@@ -1,0 +1,39 @@
+<!-- <script src="./index.js"></script> -->
+
+<script>
+  const  ojb = {
+    name:'Tom',
+    sayName: function () {
+      console.log(this, this.name)
+    }
+  }
+
+  ojb.sayName()
+
+  const aaaaaa = {
+    name: 'Package'
+  }
+
+  ojb.sayName.call(aaaaaa)
+
+  (function (list) {
+    console.log('list', list)
+    function require(file) {
+      console.log('file', file)
+      const exports = {};
+      (function (exports, code) {
+        eval(code)
+
+      })(exports, list[file])
+      return exports
+    }
+
+    require('index.js')
+  })({
+    'index.js': `
+      var add = require('add.js').default
+      console.log(add(3, 3))
+    `,
+    'add.js': `exports.default = function(a, b){return a + b}`
+  })
+</script>
