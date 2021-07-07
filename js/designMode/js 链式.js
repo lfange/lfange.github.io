@@ -37,7 +37,7 @@
 // hero: 法外狂徒： 男枪
 
 
-// 实现一个find函数，并且find函数能够满足下列条件
+// 一、 实现一个find函数，并且find函数能够满足下列条件
 
 // title数据类型为string|null
 // userId为主键，数据类型为number
@@ -76,3 +76,26 @@ function find(origin) {
 		}
 	}
 }
+
+
+// 二、对象的深度比较
+
+// 已知有两个对象obj1和obj2，实现isEqual函数判断对象是否相等
+const obj1 = {
+  a: 1,
+  c: 3,
+  b: {
+    c: [1, 2]
+  }
+}
+const obj2 = {
+  c: 4,
+  b: {
+    c: [1, 2]
+  },
+  a: 1
+}
+
+// isEqual函数，相等输出true，不相等输出false
+isEqual(obj1, obj2)
+
