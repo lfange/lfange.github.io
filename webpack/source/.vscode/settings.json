@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "terminal.integrated.shell.windows": "F:\\software\\git\\bin\\bash.exe",
   "workbench.startupEditor": "newUntitledFile",
   "git.ignoreMissingGitWarning": true,
   "explorer.confirmDelete": false,
