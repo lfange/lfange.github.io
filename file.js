@@ -1,6 +1,8 @@
 fs = require("fs");
 const path = require("path");
 
+const filterSource = ['电影', 'wwww']
+
 const movieAr = ['AVI', 'mov', 'rmvb', 'rm', 'FLV', 'mp4', '3GP']
 
 recircle(path.dirname(__filename))
@@ -50,7 +52,13 @@ function resetName(filePath, filetype) {
   // console.log('filetype isDir ', filePath, fileName, fileNameArr, fileNameArr.length);
   if (filetype === 'isDir') {
     if (fileNameArr.length > 2) {
-      console.log('fileNameArr', fileNameArr);
+      fileNameArr.map((key, index) => {
+        // if (filterSource)
+        console.log('filterSource', fileNameArr, key);
+      })
+      if (fileNameArr.includes) {
+        // console.log('fileNameArr', fileNameArr);
+      }
     }
   } else {
 
