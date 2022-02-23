@@ -7,6 +7,15 @@
 	<body>
 		<script src="./promise.js"></script>
 		<script type="text/javascript">
+			const str = '[阳光电影www.ygdy8.com].华尔街之狼.BD.720p.中英双字幕.rmvb' // /(\[*)([^\[]*])/
+			// const str = 'fdsBD发多少' // /(\[*)([^\[]*])/
+			console.log('st', str.replace(/[\w]/g, ''))
+
+			const year = 1953
+			console.log('year', /(19[0-9]{2})(20[0-9]{2})/g.test(year));
+			// console.log('st', /^[\u4e00-\u9fa5]/.test(str))
+			// 只保留中文 /[^\u4e00-\u9fa5]/g
+			// 判断是否中文开始 /^[\u4e00-\u9fa5]/
 
 			//  var Person = function(name) {
 			//     this.name = name
