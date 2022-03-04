@@ -1,57 +1,79 @@
 fs = require("fs");
 const path = require("path");
 
-const url = path.join(__dirname, '/')
-recircle(url)
+const filterSource = ['电影', 'wwww']
 
-async function recircle(url) {
-  const fileT = await fileType(url);
+const movieAr = ['AVI', 'mov', 'rmvb', 'rm', 'FLV', 'mp4', '3GP']
 
-  //  file     文件直接处理
-  if (fileT === 'file') return resetName(url)
+recircle(path.dirname(__filename))
 
-  // 文件夹处理
-  fs.readdir(url, (err, fileList) => {
-    if (err) throw err;
-    fileList.forEach((file, ind) => {
-      const fiUrl = path.resolve(`./${file}`)
-
-      fs.stat(fiUrl, function (e, stats) {
-        console.log('file file file ', fiUrl, file, stats);
-        if (!stats) {
-          fs.readdir(fiUrl, "utf8", (er, files) => {
-            console.log('stats,', files);
-          })
-          return
-        }
-        const isDir = stats.isDirectory();
-        if (stats.isFile()) return resetName(file)
-        if (isDir) {
-          //  if(file === "webpack资料") {
-          //    console.log('isDir  isDir', stats);
-          //  }
-          console.log('recircle', file);
-          recircle(file)
-        }
-      })
-    });
-  })
+// 电影时间
+const limitDate = []
+for (let i = new Date().getFullYear() - 50; i < new Date().getFullYear() + 20; i++) {
+  limitDate.push(i)
 }
 
-function fileType(file) {
-  return new Promise((resolve, reject) => {
-    fs.stat(file, function (err, ststats) {
-      if (err) return
-      if (ststats.isFile()) resolve('file')
-      if (ststats.isDirectory()) resolve('isDir')
+
+function recircle(url) {
+  const fileList = fs.readdirSync(url)
+  fileList.forEach((file) => {
+    const filePath = url + '\\' + file
+    // console.log('url ' + url + ' fileList ' + file + " filePath " + filePath);
+    fs.stat(filePath, (err, stats) => {
+      // 是文件 文件直接处理
+      if (stats.isFile()) {
+        resetName(filePath)
+      } else if (stats.isDirectory()) {
+
+        resetName(filePath, 'isDir')
+        // 为文件夹
+        recircle(filePath)
+      } else {
+        console.log('其他不明类型文件');
+      }
+
     })
+
   })
 }
 
-function resetName(file) {
-  console.log('修改 ' + file + "名字");
+function resetName(filePath, filetype) {
+  const dirname = path.dirname(filePath) // 路径中代表文件夹的部分
+  const oldFileName = path.basename(filePath) // 文件名
+  // path.extname(filePath)   文件名后缀
 
-  //  fs.rename(file, "note.txt", (er) => {
-  //    console.log("er", er)
-  //  })
+  if (filetype === 'isDir') recircle(filePath)
+  if (oldFileName.split('.').length <= 2) return
+
+  let newName = ''
+  // 文件名是否中文开头
+  const isCN = /^[\u4e00-\u9fa5]*\./g
+  // 中文 和英文判断格式
+  const MoiveNameReg = isCN.test(oldFileName) ? /(?<=^([\u4e00-\u9fa5]*)\.)/g : /(?<=^([a-zA-Z.]*)\.\d{4})/
+  const DateReg = /\.(\d{4})\./g // 提取日期时间
+  const endReg = /\.[a-z]*$/gi // 文件格式
+  // 提取文件名
+  oldFileName.replace(MoiveNameReg, (a, b) => {
+    newName = b
+  })
+
+  // 提取时间
+  oldFileName.replace(DateReg, (a, b) => {
+    newName += `(${b})`
+  })
+
+  // 提取文件名和时间都为空则文件格式不正确
+  if (!newName) return
+
+  // 如果为文件则添加后缀
+  if (filetype !== 'isDir') {
+    const videoSuffix = oldFileName.match(endReg).toString()
+    newName += `${videoSuffix}`
+  }
+  console.log('newName:', oldFileName, 'newName: ', newName)
+
+  // console.log('修改 ' + fileName + dirname + " 后缀名：" + path.extname(filePath));
+  fs.rename(filePath, newName, (er) => {
+    console.log("er", er)
+  })
 }

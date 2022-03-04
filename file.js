@@ -13,17 +13,12 @@ for (let i = new Date().getFullYear() - 50; i < new Date().getFullYear() + 20; i
   limitDate.push(i)
 }
 
-const str = '李茂扮太子.Another.Me.2022.2160p.WEB'
-
-console.log('', new Date().getFullYear(), limitDate, str.split('.'));
-
 
 function recircle(url) {
   const fileList = fs.readdirSync(url)
   fileList.forEach((file) => {
     const filePath = url + '\\' + file
     // console.log('url ' + url + ' fileList ' + file + " filePath " + filePath);
-
     fs.stat(filePath, (err, stats) => {
       // 是文件 文件直接处理
       if (stats.isFile()) {
@@ -44,29 +39,41 @@ function recircle(url) {
 
 function resetName(filePath, filetype) {
   const dirname = path.dirname(filePath) // 路径中代表文件夹的部分
-  const fileName = path.basename(filePath) // 文件名
-
-  // [\u4e00-\u9fa5] 中文
-  let newFile = ''
-  const fileNameArr = fileName.split('.')
-  // console.log('filetype isDir ', filePath, fileName, fileNameArr, fileNameArr.length);
-  if (filetype === 'isDir') {
-    if (fileNameArr.length > 2) {
-      fileNameArr.map((key, index) => {
-        // if (filterSource)
-        console.log('filterSource', fileNameArr, key);
-      })
-      if (fileNameArr.includes) {
-        // console.log('fileNameArr', fileNameArr);
-      }
-    }
-  } else {
-
-  }
+  const oldFileName = path.basename(filePath) // 文件名
   // path.extname(filePath)   文件名后缀
-  // console.log('修改 ' + fileName + dirname + " 后缀名：" + path.extname(filePath));
 
-  //  fs.rename(file, "note.txt", (er) => {
-  //    console.log("er", er)
-  //  })
+  if (filetype === 'isDir') recircle(filePath)
+  if (oldFileName.split('.').length <= 2) return
+
+  let newName = ''
+  // 文件名是否中文开头
+  const isCN = /^[\u4e00-\u9fa5]*\./g
+  // 中文 和英文判断格式
+  const MoiveNameReg = isCN.test(oldFileName) ? /(?<=^([\u4e00-\u9fa5]*)\.)/g : /(?<=^([a-zA-Z.]*)\.\d{4})/
+  const DateReg = /\.(\d{4})\./g // 提取日期时间
+  const endReg = /\.[a-z]*$/gi // 文件格式
+  // 提取文件名
+  oldFileName.replace(MoiveNameReg, (a, b) => {
+    newName = b
+  })
+
+  // 提取时间
+  oldFileName.replace(DateReg, (a, b) => {
+    newName += `(${b})`
+  })
+
+  // 提取文件名和时间都为空则文件格式不正确
+  if (!newName) return
+
+  // 如果为文件则添加后缀
+  if (filetype !== 'isDir') {
+    const videoSuffix = oldFileName.match(endReg).toString()
+    newName += `${videoSuffix}`
+  }
+  console.log('newName:', oldFileName, 'newName: ', newName)
+
+  // console.log('修改 ' + fileName + dirname + " 后缀名：" + path.extname(filePath));
+  fs.rename(filePath, newName, (er) => {
+    console.log("er", er)
+  })
 }
