@@ -20,16 +20,13 @@ function recircle(url) {
       if (stats.isFile()) {
         resetName(filePath)
       } else if (stats.isDirectory()) {
-
         resetName(filePath, 'isDir')
         // 为文件夹
         recircle(filePath)
       } else {
         console.log('其他不明类型文件');
       }
-
     })
-
   })
 }
 
@@ -44,7 +41,7 @@ function resetName(filePath, filetype) {
   let newName = ''
   // 文件名是否中文开头
   const isCN = /^[\u4e00-\u9fa5]*\./g
-  // 中文 和英文判断格式
+  // 中文 和英文判断格式  -                 修改文件的格式  电影名(时间)
   const MoiveNameReg = isCN.test(oldFileName) ? /(?<=^([\u4e00-\u9fa5]*)\.)/g : /(?<=^([a-zA-Z.]*)\.\d{4})/
   const DateReg = /\.(\d{4})\./g // 提取日期时间
   const endReg = /\.[a-z]*$/gi // 文件格式
