@@ -1,10 +1,6 @@
 fs = require("fs");
 const path = require("path");
 
-const filterSource = ['电影', 'wwww']
-
-const movieAr = ['AVI', 'mov', 'rmvb', 'rm', 'FLV', 'mp4', '3GP']
-
 recircle(path.dirname(__filename))
 
 // 电影时间
@@ -24,16 +20,13 @@ function recircle(url) {
       if (stats.isFile()) {
         resetName(filePath)
       } else if (stats.isDirectory()) {
-
         resetName(filePath, 'isDir')
         // 为文件夹
         recircle(filePath)
       } else {
         console.log('其他不明类型文件');
       }
-
     })
-
   })
 }
 
@@ -41,14 +34,14 @@ function resetName(filePath, filetype) {
   const dirname = path.dirname(filePath) // 路径中代表文件夹的部分
   const oldFileName = path.basename(filePath) // 文件名
   // path.extname(filePath)   文件名后缀
-
+  
   if (filetype === 'isDir') recircle(filePath)
   if (oldFileName.split('.').length <= 2) return
 
   let newName = ''
   // 文件名是否中文开头
   const isCN = /^[\u4e00-\u9fa5]*\./g
-  // 中文 和英文判断格式
+  // 中文 和英文判断格式  -                 修改文件的格式  电影名(时间)
   const MoiveNameReg = isCN.test(oldFileName) ? /(?<=^([\u4e00-\u9fa5]*)\.)/g : /(?<=^([a-zA-Z.]*)\.\d{4})/
   const DateReg = /\.(\d{4})\./g // 提取日期时间
   const endReg = /\.[a-z]*$/gi // 文件格式
@@ -70,9 +63,9 @@ function resetName(filePath, filetype) {
     const videoSuffix = oldFileName.match(endReg).toString()
     newName += `${videoSuffix}`
   }
-  console.log('newName:', oldFileName, 'newName: ', newName)
+  
+  newName = `${dirname}\\${newName}` // 修改的文件名路径地址
 
-  // console.log('修改 ' + fileName + dirname + " 后缀名：" + path.extname(filePath));
   fs.renameSync(filePath, newName, (er) => {
     console.log("er", er)
   })
