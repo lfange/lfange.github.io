@@ -73,7 +73,7 @@ function resetName(filePath, filetype) {
   console.log('newName:', oldFileName, 'newName: ', newName)
 
   // console.log('修改 ' + fileName + dirname + " 后缀名：" + path.extname(filePath));
-  fs.rename(filePath, newName, (er) => {
+  fs.renameSync(filePath, newName, (er) => {
     console.log("er", er)
   })
 }
