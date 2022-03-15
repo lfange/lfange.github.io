@@ -9,7 +9,7 @@ function PromiseA(promises) {
 				Promise.resolve(promises[i]).then(val => {
 					countNum++
 					resolvedvalue[i] = val
-					
+
 					if (countNum === promiseNum) {
 						return resolve(resolvedvalue)
 					}
@@ -30,3 +30,15 @@ PromiseA([p1, p2, p3])
 	.then(res => {
 		console.log('val', res)
 	})
+
+
+var timer = function() {
+	console.log('item', i)
+	for (var i = 0; i < 5; i++) {
+		var item = []
+		item.push(i)
+	}
+	console.log('item', i)
+}
+
+timer()
