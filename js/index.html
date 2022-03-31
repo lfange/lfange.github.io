@@ -5,10 +5,14 @@
 		<title></title>
 	</head>
 	<body>
+		<div id="" style="height: 10000px; background: skyblue;">
+			
+		</div>
 		<!-- <script src="函数柯里化.js"></script> -->
 		<!-- <script src="./callApply.js" type="text/javascript" charset="utf-8"></script> -->
 		<!-- <script src="./promiseA.js" type="text/javascript" charset="utf-8"></script> -->
 		<script src="js原型链.js" type="text/javascript" charset="utf-8"></script>
+		<script src="防抖和节流.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			// for (var i = 0; i < 5; i++) {
 			// 	(function(i){
@@ -17,6 +21,23 @@
 			// 		},0)
 			// 	})(i)
 			// }
+			function fns() {
+				console.log('事件触发事件触发')
+			}
+			
+			function sdebounce () {
+				console.log('debounce 防抖' )
+			}
+			const ff = throttled(fns, 2000)
+			
+			const ww = debounce(sdebounce, 1000)
+			
+			const oo = fangdou(sdebounce, 2000)
+			
+			window.onresize = function (e) {
+				// ff()
+				oo()
+			}
 		</script>
 	</body>
 </html>
