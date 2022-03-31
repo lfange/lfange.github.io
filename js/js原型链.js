@@ -12,8 +12,8 @@ const obj = {
 const myobj = Object.create(obj)
 obj.num = 88
 myobj.num += 1
-console.log('obj', obj, obj.num)
-console.log('myobj', myobj, myobj.num)
+// console.log('obj', obj.__proto__)
+// console.log('myobj', myobj, myobj.num)
 
 
 function f() {
@@ -21,10 +21,10 @@ function f() {
 	this.b = 2
 }
 
-const o = new f()
+const wa = new f()
 
-// console.log('o', o.__proto__)
-// console.log('o', o.constructor === f)
+// console.log('o', wa.__proto__)
+// console.log('o', wa.constructor === f)
 // console.log(Object.getPrototypeOf(f) === f.__proto__)
 
 
@@ -45,17 +45,39 @@ p.m()
 
 
 function Graph() {
-  this.vertices = [];
-  this.edges = [];
+	this.vertices = [];
+	this.edges = [];
 }
 
 Graph.prototype = {
-  addVertex: function(v){
-    this.vertices.push(v);
-  }
+	addVertex: function(v) {
+		this.vertices.push(v);
+	}
 };
 
 var g = new Graph();
 
-// console.log('g', g)
-// console.dir(Graph)
+
+
+// js垃圾回收《
+var o = {
+	a: {
+		b: 2
+	}
+};
+// 两个对象被创建，一个作为另一个的属性被引用，另一个被分配给变量o
+// 很显然，没有一个可以被垃圾收集
+
+var o2 = o; // o2变量是第二个对“这个对象”的引用
+
+o = 1; // 现在，“这个对象”只有一个o2变量的引用了，“这个对象”的原始引用o已经没有
+console.log('o', o)
+console.log('o', o2)
+var oa = o2.a; // 引用“这个对象”的a属性
+// 现在，“这个对象”有两个引用了，一个是o2，一个是oa
+
+o2 = "yo"; // 虽然最初的对象现在已经是零引用了，可以被垃圾回收了
+// 但是它的属性a的对象还在被oa引用，所以还不能回收
+
+oa = null; // a属性的那个对象现在也是零引用了
+// 它可以被垃圾回收了
