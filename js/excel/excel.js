@@ -25,7 +25,7 @@ worksheet.columns = [{
 	header: '姓名',
 	key: 'name',
 	width: 10
-}, ]
+}]
 
 for (let i = 0; i < 20; i++) {
 	worksheet.addRow(`{header: header + ${i}}, key: ${i}`);

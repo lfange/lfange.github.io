@@ -45,8 +45,6 @@ function throttled(fn, delay) {
  * 窗口大小resize。只需窗口调整完成后，计算窗口大小。防止重复渲染。
  */
 
-
-
 // 简单版防抖
 function fangdou(fns, delay) {
 	let timer
