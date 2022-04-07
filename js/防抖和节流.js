@@ -10,7 +10,7 @@
 function throttle(fn, delay) {
 	let oldtime = Date.now()
 	
-	return function(..args) {
+	return function(...args) {
 		let newtime = Date.now()
 		if (newtime - oldtime >= delay) {
 			fn.apply(null, args)
