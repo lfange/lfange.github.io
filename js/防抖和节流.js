@@ -10,7 +10,7 @@
 function throttle(fn, delay) {
 	let oldtime = Date.now()
 	
-	return function(..args) {
+	return function(...args) {
 		let newtime = Date.now()
 		if (newtime - oldtime >= delay) {
 			fn.apply(null, args)
@@ -44,8 +44,6 @@ function throttled(fn, delay) {
  * 手机号、邮箱验证输入检测
  * 窗口大小resize。只需窗口调整完成后，计算窗口大小。防止重复渲染。
  */
-
-
 
 // 简单版防抖
 function fangdou(fns, delay) {
