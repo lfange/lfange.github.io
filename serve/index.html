@@ -1,10 +1,107 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<div>./configure --with-http_ssl_module</div>
-	</body>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    table {
+       border-collapse: collapse;
+     }
+     th, td {
+       border: 1px solid black;
+       padding: 4px;
+     }
+     th {
+       cursor: pointer;
+     }
+     th:hover {
+       background: yellow;
+     }
+  </style>
+</head>
+
+<body>
+
+  <table id="grid">
+    <thead>
+      <tr>
+        <th data-type="number">Age</th>
+        <th data-type="string">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5</td>
+        <td>John</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pete</td>
+        <td>33</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Ann</td>
+        <td>444</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Eugene</td>
+        <td>55</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Ilya</td>
+        <td>66</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+
+    grid.onclick = function(e) {
+      if (e.target.tagName != 'TH') return;
+
+      let th = e.target;
+      // if TH, then sort
+      // cellIndex is the number of th:
+      //   0 for the first column
+      //   1 for the second column, etc
+      sortGrid(th.cellIndex, th.dataset.type);
+    };
+
+    function sortGrid(colNum, type) {
+      let tbody = grid.querySelector('tbody');
+
+      let rowsArray = Array.from(tbody.rows);
+
+      // compare(a, b) compares two rows, need for sorting
+      let compare;
+			
+			console.dir(tbody)
+			console.log('rowsArray', rowsArray)
+
+      switch (type) {
+        case 'number':
+          compare = function(rowA, rowB, rowC) {
+						console.dir(rowA)//('rowA, rowB', , rowB, rowC)
+            return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+          };
+          break;
+        case 'string':
+          compare = function(rowA, rowB) {
+            return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1;
+          };
+          break;
+      }
+
+      // sort
+      rowsArray.sort(compare);
+
+      tbody.append(...rowsArray);
+    }
+  </script>
+
+</body>
 </html>
