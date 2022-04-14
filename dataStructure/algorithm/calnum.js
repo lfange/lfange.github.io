@@ -3,43 +3,51 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-	console.log('[1,2,3,1,2,6]', ...nums, new Set(nums))
-	nums.sort((a,b) => {
-		return a - b
-	})
-	const str = nums.join('')
-	const reg = /(.+)\1{2,}/g
-	// console.log('nums', nums.join(',').split(',').map(it => +it))
-
-	console.log('match',nums, str.match(reg))
-	console.log('test', reg.test(str))
-	str.replace(reg, (a, b) => {
-		console.log('a, b', a, b)
-	})
-
+	nums.sort((a, b) => a - b)
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] === nums[i + 1]) return true
+	}
+	return false
+	// return new Set(nums).size !== nums.length  
 };
 
-console.log('上报时间:', 'swdac  think'.replace(/th\b/, '22') )
-console.log('::::', 'swdw  think'.replace(/wd\b/, '22') )
-// console.log('上报时间:', 'at noon'.replace(/\Bon/, '22') )
 
-
-// nums = [1, 1, 1, 1, 3, 3, 3, 4, 3,5,5,5, 2, 4, 2]
-nums = [1,2,3,1]
-
-containsDuplicate([1,2,3,1,2,6])
-
-
-const collectRepeatStr = (str) => {
-  let repeatStrs = []
-  const repeatRe = /(.+)\1+/g
-  // \1 和 \2 表示第一个和第二个被捕获括号匹配的子字符串，\1+ 表示重复1次以上
-  // \1{2,} 表示重复两次以上
-  str.replace(repeatRe, (old, txt) => {
-    txt && repeatStrs.push(txt)
-  })
-  
-  return repeatStrs
+// 对象 count计数
+var ObjDuplicate = function(nums) {
+	const duplicate = {}
+	nums.forEach(val => {
+		if (!duplicate.hasOwnProperty(val)) duplicate[val] = 0
+		else duplicate[val]++
+	})
+	return [...Object.values(duplicate)].some(count => count > 0)
 }
 
-console.log(collectRepeatStr('12323555454545666'))
+// map count计数法
+var MapDuplicate = function(nums) {
+	const duplicate = new Map()
+	nums.forEach((val, key) => {
+		if (!duplicate.has(val)) duplicate.set(val, 0)
+		else {
+			let ad = duplicate.get(val)
+			duplicate.set(val, ++ad)
+		}
+	})
+	return [...duplicate.values()].some(count => count > 0)
+}
+
+
+nums = [2, 5, 7333, 7,5678,58,9,7]
+console.log('Q', ObjDuplicate(nums))
+
+const collectRepeatStr = (str) => {
+	let repeatStrs = []
+	const repeatRe = /(.+)\1+/g
+	// \1 和 \2 表示第一个和第二个被捕获括号匹配的子字符串，\1+ 表示重复1次以上
+	// \1{2,} 表示重复两次以上   /(.+)\1{2,}/g
+	str.replace(repeatRe, (old, txt) => {
+		txt && repeatStrs.push(txt)
+	})
+	return repeatStrs
+}
+
+// console.log(collectRepeatStr('12323555454545666'))
