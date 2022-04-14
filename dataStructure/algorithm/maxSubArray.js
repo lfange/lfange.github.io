@@ -41,3 +41,38 @@ const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 // maxSubArray(nums)
 // console.log(maxSubArray(nums))
 
+const maxSubArr = function(nums) {
+	let result = nums[0]
+	let sum = nums[0]
+
+	for (let i = 1; i < nums.length; i++) {
+		if (nums[i] + sum >= nums[i]) {
+			sum += nums[i]
+		} else {
+			sum = nums[i]
+		}
+
+		if (sum > result) {
+			result = sum
+		}
+	}
+	return result
+}
+
+console.log(maxSubArr([-7, -5, -12, -6, -1, -2]))
+
+
+const twoSum = function(nums, target) {
+	const sumObj = new Map()
+	for (let i = 0; i < nums.length; i++) {
+		if (sumObj.has(target - nums[i])) {
+			return [sumObj.get(target - nums[i]), i]
+		} else {
+			sumObj.set(nums[i], i)
+		}
+	}
+	return null
+}
+
+
+console.log('twoSum', twoSum([3, 2, 8, 6, 4], 6))
