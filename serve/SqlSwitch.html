@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let str = `分类_喉痉挛 CFL_HJL
+		分类_氧合不当	 CFL_YHBD
+		分类_氧合不当其他	CFL_YHBDQT
+		分类_麻醉机回路故障	CFL_MZJHL
+		分类_麻醉机回路故障其他	CFL_MZJHLQT
+		分类_用药	CFL_YY
+		分类_用药其他 	CFL_YYQT
+		分类_通气无效	 CFL_TQ
+		分类_通气无效其他	CFL_TQQT
+		分类_循环异常	 CFL_XHYC
+		分类_循环异常其它	CFL_XHYCQT`
+		
+		const result = []
+		let arr = []
+		let demo = 'varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT'
+		let SqlStr = ''
+		
+		str = str.replace(/\s*/g, '')
+		str = str.replace(/(?!\_)(?<!\_)\b/g, ',')
+		
+		const atr = str.split(',')
+		
+		for (let i = 0; i < atr.length; i++) {
+			arr.push(atr[i])
+			if (arr.length === 0) {
+				SqlStr = `${atr[i]} ${demo}`
+			} else {
+				SqlStr = `${SqlStr}`
+			}
+			if (arr.length === 0) {continue}
+			result.push(arr)
+			arr = []
+		}
+		
+		CZZMZYSXM varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '主治麻醉医师',
+		
+		
+		
+		console.log('result', result)
+		console.log('str', str)
+	</script>
+</html>
