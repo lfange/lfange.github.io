@@ -42,7 +42,6 @@ const board = [
 	[".", ".", ".", ".", "8", ".", ".", "7", "9"]
 ]
 
-
 console.log('charCodeAt', isValidSudoku(board))
 
 
