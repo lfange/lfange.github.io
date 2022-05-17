@@ -17,27 +17,55 @@ var maxSubArray = function(nums) {
 		const current = nums[i]
 		if (sum + current >= current) {
 			sum += current
-			console.log('current', current)
 		} else {
 			sum = current
 			obj.start = i
 		}
 
 		if (sum > res) {
-			console.log('sum > res', current)
 			arr.push(i)
 			res = sum
 			obj.end = i
 		}
 
 	}
-	console.log('current', res)
-	console.log('obj', obj)
-	console.log('arr', arr)
+	return arr
 }
 
 const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
 // maxSubArray(nums)
-// console.log(maxSubArray(nums))
+console.log('maxSubArray1', maxSubArray(nums))
 
+function maxSubArray1(nums) {
+	let sum = nums[0]
+	let ret = nums[0]
+
+	const arr = []
+	for (let i = 1; i < nums.length; i++) {
+		if (sum + nums[i] >= nums[i]) {
+			sum += nums[i]
+		} else {
+			sum = nums[i]
+		}
+
+		if (sum > ret) {
+			arr.push(i)
+			ret = sum
+		}
+	}
+
+	return arr
+}
+
+
+
+function isValid(s) {
+	if (!s) return true;
+	let temp = s.replace(/\{\}|\[\]|\(\)/g, '');
+	console.log('s', s, 'temp', temp)
+	return temp === s ? false : isValid(temp);
+}
+
+let strrr = "([])[]]"
+console.log('isValid', isValid(strrr))
