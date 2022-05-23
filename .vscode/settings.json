@@ -1,3 +1,13 @@
 {
-  "svn.ignoreMissingSvnWarning": true
+  "svn.ignoreMissingSvnWarning": true,
+  "files.associations": {
+    "stdio.h": "c",
+    "array": "c",
+    "deque": "c",
+    "string": "c",
+    "vector": "c",
+    "iterator": "c",
+    "string_view": "c"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
