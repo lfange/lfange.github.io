@@ -1,7 +1,46 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: deeppink;
+.cardList .ant-card-body .default_cardPicture {
+  border-top: 0;
+  height: auto;
+  padding-top: 24px
+}
+
+.cardList .ant-card-body .cardButton {
+  margin-left: 0;
+}
+
+.cardList .ant-card-body .default_cardPicture img {
+  height: 68px;
+  margin-top: 24px;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+.list_action_buttons>span {
+  width: calc(100% - 6px);
+}
+
+.list_action_buttons>span>span {
+  width: inherit;
+}
+
+.list_action_buttons {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cardList .ant-card-body .cardButton .line_button {
+  width: inherit;
+  margin-right: 0;
+}
+
+.cardList .button_title {
+  color: #005aff;
+}
+
+.cardList .ant-card-body .cardTitle {
+  color: #232323;
+}
+
+.cardList .ant-card-body .content .cardInfo {
+  color: #595959;
 }

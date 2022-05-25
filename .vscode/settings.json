@@ -7,7 +7,10 @@
     "string": "c",
     "vector": "c",
     "iterator": "c",
-    "string_view": "c"
+    "string_view": "c",
+    "string.h": "c",
+    "cstdlib": "c",
+    "random": "c"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
