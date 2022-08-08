@@ -3,79 +3,57 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style type="text/css">
+			textarea {
+				width: 90%;
+				height: 30vh;
+			}
+		</style>
 	</head>
 	<body>
-	</body>
-	<script type="text/javascript">
-		let str = `分类_喉痉挛 CFL_HJL
-		分类_氧合不当	 CFL_YHBD
-		分类_氧合不当其他	CFL_YHBDQT
-		分类_麻醉机回路故障	CFL_MZJHL
-		分类_麻醉机回路故障其他	CFL_MZJHLQT
-		分类_用药	CFL_YY
-		分类_用药其他 	CFL_YYQT
-		分类_通气无效	 CFL_TQ
-		分类_通气无效其他	CFL_TQQT
-		分类_循环异常	 CFL_XHYC
-		分类_循环异常其它	CFL_XHYCQT`
-		console.time('time start')
-		const result = []
-		let arr = []
-		let demo = 'varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT'
-		let SqlStr = ''
-
-		str = str.replace(/\s*/g, '')
-		str = str.replace(/(?!\_)(?<!\_)\b/g, ',')
-
-		let flag = 0
-		let adStr = ''
-
-		const atr = str.split(',')
-
-		for (let i = 0; i < atr.length; i++) {
-			arr.push(atr[i])
-			if (arr.length === 1) {} else {
-				result.push(arr)
-				arr = []
-			}
-
-			// flag++
-			// if (flag === 1) {
-			// 	adStr = `${demo} '${atr[i]}'`
-			// }
-			// if (flag === 2) {
-			// 	flag = 0
-			// 	adStr = `${atr[i]} ${adStr}`
-			// 	SqlStr = SqlStr ? `${SqlStr},<br/> ${adStr}` : `${adStr}`
-			// 	adStr = ''
-			// }
-		}
-
-		// CZZMZYSXM varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '主治麻醉医师',
-		const maps = new Map(result)
-		let strs = ''
-		for (let [comment, key] of maps) {
-			if (strs) strs += `,<br/>`
-			strs += `${key} varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '${comment}'`
-		}
-
-		console.log('result', result)
-		document.write(strs)
-		console.timeEnd('time start')
-		// document.getElementsByTagName('body')[0].append(`<br/><br/><div>${strs}</div>`)
-		// document.write(`<div>${SqlStr}</div><br/><br/><br/><div>${strs}</div>`)
-		// console.log('strs', strs)
-
-		nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6,8,9], n = 3
-		var merge = function(nums1, m, nums2, n) {
-
+		<textarea > </textarea>
+		<button type="button" onclick="create()">生成</button>
+		<div id="render">
 			
-			if (n > 0) {
-				nums1.splice(m, nums1.length - m, ...nums2.slice(0, nums1.length - m))
-				nums1.sort((a,b) => a -b )
+		</div>
+		<script type="text/javascript">
+			// document.write(strs)
+
+			function create() {
+				console.log('', document.querySelector('textarea'))
+				let str = document.querySelector('textarea').value
+				const result = []
+				let arr = []
+				let demo = 'varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT'
+				let SqlStr = ''
+
+				str = str.replace(/\s*/g, '')
+				str = str.replace(/(?!\_)(?<!\_)\b/g, ',')
+
+				let flag = 0
+				let adStr = ''
+
+				const atr = str.split(',')
+
+				for (let i = 0; i < atr.length; i++) {
+					arr.push(atr[i])
+					if (arr.length === 1) {} else {
+						result.push(arr)
+						arr = []
+					}
+				}
+
+				// CZZMZYSXM varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '主治麻醉医师',
+				const maps = new Map(result)
+				let strs = ''
+				for (let [comment, key] of maps) {
+					if (strs) strs += `,<br/>`
+					strs +=
+						`${key} varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT '${comment}'`
+				}
+				document.querySelector('#render').innerHTML = strs
+				
 			}
-			console.log('nums1', nums1)
-		};
-		merge(nums1, m, nums2, n)
-	</script>
+		</script>
+	</body>
 </html>
