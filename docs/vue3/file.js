@@ -46,14 +46,17 @@ function resetName(filePath, filetype) {
   const DateReg = /\.(\d{4})\./g // 提取日期时间
   const endReg = /\.[a-z]*$/gi // 文件格式
   // 提取文件名
-  oldFileName.replace(MoiveNameReg, (a, b) => {
-    newName = b
+  // oldFileName.replace(MoiveNameReg, (a, b) => {
+  //   newName = b
+  // })
+  oldFileName.replace(/\d/g, (a, b) => {
+    console.log('replace', a, b)
   })
 
-  // 提取时间
-  oldFileName.replace(DateReg, (a, b) => {
-    newName += `(${b})`
-  })
+  // // 提取时间
+  // oldFileName.replace(DateReg, (a, b) => {
+  //   newName += `(${b})`
+  // })
 
   // 提取文件名和时间都为空则文件格式不正确
   if (!newName) return
