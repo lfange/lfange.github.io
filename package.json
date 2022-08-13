@@ -4,6 +4,9 @@
   "description": "学习、实敲代码",
   "main": "index.js",
   "scripts": {
+    "docs": "vuepress dev docs --temp .temp",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -42,6 +45,7 @@
     "terser-webpack-plugin": "^2.3.5",
     "thread-loader": "^2.1.3",
     "url-loader": "^3.0.0",
+    "vuepress": "^1.9.7",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
