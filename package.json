@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "vuepress dev docs --temp .temp",
-    "docs:dev": "vuepress dev docs",
+    "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

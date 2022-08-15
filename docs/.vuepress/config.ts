@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
+import Plugins from './config/plugins'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -50,5 +51,7 @@ export default defineUserConfig({
         ],
       },
     ],
-  })
+  }),
+  ...Plugins,
+  port: 6868
 })
