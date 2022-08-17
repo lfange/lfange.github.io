@@ -8,7 +8,8 @@ const sidebar = {
       "children": [
         "README.md",
         "currie",
-        "防抖节流"
+        "防抖节流",
+        "callApply"
       ]
     }
   ],
