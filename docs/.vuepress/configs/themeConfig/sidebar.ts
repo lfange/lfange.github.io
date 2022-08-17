@@ -7,6 +7,7 @@ const sidebar = {
       "sidebarDepth": 1,
       "children": [
         "README.md",
+        "currie.md"
       ]
     }
   ],
