@@ -19,6 +19,6 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 - **WeChat or QQ**: <a href="tencent://message/?uin=653398363&Site=&Menu=yesUrl" class='qq'>653398363</a>
 - **Email**: <a href="mailto:653398363@qq.com">653398363@qq.com</a>
-- **GitHub**: <https://github.com/xugaoyi>
+- **GitHub**: <https://github.com/lfange>
 
 </br>

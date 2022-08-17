@@ -2,9 +2,9 @@
   {
     lastUpdated: 'Last Updated', // string | boolean
   }
-## themeConfig2:
+## Plain the beautiful :
 
-# themeConf:
+# Oh My God:
   {
     lastUpdated: 'Last Updated', // string | boolean
   }
@@ -86,7 +86,7 @@
     {
     lastUpdated: 'Last Updated', // string | boolean
   }
-## themeConfig2:
+## Don t :
 ::: danger STOP
 危险区域，禁止通行
 :::
