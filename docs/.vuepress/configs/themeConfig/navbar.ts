@@ -1,6 +1,12 @@
 // navbar of headlink
 const navbar = [
-  { text: "数据结构与算法", link: "/" },
+  {
+    text: "算法",
+    link: "/algorithms/",
+    // children: [
+      // '/algorithms/READEME'
+    // ],
+  },
   { text: "guide", children: ["/guide/01test", "/guide/02test"] },
   {
     text: "vue3",
@@ -44,4 +50,4 @@ const navbar = [
   },
 ];
 
-export default navbar
+export default navbar;

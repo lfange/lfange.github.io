@@ -1,4 +1,15 @@
 const sidebar = {
+  '/algorithms/': [
+    {
+      "text": "ALGORITHMS",
+      "title": "ALGORITHMS",
+      "collapsable": false,
+      "sidebarDepth": 1,
+      "children": [
+        "README.md",
+      ]
+    }
+  ],
   "/guide/": [
     {
       text: "guide111",
