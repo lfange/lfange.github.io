@@ -7,7 +7,8 @@ const sidebar = {
       "sidebarDepth": 1,
       "children": [
         "README.md",
-        "currie.md"
+        "currie",
+        "防抖节流"
       ]
     }
   ],

@@ -3,7 +3,7 @@
 ### 柯里化的好处
   1. 参数复用；2. 提前返回；3. 延迟计算/运行.
 
-```
+```javascript
   function curryingAdd(x) {
     return function(y) {
       return x + y
@@ -31,7 +31,8 @@
     
   }
 ```
-// js中经常使用的bind，实现的机制就是Currying.
+#### js中经常使用的bind，实现的机制就是Currying.
+```javascript
 Function.prototype.bind = function (context) {
     var _this = this
     var args = Array.prototype.slice.call(arguments, 1)
@@ -40,10 +41,11 @@ Function.prototype.bind = function (context) {
         return _this.apply(context, args)
     }
 }
+```
 
-
-// 正常正则验证字符串 reg.test(txt)
-// 函数封装后
+### 正常正则验证字符串 reg.test(txt)
+  > 函数封装后
+```javascript
 function check(reg, txt) {
     return reg.test(txt)
 }
@@ -62,7 +64,7 @@ var hasLetter = curryingCheck(/[a-z]+/g)
 // hasNumber('test1')      // true
 // hasNumber('testtest')   // false
 // hasLetter('21212')      // false
-
+```
 
 
 
