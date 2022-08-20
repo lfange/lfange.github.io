@@ -19,11 +19,15 @@ const sidebar = {
       children: [ '/guide/01test.md', '/guide/02test.md'],
     },
   ],
-  '/vue/': [
+  '/web/': [
     {
       text: "Vue基础",
-      children: [ '/vue/mvvm模式.md', '生命周期.md']
+      children: [ 'componentRender', '/vue/mvvm模式.md', '生命周期.md']
     },
+    {
+      text: "Vue原理",
+      children: [ '/web/VueScoped' ]
+    }
   ]
 };
 
