@@ -19,14 +19,27 @@ const sidebar = {
       children: [ '/guide/01test.md', '/guide/02test.md'],
     },
   ],
-  '/web/': [
+  '/Front/': [
     {
       text: "Vue基础",
-      children: [ 'componentRender', '/vue/mvvm模式.md', '生命周期.md']
+      children: [ 
+        '/Front/vue/componentRender', 
+        '/Front/vue/mvvm.md', 
+        '/Front/vue/生命周期.md'
+      ]
     },
     {
       text: "Vue原理",
-      children: [ '/web/VueScoped' ]
+      children: [ 
+        '/Vue/README.md',
+        '/web/VueScoped'
+      ]
+    }
+  ],
+  '/computer/': [
+    {
+      text: '计算机相关',
+      children: ["/computer/README.md", "/computer/network-architecture.md"],
     }
   ]
 };

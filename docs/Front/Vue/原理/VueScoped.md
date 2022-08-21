@@ -1,7 +1,7 @@
 ---
-title: Vue中的scoped和scoped穿透
+title: Vue的scoped和scoped穿透
 date: 2020-02-23 10:54:23
-permalink: /web/VueScoped
+permalink: /Front/vue/VueScoped
 categories: 
   - 前端
   - Vue文章

@@ -9,25 +9,22 @@ const navbar = [
   },
   { text: "guide", children: ["/guide/01test", "/guide/02test"] },
   {
-    text: "vue3",
-    link: "/vue3/",
-    children: ["/vue3/01.组件渲染", "/vue3/02.组件更新", "/vue3/03.组件更新"],
-  },
-  {
     text: "计算机",
     link: "/computer/",
-    children: ["/vue3/01.组件渲染", "/vue3/02.组件更新", "/vue3/03.组件更新"],
   },
   {
     text: "前端",
-    link: "/web/", //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+    link: "/Front/", //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
     children: [
       // 说明：以下所有link的值只是在相应md文件定义的永久链接（不是什么特殊生成的编码）。另外，注意结尾是有斜杠的
       {
         text: "前端",
         children: [
           { text: "JavaScript", link: "/pages/8143cc480faf9a11/" },
-          { text: "Vue", link: "/pages/5d463fbdb172d43b/" },
+          { text: "Vue", link: "/pages/5d463fbdb172d43b/", 
+            children: [
+              '/web/mvvm模式.md'
+            ] },
         ],
       },
       {
@@ -52,9 +49,21 @@ const navbar = [
         ],
       },
       {
+        text: "vue3",
+        link: "/Front/vue/",
+        children: [ 
+          "/Front/vue3/01.组件渲染", 
+          "/Front/vue3/02.组件更新", 
+          "/Front/vue3/03.组件更新"
+        ],
+      },
+      {
         text: 'vue原理',
-        link: '/web/VueScoped',
-        // children: ['/web/VueScoped']
+        // link: '/Front/vue/',
+        // children: [ 
+        //   '/Front/vue/README.md', 
+        //   '/Front/vue/VueScoped.md'
+        // ]
       }
     ],
   },
