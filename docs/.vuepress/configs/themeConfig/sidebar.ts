@@ -23,7 +23,7 @@ const sidebar = {
     {
       text: "Vue基础",
       children: [ 
-        '/Front/vue/componentRender', 
+        '/Front/vue/componentRender/', 
         '/Front/vue/mvvm.md', 
         '/Front/vue/生命周期.md'
       ]
@@ -31,7 +31,7 @@ const sidebar = {
     {
       text: "Vue原理",
       children: [ 
-        '/Vue/README.md',
+        '/Front/vue/README.md',
         '/web/VueScoped'
       ]
     }

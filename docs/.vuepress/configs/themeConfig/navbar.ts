@@ -28,27 +28,6 @@ const navbar = [
         ],
       },
       {
-        text: "学习笔记",
-        children: [
-          { text: "《JavaScript教程》笔记", link: "/note/javascript/" },
-          { text: "《JavaScript高级程序设计》笔记", link: "/note/js/" },
-          { text: "《ES6 教程》笔记", link: "/note/es6/" },
-          { text: "《Vue》系列", link: "/vue/mvvm" },
-          {
-            text: "《TypeScript 从零实现 axios》",
-            link: "/vue/typescript-axios/",
-          },
-          {
-            text: "《Git》学习笔记",
-            link: "/vue/git/",
-          },
-          {
-            text: "《TypeScript》笔记",
-            link: "/vue/51afd6/",
-          },
-        ],
-      },
-      {
         text: "vue3",
         link: "/Front/vue/",
         children: [ 
@@ -59,7 +38,7 @@ const navbar = [
       },
       {
         text: 'vue原理',
-        // link: '/Front/vue/',
+        link: '/Front/vue/',
         // children: [ 
         //   '/Front/vue/README.md', 
         //   '/Front/vue/VueScoped.md'
