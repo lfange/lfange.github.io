@@ -11,7 +11,6 @@ const sidebar = {
         "防抖节流",
         "callApply",
         "comalgrithms"
-        // { text: '常见算法', link: "comalgrithms" },
       ]
     }
   ],
