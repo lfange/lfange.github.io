@@ -1,8 +1,11 @@
-/**
- * 给你一个整数数组 nums ，
- * 请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
- */
+## 两数之和
 
+  给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+
+  你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+
+
+```javascript
 var maxSubArray = function (nums) {
   let sum = nums[0]
   let res = nums[0]
@@ -57,7 +60,6 @@ const maxSubArr = function (nums) {
 
 console.log(maxSubArr([-7, -5, -12, -6, -1, -2]))
 
-
 const twoSum = function (nums, target) {
   const sumObj = new Map()
   for (let i = 0; i < nums.length; i++) {
@@ -70,5 +72,6 @@ const twoSum = function (nums, target) {
   return null
 }
 
-
 console.log('twoSum', twoSum([3, 2, 8, 6, 4], 6))
+
+```

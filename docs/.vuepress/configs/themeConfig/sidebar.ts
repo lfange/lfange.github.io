@@ -7,9 +7,11 @@ const sidebar = {
       "sidebarDepth": 1,
       "children": [
         "README.md",
+        "twoSum.md",
         "currie",
         "防抖节流",
-        "callApply"
+        "callApply",
+        "comalgrithms"
       ]
     }
   ],

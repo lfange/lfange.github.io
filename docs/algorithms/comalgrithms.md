@@ -1,3 +1,17 @@
+---
+title: 常见算法
+permalink: /algorithms/cal
+categories: 
+  - 算法
+  - 基础
+tags: 
+  - null
+author: 
+  name: lfange
+  link: https://github.com/lfange
+---
+
+``` javascript
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -35,7 +49,6 @@ var MapDuplicate = function(nums) {
 	return [...duplicate.values()].some(count => count > 0)
 }
 
-
 nums = [2, 5, 7333, 7,5678,58,9,7]
 console.log('Q', ObjDuplicate(nums))
 
@@ -51,3 +64,4 @@ const collectRepeatStr = (str) => {
 }
 
 // console.log(collectRepeatStr('12323555454545666'))
+```

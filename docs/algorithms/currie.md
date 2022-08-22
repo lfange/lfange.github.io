@@ -1,3 +1,18 @@
+---
+title: 函数柯里化
+date: 2022-06-23 10:54:23
+permalink: /algorithms/currie
+categories: 
+  - 算法
+  - 基础
+tags: 
+  - null
+author: 
+  name: lfange
+  link: https://github.com/lfange
+---
+
+
 ### 什么是柯里化？
   指的是将一个接受多个参数的函数 变为 接受一个参数返回一个函数的固定形式，这样便于再次调用
 ### 柯里化的好处
