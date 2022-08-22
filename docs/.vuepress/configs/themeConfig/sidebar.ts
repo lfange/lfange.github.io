@@ -7,11 +7,11 @@ const sidebar = {
       "sidebarDepth": 1,
       "children": [
         "README.md",
-        "twoSum.md",
         "currie",
         "防抖节流",
         "callApply",
         "comalgrithms"
+        // { text: '常见算法', link: "comalgrithms" },
       ]
     }
   ],

@@ -1,15 +1,4 @@
----
-title: 常见算法
-permalink: /algorithms/cal
-categories: 
-  - 算法
-  - 基础
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
+# 常见算法
 
 ``` javascript
 /**
