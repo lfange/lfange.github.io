@@ -1,7 +1,7 @@
 ---
 title: componentRender
 date: 2020-02-23 10:54:23
-permalink: /Front/vue/componentRender/
+permalink: /Front/vue/componentRender
 categories: 
   - 前端
   - Vue文章
@@ -88,8 +88,8 @@ author:
 ##### **宇：
 > 老师您好，看完这一节，我有一些不明白的点，我还是没清楚subTree和initialVNode, 能不能形象的解释一下，谢谢老师了🙏
 
- ###### &nbsp;&nbsp;&nbsp; 讲师回复：
-> &nbsp;&nbsp;&nbsp; 建议认真学习“渲染 vnode” 小节，举的例子就已经说的很明白了，组件 vnode 是描述组件的抽象节点，比如 <hello> 渲染对应的就是组件 vnode，子树 vnode 是整个组件渲染生成 DOM 对应的 vnode 树，比如 hello 组件内部自身渲染的 DOM 对应的 vnode 就是子树 vnode。
+ ###### &nbsp;&nbsp;&nbsp; 讲师回复：:no-pre
+> &nbsp;&nbsp;&nbsp; 建议认真学习“渲染 vnode” 小节，举的例子就已经说的很明白了，组件VNode是描述组件的抽象节点，比如 `<hello>`渲染对应的就是组件 vnode，子树 vnode 是整个组件渲染生成 DOM 对应的 vnode 树，比如 hello 组件内部自身渲染的 DOM 对应的 vnode 就是子树 vnode。
 
 ##### **翔：
 > 是否拆分，不应该关注粒度，应该关注复用性与维护性。如果一段代码不能复用，没必要拆分，组件也一样。如果拆分可以通过好的命名让主逻辑更简洁清晰，拆分也是很好的选择

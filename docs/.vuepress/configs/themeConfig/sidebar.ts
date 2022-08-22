@@ -1,3 +1,10 @@
+
+
+// vue path render
+const frontVuePath = (name: string): string => {
+  return `/Front/Vue/${name}.md`
+}
+
 const sidebar = {
   '/algorithms/': [
     {
@@ -22,9 +29,11 @@ const sidebar = {
   ],
   '/Front/': [
     {
-      text: "Vue基础",
-      children: [ 
-        '/Front/vue/componentRender/', 
+      text: "Vue",
+      children: [
+        frontVuePath('README'),
+        frontVuePath('vuebase'),
+        {text: 'componentRender', link: '/Front/vue/componentRenderss'},
         '/Front/vue/mvvm.md', 
         '/Front/vue/生命周期.md'
       ]

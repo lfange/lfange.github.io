@@ -1,23 +1,4 @@
----
-title: MVVM模式
-date: 2020-02-04 12:19:00
-permalink: /vue/mvvm
-categories: 
-  - Vue
-  - 基础
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
-:::tip
-
-说明：本章内容是博主的Vue学习笔记，以[官方文档](https://cn.vuejs.org/v2/guide/)为准。
-
-:::
-
-
+# 5555
 
 ## MVVM模式
 
