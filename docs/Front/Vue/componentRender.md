@@ -1,18 +1,4 @@
----
-title: componentRender
-date: 2020-02-23 10:54:23
-permalink: /Front/vue/componentRender
-categories: 
-  - 前端
-  - Vue文章
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
-
-## 组件开发是否是越细越好
+# 组件开发是否是越细越好
 
 ### 精选评论
 

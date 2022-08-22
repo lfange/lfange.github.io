@@ -1,16 +1,3 @@
----
-title: Vue项目使用mock数据的几种方式
-date: 2020-02-26 14:06:58
-permalink: /pages/bd1af2f75fd361fc
-categories: 
-  - 前端
-  - Vue文章
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
 # Vue项目使用mock数据的几种方式
 
 本文是基于vue/cli 3.0创建的项目进行讲解
@@ -71,8 +58,6 @@ author:
    });
    ```
 
-   
-
 ## 方式二：在public文件夹放mock数据（无需使用mockjs插件）
 
 1. 在`public`文件夹下创建一个`mock`文件夹，用来存放模拟数据的json文件
@@ -123,8 +108,6 @@ author:
    ```
 
 > 这方式貌似不支持`post`请求，有待研究。
-
-
 
 ## 方式三：前端本地启动一个nodejs服务，vue项目向nodejs服务请求mock数据
 
@@ -209,13 +192,9 @@ author:
    });
    ```
 
-   
-
 ## 总结
 
 方式二目前来看只支持get方式请求，对于post请求还有待研究。方式三虽然也是一种实现方式，但实现起来比较麻烦。个人建议使用方式一，灵活、方便。
-
-
 
 ## 相关文章
 

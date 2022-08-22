@@ -1,18 +1,4 @@
----
-title: Vue中的scoped和scoped穿透
-date: 2020-02-23 10:54:23
-permalink: /pages/c80d2751cf1f4268
-categories: 
-  - 前端
-  - Vue文章
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
-
-# Vue中的scoped和scoped穿透
+# Vue中scoped和scoped穿透
 
 ## 什么是scoped？
 

@@ -33,8 +33,10 @@ const sidebar = {
       children: [
         frontVuePath('README'),
         frontVuePath('vuebase'),
-        {text: 'componentRender', link: '/Front/vue/componentRenderss'},
-        '/Front/vue/mvvm.md', 
+        frontVuePath('Vuescoped'),
+        frontVuePath('VueMock'),
+        frontVuePath('Vuewebpack'),
+        frontVuePath('componentRender'),
         '/Front/vue/生命周期.md'
       ]
     },
