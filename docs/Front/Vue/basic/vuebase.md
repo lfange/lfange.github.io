@@ -95,28 +95,24 @@ A：MVVM 模式，第一个 M 代表数据模型，V 代表视图，VM 代表视
 </script>
 ```
 
-## Demo
+## v-if vs v-show
 
-```html
-<p
-  class="codepen"
-  data-height="265"
-  data-theme-id="light"
-  data-default-tab="js,result"
-  data-user="lfange"
-  data-slug-hash="GRJZWjb"
-  style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
-  data-pen-title="生命周期钩子"
->
-  <span
-    >See the Pen
-    <a href="https://codepen.io/lfange/pen/GRJZWjb"> 生命周期钩子</a> by lfange
-    (<a href="https://codepen.io/lfange">@lfange</a>) on
-    <a href="https://codepen.io">CodePen</a>.</span
-  >
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-```
+[API](https://cn.vuejs.org/v2/guide/conditional.html#v-if-vs-v-show)
+
+`v-if` 根据渲染条件决定是否把元素渲染到DOM页面，而`v-show`不管渲染条件是什么，都会把元素渲染到DOM页面，只是简单的切换CSS的显示隐藏。
+<!-- more -->
+如果需要非常频繁地切换，则使用 `v-show` 较好；如果在运行时条件很少改变，则使用 `v-if` 较好。
+
+## 计算属性 vs 方法 vs 侦听属性
+
+[API](https://cn.vuejs.org/v2/guide/computed.html#计算属性缓存-vs-方法)
+
+如果一个功能同时可以使用计算属性(computed)、方法(methods)、侦听属性(watch)来实现的时候推荐使用计算属性。
+<!-- more -->
+| 计算属性                                 | 方法                                               | 侦听属性                                     |
+| ---------------------------------------- | -------------------------------------------------- | -------------------------------------------- |
+| 计算属性是基于它们的响应式依赖进行缓存的 | 每当触发重新渲染时，调用方法将**总会**再次执行函数 | 有缓存，但相比计算属性，实现起来要复杂很多。 |
+
 
 ## 列表渲染
 

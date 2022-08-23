@@ -32,6 +32,7 @@ const sidebar = {
       text: "Vue",
       children: [
         Vue2Base('basic/vuebase'),
+        Vue2Base('basic/animation'),
         Vue2Base('Vuescoped'),
         Vue2Base('basic/VueMock'),
         Vue2Base('basic/Vuewebpack'),
