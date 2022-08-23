@@ -1,18 +1,6 @@
----
-title: Vuex
-date: 2020-08-08 10:38:33
-permalink: /pages/b30620/
-categories: 
-  - 《Vue》笔记
-  - Vuex
-tags: 
-  - 
----
 # Vuex
 
 Vuex 是一个专为 Vue.js 应用程序开发的**状态管理模式**。
-
-
 
 ## Vuex使用过程演示
 
@@ -621,9 +609,6 @@ actions: {
 ```
 
 > 一个 `store.dispatch` 在不同模块中可以触发多个 action 函数。在这种情况下，只有当所有触发函数完成后，返回的 Promise 才会执行。
-
-
-
 
 
 ## 更多

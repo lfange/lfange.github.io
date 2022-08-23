@@ -1,18 +1,4 @@
----
-title: Vue Base
-date: 2022-02-23 10:54:23
-permalink: /Front/vuebase
-categories:
-  - 前端
-  - Vue文章
-tags:
-  - null
-author:
-  name: lfange
-  link: https://github.com/lfange
----
-
-# Vue Base
+# Vue基础
 
 ## MVVM 模式
 

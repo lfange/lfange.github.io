@@ -1,16 +1,3 @@
----
-title: 使用组件的细节点
-date: 2020-02-13 13:26:20
-permalink: /pages/83a1ab785e7fd70c
-categories: 
-  - 《Vue》笔记
-  - 组件
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
 # 使用组件的细节点
 
 ## 解析 DOM 模板时的注意事项
@@ -52,8 +39,6 @@ author:
 - 字符串 (例如：`template: '...'`)
 - [单文件组件 (`.vue`)](https://cn.vuejs.org/v2/guide/single-file-components.html)
 - [`<script type="text/x-template">`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#X-Templates)
-
-
 
 ## 子组件内的data要使用函数返回
 

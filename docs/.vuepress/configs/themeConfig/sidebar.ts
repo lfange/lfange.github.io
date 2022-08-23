@@ -1,7 +1,7 @@
 
 
 // vue path render
-const frontVuePath = (name: string): string => {
+const Vue2Base = (name: string): string => {
   return `/Front/Vue/${name}.md`
 }
 
@@ -31,17 +31,22 @@ const sidebar = {
     {
       text: "Vue",
       children: [
-        frontVuePath('README'),
-        frontVuePath('vuebase'),
-        frontVuePath('Vuescoped'),
-        frontVuePath('VueMock'),
-        frontVuePath('Vuewebpack'),
-        frontVuePath('componentRender'),
+        Vue2Base('basic/vuebase'),
+        Vue2Base('Vuescoped'),
+        Vue2Base('basic/VueMock'),
+        Vue2Base('basic/Vuewebpack'),
+        Vue2Base('basic/componentRender'),
         '/Front/vue/生命周期.md'
       ]
     },
     {
-      text: "Vue原理",
+      text: "Vue Cli",
+      children: [
+        Vue2Base('vuecli/vuecli'),
+      ]
+    },
+    {
+      text: "Vue Advanced",
       children: [ 
         '/Front/vue/README.md',
         '/web/VueScoped'

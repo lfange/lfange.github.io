@@ -17,10 +17,18 @@ const navbar = [
     link: "/Front/",
     children: [
       {
-        text: "Vue",
-        link: '/Front/vue/',
-        // children: [
+        text: "Vue Base",
+        link: '/Front/vue/basic/vuebase',
+        children: [
         //   "/Front/vuebase.md"
+        ]
+      },
+      {
+        text: 'Vue Advanced',
+        link: '/Front/vue/',
+        // children: [ 
+        //   '/Front/vue/README.md', 
+        //   '/Front/vue/VueScoped.md'
         // ]
       },
       { 
@@ -48,14 +56,6 @@ const navbar = [
           "/Front/vue3/02.组件更新", 
           "/Front/vue3/03.组件更新"
         ],
-      },
-      {
-        text: 'vue原理',
-        link: '/Front/vue/',
-        // children: [ 
-        //   '/Front/vue/README.md', 
-        //   '/Front/vue/VueScoped.md'
-        // ]
       }
     ],
   },

@@ -1,16 +1,3 @@
----
-title: Vue CLi v3 创建项目使用记录
-date: 2020-02-20 17:24:29
-permalink: /pages/d00311f8174119b2
-categories: 
-  - 《Vue》笔记
-  - 工具
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
 # Vue CLi v3.x 创建项目使用记录
 
 [官方文档](https://cli.vuejs.org/zh/)
