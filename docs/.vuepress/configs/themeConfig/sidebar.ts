@@ -38,6 +38,7 @@ const sidebar = {
         Vue2Base('basic/VueMock'),
         Vue2Base('basic/Vuewebpack'),
         Vue2Base('basic/componentRender'),
+        Vue2Base('basic/communication'),
       ]
     },
     {
