@@ -33,11 +33,11 @@ const sidebar = {
       children: [
         Vue2Base('basic/vuebase'),
         Vue2Base('basic/animation'),
+        Vue2Base('basic/Vuex'),
         Vue2Base('Vuescoped'),
         Vue2Base('basic/VueMock'),
         Vue2Base('basic/Vuewebpack'),
         Vue2Base('basic/componentRender'),
-        '/Front/vue/生命周期.md'
       ]
     },
     {
@@ -49,8 +49,8 @@ const sidebar = {
     {
       text: "Vue Advanced",
       children: [ 
-        '/Front/vue/README.md',
-        '/web/VueScoped'
+        Vue2Base('README'),
+        Vue2Base('advanced/Vuescoped'),
       ]
     }
   ],

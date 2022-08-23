@@ -78,27 +78,16 @@
 
 动画类名：在 [Animate官网](https://daneden.github.io/animate.css/) 获取。
 
-## Demo
+## transition-group列表过渡
 
-```md:no-v-pre
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="lfange" data-slug-hash="JjdXBmy" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="vue中使用animate.css库">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/JjdXBmy">
-  vue中使用animate.css库</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-```
-
-
-# transition-group列表过渡
-
-## 列表的进入/离开过渡
+### 列表的进入/离开过渡
 
 ```html
 <transition-group tag="ul"> <!--tag转为ul-->
     <li v-for="item in list" :key="item">{{item}}</li> <!--子元素要有key-->
 </transition-group>
 ```
+
 **注意**：列表元素一定要有`key`
 <!-- more -->
 ```css
@@ -111,13 +100,6 @@
 }
 ```
 
-<p class="codepen" data-height="345" data-theme-id="light" data-default-tab="html,result" data-user="lfange" data-slug-hash="WNvxGjQ" style="height: 345px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="vue列表过渡">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/WNvxGjQ">
-  vue列表过渡</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
 ## 列表的排序过渡
 
 ```css
@@ -125,19 +107,3 @@
   transition: transform 1s;
 }
 ```
-
-<p class="codepen" data-height="313" data-theme-id="light" data-default-tab="html,result" data-user="lfange" data-slug-hash="gOpMwXN" style="height: 313px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="vue列表过渡-排序过渡">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/gOpMwXN">
-  vue列表过渡-排序过渡</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-**列表过渡&排序过渡**
-
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="lfange" data-slug-hash="VwLjmmw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="vue列表过渡&amp;amp;排序过渡">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/VwLjmmw">
-  vue列表过渡&amp;排序过渡</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

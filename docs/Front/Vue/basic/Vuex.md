@@ -85,8 +85,6 @@ computed: {
 
 > state状态的改变会触发computed的重新计算
 
-
-
 ## 核心概念
 
 ### State
@@ -615,3 +613,31 @@ actions: {
 
 更多内容查看官方文档：<https://vuex.vuejs.org/zh/guide/modules.html>
 
+## vuex操作相关
+
+```js
+import { mapActions, mapMutations, mapGetters } from 'vuex'
+
+computed: {
+    ...mapGetters([ // 获取数据，内部为数组
+        'searchHistory' // 相当于在data插入searchHistory和获取到的数据
+    ])
+},
+
+methods: {
+	某方法(){
+	  this.saveSearchHistory(传入值)
+	},
+	...mapActions([ // 提交actions修改数据，内部为数组 因为actions文件已对方法进行了封装所有是数组类型
+      'saveSearchHistory' // 相当于在methods绑定了事件saveSearchHistory
+    ]),
+	
+	某方法() {
+		this.setFullScreen(传入值)
+	},
+	 ...mapMutations({ // 提交mutations，内部为对象
+      setFullScreen: 'SET_FULL_SCREEN' // 相当于在methods绑定了事件setFullScreen
+    })
+}
+
+```
