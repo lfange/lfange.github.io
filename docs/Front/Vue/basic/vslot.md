@@ -1,20 +1,6 @@
----
-title: 插槽slot
-date: 2020-02-16 11:46:27
-permalink: /pages/055ecee9a4325386
-categories: 
-  - 《Vue》笔记
-  - 组件
-tags: 
-  - null
-author: 
-  name: lfange
-  link: https://github.com/lfange
----
 # 插槽slot
 
 [API](https://cn.vuejs.org/v2/guide/components-slots.html)
-
 ## 插槽
 
 ```html
@@ -283,14 +269,3 @@ Vue.component('child', {
   {{ user.firstName }}
 </current-user>
 ```
-
-
-
-## Demo
-
-<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="js,result" data-user="lfange" data-slug-hash="XWbdpBp" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="插槽slot">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/XWbdpBp">
-  插槽slot</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>

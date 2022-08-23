@@ -1,4 +1,4 @@
-# Vue项目使用mock数据的几种方式
+# Vue mock usage
 
 本文是基于vue/cli 3.0创建的项目进行讲解
 

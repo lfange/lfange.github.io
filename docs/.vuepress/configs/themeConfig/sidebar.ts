@@ -34,11 +34,11 @@ const sidebar = {
         Vue2Base('basic/vuebase'),
         Vue2Base('basic/animation'),
         Vue2Base('basic/Vuex'),
-        Vue2Base('Vuescoped'),
         Vue2Base('basic/VueMock'),
         Vue2Base('basic/Vuewebpack'),
         Vue2Base('basic/componentRender'),
         Vue2Base('basic/communication'),
+        Vue2Base('basic/vslot'),
       ]
     },
     {
