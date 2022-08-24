@@ -9,7 +9,7 @@
 > 如果不使用v-bind传入的值为字符串，使用v-bind绑定传入的值为表达式。
 <!-- more -->
 子组件中，通过props对象接收值
-```js
+```javascript
  props: {
     name: { // 接收父组件传入值
         type: String || ...,
@@ -54,7 +54,7 @@ this.$emit('fnX', value)
 ```
 <!-- more -->
 父组件通过`v-on`绑定子组件派发的事件，并触发一个新的事件，新的事件内可以接收传来的值
-```js
+```html
 <ComponentName @fnX="fnY"></ComponentName>
 
 methods: {
@@ -135,11 +135,6 @@ props: {
 当组件的嵌套多时，非父子组件间传值就显得复杂，除了使用[vuex](https://vuex.vuejs.org/zh/)实现之外，还可以通过Bus（或者叫 总线/发布订阅模式/观察者模式）的方式实现非父子组件间传值。
 
 <!-- more -->
-
-<div id="root">
-		<child1 content="组件1：点我传出值"></child1>
-		<child2 content="组件2"></child2>
-	</div>
 
 ```html
 <div id="root">

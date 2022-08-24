@@ -64,10 +64,10 @@
 
 ```html
 <transition
-            name="custom-classes-transition"
-            enter-active-class="animated tada"
-            leave-active-class="animated bounceOutRight"
-            >
+      name="custom-classes-transition"
+      enter-active-class="animated tada"
+      leave-active-class="animated bounceOutRight"
+      >
     <p v-if="show">hello</p>
 </transition>
 ```
