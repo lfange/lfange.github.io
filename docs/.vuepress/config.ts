@@ -7,6 +7,7 @@ export default defineUserConfig({
   title: 'Lfange`s Blog ！',
   description: '这是我的第一个 VuePress 站点',
   port: 6868,
+  base: '/daydayup/',
   
   theme,
   ...Plugins
