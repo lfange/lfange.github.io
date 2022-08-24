@@ -34,17 +34,18 @@ const sidebar = {
         Vue2Base('basic/vuebase'),
         Vue2Base('basic/animation'),
         Vue2Base('basic/Vuex'),
-        Vue2Base('basic/VueMock'),
-        Vue2Base('basic/Vuewebpack'),
-        Vue2Base('basic/componentRender'),
+        Vue2Base('componet/usage'),
         Vue2Base('basic/communication'),
+        Vue2Base('basic/componentRender'),
         Vue2Base('basic/vslot'),
+        Vue2Base('basic/VueMock'),
       ]
     },
     {
       text: "Vue Cli",
       children: [
         Vue2Base('vuecli/vuecli'),
+        Vue2Base('vuecli/Vuewebpack'),
       ]
     },
     {

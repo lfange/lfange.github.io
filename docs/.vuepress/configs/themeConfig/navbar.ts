@@ -40,12 +40,12 @@ const navbar = [
       {
         text: "Vue3",
         children: [
-          { 
-            text: "Vue", link: "/pages/5d463fbdb172d43b/", 
-            children: [
-              '/web/mvvm模式.md'
-            ] 
-          },
+          // { 
+          //   text: "Vue", link: "/pages/5d463fbdb172d43b/", 
+          //   children: [
+          //     '/web/mvvm模式.md'
+          //   ] 
+          // },
         ],
       },
       {

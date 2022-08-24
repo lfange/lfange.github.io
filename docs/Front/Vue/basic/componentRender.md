@@ -40,8 +40,6 @@
 - [单文件组件 (`.vue`)](https://cn.vuejs.org/v2/guide/single-file-components.html)
 - [`<script type="text/x-template">`](https://cn.vuejs.org/v2/guide/components-edge-cases.html#X-Templates)
 
-
-
 ## 子组件内的data要使用函数返回
 
 ```js

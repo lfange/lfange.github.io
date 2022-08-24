@@ -10,16 +10,14 @@
 
 2.  3.0 移除了 config、build 等配置目录，如果需要进行相关配置我们需要在根目录下创建` vue.config.js` 进行配置。
 
-## 方式一：使用mockjs插件实现本地mock数据
+## 方式一
+> 使用mockjs插件实现本地mock数据
 
 1. 安装`mockjs`插件
-
    ```sh
    npm i mockjs -D
    ```
-
 2. 在src目录下创建一个`mock`文件夹，在`mock`文件夹下创建一个`index.js`和一个`data`文件夹（用于存放项目需要的模拟数据）
-
    ```
    .
    ├── src
@@ -58,7 +56,8 @@
    });
    ```
 
-## 方式二：在public文件夹放mock数据（无需使用mockjs插件）
+## 方式二
+> 在public文件夹放mock数据（无需使用mockjs插件）
 
 1. 在`public`文件夹下创建一个`mock`文件夹，用来存放模拟数据的json文件
 
@@ -92,7 +91,6 @@
     }
    }
    ```
-
    [devServer.proxy官方文档](https://cli.vuejs.org/zh/config/#devserver-proxy)
 
 3. 最后，在vue模板中使用即可
@@ -109,7 +107,8 @@
 
 > 这方式貌似不支持`post`请求，有待研究。
 
-## 方式三：前端本地启动一个nodejs服务，vue项目向nodejs服务请求mock数据
+## 方式三
+> 前端本地启动一个nodejs服务，vue项目向nodejs服务请求mock数据
 
 1. 创建一个node项目（为了方便，本例直接在vue项目根目录创建，当然也可以是其它任何地方）
 
@@ -198,5 +197,5 @@
 
 ## 相关文章
 
-[《Vue CLi3 修改webpack配置》](https://lfange.com/pages/5d463fbdb172d43b/)
+[《Vue CLi3 修改webpack配置》](Vuewebpack.md)
 

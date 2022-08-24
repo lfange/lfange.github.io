@@ -1,4 +1,32 @@
-# 使用组件的细节点
+# Vue组件
+
+## vue父子组件的生命周期顺序
+
+### 加载渲染过程
+
+```repl
+父beforeCreate -> 父created-> 父beforeMount-> 子beforeCreate -> 子created -> 子beforeMount -> 子mounted -> 父mounted
+```
+
+父组件会先执行到beforeMount，接着会执行子组件钩子到挂载结束，再挂载父组件。
+
+### 子组件更新过程
+
+```repl
+父beforeUpdate -> 子beforeUpdate -> 子updated -> 父updated
+```
+
+### 父组件更新过程
+
+```repl
+父beforeUpdate -> 父updated
+```
+
+### 销毁过程
+
+```repl
+父beforeDestroy -> 子beforeDestroy -> 子destroyed -> 父destroyed
+```
 
 ## 解析 DOM 模板时的注意事项
 
@@ -71,14 +99,3 @@ Vue.component('row', {
 ```
 
 `ref` 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 `$refs` 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向**组件实例**。
-
-
-**组件实例对象 VueComponent**
-> 打开控制台，点击demo中的按钮可查看组件实例
-
-<p class="codepen" data-height="460" data-theme-id="light" data-default-tab="js,result" data-user="lfange" data-slug-hash="VwLeMoM" style="height: 460px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 20px solid; margin: 1em 0; padding: 1em;" data-pen-title="VwLeMoM">
-  <span>See the Pen <a href="https://codepen.io/lfange/pen/VwLeMoM">
-  VwLeMoM</a> by lfange (<a href="https://codepen.io/lfange">@lfange</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
