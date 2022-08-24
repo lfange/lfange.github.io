@@ -47,15 +47,6 @@ const navbar = [
           //   ] 
           // },
         ],
-      },
-      {
-        text: "vue3",
-        link: "/Front/vue/",
-        children: [ 
-          "/Front/vue3/01.组件渲染", 
-          "/Front/vue3/02.组件更新", 
-          "/Front/vue3/03.组件更新"
-        ],
       }
     ],
   },
