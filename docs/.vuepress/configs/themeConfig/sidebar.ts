@@ -83,7 +83,8 @@ const sidebar = {
       { 
         text: '计算机网络',
         children: [
-          comBase('cnet/README')
+          comBase('cnet/README'),
+          comBase('cnet/network-architecture'),
         ]
       },
         // "/computer/README.md", "/computer/network-architecture.md"],
