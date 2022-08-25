@@ -5,6 +5,10 @@ const Vue2Base = (name: string): string => {
   return `/Front/Vue/${name}.md`
 }
 
+const jsBase = (name: string): string => {
+  return `/Front/JavaScript/${name}.md`
+}
+
 const comBase = (name: string): string => {
   return `/computer/${name}.md`
 }
@@ -24,12 +28,6 @@ const sidebar = {
         "comalgrithms"
       ]
     }
-  ],
-  "/guide/": [
-    {
-      text: "guide111",
-      children: [ '/guide/01test.md', '/guide/02test.md'],
-    },
   ],
   '/Front/': [
     {
@@ -58,6 +56,15 @@ const sidebar = {
         Vue2Base('README'),
         Vue2Base('advanced/Vuescoped'),
       ]
+    },
+    {
+      text: "JavaScript",
+      children: [ 
+        jsBase('currie'),
+        jsBase('防抖节流'),
+        jsBase('callApply'),
+      ]
+      
     }
   ],
   '/computer/': [

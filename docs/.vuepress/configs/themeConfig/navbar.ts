@@ -33,9 +33,10 @@ const navbar = [
         // ]
       },
       { 
-        text: "JavaScript", 
+        text: "JavaScript",
+        link: '/Front/JavaScript/currie',
         children: [
-
+          
         ]
       },
       {
