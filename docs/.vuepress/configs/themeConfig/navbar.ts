@@ -11,6 +11,11 @@ const navbar = [
   {
     text: "计算机",
     link: "/computer/",
+    children: [
+      '/computer/os/README.md',
+      '/computer/cnet/README.md',
+      '/computer/pocc/README.md',
+    ]
   },
   {
     text: "前端",

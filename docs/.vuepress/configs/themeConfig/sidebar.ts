@@ -5,6 +5,10 @@ const Vue2Base = (name: string): string => {
   return `/Front/Vue/${name}.md`
 }
 
+const comBase = (name: string): string => {
+  return `/computer/${name}.md`
+}
+
 const sidebar = {
   '/algorithms/': [
     {
@@ -58,8 +62,14 @@ const sidebar = {
   ],
   '/computer/': [
     {
-      text: '计算机相关',
-      children: ["/computer/README.md", "/computer/network-architecture.md"],
+      children: [
+        { 
+          text: '计算机组成原理',
+          children: [
+            comBase('pocc/README')
+          ]
+        },
+        "/computer/README.md", "/computer/network-architecture.md"],
     }
   ]
 };
