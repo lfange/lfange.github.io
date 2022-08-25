@@ -61,16 +61,25 @@ const sidebar = {
     }
   ],
   '/computer/': [
-    {
-      children: [
-        { 
-          text: '计算机组成原理',
-          children: [
-            comBase('pocc/README')
-          ]
-        },
-        "/computer/README.md", "/computer/network-architecture.md"],
-    }
+      { 
+        text: '计算机组成原理',
+        children: [
+          comBase('pocc/README')
+        ]
+      },
+      { 
+        text: '操作系统',
+        children: [
+          comBase('os/README')
+        ]
+      },
+      { 
+        text: '计算机网络',
+        children: [
+          comBase('cnet/README')
+        ]
+      },
+        // "/computer/README.md", "/computer/network-architecture.md"],
   ]
 };
 

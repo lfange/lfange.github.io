@@ -3,11 +3,7 @@ const navbar = [
   {
     text: "算法",
     link: "/algorithms/",
-    // children: [
-      // '/algorithms/READEME'
-    // ],
   },
-  { text: "guide", children: ["/guide/01test", "/guide/02test"] },
   {
     text: "计算机",
     link: "/computer/",
