@@ -32,6 +32,7 @@ const sidebar = {
   '/Front/': [
     {
       text: "Vue",
+      link: Vue2Base('basic/vuebase'),
       children: [
         Vue2Base('basic/vuebase'),
         Vue2Base('basic/animation'),
@@ -45,6 +46,7 @@ const sidebar = {
     },
     {
       text: "Vue Cli",
+      link: Vue2Base('vuecli/vuecli'),
       children: [
         Vue2Base('vuecli/vuecli'),
         Vue2Base('vuecli/Vuewebpack'),
@@ -52,6 +54,7 @@ const sidebar = {
     },
     {
       text: "Vue Advanced",
+      link: Vue2Base('README'),
       children: [ 
         Vue2Base('README'),
         Vue2Base('advanced/Vuescoped'),
@@ -59,11 +62,16 @@ const sidebar = {
     },
     {
       text: "JavaScript",
+      link: '/Front/JavaScript/currie',
       children: [ 
         jsBase('currie'),
         jsBase('防抖节流'),
         jsBase('callApply'),
+        jsBase('brower'),
       ]
+      
+    },
+    {
       
     }
   ],
