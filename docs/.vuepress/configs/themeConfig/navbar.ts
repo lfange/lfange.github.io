@@ -9,7 +9,7 @@ const navbar = [
     link: "/computer/",
     children: [
       '/computer/os/README.md',
-      '/net/README.md',
+      '/computer/net/README.md',
       '/computer/pocc/README.md',
     ]
   },
@@ -36,7 +36,6 @@ const navbar = [
         text: "JavaScript",
         link: '/Front/JavaScript/currie',
         children: [
-          
         ]
       },
       {
