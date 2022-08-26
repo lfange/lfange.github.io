@@ -9,7 +9,7 @@ const navbar = [
     link: "/computer/",
     children: [
       '/computer/os/README.md',
-      '/computer/cnet/README.md',
+      '/net/README.md',
       '/computer/pocc/README.md',
     ]
   },
