@@ -9,7 +9,6 @@ const Vue3Base = (name: string): string => {
   return `/Front/vue3/${name}.md`
 }
 
-
 const jsBase = (name: string): string => {
   return `/Front/JavaScript/${name}.md`
 }
@@ -72,7 +71,7 @@ const sidebar = {
   ],
   '/Front/vue3/': [
     {
-      text: "vue3",
+      text: "Vue3",
       link: Vue3Base('basic'),
       children: [ 
         Vue3Base('basic')
