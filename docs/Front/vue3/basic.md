@@ -40,6 +40,56 @@ app.mount("#app");
 createApp(App).use(store).use(router).mount("#app");
 ```
 
+## 组合式API
+Vue2 是 选项式API（Option API），一个逻辑会散乱在文件不同位置（data、props、computed、watch、生命周期函数等），导致代码的可读性变差，需要上下来回跳转文件位置。Vue3 组合式API（Composition API）则很好地解决了这个问题，可将同一逻辑的内容写到一起。
+
+除了增强了代码的可读性、内聚性，组合式API 还提供了较为完美的逻辑复用性方案，举个🌰，如下所示公用鼠标坐标案例。
+```vue
+// main.vue
+<template>
+  <span>mouse position {{x}} {{y}}</span>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import useMousePosition from './useMousePosition'
+
+const {x, y} = useMousePosition()
+
+}
+</script>
+```
+
+```javascript
+// useMousePosition.js
+import { ref, onMounted, onUnmounted } from 'vue'
+
+function useMousePosition() {
+  let x = ref(0)
+  let y = ref(0)
+  
+  function update(e) {
+    x.value = e.pageX
+    y.value = e.pageY
+  }
+  
+  onMounted(() => {
+    window.addEventListener('mousemove', update)
+  })
+  
+  onUnmounted(() => {
+    window.removeEventListener('mousemove', update)
+  })
+  
+  return {
+    x,
+    y
+  }
+}
+</script>
+```
+
+
 ## setup 函数
 
 1. 简介  
@@ -328,17 +378,18 @@ setup(){
 }
 ```
 ### 新旧对比
-```
-beforeCreate -> use setup()
-created -> use setup()
-beforeMount -> onBeforeMount
-mounted -> onMounted
-beforeUpdate -> onBeforeUpdate
-updated -> onUpdated
-beforeDestroy -> onBeforeUnmount
-destroyed -> onUnmounted
-errorCaptured -> onErrorCaptured
-```
+| Vue2.x      | Vue3 |
+| ------------- | ------------------ |
+| beforeCreate  | Not needed*  |
+| created | Not needed* |
+| beforeMount | onBeforeMount |
+| mounted | onMounted |
+| beforeUpdate | onBeforeUpdate |
+| updated | onUpdated |
+| beforeDestroy | onBeforeUnmount |
+| destroyed | onUnmounted |
+| errorCaptured | onErrorCaptured |
+
 2. 使用
 ```vue
 <template>
@@ -385,6 +436,10 @@ export default {
 };
 </script>
 ```
+
+::: tip
+setup是围绕beforeCreate和created生命周期钩子运行的，所以不需要显式地去定义。 
+:::
 
 ## provide和inject
 1. 简介  
@@ -463,9 +518,20 @@ export default {
 </script>
 ```
 
+## Teleport
+Teleport组件可将部分DOM移动到 Vue app之外的位置。比如项目中常见的Dialog组件
+
+```vue
+<button @click="dialogVisible = true">点击</button>
+<teleport to="body">
+   <div class="dialog" v-if="dialogVisible">
+   </div>
+</teleport>
+```
+
 ## Suspense 异步组件
 1. 简介  
-Suspense组件用于在等待某个异步组件解析时显示后备内容。
+Suspense组件用于在等待某个异步组件解析时显示后备内容。如 loading ，使用户体验更平滑。使用它，需在模板中声明，并包括两个命名插槽：default和fallback。Suspense确保加载完异步内容时显示默认插槽，并将fallback插槽用作加载状态。
 2. 什么时候使用
 - 在页面加载之前显示加载动画
 - 显示占位符内容
@@ -479,9 +545,12 @@ Suspense组件用于在等待某个异步组件解析时显示后备内容。
     <Async/>
   </template>
 </Suspense>
-// 具名插槽的缩写是在 vue2.6.0 新增，跟 v-on 和 v-bind 一样，v-slot 也有缩写， 替换为字符 #。
+// 具名插槽的缩写是在vue2.6.0新增，跟 v-on 和 v-bind 一样，v-slot 缩写,替换为字符 #。
 // 例如 v-slot:header 可以被重写为 #header
 ```
+真实的项目中踩过坑，若想在 setup 中调用异步请求，需在 setup 前加async关键字。这时，会受到警告async setup() is used without a suspense boundary。
+
+解决方案：在父页面调用当前组件外包裹一层Suspense组件。
 
 ```vue
 // 插槽包裹渲染异步组件之前的内容
@@ -518,9 +587,3 @@ export default {
   }
 }
 ```
-
-## Suspense 异步组件
-1. 简介  
-provide()和 inject()可以实现嵌套组件之间的数据传递。这两个函数只能在 setup()函数中使用。父级组
-件中使用 provide()函数向下传递数据；子级组件中使用 inject()获取上层传递过来的数据
-2. 使用

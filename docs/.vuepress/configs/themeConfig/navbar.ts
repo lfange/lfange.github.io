@@ -20,9 +20,6 @@ const navbar = [
       {
         text: "Vue Base",
         link: '/Front/vue/basic/vuebase',
-        children: [
-        //   "/Front/vuebase.md"
-        ]
       },
       {
         text: 'Vue advanced',
@@ -34,21 +31,11 @@ const navbar = [
       },
       { 
         text: "JavaScript",
-        link: '/Front/JavaScript/currie',
-        children: [
-        ]
+        link: '/Front/JavaScript/currie'
       },
       {
         text: "Vue3",
         link: '/Front/Vue3/basic',
-        children: [
-          // { 
-          //   text: "Vue", link: "/pages/5d463fbdb172d43b/", 
-          //   children: [
-          //     '/web/mvvm模式.md'
-          //   ] 
-          // },
-        ],
       }
     ],
   },
