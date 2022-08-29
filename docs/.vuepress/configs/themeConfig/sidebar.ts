@@ -5,6 +5,11 @@ const Vue2Base = (name: string): string => {
   return `/Front/Vue/${name}.md`
 }
 
+const Vue3Base = (name: string): string => {
+  return `/Front/vue3/${name}.md`
+}
+
+
 const jsBase = (name: string): string => {
   return `/Front/JavaScript/${name}.md`
 }
@@ -19,17 +24,14 @@ const sidebar = {
       "text": "ALGORITHMS",
       "title": "ALGORITHMS",
       "collapsable": false,
-      "sidebarDepth": 1,
+      // "sidebarDepth": 1,
       "children": [
         "README.md",
-        "currie",
-        "防抖节流",
-        "callApply",
         "comalgrithms"
       ]
     }
   ],
-  '/Front/': [
+  '/Front/Vue/': [
     {
       text: "Vue",
       link: Vue2Base('basic/vuebase'),
@@ -43,23 +45,20 @@ const sidebar = {
         Vue2Base('basic/vslot'),
         Vue2Base('basic/VueMock'),
       ]
-    },
+    }
+  ],
+  '/Front/Vue/advanced/': [
     {
-      text: "Vue Cli",
-      link: Vue2Base('vuecli/vuecli'),
+      text: "Vue advanced",
+      link: Vue2Base('advanced/vuecli'),
       children: [
-        Vue2Base('vuecli/vuecli'),
-        Vue2Base('vuecli/Vuewebpack'),
-      ]
-    },
-    {
-      text: "Vue Advanced",
-      link: Vue2Base('README'),
-      children: [ 
-        Vue2Base('README'),
+        Vue2Base('advanced/vuecli'),
+        Vue2Base('advanced/Vuewebpack'),
         Vue2Base('advanced/Vuescoped'),
       ]
-    },
+    }
+  ],
+  '/Front/JavaScript/': [
     {
       text: "JavaScript",
       link: '/Front/JavaScript/currie',
@@ -69,10 +68,15 @@ const sidebar = {
         jsBase('callApply'),
         jsBase('brower'),
       ]
-      
-    },
+    }
+  ],
+  '/Front/vue3/': [
     {
-      
+      text: "vue3",
+      link: Vue3Base('basic'),
+      children: [ 
+        Vue3Base('basic')
+      ]
     }
   ],
   '/computer/': [

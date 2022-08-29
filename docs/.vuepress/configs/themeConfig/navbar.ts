@@ -25,8 +25,8 @@ const navbar = [
         ]
       },
       {
-        text: 'Vue Advanced',
-        link: '/Front/vue/',
+        text: 'Vue advanced',
+        link: '/Front/vue/advanced/vuecli',
         // children: [ 
         //   '/Front/vue/README.md', 
         //   '/Front/vue/VueScoped.md'
@@ -40,6 +40,7 @@ const navbar = [
       },
       {
         text: "Vue3",
+        link: '/Front/Vue3/basic',
         children: [
           // { 
           //   text: "Vue", link: "/pages/5d463fbdb172d43b/", 
