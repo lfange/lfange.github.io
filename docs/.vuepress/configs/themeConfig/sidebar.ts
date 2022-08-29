@@ -73,6 +73,7 @@ const sidebar = {
     {
       text: "Vue3",
       link: Vue3Base('basic'),
+      "collapsable": false,
       children: [ 
         Vue3Base('basic')
       ]

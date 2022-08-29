@@ -121,11 +121,9 @@ export default defineComponent({
 
 ## ref 的使用
 
-### 简介
-
+1. 简介  
 ref()函数用来根据给定的值创建一个响应式的数据对象，ref()函数调用的返回值是一个对象，这个对象上只包含一个 value 属性
-
-### 基本用法
+2. 基本用法
 
 ```vue
 <template>
@@ -209,12 +207,10 @@ export default {
 
 ## toRefs
 
-### 简介
-
+1. 简介  
 toRefs()函数可以将 reactive()创建出来的响应式对象，转换为普通对象，只不过这个对象上的每个属性节点，都是 ref()类型的响应式数据  
 比如：当想要从一个组合逻辑函数中返回响应式对象时，用 toRefs 是很有效的，该 API 让消费组件可以解构 / 扩展（使用 ... 操作符）返回的对象，并不会丢失响应性
-
-### 使用
+2. 使用
 
 ```vue
 <template>
@@ -236,10 +232,10 @@ export default {
 ```
 
 ## computed
-### 简介
+1. 简介  
 computed()用来创建计算属性，computed()函数的返回值是一个 ref 的实例
 
-### 使用
+2. 使用
 ```vue
 <template>
   <div>
@@ -269,9 +265,9 @@ export default {
 ```
 
 ## watch
-### 简介
+1. 简介  
 watch() 函数用来监视某些数据项的变化，从而触发某些特定的操作
-### 使用
+2. 使用
 ```vue
 <template>
   <div>
@@ -313,7 +309,218 @@ export default {
 </script>
 ```
 
-## watch
-### 简介
+## 生命周期钩子函数
+### 用法
+```javascript
+// 1)新版的生命周期函数，可以按需导入到组件中，且只能在 setup() 函数中使用
+import { onMounted, onUpdated, onUnmounted} from "vue";
+// 2)在setup()函数中调用computed()函数
+setup(){
+  onMounted(() => {
+    console.log('mounted!')
+  })
+  onUpdated(() => {
+    console.log('updated!')
+  })
+  onUnmounted(() => {
+    console.log('unmounted!')
+  })
+}
+```
+### 新旧对比
+```
+beforeCreate -> use setup()
+created -> use setup()
+beforeMount -> onBeforeMount
+mounted -> onMounted
+beforeUpdate -> onBeforeUpdate
+updated -> onUpdated
+beforeDestroy -> onBeforeUnmount
+destroyed -> onUnmounted
+errorCaptured -> onErrorCaptured
+```
+2. 使用
+```vue
+<template>
+  <div>
+    <p>{{ num }}</p>
+    <p>{{ type }}</p>
+  </div>
+</template>
+<script>
+import { reactive, toRefs, onMounted, onUpdated, onUnmounted } from "vue";
+export default {
+  setup() {
+    var timer = null;
+    let state = reactive({
+      num: 1,
+      type: '奇数'
+    });
+    const autoPlay = () => {
+      state.num++;
+      if (state.num == 5) {
+        state.num = 0;
+      }
+    }
+    const play = () => {
+      timer = setInterval(autoPlay, 1000)
+    }
+    onMounted(() => { //挂载完成
+      play();
+    })
+    onUpdated(() => {
+      if (state.num % 2 == 0) {
+        state.type = '偶数'
+      } else {
+        state.type = '奇数'
+      }
+    })
+    onUnmounted(() => { //销毁
+      clearInterval(timer);
+    })
+    return {
+      ...toRefs(state)
+    }
+  },
+};
+</script>
+```
 
-### 使用
+## provide和inject
+1. 简介  
+provide()和 inject()可以实现嵌套组件之间的数据传递。这两个函数只能在 setup()函数中使用。父级组
+件中使用 provide()函数向下传递数据；子级组件中使用 inject()获取上层传递过来的数据
+2. 使用
+父组件
+```vue
+<template>
+  <div id="app">
+    <h1>根组件</h1>
+    <Demo1 />
+    <Demo2 />
+  </div>
+</template>
+<script>
+import Demo1 from '@/components/demo1'
+import Demo2 from '@/components/demo2'
+// 1. 按需导入 provide
+import { reactive, toRefs, provide } from "vue";
+export default {
+  setup() {
+    // 父级组件通过 provide 函数向子级组件共享数据
+    //provide('要共享的数据名称', 被共享的数据)
+    provide('globalColor', 'red')
+  },
+  components: {
+    Demo1,
+    Demo2
+  }
+}
+</script>
+```
+子组件1
+```vue
+<template>
+  <div>
+    {{ name }}----{{ color }}
+  </div>
+</template>
+  <script>
+  import { reactive, computed, provide, inject, toRefs } from "vue"
+  export default {
+    setup(props) {
+      //创建响应式数据对象
+      const state = reactive({
+        name: 'demo1',
+        //调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+        color: inject("globalColor")
+      })
+      return state
+    }
+  }
+  </script>
+```
+子组件2
+```vue
+<template>
+  <div>
+    {{  name  }}----{{  color  }}
+  </div>
+</template>
+<script>
+import { reactive, computed, provide, inject, toRefs } from "vue"
+export default {
+  setup(props) {
+    //创建响应式数据对象
+    const state = reactive({
+      name: 'demo2',
+      //调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+      color: inject("globalColor")
+    })
+    return state
+  }
+}
+</script>
+```
+
+## Suspense 异步组件
+1. 简介  
+Suspense组件用于在等待某个异步组件解析时显示后备内容。
+2. 什么时候使用
+- 在页面加载之前显示加载动画
+- 显示占位符内容
+- 处理延迟加载的图像
+
+3. 使用
+```vue
+// 插槽包裹异步组件
+<Suspense>
+  <template #default>
+    <Async/>
+  </template>
+</Suspense>
+// 具名插槽的缩写是在 vue2.6.0 新增，跟 v-on 和 v-bind 一样，v-slot 也有缩写， 替换为字符 #。
+// 例如 v-slot:header 可以被重写为 #header
+```
+
+```vue
+// 插槽包裹渲染异步组件之前的内容
+<Suspense>
+  <template #fallback>
+    <h1>Loading...</h1>
+  </template>
+</Suspense>
+```
+4. 如何运用
+父组件中定义
+```vue
+<Suspense>
+  <template #default>
+    <List />
+  </template>
+  <template #fallback>
+    <div>loading......</div>
+  </template>
+</Suspense>
+```
+List子组件中的处理
+```javascript
+import { getPage } from '@/api/http'
+export default {
+  async setup() {
+    const res = await getPage();
+    const state = reactive({
+      items: res.data.data
+    });
+    return {
+      ...toRefs(state)
+    };
+  }
+}
+```
+
+## Suspense 异步组件
+1. 简介  
+provide()和 inject()可以实现嵌套组件之间的数据传递。这两个函数只能在 setup()函数中使用。父级组
+件中使用 provide()函数向下传递数据；子级组件中使用 inject()获取上层传递过来的数据
+2. 使用
