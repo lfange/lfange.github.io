@@ -66,6 +66,7 @@ const sidebar = {
         jsBase('防抖节流'),
         jsBase('callApply'),
         jsBase('brower'),
+        jsBase('flatten'),
       ]
     }
   ],
@@ -73,7 +74,7 @@ const sidebar = {
     {
       text: "Vue3",
       link: Vue3Base('basic'),
-      "collapsable": false,
+      collapsable: false,
       children: [ 
         Vue3Base('basic'),
         Vue3Base('change'),
