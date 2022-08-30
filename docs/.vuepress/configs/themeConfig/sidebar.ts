@@ -75,7 +75,8 @@ const sidebar = {
       link: Vue3Base('basic'),
       "collapsable": false,
       children: [ 
-        Vue3Base('basic')
+        Vue3Base('basic'),
+        Vue3Base('change'),
       ]
     }
   ],
