@@ -39,6 +39,10 @@ const navbar = [
       }
     ],
   },
+  {
+    text: "工具",
+    link: "/tools/"
+  }
 ];
 
 export default navbar;
