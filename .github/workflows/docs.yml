@@ -8,8 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
+  # 定义名为 docs 的作业, 子键将定义作业的属性
   docs:
-    runs-on: ubuntu-latest
+    # 将作业配置为在最新版本的 Ubuntu Linux 运行器上运行
+    runs-on: ubuntu-latest  
 
     steps:
       - uses: actions/checkout@v2
