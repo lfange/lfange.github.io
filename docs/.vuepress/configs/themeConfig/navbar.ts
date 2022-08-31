@@ -44,6 +44,10 @@ const navbar = [
     ],
   },
   {
+    text: 'web3',
+    link: '/web3/'
+  },
+  {
     text: "工具",
     link: "/tools/"
   }
