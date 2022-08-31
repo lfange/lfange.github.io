@@ -29,14 +29,18 @@ const navbar = [
         //   '/Front/vue/VueScoped.md'
         // ]
       },
+      {
+        text: "Vue3",
+        link: '/Front/Vue3/basic',
+      },
       { 
         text: "JavaScript",
         link: '/Front/JavaScript/currie'
       },
-      {
-        text: "Vue3",
-        link: '/Front/Vue3/basic',
-      }
+      { 
+        text: "TypeScript",
+        link: '/Front/ts/'
+      },
     ],
   },
   {

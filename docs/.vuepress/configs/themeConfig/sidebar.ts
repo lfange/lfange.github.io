@@ -13,6 +13,10 @@ const jsBase = (name: string): string => {
   return `/Front/JavaScript/${name}.md`
 }
 
+const TsBase = (name: string): string => {
+  return `/Front/ts/${name}.md`
+}
+
 const comBase = (name: string): string => {
   return `/computer/${name}.md`
 }
@@ -57,6 +61,17 @@ const sidebar = {
       ]
     }
   ],
+  '/Front/vue3/': [
+    {
+      text: "Vue3",
+      link: Vue3Base('basic'),
+      collapsable: false,
+      children: [ 
+        Vue3Base('basic'),
+        Vue3Base('change'),
+      ]
+    }
+  ],
   '/Front/JavaScript/': [
     {
       text: "JavaScript",
@@ -70,14 +85,14 @@ const sidebar = {
       ]
     }
   ],
-  '/Front/vue3/': [
+  '/Front/ts/': [
     {
-      text: "Vue3",
-      link: Vue3Base('basic'),
+      text: "TypeScript",
+      link: '/Front/ts/',
       collapsable: false,
       children: [ 
-        Vue3Base('basic'),
-        Vue3Base('change'),
+        TsBase('README'),
+        TsBase('baseType'),
       ]
     }
   ],
