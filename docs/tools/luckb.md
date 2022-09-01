@@ -5,6 +5,8 @@
 {{ state.luck }}
 {{ msg }}
 
+<a-button type="primary">Primary Button</a-button>
+
 <div id="ball-container">
   <span :class="index < 6 ? 'prizNum' : 'lastprizNum' " v-for="(ball,index) in luckArr">{{ ball }}</span>
 </div>

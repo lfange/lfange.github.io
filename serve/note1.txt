@@ -1,2 +1,0 @@
-  console.log('ffffffffffff', fileList)
-  console.log('ffffffffffff', fileList)
