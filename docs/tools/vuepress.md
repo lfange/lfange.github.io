@@ -8,6 +8,8 @@ pnpm add ant-design-vue -D
 
 ## 修改 client.ts
 
+[client 客户端配置](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html)
+
 vuepress2.x 版本修改用于客户端应用增强的 docs/.vuepress/client.ts
 
 修改后文件如下：
