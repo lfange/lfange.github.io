@@ -38,7 +38,7 @@
   }
 
 </script>
-<style>
+<style scoped>
 	html,
     body,
     #map {

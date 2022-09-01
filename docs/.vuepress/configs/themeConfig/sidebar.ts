@@ -117,6 +117,10 @@ const sidebar = {
         ]
       },
         // "/computer/README.md", "/computer/network-architecture.md"],
+  ],
+  '/tools/': [
+    '/tools/README/',
+    '/tools/vuepress',
   ]
 };
 
