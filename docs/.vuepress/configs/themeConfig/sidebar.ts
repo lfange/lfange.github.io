@@ -119,8 +119,15 @@ const sidebar = {
         // "/computer/README.md", "/computer/network-architecture.md"],
   ],
   '/tools/': [
-    '/tools/README/',
-    '/tools/vuepress',
+    '/tools/',
+    '/tools/vuepress/'
+    // { 
+    //   text: '工具类',
+    //   link: '/tools/',
+    //   children: [
+    //     '/tools/vuepress/',
+    //   ],
+    // }
   ]
 };
 

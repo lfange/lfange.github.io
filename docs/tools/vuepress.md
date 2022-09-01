@@ -28,7 +28,7 @@ export default defineClientConfig({
 });
 ```
 
-## md 文件使用
+## 使用
 
 接下来就可以像往常一样食用 antd 的组件了
 
