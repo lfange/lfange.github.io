@@ -1,22 +1,15 @@
 # luckb
 
-<div class='start prizeBtn' id="dobble" @click="getPrize()">Start</div>
-
-{{ state.luck }}
-{{ msg }}
-
-<a-button type="primary">Primary Button</a-button>
+<a-button type="primary" @click="getPrize()">Start</a-button>
 
 <div id="ball-container">
-  <span :class="index < 6 ? 'prizNum' : 'lastprizNum' " v-for="(ball,index) in luckArr">{{ ball }}</span>
+  <span :class="index < 6 ? 'ball' : 'lastball' " v-for="(ball,index) in luckArr">{{ ball }}</span>
 </div>
 
 <script setup lang="ts">
   import { ref, reactive, watch, computed, provide } from "vue";
 
-  const msg = 'msg'
-
-  const luckArr = ref<string[]>([])
+  const luckArr = ref<string[]>(['05', '12', '32', '19', '26', '21'])
 
   const state = reactive({
     luck: 'reactive'
@@ -33,38 +26,17 @@
 
     set.add(Math.round(Math.random() * 16))
     luckArr.value = [...set] 
-    // prizeTicket += '<span class="lastprizNum">' + Math.round(Math.random() * 16) + '</span><br/>'
+    // prizeTicket += '<span class="lastball">' + Math.round(Math.random() * 16) + '</span><br/>'
     // document.getElementById("getPrize").innerHTML += '\n\n' + prizeTicket
   }
 
 </script>
 <style scoped>
-	html,
-    body,
-    #map {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    .prizeBtn {
-      color: white;
-      font-size: 16px;
-      margin: 20vh auto;
-      padding: 0 6px;
-      height: 40px;
-      line-height: 40px;
-      background-color: #409EFF;
-      text-align: center;
-      border-radius: 4px;
-      cursor: pointer;
-      display: inline-block;
-    }
 
     #ball-container {
       width: 230px;
       margin: 0 auto;
-      background-color: yellowgreen;
+      background-color: yellow;
       padding: 6px 4px;
     }
 
@@ -74,18 +46,18 @@
       margin: 2px 0;
     }
 
-    .prizNum {
+    .ball {
       width: 25px;
       text-align: center;
       line-height: 25px;
-      background: red;
+      background: linear-gradient(270deg, #c50701, #e62c60);
       border-radius: 50%;
       padding: 2px;
       font-size: 14px;
       color: white;
     }
 
-    .lastprizNum {
+    .lastball {
       width: 25px;
       text-align: center;
       line-height: 25px;
