@@ -1,8 +1,12 @@
 # luckb
 
+<a-row>
+    <a-col :span="12">col-12</a-col>
+    <a-col :span="12">col-12</a-col>
+  </a-row>
 <a-button type="primary" @click="getPrize()">Start</a-button>
 
-<div id="ball-container">
+<div class="ball-container">
   <span :class="index < 6 ? 'ball' : 'lastball' " v-for="(ball,index) in luckArr">{{ ball }}</span>
 </div>
 
@@ -23,8 +27,9 @@
       if (prizeNum > 0) set.add(prizeNum)
     }
     console.log('ball', set)
-
-    set.add(Math.round(Math.random() * 16))
+    while (set.size < 7) {
+      set.add(Math.round(Math.random() * 16))
+    }
     luckArr.value = [...set] 
     // prizeTicket += '<span class="lastball">' + Math.round(Math.random() * 16) + '</span><br/>'
     // document.getElementById("getPrize").innerHTML += '\n\n' + prizeTicket
@@ -33,53 +38,34 @@
 </script>
 <style scoped>
 
-    #ball-container {
-      width: 230px;
+    .ball-container {
+      width: 250px;
       margin: 0 auto;
       background-color: yellow;
       padding: 6px 4px;
     }
 
-    #ball-container>span {
+    .ball-container>span {
       display: inline-block;
       font-weight: bold;
-      margin: 2px 0;
+      margin: 2px;
+
+      width: 2em;
+      text-align: center;
+      line-height: 2em;
+      border-radius: 50%;
+      font-size: 14px;
+      color: white;
     }
 
     .ball {
-      width: 25px;
-      text-align: center;
-      line-height: 25px;
       background: linear-gradient(270deg, #c50701, #e62c60);
-      border-radius: 50%;
-      padding: 2px;
-      font-size: 14px;
-      color: white;
     }
 
     .lastball {
-      width: 25px;
-      text-align: center;
-      line-height: 25px;
       background: blue;
-      border-radius: 50%;
-      padding: 2px;
-      font-size: 14px;
-      color: white;
     }
 
-    .container {
-      background-color: red;
-      overflow: hidden;
-      /* creates a block formatting context */
-      margin: 0px 20vw 1vh;
-      box-sizing: border-box;
-    }
-
-    p {
-      background-color: lightgreen;
-      margin: 10px 0;
-    }
 	#div1 {
 		width: 600px;
 		height: 300px;
