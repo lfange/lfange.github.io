@@ -31,8 +31,6 @@
       set.add(Math.round(Math.random() * 16))
     }
     luckArr.value = [...set] 
-    // prizeTicket += '<span class="lastball">' + Math.round(Math.random() * 16) + '</span><br/>'
-    // document.getElementById("getPrize").innerHTML += '\n\n' + prizeTicket
   }
 
 </script>
