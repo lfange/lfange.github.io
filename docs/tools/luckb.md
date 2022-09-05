@@ -1,14 +1,15 @@
 # luckb
 
 <a-button type="primary" @click="getPrize()">Start</a-button>
- <a-tabs v-model:activeKey="isdoblue">
+{{isdoblue}}
+<a-tabs v-model:activeKey="active">
   <a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
   <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
-  len {{ len }}
 <div class="ball-container">
-  <p v-for="ar in luckArr">
+  <p v-for="(ar, arindx) in luckArr">
     <span :class="index < len ? 'ball' : 'lastball' " v-for="(ball,index) in ar">{{ ball }}</span>
+    <a-button type="text" danger>删除</a-button>
   </p>
 </div>
 
@@ -16,36 +17,51 @@
   import { ref, reactive, watch, computed, provide } from "vue";
 
   const luckArr = ref<[][[]]>([['05', '12', '32', '19', '26', '21']])
-  const isdoblue = ref<string>('dobule')
+  const active = ref<string>('dobule')
 
-  const len = computed<number>(() => isdoblue.value === 'dobule' ? 6 : 5)
+  const isdoblue = computed<Boolean>(() => active.value === 'dobule')
 
-  console.log("Boolean", len.value)
+  const len = computed<number>(() => isdoblue.value ? 7 : 6)
 
-  const state = reactive({
-    luck: 'reactive'
-  })
+  function getBallLen() {
+    const redMax = isdoblue.value ? 33 : 35
+    const bluMax = isdoblue.value ? 16 : 12
+    return { redMax, bluMax }
+  }
+
+  function getBalls() {
+    const { redMax, bluMax } = getBallLen()
+    const redArr = new Array(redMax).fill('1').map((i, ind) => ind + 1)
+    const blueArr = new Array(bluMax).fill('1').map((i, ind) => ind + 1)
+    return { redArr, blueArr }
+  }
 
   function getPrize() {
-    const set = new Set()
 
-    while(set.size < 6) {
-      var prizeNum: number = Math.round(Math.random() * 33)
-      if (prizeNum > 0) set.add(prizeNum)
-    }
-    console.log('ball', set)
-    while (set.size < 7) {
-      set.add(Math.round(Math.random() * 16))
-    }
-    luckArr.value.push([...set])
+    const { redArr, blueArr } =  getBalls()
+    console.log('this', redArr, blueArr, len.value);
+
+    const redBall = new Set()
+    const blueBall = new Set()
+
+    // while(redBall.size < len.value) {
+      var prizeNum: number = Math.floor(Math.random() * 33)
+      console.log('prizeNum', prizeNum);
+      const index = redArr.findIndex((i) => i === prizeNum)
+      console.log('index', index);
+      // const ball = redArr.splice
+      // if (prizeNum > 0) redBall.add(prizeNum)
+    // }
+    console.log('[...set].sort()', [...redBall].sort());
+    // while (blueBall.size < 7 - len.value) {
+    //   blueBall.add(Math.round(Math.random() * 16))
+    // }
+    // luckArr.value.push([...redBall, ...blueBall])
   }
 
 </script>
 <style scoped>
   .ball-container {
-    width: 250px;
-    background-color: yellow;
-    padding: 6px 4px;
   }
 
   .ball-container span {
@@ -58,6 +74,7 @@
     border-radius: 50%;
     font-size: 14px;
     color: white;
+    user-select: none;
   }
 
   .ball {
