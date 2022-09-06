@@ -23,6 +23,8 @@
 
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
 
+  change('dobule')
+
   const len = computed<number>(() => isdoblue.value ? 6 : 5)
 
   function getBallLen() {
@@ -71,7 +73,6 @@
 
   function change(tab) {
     luckArr.value = JSON.parse(localStorage.getItem(tab)) || []
-    console.log('change', luckArr.value);
   }
 
 </script>
