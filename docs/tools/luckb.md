@@ -1,23 +1,24 @@
 # luckb
 
 <a-button type="primary" @click="getPrize()">Start</a-button>
-{{isdoblue}}
-<a-tabs v-model:activeKey="active">
+
+<a-tabs v-model:activeKey="active" @change="change">
   <a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
   <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
-<div class="ball-container">
 
-  <p v-for="(ar, arindx) in luckArr">
+<div class="ball-container">
+  <div v-for="(ar, arindx) in luckArr">
     <span :class="index + 1 <= len ? 'ball' : 'lastball' " v-for="(ball,index) in ar"> {{ ball }}</span>
-    <a-button type="text" danger>删除</a-button>
-  </p>
+    <a-button type="text" danger><delete-outlined /></a-button>
+    <delete-outlined />
+  </div>
 </div>
 
 <script setup lang="ts">
   import { ref, reactive, watch, computed, provide } from "vue";
 
-  const luckArr = ref<[][[]]>([['05', '12', '32', '19', '26', '21']])
+  const luckArr = ref<[][[]]>([[]])
   const active = ref<string>('dobule')
 
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
@@ -54,7 +55,7 @@
 
     const redB = [...redBall].sort((a, b) => a - b).map((i: number) => i < 10 ? `0${i}` : i )
 
-    for (let i = bluMax, le = bluMax - 7 + len.value ; i > le; i--) {
+    for (let i = bluMax, le = bluMax - 7 + len.value; i > le; i--) {
       const radom = Math.random() * i
       const index: number = radom === 0 ? 0 : Math.floor(radom)
       blueBall.add(blueArr[index])
@@ -64,6 +65,13 @@
     const blueB = [...blueBall].sort((a, b) => a - b).map((i: number) => i < 10 ? `0${i}` : i )
 
     luckArr.value.push([...redB, ...blueB])
+
+    localStorage.setItem(active.value, JSON.stringify(luckArr.value))
+  }
+
+  function change(tab) {
+    luckArr.value = JSON.parse(localStorage.getItem(tab)) || []
+    console.log('change', luckArr.value);
   }
 
 </script>
