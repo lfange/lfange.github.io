@@ -3,22 +3,31 @@
 <a-button type="primary" @click="getPrize()">Start</a-button>
 
 <a-tabs v-model:activeKey="active" @change="change">
-  <a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
-  <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
+<a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
+<a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
 
 <div class="ball-container">
   <div v-for="(ar, arindx) in luckArr">
     <span :class="index + 1 <= len ? 'ball' : 'lastball' " v-for="(ball,index) in ar"> {{ ball }}</span>
-    <a-button type="text" danger><delete-outlined /></a-button>
+    <a-button type="text" danger @click="delet(arindx)"><delete-outlined />删除</a-button>
     <delete-outlined />
   </div>
 </div>
 
+<script lang="ts">
+ import { defineComponent } from 'vue';
+  import { DeleteOutlined } from '@ant-design/icons-vue';
+  export default defineComponent({
+    components: {
+      DeleteOutlined
+    },
+  });
+</script>
+
 <script setup lang="ts">
   import { ref, reactive, watch, computed, provide } from "vue";
-
-  const luckArr = ref<[][[]]>([[]])
+  const luckArr = ref<[]>([[]])
   const active = ref<string>('dobule')
 
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
@@ -73,6 +82,12 @@
 
   function change(tab) {
     luckArr.value = JSON.parse(localStorage.getItem(tab)) || []
+  }
+
+  function delet (delIndex: number) {
+    console.log('delet', delIndex);
+    luckArr.value.splice(delIndex, 1)
+    localStorage.setItem(active.value, JSON.stringify(luckArr.value))
   }
 
 </script>

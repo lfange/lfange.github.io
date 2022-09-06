@@ -16,12 +16,12 @@ vuepress2.x 版本修改用于客户端应用增强的 docs/.vuepress/client.ts
 
 ```javascript
 import { defineClientConfig } from "@vuepress/client";
-import Antd from "ant-design-vue";
+import { Button } from 'ant-design-vue';
 import "ant-design-vue/dist/antd.css";
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
-    app.use(Antd);
+    app.use(Button)
   },
   setup() {},
   rootComponents: [],
