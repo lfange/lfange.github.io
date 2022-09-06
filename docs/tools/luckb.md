@@ -1,4 +1,4 @@
-# luckb
+# Try their luck
 
 <a-button type="primary" @click="getPrize()">Start</a-button>
 
