@@ -41,6 +41,10 @@ const navbar = [
         text: "TypeScript",
         link: '/Front/ts/'
       },
+      { 
+        text: "浏览器",
+        link: '/Front/brower/README.md'
+      },
     ],
   },
   {

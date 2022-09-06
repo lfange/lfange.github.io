@@ -96,6 +96,16 @@ const sidebar = {
       ]
     }
   ],
+  '/Front/brower/': [
+    {
+      text: "brower",
+      link: '/Front/brower/',
+      collapsable: false,
+      children: [
+        '/Front/brower/README.md'
+      ]
+    }
+  ],
   '/computer/': [
       { 
         text: '计算机组成原理',
