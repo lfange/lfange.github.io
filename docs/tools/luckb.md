@@ -7,8 +7,9 @@
   <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
 <div class="ball-container">
+
   <p v-for="(ar, arindx) in luckArr">
-    <span :class="index < len ? 'ball' : 'lastball' " v-for="(ball,index) in ar">{{ ball }}</span>
+    <span :class="index + 1 <= len ? 'ball' : 'lastball' " v-for="(ball,index) in ar"> {{ ball }}</span>
     <a-button type="text" danger>删除</a-button>
   </p>
 </div>
@@ -21,7 +22,7 @@
 
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
 
-  const len = computed<number>(() => isdoblue.value ? 7 : 6)
+  const len = computed<number>(() => isdoblue.value ? 6 : 5)
 
   function getBallLen() {
     const redMax = isdoblue.value ? 33 : 35
@@ -38,25 +39,31 @@
 
   function getPrize() {
 
+    const { redMax, bluMax } = getBallLen()
     const { redArr, blueArr } =  getBalls()
-    console.log('this', redArr, blueArr, len.value);
 
     const redBall = new Set()
     const blueBall = new Set()
 
-    // while(redBall.size < len.value) {
-      var prizeNum: number = Math.floor(Math.random() * 33)
-      console.log('prizeNum', prizeNum);
-      const index = redArr.findIndex((i) => i === prizeNum)
-      console.log('index', index);
-      // const ball = redArr.splice
-      // if (prizeNum > 0) redBall.add(prizeNum)
-    // }
-    console.log('[...set].sort()', [...redBall].sort());
-    // while (blueBall.size < 7 - len.value) {
-    //   blueBall.add(Math.round(Math.random() * 16))
-    // }
-    // luckArr.value.push([...redBall, ...blueBall])
+    for (let i = redMax, le = redMax - len.value; i > le; i-- ) {
+      const radom = Math.random() * i
+      const index: number = radom === 0 ? 0 : Math.floor(radom)
+      redBall.add(redArr[index])
+      redArr.splice(index, 1)
+    }
+
+    const redB = [...redBall].sort((a, b) => a - b).map((i: number) => i < 10 ? `0${i}` : i )
+
+    for (let i = bluMax, le = bluMax - 7 + len.value ; i > le; i--) {
+      const radom = Math.random() * i
+      const index: number = radom === 0 ? 0 : Math.floor(radom)
+      blueBall.add(blueArr[index])
+      blueArr.splice(index, 1)
+    }
+
+    const blueB = [...blueBall].sort((a, b) => a - b).map((i: number) => i < 10 ? `0${i}` : i )
+
+    luckArr.value.push([...redB, ...blueB])
   }
 
 </script>
