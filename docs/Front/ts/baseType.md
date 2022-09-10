@@ -452,6 +452,4 @@ testAndFn({ name: "Fange" });
 ```
 
 
-
-
 Typescript更多内容查看[官网](https://www.tslang.cn/docs/handbook/basic-types.html)
