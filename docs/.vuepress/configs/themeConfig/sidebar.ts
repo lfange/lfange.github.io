@@ -102,7 +102,8 @@ const sidebar = {
       link: '/Front/brower/',
       collapsable: false,
       children: [
-        '/Front/brower/README.md'
+        '/Front/brower/README.md',
+        '/Front/brower/cache.md'
       ]
     }
   ],
