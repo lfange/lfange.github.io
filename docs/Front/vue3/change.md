@@ -629,3 +629,5 @@ Vue3 由 TS 重写，相对于 Vue2 有更好地 TypeScript 支持。
 [Vue 源码解读（3）—— 响应式原理](https://juejin.cn/post/6950826293923414047#heading-12)  
 [Vue 3 Virtual Dom Diff源码阅读](https://segmentfault.com/a/1190000038654183)  
 [Vue 2 迁移](https://v3.vuejs.org/guide/migration/migration-build.html#overview)  
+
+[Vue3 原理](https://juejin.cn/post/6979039113689169957)
