@@ -86,26 +86,12 @@ const sidebar = {
     }
   ],
   '/Front/ts/': [
-    {
-      text: "TypeScript",
-      link: '/Front/ts/',
-      collapsable: false,
-      children: [ 
-        TsBase('README'),
-        TsBase('baseType'),
-      ]
-    }
+    TsBase('README'),
+    TsBase('baseType'),
   ],
   '/Front/browser/': [
-    {
-      text: "浏览器相关",
-      link: '/Front/browser/',
-      collapsable: false,
-      children: [
-        '/Front/browser/README.md',
-        '/Front/browser/cache.md'
-      ]
-    }
+    '/Front/browser/README.md',
+    '/Front/browser/cache.md'
   ],
   '/computer/': [
       { 
