@@ -1,6 +1,7 @@
 import { defineClientConfig } from '@vuepress/client'
 import { Button, Tabs } from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+// import 'ant-design-vue/dist/antd.css';
+import 'ant-design-vue/es/button/style/index.css';
 
 
 export default defineClientConfig({
