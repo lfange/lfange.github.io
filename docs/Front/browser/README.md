@@ -6,3 +6,5 @@
 ## collapsable
 
       collapsable: false,
+
+[browsers_work](https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work)

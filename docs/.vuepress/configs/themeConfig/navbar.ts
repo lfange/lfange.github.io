@@ -43,7 +43,7 @@ const navbar = [
       },
       { 
         text: "浏览器",
-        link: '/Front/brower/README.md'
+        link: '/Front/browser/README.md'
       },
     ],
   },

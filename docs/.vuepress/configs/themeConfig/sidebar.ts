@@ -96,14 +96,14 @@ const sidebar = {
       ]
     }
   ],
-  '/Front/brower/': [
+  '/Front/browser/': [
     {
-      text: "brower",
-      link: '/Front/brower/',
+      text: "浏览器相关",
+      link: '/Front/browser/',
       collapsable: false,
       children: [
-        '/Front/brower/README.md',
-        '/Front/brower/cache.md'
+        '/Front/browser/README.md',
+        '/Front/browser/cache.md'
       ]
     }
   ],
