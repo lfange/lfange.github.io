@@ -55,10 +55,10 @@ const navbar = [
     text: "工具",
     link: "/tools/"
   },
-  {
-    text: 'luck',
-    link: '/tools/luckb'
-  }
+  // {
+  //   text: 'luck',
+  //   link: '/tools/luckb'
+  // }
 ];
 
 export default navbar;
