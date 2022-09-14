@@ -130,6 +130,11 @@ http://localhost:8080/engine-rest/external-task/{externalTaskid}/complete
 }
 ```
 
+::: tip Worker Id 为空
+  ![WorkId Empty](./emptyworkId.jpg)
+	在使用时，我发现当 `externalTask`没有开启脚本的时候`WorkerId`有为空的情况， `node ./xx.js`运行脚本就没有问题了。 
+:::
+
 ## reference
 
 [Camunda Rest Api](https://docs.camunda.org/manual/7.17/reference/rest/overview/)
