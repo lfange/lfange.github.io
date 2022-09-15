@@ -51,6 +51,29 @@ http://localhost:8080/engine-rest/process-definition/key/${ID}/start
 }
 ```
 
+## UserTask
+
+[submit-form Api](https://docs.camunda.org/manual/7.17/reference/rest/task/post-submit-form/)
+
+```javascript
+http://localhost:8080/camunda/api/engine/engine/default/task/b8ee6568-34a6-11ed-aa62-00d8617d5d1d/submit-form
+
+Parameters:
+{
+    "variables": {
+        "amount": {
+            "value": 9568751
+        },
+        "item": {
+            "value": "item"
+        },
+        "approved": {
+            "value": true
+        }
+    }
+}
+```
+
 ## Service Tasks
 
 Service Tasks 触发有[几种方法](https://docs.camunda.org/manual/latest/reference/bpmn20/tasks/service-task/)，以下是使用 External Tasks 触发.
@@ -60,6 +83,7 @@ External Tasks 可以选择[`java`或`NodeJs`](https://docs.camunda.org/get-star
 ![workerId](./externalTask.jpg)  
 上图是一个触发 Service Task 的流程实例，当前节点是在 Service Task 处
 
+[node task Worker](https://docs.camunda.org/get-started/quick-start/service-task/)
 ### Implement an external task worker
 
 ```javascript
@@ -117,7 +141,7 @@ client.subscribe("charge0914", async function ({ task, taskService }) {
 ```
 
 ### 通过 `complete` 可以完成该流程任务
-
+[complete Api](https://docs.camunda.org/manual/7.17/reference/rest/external-task/post-complete/)  
 示例所需要的参数对应上图
 
 ```javascript
@@ -131,8 +155,8 @@ http://localhost:8080/engine-rest/external-task/{externalTaskid}/complete
 ```
 
 ::: tip Worker Id 为空
-  ![WorkId Empty](./emptyworkId.jpg)
-	在使用时，我发现当 `externalTask`没有开启脚本的时候`WorkerId`有为空的情况， `node ./xx.js`运行脚本就没有问题了。 
+![WorkId Empty](./emptyworkId.jpg)
+在使用时，我发现当 `externalTask`没有开启脚本的时候`WorkerId`有为空的情况， `node ./xx.js`运行脚本就没有问题了。
 :::
 
 ## reference
