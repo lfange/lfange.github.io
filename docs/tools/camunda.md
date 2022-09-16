@@ -3,7 +3,8 @@
 ## 发布流程
 
 完成流程设计后，需要发布流程  
- [官网教程](https://docs.camunda.org/get-started/quick-start/deploy/)  
+ [官网教程](https://docs.camunda.org/get-started/quick-start/deploy/)
+ [知乎](https://zhuanlan.zhihu.com/p/375908620)    
  [create Api](https://docs.camunda.org/manual/7.17/reference/rest/deployment/post-deployment/)
 
 ```javascript
@@ -51,7 +52,22 @@ http://localhost:8080/engine-rest/process-definition/key/${ID}/start
 }
 ```
 
-## 
+## process-instance
+
+### Activity Instance
+> 通过 id 检索给定流程实例的活动实例（树 [API](https://docs.camunda.org/manual/7.17/reference/rest/process-instance/get-activity-instances/)
+```javascript
+/process-instance/dcb58801-34c1-11ed-8348-00d8617d5d1d/activity-instances
+```
+
+### form-variables
+> [form-variables](https://docs.camunda.org/manual/7.17/reference/rest/task/get-form-variables/)
+  检索任务的表单项，如果定义了表单，则返回表单项内容
+
+```javascript
+// GET
+/task/{id}/form-variables
+```
 
 ## UserTask
 
