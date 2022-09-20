@@ -51,6 +51,7 @@ const sidebar = {
     jsBase("callApply"),
     jsBase("brower"),
     jsBase("flatten"),
+    jsBase("module"),
   ],
   "/Front/ts/": [TsBase("README"), TsBase("baseType")],
   "/Front/browser/": ["/Front/browser/README.md", "/Front/browser/cache.md"],
