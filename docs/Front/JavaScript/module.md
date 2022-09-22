@@ -28,7 +28,7 @@ var http = require('http');
 http.createService(...).listen(3000);
 ```
 
-## AMD (Async) [require.js] 
+## AMD (Async) [require.js]
 
 `AMD`规范采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。这里介绍用`require.js`实现 AMD 规范的模块化：用 require.config()指定引用路径等，用 define()定义模块，用 require()加载模块。  
 首先我们需要引入 require.js 文件和一个入口文件 main.js。main.js 中配置 require.config()并规定项目中用到的基础模块。
@@ -103,85 +103,119 @@ define(["a", "b", "c", "d", "e", "f"], function (a, b, c, d, e, f) {
 
 ```javascript
 /** AMD写法 **/
-define(["a", "b", "c", "d", "e", "f"], function(a, b, c, d, e, f) { 
-     // 等于在最前面声明并初始化了要用到的所有模块
-    a.doSomething();
-    if (false) {
-        // 即便没用到某个模块 b，但 b 还是提前执行了
-        b.doSomething()
-    } 
+define(["a", "b", "c", "d", "e", "f"], function (a, b, c, d, e, f) {
+  // 等于在最前面声明并初始化了要用到的所有模块
+  a.doSomething();
+  if (false) {
+    // 即便没用到某个模块 b，但 b 还是提前执行了
+    b.doSomething();
+  }
 });
 
 /** CMD写法 **/
-define(function(require, exports, module) {
-    var a = require('./a'); //在需要时申明
-    a.doSomething();
-    if (false) {
-        var b = require('./b');
-        b.doSomething();
-    }
+define(function (require, exports, module) {
+  var a = require("./a"); //在需要时申明
+  a.doSomething();
+  if (false) {
+    var b = require("./b");
+    b.doSomething();
+  }
 });
 
 /** sea.js **/
 // 定义模块 math.js
-define(function(require, exports, module) {
-    var $ = require('jquery.js');
-    var add = function(a,b){
-        return a+b;
-    }
-    exports.add = add;
+define(function (require, exports, module) {
+  var $ = require("jquery.js");
+  var add = function (a, b) {
+    return a + b;
+  };
+  exports.add = add;
 });
 // 加载模块
-seajs.use(['math.js'], function(math){
-    var sum = math.add(1+2);
+seajs.use(["math.js"], function (math) {
+  var sum = math.add(1 + 2);
 });
 ```
+
 ## ES6 Module
 
-ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+ESM 是`ESModule`，是`ECMAScript`自己的模块体系，是  `Javascript`  提出的实现一个标准模块系统的方案，于 ES6 引入，  代表  ES  模块。
+
+ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，旨在成为浏览器和服务器通用的模块解决方案。其模块功能主要由两个命令构成：export 和 import。export 命令用于规定模块的对外接口，import 命令用于输入其他模块提供的功能。
 
 ```javascript
 /** 定义模块 math.js **/
 var basicNum = 0;
 var add = function (a, b) {
-    return a + b;
+  return a + b;
 };
 export { basicNum, add };
 
 /** 引用模块 **/
-import { basicNum, add } from './math';
+import { basicNum, add } from "./math";
 function test(ele) {
-    ele.textContent = add(99 + basicNum);
+  ele.textContent = add(99 + basicNum);
 }
 ```
 
-如上例所示，使用import命令的时候，用户需要知道所要加载的变量名或函数名。其实ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号。这也更趋近于ADM的引用写法。
+如上例所示，使用 import 命令的时候，用户需要知道所要加载的变量名或函数名。其实 ES6 还提供了 export default 命令，为模块指定默认输出，对应的 import 语句不需要使用大括号。这也更趋近于 ADM 的引用写法。
 
 ```javascript
 /** export default **/
 //定义输出
 export default { basicNum, add };
 //引入
-import math from './math';
+import math from "./math";
 function test(ele) {
-    ele.textContent = math.add(99 + math.basicNum);
+  ele.textContent = math.add(99 + math.basicNum);
 }
 ```
 
-ES6的模块不是对象，import命令会被 JavaScript 引擎静态分析，在编译时就引入模块代码，而不是在代码运行时加载，所以无法实现条件加载。也正因为这个，使得静态分析成为可能。
+ES6 的模块不是对象，import 命令会被 JavaScript 引擎静态分析，在编译时就引入模块代码，而不是在代码运行时加载，所以无法实现条件加载。也正因为这个，使得静态分析成为可能。
 
-## ES6 模块与 CommonJS 模块的差异
+## ES6 与 CommonJS 的差异
 
 - CommonJS 模块输出的是一个**值的拷贝**，ES6 模块输出的是**值的引用**。
 - CommonJS 模块是**运行时加载**，ES6 模块是**编译时输出接口**。
-> 1. **运行时加载**: CommonJS 模块就是对象；即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载
-> 2. **编译时加载**: ES6 模块不是对象，而是通过 export 命令显式指定输出的代码，import时采用静态命令的形式。即在import时可以指定加载某个输出值，而不是加载整个模块，这种加载称为“编译时加载”。
+  > 1. **运行时加载**: CommonJS 模块就是对象；即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载
+  > 2. **编译时加载**: ES6 模块不是对象，而是通过 export 命令显式指定输出的代码，import 时采用静态命令的形式。即在 import 时可以指定加载某个输出值，而不是加载整个模块，这种加载称为“编译时加载”。
 - CommonJS 模块的 require()是同步加载模块，ES6 模块的 import 命令是异步加载，有一个独立的模块依赖的解析阶段。
 
 > CommonJS 加载的是一个对象（即 module.exports 属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成
+
+## exports 和 module.exports
+
+module.exports 默认值为{}
+exports 是 module.exports 的引用
+exports 默认指向 module.exports 的内存空间
+require() 返回的是 module.exports 而不是 exports
+若对 exports 重新赋值，则断开了 exports 对 module.exports 的指向
+
+require 和 import 都可引用
+### module.exports
+```javascript
+//foo.js
+exports.foo="foo"
+//等同于
+module.exports.foo="foo"
+ 
+//bar.js
+const { foo } = require('./foo.js')
+console.log(foo);//'foo'
+```
+
+### exports
+```javascript
+//foo.js
+exports = { foo: 'foo' }
+//bar.js
+const { foo } = require('./foo.js')
+//reuqire 返回的是 module.exports 对象， 默认为 {}
+console.log(foo);//undefined
+```
 
 ## reference
 
 [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)  
 [module-loader](https://es6.ruanyifeng.com/#docs/module-loader)  
-[前端模块化](https://juejin.cn/post/6844903576309858318)  
+[前端模块化](https://juejin.cn/post/6844903576309858318)
