@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /hero.png  
-heroText: Lfange Blog!
+heroText: Best for the Best!
 tagline: 学而时习之，不亦说乎
 actionText: 11 →
 actionLink: /vue3/

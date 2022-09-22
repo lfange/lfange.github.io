@@ -5,8 +5,8 @@ import head from './configs/head'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'Lfange`s Blog ！',
-  description: '这是我的第一个 VuePress 站点',
+  title: 'fange`s Blog Home！',
+  description: '个人学习笔记',
   port: 6868,
   base: '/daydayup/',
   head,
