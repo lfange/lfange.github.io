@@ -8,9 +8,9 @@ const navbar = [
     text: "计算机",
     link: "/computer/",
     children: [
-      '/computer/os/README.md',
-      '/computer/net/README.md',
-      '/computer/pocc/README.md',
+      // '/computer/os/README.md',
+      '/computer/net/network-architecture',
+      // '/computer/pocc/README.md',
     ]
   },
   {

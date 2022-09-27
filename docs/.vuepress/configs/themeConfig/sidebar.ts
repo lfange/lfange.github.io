@@ -56,17 +56,20 @@ const sidebar = {
   "/Front/ts/": [TsBase("README"), TsBase("baseType")],
   "/Front/browser/": ["/Front/browser/README.md", "/Front/browser/cache.md"],
   "/computer/": [
-    {
-      text: "计算机组成原理",
-      children: [comBase("pocc/README")],
-    },
-    {
-      text: "操作系统",
-      children: [comBase("os/README")],
-    },
+    // {
+    //   text: "计算机组成原理",
+    //   children: [comBase("pocc/README")],
+    // },
+    // {
+    //   text: "操作系统",
+    //   children: [comBase("os/README")],
+    // },
     {
       text: "计算机网络",
-      children: [comBase("net/README"), comBase("net/network-architecture")],
+      children: [ 
+        // comBase("net/README"), 
+        comBase("net/network-architecture")
+      ],
     },
     // "/computer/README.md", "/computer/network-architecture.md"],
   ],
