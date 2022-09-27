@@ -10,7 +10,7 @@ export default defineClientConfig({
     app.use(Tabs)
     console.log('enhance', app)
     console.log('router', router)
-    console.log('siteData', siteData)
+    console.log('siteData~', siteData)
   },
   setup() {},
   rootComponents: [],
