@@ -30,4 +30,18 @@ func main() {
 
 	phone = new(IPhone) 
 	phone.call() // I am iPhone, I can call you!!!
+
+	getPerson()
+}
+
+
+type Person struct {
+	name string
+	age int
+	gender string
+}
+
+func getPerson() {
+	man := &Person{"Bob", 26, "man"}
+	fmt.Println(man.name, man.age, man.gender, man)  //Bob 26 man &{Bob 26 man} 
 }
