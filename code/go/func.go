@@ -4,7 +4,8 @@ import ("fmt")
 
 
 func main() {
-	test2()
+	// test2()
+	closure()
 }
 
 // go  值传递  不会改变参数值
@@ -40,7 +41,6 @@ func swap2(x *int, y *int) {
 	// 函数体内部 a 则为内存地址
 }
 
-
 func test2() {
 	a := 1
 	b := 2
@@ -52,4 +52,27 @@ func test2() {
 
 	fmt.Printf("交换后 a 的值: %d\n", a)
 	fmt.Printf("交换后 b 的值: %d\n", b)
+}
+
+
+// closure 闭包
+func closure() {
+	// 函数柯里化，返回的是一个函数
+	nextNumber := getSequence()
+	// 调用 nextNumber() 执行自增
+	fmt.Println("nextNumber: ", nextNumber()) // 1
+	fmt.Println("nextNumber: ", nextNumber()) // 2
+	fmt.Println("nextNumber: ", nextNumber()) // 3
+
+	nextNumber2 := getSequence()
+	fmt.Println("nextNumber2: ", nextNumber2()) // 1
+	fmt.Println("nextNumber2: ", nextNumber2()) // 2
+}
+
+func getSequence() func() int{
+	i := 0
+	return func() int {
+		i += 1
+		return i
+	}
 }
