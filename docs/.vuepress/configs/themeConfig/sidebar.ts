@@ -73,6 +73,9 @@ const sidebar = {
     },
     // "/computer/README.md", "/computer/network-architecture.md"],
   ],
+  "/backend/Golang/": [
+    "/backend/Golang/README.md"
+  ],
   "/tools/": [
     "/tools/",
     "/tools/vuepress/",
