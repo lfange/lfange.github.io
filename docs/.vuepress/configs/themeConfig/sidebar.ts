@@ -74,7 +74,8 @@ const sidebar = {
     // "/computer/README.md", "/computer/network-architecture.md"],
   ],
   "/backend/Golang/": [
-    "/backend/Golang/README.md"
+    "/backend/Golang/README.md",
+    "/backend/Golang/Tutorial.md"
   ],
   "/tools/": [
     "/tools/",

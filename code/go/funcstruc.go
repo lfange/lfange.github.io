@@ -52,7 +52,6 @@ func callBack(x int) int {
 
 
 // 递归  菲波那切数列
-
 func recur() {
 	for i := 0; i < 10; i++ {
 		fmt.Println(fibonacci(i))		
