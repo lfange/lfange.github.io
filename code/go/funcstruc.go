@@ -18,6 +18,8 @@ func main() {
 	fmt.Println("圆的面积 = ", c1.getArea())
 
 	varfunc()
+
+	recur()
 }
 
 
@@ -46,4 +48,21 @@ func testCallBack(x int, f cb) {
 func callBack(x int) int {
 	fmt.Printf("我是回调, x: %d\n", x)
 	return x
+}
+
+
+// 递归  菲波那切数列
+
+func recur() {
+	for i := 0; i < 10; i++ {
+		fmt.Println(fibonacci(i))		
+	}
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	} else {
+		return (fibonacci(n - 2) + fibonacci(n - 1))
+	}
 }

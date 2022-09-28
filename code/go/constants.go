@@ -13,9 +13,11 @@ func main() {
 	fmt.Printf("面积: %d", area, "area :", 5 + area)
 	fmt.Println(a, b, c)
 	
-	emun()
+	// emun()
 
-	constIndex()
+	// constIndex()
+
+	typeTransform()
 }
 
 func emun() {
@@ -30,7 +32,6 @@ func emun() {
 
 
 func constIndex() {
-
 	// iota 在 const关键字出现时将被重置为 0(const 内部的第一行之前)，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。
 	// const (
 	// 	aa = iota
@@ -48,7 +49,7 @@ func constIndex() {
 
 	// iota 特殊常量
 	const (
-		a = iota   //0
+		a = "22"   //0
 		b          //1
 		c          //2
 		d = "ha"   //独立值，iota += 1
@@ -60,4 +61,18 @@ func constIndex() {
 	)
 
 	fmt.Println("iota 计数索引", a,b,c,d,e,f,g,h,i)
+}
+
+// 类型转换
+func typeTransform() {
+	var a int = 15
+	var b int = 7
+	var mean float32
+
+	fmt.Printf("mean的值为: %f \n", mean)
+	
+	mean = float32(a) / float32(b)
+
+	fmt.Printf("mean的值为: %f \n", mean)
+	fmt.Println("typeTransform ", float32(a), float32(b))
 }
