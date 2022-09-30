@@ -71,3 +71,15 @@ func (struct_name_variable struct_name) method_namen() [return_type] {
    /* 方法实现*/
 }
 ```
+
+## 通道
+
+通道（channel）是用来传递数据的一个数据结构
+
+通道可用于两个 goroutine 之间通过传递一个指定类型的值来同步运行和通讯。操作符 <- 用于指定通道的方向，发送或接收。如果未指定方向，则为双向通道
+
+```javascript
+ch <- v    // 把 v 发送到通道 ch
+v := <-ch  // 从 ch 接收数据
+           // 并把值赋给 v
+```
