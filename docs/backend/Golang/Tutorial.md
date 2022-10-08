@@ -71,3 +71,18 @@ func (struct_name_variable struct_name) method_namen() [return_type] {
    /* 方法实现*/
 }
 ```
+
+## Golang 路径设置
+
+[Go module 本地开发](https://go.dev/doc/tutorial/call-module-code)
+
+由于`go`的`package包`需要下载，而本地的包没有发布，所有需要改路径
+
+```javascript
+go mod edit -replace example.com/greetings=../greetings
+```
+
+```javascript
+$ go mod tidy
+go: found example.com/greetings in example.com/greetings v0.0.0-00010101000000-000000000000
+```
