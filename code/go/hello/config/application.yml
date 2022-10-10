@@ -1,0 +1,9 @@
+datasource:
+  driverName: mysql
+  host: 127.0.0.1
+  port: 3306
+  database: gin
+  username: root
+  password: xiaofanqie
+  charset: utf8
+  loc: chengdu
