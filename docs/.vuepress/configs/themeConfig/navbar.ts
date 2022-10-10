@@ -9,9 +9,9 @@ const navbar = [
     link: "/computer/",
     children: [
       // '/computer/os/README.md',
-      '/computer/net/network-architecture',
+      "/computer/net/network-architecture",
       // '/computer/pocc/README.md',
-    ]
+    ],
   },
   {
     text: "前端",
@@ -19,48 +19,47 @@ const navbar = [
     children: [
       {
         text: "Vue Base",
-        link: '/Front/vue/basic/vuebase',
+        link: "/Front/vue/basic/vuebase",
       },
       {
-        text: 'Vue advanced',
-        link: '/Front/vue/advanced/vuecli',
-        // children: [ 
-        //   '/Front/vue/README.md', 
+        text: "Vue advanced",
+        link: "/Front/vue/advanced/vuecli",
+        // children: [
+        //   '/Front/vue/README.md',
         //   '/Front/vue/VueScoped.md'
         // ]
       },
       {
         text: "Vue3",
-        link: '/Front/Vue3/basic',
+        link: "/Front/Vue3/basic",
       },
-      { 
+      {
         text: "JavaScript",
-        link: '/Front/JavaScript/currie'
+        link: "/Front/JavaScript/currie",
       },
-      { 
+      {
         text: "TypeScript",
-        link: '/Front/ts/'
+        link: "/Front/ts/",
       },
-      { 
+      {
         text: "浏览器",
-        link: '/Front/browser/README.md'
+        link: "/Front/browser/README.md",
       },
     ],
   },
   {
-    text: '后端',
-    link: '/backend/',
-    children: [
-      '/backend/Golang/README.md'
-    ]
+    text: "后端",
+    link: "/backend/",
+    children: ["/backend/Golang/README.md"],
   },
+  { text: "服务", link: "/serve/", children: [ "/serve/linux.md"] },
   {
-    text: 'web3',
-    link: '/web3/'
+    text: "web3",
+    link: "/web3/",
   },
   {
     text: "工具",
-    link: "/tools/"
+    link: "/tools/",
   },
   // {
   //   text: 'luck',

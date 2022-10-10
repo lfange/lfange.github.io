@@ -90,6 +90,9 @@ const sidebar = {
     //   ],
     // }
   ],
+  "/serve/": [
+    "/serve/linux.md"
+  ]
 };
 
 export default sidebar;
