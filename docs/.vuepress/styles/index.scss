@@ -1,9 +1,13 @@
 :root {
   scroll-behavior: smooth;
 }
+body {
+  cursor: url(/images/icons/blue.cur),auto
+}
 
 @media (min-width: 751px) {
   #docsearch-container:lang(zh-CN) {
     min-width: 184.66px;
   }
 }
+
