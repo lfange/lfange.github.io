@@ -1,12 +1,14 @@
-# vuepress 集成 ant-design-vue
+# vuepress blog
 
-## 安装 ant-design-vue
+## vuepress集成ant-design-vue
+
+### 安装 ant-design-vue
 
 ```javascript
 pnpm add ant-design-vue -D
 ```
 
-## 修改 client.ts
+### 修改 client.ts
 
 [client 客户端配置](https://v2.vuepress.vuejs.org/zh/advanced/cookbook/usage-of-client-config.html)
 
@@ -28,7 +30,7 @@ export default defineClientConfig({
 });
 ```
 
-## 使用
+### 使用
 
 接下来就可以像往常一样食用 antd 的组件了
 

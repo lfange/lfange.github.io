@@ -1,4 +1,6 @@
-# 设置 git 同时推送 github 和 gitee 远程仓库
+# git order
+
+## git 同时推送 github 和 gitee
 
 1. 进入工程根目录打开.git 文件夹（需要显示隐藏文件夹）
 
@@ -16,3 +18,25 @@
 ```
 
 然后可以在控制台或者`git`仓库看到推送记录
+
+## git 忽略文件
+
+### 忽略未存在缓冲区的文件
+
+在项目根目录创建`.gitignore`文件，直接添加需要忽略的文件至 `.gitignore`中.如`node_modules/`
+
+### 忽略已存在缓冲区的文件
+
+该情况可能出现在，修改了配置文件，或者修改一些配置适应本地环境的文件。  
+使用 `git update-index --assume-unchanged PATH/FILE` 来不追踪该文件更新与否。
+PATH/FILE 特定文件比如 config/config.php 等等。
+
+### 已经存在缓冲区，但是希望其以后从缓冲区移除
+
+该情况可能出现在，某些文件可能不需要添加到缓冲区，但是不小心添加到缓冲区，需要忽略，可以先从缓冲区移除，在从.gitignore 文件中忽略
+`git rm --cached testFile` //将该文件从缓冲区移除永远不追踪该文件
+```javascript
+$ git rm --cached .vscode/
+rm '.vscode/c_cpp_properties.json'        
+rm '.vscode/settings.json'
+```
