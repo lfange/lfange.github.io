@@ -9,8 +9,7 @@ import (
 )
 
 var DB *gorm.DB
-
-func InitDB() *gorm.DB {
+func InitDB() *gorm.DB{
 	driverName := viper.GetString("datasource.driverName")
 	host := viper.GetString("datasource.host")
 	port := viper.GetString("datasource.port")
@@ -27,18 +26,17 @@ func InitDB() *gorm.DB {
 		database,
 		charset,
 		url.QueryEscape(loc))
-
 	db, err := gorm.Open(driverName, args)
 	if err != nil {
-		//panic("fail to connect database, err: " + err.Error())
-		fmt.Println("fail to connect database")
+		panic("fail to connect database, err: " + err.Error())
 	}
 	db.AutoMigrate(&model.User{})
+	db.AutoMigrate(&model.Meber{})
 	db.AutoMigrate(&model.InviteCode{})
 	DB = db
 	return db
 }
 
-func GetDB() *gorm.DB {
+func GetDB() *gorm.DB  {
 	return DB
 }

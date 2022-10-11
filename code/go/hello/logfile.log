@@ -4,3 +4,9 @@
 {"level":"info","msg":"| 422 |            0s |             ::1 | POST | /v1/account/register","time":"2022-10-10 15:12:52"}
 {"level":"info","msg":"| 422 |       504.8µs |             ::1 | POST | /v1/account/register","time":"2022-10-10 15:13:22"}
 {"level":"info","msg":"| 422 |      1.0046ms |             ::1 | POST | /v1/account/register","time":"2022-10-10 15:21:38"}
+{"level":"info","msg":"| 404 |            0s |             ::1 | GET | /favicon.ico","time":"2022-10-11 09:24:35"}
+{"level":"info","msg":"| 404 |            0s |             ::1 | POST | /v1/meber","time":"2022-10-11 09:34:21"}
+{"level":"info","msg":"| 200 |     12.4675ms |             ::1 | POST | /v1/meber","time":"2022-10-11 10:05:41"}
+{"level":"info","msg":"| 200 |     75.9664ms |             ::1 | POST | /v1/account/register","time":"2022-10-11 11:48:08"}
+{"level":"info","msg":"| 404 |            0s |             ::1 | GET | /v1/account/register","time":"2022-10-11 11:48:13"}
+{"level":"info","msg":"| 404 |            0s |             ::1 | GET | /favicon.ico","time":"2022-10-11 11:48:13"}

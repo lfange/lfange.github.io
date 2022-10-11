@@ -6,4 +6,4 @@ datasource:
   username: root
   password: xiaofanqie
   charset: utf8
-  loc: chengdu
+  loc: Asia/Shanghai

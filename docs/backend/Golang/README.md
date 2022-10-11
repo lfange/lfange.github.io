@@ -35,6 +35,18 @@ go env -w GOPROXY=https://goproxy.cn,direct
 
 ## GO MOD
 
+golang 提供了 go mod 命令来管理包。 go mod 有以下命令：
+| 命令 | 说明 |
+| ----------- | ----------- |
+| download | download modules to local cache(下载依赖包) |
+| edit | edit go.mod from tools or scripts（编辑 go.mod) |
+| graph | print module requirement graph (打印模块依赖图) |
+| verify | initialize new module in current directory（在当前目录初始化 mod） |
+| tidy | add missing and remove unused modules(拉取缺少的模块，移除不用的模块) |
+| vendor | make vendored copy of dependencies(将依赖复制到 vendor 下) |
+| verify | verify dependencies have expected content (验证依赖是否正确）
+| why | explain why packages or modules are needed(解释为什么需要依赖)
+
 ### Golang 路径设置
 
 [Go module 本地开发](https://go.dev/doc/tutorial/call-module-code)  
@@ -68,10 +80,58 @@ $ go mod tidy
 go: found example.com/greetings in example.com/greetings v0.0.0-00010101000000-000000000000
 ```
 
+## Updating modules
 
-## Go跨域
+有时候在项目中需要更新 github 上的依赖包，则需要手动执行更新 module 操作，我们使用`go get`
 
-Gin框架配置处理跨域的中间件：
+- 运行 `go get -u` 以使用最新的 minor 版本或修补程序版本（即它将从 1.0.0 更新到例如 1.0.1，或者，如果可用，则更新为 1.1.0）
+- 运行 `go get -u=patch` 以使用最新的 修补程序 版本（即，将更新为 1.0.1 但不更新 为 1.1.0）
+- 运行 `go get package@version` 以更新到特定版本（例如 github.com/lfange/daydayup@v1.0.1）
+
+```javascript
+// 更新最新
+$ go get -u
+$ go get -u=patch
+//指定包，指定版本
+$ go get github.com/lfange/daydayup@v1.0.1
+```
+
+操作完，go.mod 文件会修改如下:
+
+```javascript
+go 1.19.1
+
+require (
+    github.com/lfange/daydayup v1.0.1
+)
+```
+
+如果在项目中使用两个不同大版本,则可以用别名
+
+```javascript
+package main
+
+import (
+    "fmt"
+    "github.com/lfange/daydayup"
+    mv2 "github.com/lfange/daydayup/v2"
+)
+
+func main() {
+    g, err := mv2.SayHi("Roberto", "pt")
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(g)
+
+    fmt.Println(daydayup.SayHi("Roberto"))
+}
+```
+执行一下 go mod tidy
+
+## Go 跨域
+
+Gin 框架配置处理跨域的中间件：
 
 ```javascript
 func Cors(context *gin.Context) {

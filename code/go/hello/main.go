@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
+	"lfange.com/hello/common"
 	"lfange.com/hello/config"
 	"lfange.com/hello/routes"
 	"net/http"
@@ -10,8 +13,8 @@ import (
 
 func main() {
 	InitConfig() //初始化配置
-	//db := common.InitDB()
-	//defer db.Close()
+	db := common.InitDB()
+	defer db.Close()
 	InitGin() //初始化Gin框架并启动
 }
 
@@ -33,6 +36,8 @@ func InitConfig() {
 	viper.AddConfigPath("./config/")
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic("" + err.Error())
+		fmt.Println("viper InitConfig errr" + err.Error())
 	}
+	fmt.Println("viper InitConfig errr finish")
+
 }
