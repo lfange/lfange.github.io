@@ -9,7 +9,8 @@ import (
 )
 
 var DB *gorm.DB
-func InitDB() *gorm.DB{
+
+func InitDB() *gorm.DB {
 	driverName := viper.GetString("datasource.driverName")
 	host := viper.GetString("datasource.host")
 	port := viper.GetString("datasource.port")
@@ -37,6 +38,6 @@ func InitDB() *gorm.DB{
 	return db
 }
 
-func GetDB() *gorm.DB  {
+func GetDB() *gorm.DB {
 	return DB
 }
