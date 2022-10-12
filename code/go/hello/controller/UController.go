@@ -6,6 +6,7 @@ import (
 	"lfange.com/hello/model"
 	"lfange.com/hello/response"
 	"net/http"
+	_ "strconv"
 )
 
 func UController(ctx *gin.Context) {
@@ -40,21 +41,24 @@ func UList(ctx *gin.Context) {
 
 func GetMeberId(c *gin.Context) {
 
-	//var meber model.Meber
-	//Println("&meber", &meber)
+	var meber model.Meber
+
 	//// 将request的body中的数据，自动按照json格式解析到结构体
-	//if err := c.ShouldBindJSON(&meber); err != nil {
+	if err := c.ShouldBindJSON(&meber); err != nil {
 	//	// 返回错误信息
 	//	// gin.H封装了生成json数据的工具
 	//	response.Response(c, http.StatusInternalServerError, 500, nil, err.Error())
 	//	return
-	//}
 
-	db := common.GetDB()
+		db := common.GetDB()
+		println("Param", c.Param("id"), c.DefaultQuery)
+		println("name", c.Params.ByName("name"), c.Params.ByName("id"))
+		//var meber = model.Meber{}
 
-	results := db.Model(model.Meber{
-		Name: "fange",
-	})
+		results := db.First(&model.Meber{}, 6)
 
-	response.Success(c, gin.H{"results": results}, "okkkk")
+		response.Success(c, gin.H{"results": results}, "okkkk")
+	}
+
+
 }
