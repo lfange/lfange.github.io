@@ -41,7 +41,7 @@ golang 提供了 go mod 命令来管理包。 go mod 有以下命令：
 | download | download modules to local cache(下载依赖包) |
 | edit | edit go.mod from tools or scripts（编辑 go.mod) |
 | graph | print module requirement graph (打印模块依赖图) |
-| verify | initialize new module in current directory（在当前目录初始化 mod） |
+| init | initialize new module in current directory（在当前目录初始化 mod） |
 | tidy | add missing and remove unused modules(拉取缺少的模块，移除不用的模块) |
 | vendor | make vendored copy of dependencies(将依赖复制到 vendor 下) |
 | verify | verify dependencies have expected content (验证依赖是否正确）
@@ -127,6 +127,7 @@ func main() {
     fmt.Println(daydayup.SayHi("Roberto"))
 }
 ```
+
 执行一下 go mod tidy
 
 ## Go 跨域
@@ -156,3 +157,96 @@ func Cors(context *gin.Context) {
 	context.Next()
 }
 ```
+
+::: details Go 资料
+- [Go 中文官网](https://go-zh.org/)
+- [Go by Example 中文版](https://gobyexample-cn.github.io/)
+- [Go 入门指南](https://fuckcloudnative.io/the-way-to-go/)
+- [Go 语言圣经](https://book.itsfun.top/gopl-zh/)
+- [Go 语言中文文档](http://www.topgoer.com/)
+- [Go2 编程指南](https://chai2010.cn/go2-book/)
+- [Go 语言高级编程](https://chai2010.cn/advanced-go-programming-book/)
+- [Go Web 编程](https://www.kancloud.cn/kancloud/web-application-with-golang/44105)
+- [Go 知识图谱](https://www.processon.com/view/link/5a9ba4c8e4b0a9d22eb3bdf0#map)
+- [组织 Go 代码](https://blog.go-zh.org/organizing-go-code)
+- [Go 切片：用法和本质](https://blog.go-zh.org/go-slices-usage-and-internals)
+- [Go 面向包的设计和架构分层](https://github.com/danceyoung/paper-code/blob/master/package-oriented-design/packageorienteddesign.md)
+- [更多](https://www.bookstack.cn/explore?cid=10&tab=popular)
+:::
+
+<details>
+<summary>Gin</summary>
+
+- [Gin 官方文档](https://gin-gonic.com/zh-cn/docs/)
+- [Gin 中文文档](https://www.kancloud.cn/shuangdeyu/gin_book/949411)
+- [轻量级 Web 框架 Gin 结构分析](http://blog.itpub.net/31561269/viewspace-2637490/)
+- [更多](https://www.bookstack.cn/explore?cid=168)
+
+</details>
+
+<details>
+<summary>Gorm</summary>
+
+- [GORM 官方文档](https://gorm.io/zh_CN/)
+- [GORM 中文文档](http://gorm.book.jasperxu.com/)
+
+</details>
+
+<details>
+<summary>Swag</summary>
+
+- [Swag 开源地址](https://github.com/swaggo/swag)
+- [Swag 中文说明](https://github.com/swaggo/swag/blob/master/README_zh-CN.md)
+
+</details>
+
+<details>
+<summary>数据库</summary>
+
+- [SQL Server 技术文档](https://docs.microsoft.com/zh-cn/sql/sql-server)
+- [下载 SSMS](https://docs.microsoft.com/zh-cn/sql/ssms/download-sql-server-management-studio-ssms)
+
+---
+
+- [PostgreSQL 官网](https://www.postgresql.org/)
+- [PostgreSQL 教程](https://www.runoob.com/postgresql/postgresql-tutorial.html)
+- [PostgreSQL 手册](http://www.postgres.cn/docs/13/)
+- [PostgreSQL 新手入门](http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html)
+- [更多](https://www.bookstack.cn/explore?cid=166)
+
+---
+
+- [MySQL](https://www.bookstack.cn/explore?cid=38)
+- [SQLite](https://www.bookstack.cn/explore?cid=43)
+- [Redis](https://www.bookstack.cn/explore?cid=42)
+- [更多](https://www.bookstack.cn/explore?cid=4&tab=popular)
+
+</details>
+
+<details>
+<summary>Elasticsearch</summary>
+
+- [Elasticsearch 中文官网](https://www.elastic.co/cn/elasticsearch/)
+- [Elasticsearch 下载地址](https://www.elastic.co/cn/downloads/elasticsearch)
+- [Elasticsearch 权威指南](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)
+- [Elasticsearch 参考文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [更多](https://www.bookstack.cn/explore?cid=210)
+
+</details>
+
+<details>
+
+<summary>Git + GitLab</summary>
+
+- [Git 官方教程](https://git-scm.com/book/zh/v2)
+- [Git 中文教程 - w3c](https://www.w3cschool.cn/git/)
+- [Git 中文教程 - 易百](https://www.yiibai.com/git)
+- [Git 中文教程 - runoob](https://www.runoob.com/git/git-tutorial.html)
+
+---
+
+- [GitLab 官方教程](https://docs.gitlab.com/ee/README.html)
+- [GitLab 中文教程 - 易百](https://www.yiibai.com/gitlab/gitlab_merge_requests.html)
+- [GitLab 支持的 Markdown 语法说明](http://192.168.200.39:999/help/user/markdown.md)
+
+</details>

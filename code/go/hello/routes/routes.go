@@ -11,10 +11,13 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	r.POST("/v1/account/register", controller.Register)
 
 	r.GET("/v1/account/invite", controller.Invite) //邀请码生成
-	r.POST("/v1/meber", controller.UController)
 
-	r.GET("/v1/meber", controller.UList)
-	r.GET("/v1/GetMeberId", controller.GetMeberId)
+	meberRoutes := r.Group("/v1/meber")
+
+	meberRoutes.POST("", controller.UController)
+	meberRoutes.GET("/UList", controller.UList)
+	meberRoutes.GET("/:id", controller.GetMeberId)
+	meberRoutes.GET("/GetUrl", controller.GetUrl)
 
 	return r
 }

@@ -33,32 +33,41 @@ func UController(ctx *gin.Context) {
 func UList(ctx *gin.Context) {
 	var mebers []model.Meber
 	db := common.GetDB()
-	db.Find(&mebers)
 	results := db.Find(&mebers)
 
 	response.Success(ctx, gin.H{"results": results}, "okkkk")
 }
 
+// 获取Get参数
+func GetUrl(c *gin.Context) {
+	db := common.GetDB()
+	name := c.DefaultQuery("name", "fanye")
+
+	// UserName := c.DefaultPostForm("username", "unkown")   formdata
+	//password := c.PostForm("password")
+	job := c.Query("job")
+	println("name", name)
+	println("job", job)
+	var mebers []model.Meber
+	//results := db.Where(model.Meber{Name: name}).Find(&model.Meber{})
+	results := db.Where( "name = ?", name).Find(&mebers)
+
+	response.Success(c, gin.H{"results": results}, "success!!!")
+}
+
+// 获取路径中的参数
 func GetMeberId(c *gin.Context) {
 
-	var meber model.Meber
+	//var meber model.Meber
 
 	//// 将request的body中的数据，自动按照json格式解析到结构体
-	if err := c.ShouldBindJSON(&meber); err != nil {
+	//if err := c.ShouldBindJSON(&meber); err != nil {
 	//	// 返回错误信息
 	//	// gin.H封装了生成json数据的工具
 	//	response.Response(c, http.StatusInternalServerError, 500, nil, err.Error())
 	//	return
-
-		db := common.GetDB()
-		println("Param", c.Param("id"), c.DefaultQuery)
-		println("name", c.Params.ByName("name"), c.Params.ByName("id"))
-		//var meber = model.Meber{}
-
-		results := db.First(&model.Meber{}, 6)
-
-		response.Success(c, gin.H{"results": results}, "okkkk")
-	}
-
-
+	db := common.GetDB()
+	keyid := c.Param("id")
+	results := db.First(&model.Meber{}, keyid)
+	response.Success(c, gin.H{"results": results}, "okkkk")
 }
