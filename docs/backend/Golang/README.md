@@ -179,6 +179,7 @@ func Cors(context *gin.Context) {
 
 - [Gin 官方文档](https://gin-gonic.com/zh-cn/docs/)
 - [Gin 中文文档](https://www.kancloud.cn/shuangdeyu/gin_book/949411)
+- [gin-vue-admin](https://www.gin-vue-admin.com/)
 - [轻量级 Web 框架 Gin 结构分析](http://blog.itpub.net/31561269/viewspace-2637490/)
 - [更多](https://www.bookstack.cn/explore?cid=168)
 

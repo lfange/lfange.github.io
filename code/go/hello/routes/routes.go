@@ -18,6 +18,8 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	meberRoutes.GET("/UList", controller.UList)
 	meberRoutes.GET("/:id", controller.GetMeberId)
 	meberRoutes.GET("/GetUrl", controller.GetUrl)
+	meberRoutes.PUT("/:id", controller.Update)
+	meberRoutes.DELETE("/:id", controller.Delete)
 
 	return r
 }
