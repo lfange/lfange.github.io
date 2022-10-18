@@ -82,6 +82,7 @@ const sidebar = {
     "/tools/vuepress/",
     "/tools/camunda/",
     "/tools/git/",
+    "/tools/regular"
     // {
     //   text: '工具类',
     //   link: '/tools/',
