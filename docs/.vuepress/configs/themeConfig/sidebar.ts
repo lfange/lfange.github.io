@@ -55,6 +55,7 @@ const sidebar = {
   ],
   "/Front/ts/": [TsBase("README"), TsBase("baseType")],
   "/Front/browser/": ["/Front/browser/README.md", "/Front/browser/cache.md"],
+  "/Front/performance/": ["/Front/performance/README.md"],
   "/computer/": [
     // {
     //   text: "计算机组成原理",
@@ -75,7 +76,8 @@ const sidebar = {
   ],
   "/backend/Golang/": [
     "/backend/Golang/README.md",
-    "/backend/Golang/Tutorial.md"
+    "/backend/Golang/Tutorial.md",
+    "/backend/Golang/gorm.md",
   ],
   "/tools/": [
     "/tools/",

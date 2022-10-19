@@ -1,4 +1,4 @@
-# gorm database
+# gorm
 
 [gorm快速入门](https://gorm.io/zh_CN/docs/index.html#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
 
@@ -25,4 +25,15 @@ func main() {
 
 ```javascript
 username:password@protocol(address)/dbname?param=value
+```
+
+## 参数处理
+
+[params](http://www.codebaoku.com/gin/gin-parameter.html)
+
+
+- 设置默认值
+
+```javascript
+Name string `gorm:"default:galeone"`
 ```
