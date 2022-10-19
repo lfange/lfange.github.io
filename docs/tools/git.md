@@ -35,8 +35,41 @@ PATH/FILE 特定文件比如 config/config.php 等等。
 
 该情况可能出现在，某些文件可能不需要添加到缓冲区，但是不小心添加到缓冲区，需要忽略，可以先从缓冲区移除，在从.gitignore 文件中忽略
 `git rm --cached testFile` //将该文件从缓冲区移除永远不追踪该文件
+
 ```javascript
 $ git rm --cached .vscode/
-rm '.vscode/c_cpp_properties.json'        
+rm '.vscode/c_cpp_properties.json'
 rm '.vscode/settings.json'
+```
+
+## 重命名本地分支
+
+- 在当前分支时
+
+```javascript
+git branch -m new_branch_name
+```
+
+- 当不在当前分支时
+
+```javascript
+git branch -m old_branch_name new_branch_name
+```
+
+- 删除远程分支
+
+```javascript
+git push --delete origin old_branch_name
+```
+
+- 上传新命名的本地分支
+
+```javascript
+git push origin new_branch_name
+```
+
+- 关联修改后的本地分支与远程分支
+
+```javascript
+git branch --set-upstream-to origin/new_branch_name
 ```

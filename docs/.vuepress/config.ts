@@ -8,7 +8,7 @@ export default defineUserConfig({
   title: 'fange`s Blog Home！',
   description: '个人学习笔记',
   port: 6868,
-  base: '/daydayup/',
+  base: '',
   head,
   theme,
   ...Plugins

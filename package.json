@@ -1,5 +1,5 @@
 {
-  "name": "daydayup",
+  "name": "lfange",
   "version": "1.0.0",
   "description": "学习、实敲代码",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a653398363/daydayup.git"
+    "url": "git+https://github.com/a653398363/lfange.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/a653398363/daydayup/issues"
+    "url": "https://github.com/a653398363/lfange.github.io/issues"
   },
-  "homepage": "https://github.com/a653398363/daydayup#readme",
+  "homepage": "https://github.com/a653398363/lfange.github.io#readme",
   "dependencies": {
     "ant-design-vue": "^3.2.11",
     "gitalk": "^1.8.0"

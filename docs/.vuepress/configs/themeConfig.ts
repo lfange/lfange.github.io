@@ -7,7 +7,7 @@ const theme = defaultTheme({
     navbar,
     sidebar,
 
-    repo: 'lfange/daydayup',
+    repo: 'lfange',
     docsDir: 'docs', // 编辑的文件夹
     docsBranch: 'master', // 假如文档放在一个特定的分支下
     editLink: true,

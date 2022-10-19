@@ -86,14 +86,14 @@ go: found example.com/greetings in example.com/greetings v0.0.0-00010101000000-0
 
 - 运行 `go get -u` 以使用最新的 minor 版本或修补程序版本（即它将从 1.0.0 更新到例如 1.0.1，或者，如果可用，则更新为 1.1.0）
 - 运行 `go get -u=patch` 以使用最新的 修补程序 版本（即，将更新为 1.0.1 但不更新 为 1.1.0）
-- 运行 `go get package@version` 以更新到特定版本（例如 github.com/lfange/daydayup@v1.0.1）
+- 运行 `go get package@version` 以更新到特定版本（例如 github.com/lfange/lfange.github.io@v1.0.1）
 
 ```javascript
 // 更新最新
 $ go get -u
 $ go get -u=patch
 //指定包，指定版本
-$ go get github.com/lfange/daydayup@v1.0.1
+$ go get github.com/lfange/lfange.github.io@v1.0.1
 ```
 
 操作完，go.mod 文件会修改如下:
@@ -102,7 +102,7 @@ $ go get github.com/lfange/daydayup@v1.0.1
 go 1.19.1
 
 require (
-    github.com/lfange/daydayup v1.0.1
+    github.com/lfange/lfange.github.io v1.0.1
 )
 ```
 
@@ -113,8 +113,8 @@ package main
 
 import (
     "fmt"
-    "github.com/lfange/daydayup"
-    mv2 "github.com/lfange/daydayup/v2"
+    lfange "github.com/lfange/lfange.github.io"
+    mv2 "github.com/lfange/lfange.github.io/v2"
 )
 
 func main() {
@@ -124,7 +124,7 @@ func main() {
     }
     fmt.Println(g)
 
-    fmt.Println(daydayup.SayHi("Roberto"))
+    fmt.Println(lfange.SayHi("Roberto"))
 }
 ```
 
@@ -159,6 +159,7 @@ func Cors(context *gin.Context) {
 ```
 
 ::: details Go 资料
+
 - [Go 中文官网](https://go-zh.org/)
 - [Go by Example 中文版](https://gobyexample-cn.github.io/)
 - [Go 入门指南](https://fuckcloudnative.io/the-way-to-go/)
@@ -172,7 +173,7 @@ func Cors(context *gin.Context) {
 - [Go 切片：用法和本质](https://blog.go-zh.org/go-slices-usage-and-internals)
 - [Go 面向包的设计和架构分层](https://github.com/danceyoung/paper-code/blob/master/package-oriented-design/packageorienteddesign.md)
 - [更多](https://www.bookstack.cn/explore?cid=10&tab=popular)
-:::
+  :::
 
 <details>
 <summary>Gin</summary>
