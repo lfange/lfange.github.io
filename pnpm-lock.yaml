@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@vssue/api-github-v4': ^1.4.7
+  '@vssue/vuepress-plugin-vssue': ^1.4.8
   '@vuepress/client': 2.0.0-beta.49
   '@vuepress/plugin-back-to-top': 2.0.0-beta.49
   ant-design-vue: ^3.2.11
@@ -15,6 +17,8 @@ dependencies:
   gitalk: 1.8.0
 
 devDependencies:
+  '@vssue/api-github-v4': 1.4.7
+  '@vssue/vuepress-plugin-vssue': 1.4.8_vuepress@2.0.0-beta.49
   '@vuepress/client': 2.0.0-beta.49
   '@vuepress/plugin-back-to-top': 2.0.0-beta.49
   vue: 3.2.37
@@ -357,6 +361,31 @@ packages:
     dependencies:
       vite: 2.9.15
       vue: 3.2.37
+    dev: true
+
+  /@vssue/api-github-v4/1.4.7:
+    resolution: {integrity: sha512-Tk4ZYyX03RwoVy29RW1+ZdqESzX/gLsN9010Eaq0WT/2pNV+8quyT9TMypIZp6rZCGNYTSdxB8ET4IiF7SLKXQ==}
+    dependencies:
+      '@vssue/utils': 1.4.7
+      axios: 0.21.4
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
+  /@vssue/utils/1.4.7:
+    resolution: {integrity: sha512-e94karP4szmSNT2L4bgIT+VGToBSY3bdlgmGcomcD2qCXTWDK4krSOYm8ES+BhHTcmCvzQYU/xenHR4tzrythA==}
+    dependencies:
+      date-fns: 1.30.1
+      qs: 6.10.3
+    dev: true
+
+  /@vssue/vuepress-plugin-vssue/1.4.8_vuepress@2.0.0-beta.49:
+    resolution: {integrity: sha512-0QzegHl/Rx4/XgXswThIJi4Yk+b6AIaM450jX6p4RbOM6yOTzEKLTMduUo54Rvhq/NHNusu4Yy/w1iY8NTqBEg==}
+    peerDependencies:
+      vuepress: ^1.0.0
+    dependencies:
+      vssue: 1.4.8
+      vuepress: 2.0.0-beta.49_2swkti5cn42xfigpmsn6ifcgpu
     dev: true
 
   /@vue/compiler-core/3.2.37:
@@ -1213,6 +1242,14 @@ packages:
       - supports-color
     dev: false
 
+  /axios/0.21.4:
+    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+    dependencies:
+      follow-redirects: 1.15.1_debug@4.3.4
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
@@ -2042,6 +2079,10 @@ packages:
 
   /cyclist/1.0.1:
     resolution: {integrity: sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==}
+    dev: true
+
+  /date-fns/1.30.1:
+    resolution: {integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==}
     dev: true
 
   /date-fns/2.16.1:
@@ -3103,6 +3144,11 @@ packages:
     resolution: {integrity: sha512-4EqUN/DyAfV5RoTF3gDzuTFiCc7NraexNnIB9TxWE8/abaW/rZKv0NCCEpLqwBlAjFpKKDr7qBlOZos02wqazQ==}
     engines: {node: '>=0.10.0'}
     dev: false
+
+  /github-markdown-css/3.0.1:
+    resolution: {integrity: sha512-9G5CIPsHoyk5ObDsb/H4KTi23J8KE1oDd4KYU51qwqeM+lKWAiO7abpSgCkyWswgmSKBiuE7/4f8xUz7f2qAiQ==}
+    engines: {node: '>=0.10.0'}
+    dev: true
 
   /glob-parent/3.1.0:
     resolution: {integrity: sha512-E8Ak/2+dZY6fnzlR7+ueWvhsH1SjHr4jjss4YS/h4py44jY9MhK/VFdaZJAWDz6BbL21KeteKxFSFpq8OS5gVA==}
@@ -5864,6 +5910,24 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: true
 
+  /vssue/1.4.8:
+    resolution: {integrity: sha512-Stp0CxF65Uv658qgYUgYKEDiWM8wskUfKCOT9ISJwz/Qn58N050vYnFYClnUXG060ZQi1YQxkTCuJAw8ee3YlQ==}
+    dependencies:
+      '@vssue/utils': 1.4.7
+      github-markdown-css: 3.0.1
+      vue: 2.7.10
+      vue-i18n: 8.27.2
+      vue-property-decorator: 8.5.1_vue@2.7.10
+    dev: true
+
+  /vue-class-component/7.2.6_vue@2.7.10:
+    resolution: {integrity: sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==}
+    peerDependencies:
+      vue: ^2.0.0
+    dependencies:
+      vue: 2.7.10
+    dev: true
+
   /vue-demi/0.13.11_vue@3.2.37:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
     engines: {node: '>=12'}
@@ -5881,6 +5945,10 @@ packages:
 
   /vue-hot-reload-api/2.3.4:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
+    dev: true
+
+  /vue-i18n/8.27.2:
+    resolution: {integrity: sha512-QVzn7u2WVH8F7eSKIM00lujC7x1mnuGPaTnDTmB01Hd709jDtB9kYtBqM+MWmp5AJRx3gnqAdZbee9MelqwFBg==}
     dev: true
 
   /vue-loader/15.10.0_webpack@4.46.0:
@@ -5959,6 +6027,15 @@ packages:
       - velocityjs
       - walrus
       - whiskers
+    dev: true
+
+  /vue-property-decorator/8.5.1_vue@2.7.10:
+    resolution: {integrity: sha512-O6OUN2OMsYTGPvgFtXeBU3jPnX5ffQ9V4I1WfxFQ6dqz6cOUbR3Usou7kgFpfiXDvV7dJQSFcJ5yUPgOtPPm1Q==}
+    peerDependencies:
+      vue: '*'
+    dependencies:
+      vue: 2.7.10
+      vue-class-component: 7.2.6_vue@2.7.10
     dev: true
 
   /vue-router/4.1.5_vue@3.2.37:

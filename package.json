@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "docs": "vuepress dev docs --temp .temp",
-    "dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev": "node ./builds/addComponents.js && vuepress dev docs",
+    "docs:build": "node ./builds/addComponents.js && vuepress build docs && node ./builds/delComponents.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,8 @@
     "gitalk": "^1.8.0"
   },
   "devDependencies": {
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
     "@vuepress/client": "2.0.0-beta.49",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.49",
     "ant-design-vue": "^3.2.11",
