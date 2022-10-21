@@ -20,11 +20,10 @@
   },
   "homepage": "https://github.com/a653398363/lfange.github.io#readme",
   "dependencies": {
-    "ant-design-vue": "^3.2.11",
-    "gitalk": "^1.8.0",
-    "vssue": "^1.4.8"
+    "ant-design-vue": "^3.2.11"
   },
   "devDependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@vuepress/client": "2.0.0-beta.49",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.49",
     "ant-design-vue": "^3.2.11",

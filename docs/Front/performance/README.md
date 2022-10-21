@@ -152,7 +152,7 @@ plugins: [
 ![](./gzbuild.png)
 
 配置好之后，打开浏览器访问线上，F12 查看控制台，如果该文件资源的响应头里显示有 Content-Encoding: gzip，表示浏览器支持并且启用了 Gzip 压缩的资源
-![](resgz.png)
+![Gzip压缩](./resgz.png)
 
 在服务器我们也要做相应的配置 如果发送请求的浏览器支持 gzip，就发送给它 gzip 格式的文件
 

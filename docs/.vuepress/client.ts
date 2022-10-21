@@ -2,7 +2,7 @@ import { defineClientConfig } from '@vuepress/client'
 import { Button, Tabs } from 'ant-design-vue';
 // import 'ant-design-vue/dist/antd.css';
 import 'ant-design-vue/es/button/style/index.css';
-import Layout from './theme/layouts.vue'
+// import Layout from './theme/layouts.vue'
 
 // "@vssue/api-github-v4": "^1.4.7",
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
@@ -22,15 +22,11 @@ export default defineClientConfig({
     // })
     app.use(Button)
     app.use(Tabs)
-    app.use(Layout)
     // app.use(Vssue)
     console.log('enhance', app)
     console.log('router', router)
     console.log('siteData~', siteData)
   },
   setup() {},
-  rootComponents: [],
-  layouts: {
-    Layout
-  },
+  rootComponents: []
 })
