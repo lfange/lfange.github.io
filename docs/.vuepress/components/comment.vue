@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'comment',
+  name: 'Comment',
   data() {
     return {};
   },
@@ -34,5 +34,5 @@ export default {
 };
 </script>
 <style>
-@import '../styles/gittalk.css';
+@import '../styles/gitalk.css';
 </style>

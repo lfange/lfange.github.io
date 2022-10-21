@@ -2,7 +2,8 @@ import { defineClientConfig } from '@vuepress/client'
 import { Button, Tabs } from 'ant-design-vue';
 // import 'ant-design-vue/dist/antd.css';
 import 'ant-design-vue/es/button/style/index.css';
-// import Layout from './theme/layouts.vue'
+import Layouts from './theme/layouts.vue'
+import Comment from './components/comment.vue'
 
 // "@vssue/api-github-v4": "^1.4.7",
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
@@ -20,13 +21,18 @@ export default defineClientConfig({
     //   clientId: 'f1309179924acb97c720', // 刚保存下来的  Client ID
     //   clientSecret: '9642dae529f47a9649217ffec15dca010dc00786 ', //  刚才保存下来的 Client secrets  只有在使用某些平台时需要
     // })
+    app.component("Comment", Comment)
     app.use(Button)
     app.use(Tabs)
-    // app.use(Vssue)
+    // app.component("Layouts", Layouts)
+    // app.use(Layouts)
     console.log('enhance', app)
     console.log('router', router)
     console.log('siteData~', siteData)
   },
   setup() {},
-  rootComponents: []
+  rootComponents: [],
+  layouts: {
+    Layouts
+  }
 })

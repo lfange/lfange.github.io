@@ -41,3 +41,5 @@ vuepress2.x 使用 vue 可见[官网](https://v2.vuepress.vuejs.org/zh/advanced/
 ```
 
 <a-button type="primary">Primary Button</a-button>
+
+<Comment />
