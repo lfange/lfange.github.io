@@ -1,11 +1,31 @@
 # git order
 
-## git 强制拉取远程覆盖本地
+## 工作区域
 
-撤销本地、暂存区、版本库（用远程服务器的`master`替换本地、暂存区、版本库）
+1. 工作区
+   即自己当前分支所修改的代码，git add xx 之前的！不包括 git add xx 和 git commit xxx 之后的。
+
+2. 暂存区  
+   已经 `git add xxx` 进去，且未 `git commit xxx` 的
+
+3. 本地分支
+   已经 git commit -m xxx 提交到本地分支的
+
+git reset HEAD <路径/文件名>
+
+### 取消工作区修改
+
+`git checkout — file` 可以丢弃工作区的修改  
+`git checkout . ` 本地所有修改的。没有的提交的，都返回到原来的状态
+
+git stash #把所有没有提交的修改暂存到 stash 里面。可用 git stash pop 恢复
+
+### 取消暂存区修改
+
+`git reset HEAD` 如果后面什么都不跟的话 就是上一次 add 里面的全部撤销了, 即取消暂存区的到工作区
 
 ```javascript
-git reset --hard origin/master
+git reset HEAD
 ```
 
 ### 回滚到指定 commit
@@ -24,10 +44,21 @@ Date:   Tue Oct 25 16:43:38 2022 +0800
 git reset --hard f6f350c9c73eb703bdf996fc686d5eb0e0cf2a3c
 ```
 
+回到最新的一次提交  
+`git reset --hard HEAD^` or `git reset HEAD^` 此时代码保留，回到 git add 之前
+
 如果需要同时回滚远程
 
 ```javascript
 git push -f
+```
+
+### git 强制拉取远程覆盖本地
+
+撤销本地、暂存区、版本库（用远程服务器的`master`替换本地、暂存区、版本库）
+
+```javascript
+git reset --hard origin/master
 ```
 
 ## git 同时推送 github 和 gitee
@@ -103,3 +134,7 @@ git push origin new_branch_name
 ```javascript
 git branch --set-upstream-to origin/new_branch_name
 ```
+
+## 参考
+
+[git docs](https://git-scm.com/docs)
