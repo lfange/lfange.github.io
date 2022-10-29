@@ -1,10 +1,16 @@
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import MyPlugin from './Myplugin'
+
+console.log('Myplugin', MyPlugin.name)
 
 const plugins = [
   backToTopPlugin(),
   ['vuepress-plugin-auto-sidebar', {
     
-  }]
+  }],
+  MyPlugin({
+    id: 'source'
+  })
   // ['@vssue/vuepress-plugin-vssue', {
   //   // 设置平台，而不是 `api` 
   //   platform: 'github-v4',

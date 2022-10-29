@@ -26,9 +26,9 @@ export default defineClientConfig({
     app.use(Tabs)
     // app.component("Layouts", Layouts)
     // app.use(Layouts)
-    console.log('enhance', app)
-    console.log('router', router)
-    console.log('siteData~', siteData)
+    // console.log('enhance', app)
+    // console.log('router', router)
+    // console.log('siteData~', siteData)
   },
   setup() {},
   rootComponents: [],

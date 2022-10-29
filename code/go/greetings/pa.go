@@ -16,14 +16,18 @@ var (
 // 爬邮箱
 func GetEmail() {
     // 1.去网站拿数据
-    resp, err := http.Get("https://tieba.baidu.com/p/6051076813?red_tag=1573533731")
+    resp, err := http.Get("https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=30&isVerify=1&pageNo=1")
     HandleError(err, "http.Get url")
     defer resp.Body.Close()
+
     // 2.读取页面内容
     pageBytes, err := ioutil.ReadAll(resp.Body)
     HandleError(err, "ioutil.ReadAll")
     // 字节转字符串
     pageStr := string(pageBytes)
+
+
+    fmt.Println("pageStr", pageStr)
     //fmt.Println(pageStr)
     // 3.过滤数据，过滤qq邮箱
     re := regexp.MustCompile(reQQEmail)
