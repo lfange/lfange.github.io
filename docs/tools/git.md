@@ -1,5 +1,35 @@
 # git order
 
+## git 强制拉取远程覆盖本地
+
+撤销本地、暂存区、版本库（用远程服务器的`master`替换本地、暂存区、版本库）
+
+```javascript
+git reset --hard origin/master
+```
+
+### 回滚到指定 commit
+
+`git log` 查看提交记录
+
+```javascript
+commit f6f350c9c73eb703bdf996fc686d5eb0e0cf2a3c (HEAD -> master, origin/master, origin/HEAD)
+Author: lfange <653398363@qq.com>
+Date:   Tue Oct 25 16:43:38 2022 +0800
+```
+
+找到需要回滚的 commit `f6f350c9c73eb703bdf996fc686d5eb0e0cf2a3c`,执行以下命令就可以回滚到这个版本
+
+```javascript
+git reset --hard f6f350c9c73eb703bdf996fc686d5eb0e0cf2a3c
+```
+
+如果需要同时回滚远程
+
+```javascript
+git push -f
+```
+
 ## git 同时推送 github 和 gitee
 
 1. 进入工程根目录打开.git 文件夹（需要显示隐藏文件夹）
