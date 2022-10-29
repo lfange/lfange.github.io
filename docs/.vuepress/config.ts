@@ -5,7 +5,7 @@ import head from './configs/head'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'fange`s Blog Home！',
+  title: '哓番茄',
   description: '个人学习笔记',
   port: 6868,
   base: '/',

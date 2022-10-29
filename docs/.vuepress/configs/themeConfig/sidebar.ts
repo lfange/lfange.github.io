@@ -52,6 +52,8 @@ const sidebar = {
     jsBase("brower"),
     jsBase("flatten"),
     jsBase("module"),
+    jsBase("print"),
+    jsBase("rtcpeer")
   ],
   "/Front/ts/": [TsBase("README"), TsBase("baseType")],
   "/Front/browser/": ["/Front/browser/README.md", "/Front/browser/cache.md"],
