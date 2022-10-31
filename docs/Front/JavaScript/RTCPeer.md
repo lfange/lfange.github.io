@@ -54,30 +54,33 @@ fpPromise
 
 ```javascript
 function RTCGetIp() {
-  //compatibility for Firefox and chrome
-  window.RTCPeerConnection =
-    window.RTCPeerConnection ||
-    window.mozRTCPeerConnection ||
-    window.webkitRTCPeerConnection
-  var pc = new RTCPeerConnection({
-    iceServers: [],
-  })
-  let myIP
-  const noop = () => {}
-  pc.createDataChannel('bogus') // 随便创建 create a bogus data channel
-  const reg = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g
-  pc.createOffer(pc.setLocalDescription.bind(pc), noop) // create offer and set local description
-  pc.onicecandidate = function (ice) {
-    // ice.candidate.address: xxx.xxx.xxx.xxx
-    if (ice && ice.candidate && ice.candidate.candidate) {
-      myIP = ice.candidate.address // 也可以通过解析candidate字符串获取ip reg.exec(ice.candidate.candidate)[1]
-      pc.onicecandidate = noop
-    }
-  }
-  return myIP
-}
+  return new Promise((resolve, reject) => {
+    //compatibility for Firefox and chrome
+    window.RTCPeerConnection =
+      window.RTCPeerConnection ||
+      window.mozRTCPeerConnection ||
+      window.webkitRTCPeerConnection;
+    var pc = new RTCPeerConnection({
+      iceServers: [],
+    });
+    let myIP;
+    const noop = () => {};
+    pc.createDataChannel("bogus"); // 随便创建 create a bogus data channel
+    const reg =
+      /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g;
+    pc.createOffer(pc.setLocalDescription.bind(pc), noop); // create offer and set local description
+    pc.onicecandidate = function (ice) {
+      // ice.candidate.address: xxx.xxx.xxx.xxx
+      if (ice && ice.candidate && ice.candidate.candidate) {
+        myIP = ice.candidate.address; // 也可以通过解析candidate字符串获取ip reg.exec(ice.candidate.candidate)[1]
+        pc.onicecandidate = noop;
+        resolve(myIP);
+      }
+    };
+  });
+};
 
-RTCGetIp()
+await RTCGetIp()
 ```
 
 ### RTCIP 在线获取
