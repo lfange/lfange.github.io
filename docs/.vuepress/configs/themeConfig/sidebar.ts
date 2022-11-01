@@ -44,7 +44,11 @@ const sidebar = {
     Vue2Base("advanced/Vuewebpack"),
     Vue2Base("advanced/Vuescoped"),
   ],
-  "/Front/vue3/": [Vue3Base("basic"), Vue3Base("change")],
+  "/Front/vue3/": [
+    Vue3Base("basic"), 
+    Vue3Base("change"),
+    Vue3Base("vite")
+  ],
   "/Front/JavaScript/": [
     jsBase("currie"),
     jsBase("防抖节流"),
