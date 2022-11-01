@@ -3,8 +3,8 @@
 <a-button type="primary" @click="getPrize()">Start</a-button>
 
 <a-tabs v-model:activeKey="active" @change="change">
-<a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
-<a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
+  <a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
+  <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
 
 <div class="ball-container">
