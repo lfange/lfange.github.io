@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import theme from './configs/themeConfig'
+// import { fooTheme } from './mytheme'
 import Plugins from './configs/plugins'
 import head from './configs/head'
 
@@ -11,5 +12,6 @@ export default defineUserConfig({
   base: '/',
   head,
   theme,
+  // theme: fooTheme,
   ...Plugins
 })

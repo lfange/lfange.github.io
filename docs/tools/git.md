@@ -63,6 +63,38 @@ git reset --hard origin/master
 
 ## git stash
 
+`git stash` 可以将当前未提交的修改(即，**工作区的修改和暂存区的修改**)先暂时储藏起来，这样工作区干净了后，就可以切换分支下拉一个 fix 分支。在完成线上 bug 的修复工作后又切换回来
+
+`git stash` 是本地的，不会通过 git push 命令上传到 git server 上
+
+`git stash save [stashMessage]` 存储当前修改,并给当前修改新增别名
+
+### 标识储藏记录
+
+### 查看存储
+
+`git stash list` 查看所有储藏
+
+### 取出储藏
+
+`git stash pop` 用于取出最近一次储藏的修改到工作区，将缓存堆栈中的第一个 stash 删除，并将对应修改应用到当前的工作目录下。
+
+`git stash apply stash@xx` 将缓存堆栈中的 stash 多次应用到工作目录中，但并不删除 stash 拷贝
+
+### 移除 stash
+
+使用`git stash drop`命令，后面跟着 stash 名字
+
+### 查看指定 stash 的 diff
+
+使用 `git stash show` 命令，后面跟着 stash 名字。示例如下
+
+### 从 stash 创建分支
+
+`git stash branch stash@xx`
+
+命令
+
 ```javascript
 git stash list [<options>]
 git stash show [<stash>]
@@ -78,36 +110,6 @@ git stash clear
 git stash create [<message>]
 git stash store [-m|--message <message>] [-q|--quiet] <commit>
 ```
-
-`git stash` 可以将当前未提交的修改(即，工作区的修改和暂存区的修改)先暂时储藏起来，这样工作区干净了后，就可以切换分支下拉一个 fix 分支。在完成线上 bug 的修复工作后
-
-`stash` 是本地的，不会通过 git push 命令上传到 git server 上
-
-`git stash save [stashMessage]` 存储当前修改,并给当前修改新增别名
-
-### 标识储藏记录
-
-### 查看存储
-
-`git stash list` 查看所有储藏
-
-### 取出储藏
-
-`git stash pop` 用于取出最近一次储藏的修改到工作区，将缓存堆栈中的第一个 stash 删除，并将对应修改应用到当前的工作目录下。
-
-`git stash apply @xx` 将缓存堆栈中的 stash 多次应用到工作目录中，但并不删除 stash 拷贝
-
-### 移除 stash
-
-使用`git stash drop`命令，后面可以跟着 stash 名字
-
-### 查看指定 stash 的 diff
-
-使用 `git stash show` 命令，后面可以跟着 stash 名字。示例如下
-
-### 从 stash 创建分支
-
-`git stash branch @xx`
 
 ## git 同时推送 github 和 gitee
 

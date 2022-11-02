@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <canvas id="canvas" width="500" height="200"></canvas>
+
+  ID: <span id="ID"></span>
+
+  <!-- <script src="./print.js" type="text/javascript" charset="utf-8"></script> -->
+  <script>
+    // console.log(FingerprintJS)
+    // Initialize the agent at application startup.
+    const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+      .then(FingerprintJS => FingerprintJS.load())
+
+    // Get the visitor identifier when you need it.
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => {
+        // This is the visitor identifier:
+        const visitorId = result.visitorId
+        console.log(visitorId)
+        document.querySelector("#ID").innerHTML = visitorId
+      })
+
+    function getId() {
+      const canvas = document.getElementById('canvas')
+      const ctx = canvas.getContext('2d')
+      ctx.font = '22px Arial'
+      ctx.fillStyle = 'red'
+      ctx.fillText("hello moto", 20, 20)
+      return canvas.toDataURL('image/jpeg')
+    }
+
+    // document.write(getId())
+    console.log(getId())
+  </script>
+  <script type="text/javascript">
+    function RTCGetIp() {
+
+      //compatibility for Firefox and chrome
+      window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window
+        .webkitRTCPeerConnection;
+      var pc = new RTCPeerConnection({
+        iceServers: [],
+      })
+      let myIP
+      const noop = () => {}
+      pc.createDataChannel('bogus') // 随便创建 create a bogus data channel
+      const reg = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g
+      pc.createOffer(pc.setLocalDescription.bind(pc), noop) // create offer and set local description
+      pc.onicecandidate = function (ice) {
+        console.log('ice', ice)
+        // ice.candidate.address: 192.168.211.98
+        if (ice && ice.candidate && ice.candidate.candidate) {
+          myIP = ice.candidate.address || reg.exec(ice.candidate.candidate)[1]
+          console.log('my IP: ', myIP)
+          pc.onicecandidate = noop
+        }
+      }
+      return myIP
+    }
+
+    RTCGetIp()
+  </script>
+
+</body>
+
+</html>

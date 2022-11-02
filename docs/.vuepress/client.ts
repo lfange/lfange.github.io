@@ -1,8 +1,9 @@
 import { defineClientConfig } from '@vuepress/client'
 import { Button, Tabs } from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+import 'ant-design-vue/es/tabs/style/index.css';
 import 'ant-design-vue/es/button/style/index.css';
-import Layouts from './theme/layouts.vue'
+import Layout from './theme/layouts/Layout.vue'
+import NotFound from './theme/NotFound.vue'
 import Comment from './components/comment.vue'
 
 // "@vssue/api-github-v4": "^1.4.7",
@@ -33,6 +34,7 @@ export default defineClientConfig({
   setup() {},
   rootComponents: [],
   layouts: {
-    Layouts
+    Layout,
+    NotFound,
   }
 })

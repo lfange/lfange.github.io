@@ -3,7 +3,7 @@
 > 正向表达式就是所匹配要操作的字符串在前，表达式 pattern 在后;
 > 反向表达式则是表达式 pattern 在前，所匹配要操作的字符串在后。
 
-1. exc(?:pattern)
+1. **exc(?:pattern)**  
    匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分是很有用。例如“factor(?:y|ies)”就是一个比“factory|factories”更简略的表达式
 
 ```javascript
@@ -28,7 +28,7 @@ console.log('str:', str)
 // str: 123work123866
 ```
 
-3. exc(?!pattern)
+3. exc(?!pattern)  
    **正向否定预查，在任何不匹配 pattern 的 exc 开始处匹配查找字符串**。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。
 
 ```javascript

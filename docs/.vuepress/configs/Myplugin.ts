@@ -2,7 +2,7 @@
 const fileRegex = /\.(my-file-ext)$/
 
 export default function MyPlugin(options) {
-  console.log("MyPlugin", options);
+  console.log("default MyPlugin", options);
   return {
     name: "my-example", // 名称用于警告和错误展示
     config: () => ({
@@ -23,7 +23,7 @@ export default function MyPlugin(options) {
       return null; // 返回null表明是其他id要继续处理
     },
     load(id) {
-      console.log("MyPlugin", id);
+      console.log("load MyPlugin", id);
       if (id === "virtual-module") {
         return 'export default "This is virtual!"'; // 返回"virtual-module"模块源码
       }
