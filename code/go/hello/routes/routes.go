@@ -21,5 +21,7 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	meberRoutes.PUT("/:id", controller.Update)
 	meberRoutes.DELETE("/:id", controller.Delete)
 
+	//r.GET('/db', )
+
 	return r
 }

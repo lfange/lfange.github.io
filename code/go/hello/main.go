@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/spf13/viper"
 	"lfange.com/hello/common"
 	"lfange.com/hello/config"
 	"lfange.com/hello/routes"
@@ -31,13 +29,7 @@ func InitGin() {
 
 func InitConfig() {
 	config.InitLogger()
-	viper.SetConfigName("application")
-	viper.SetConfigType("yml")
-	viper.AddConfigPath("./config/")
-	err := viper.ReadInConfig()
-	if err != nil {
-		fmt.Println("viper InitConfig errr" + err.Error())
-	}
-	fmt.Println("viper InitConfig errr finish")
 
+	// init Viper
+	common.InitViper()
 }

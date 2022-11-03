@@ -58,11 +58,15 @@ func GetUrl(c *gin.Context) {
 	name := c.DefaultQuery("name", "fanye")
 	job := c.Query("job")
 	println("name", name)
+	if job == "" {
+		println("job is null")
+	}
+
 	println("job", job)
 	var mebers []model.Meber
 	//results := db.Where(model.Meber{Name: name}).Find(&model.Meber{})
 	results := db.Where("name = ? and job = ?", name, job).Find(&mebers)
-	response.Success(c, gin.H{"results": results}, "success!!!")
+	response.Success(c, gin.H{"result": results.Value }, "success!!!")
 }
 
 // 获取路径中的参数
