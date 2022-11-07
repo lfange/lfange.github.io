@@ -58,7 +58,7 @@ nohup node index.js &
 如果使用 nohup 命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为 nohup.out 的文件中，除非另外指定了输出文件：
 
 ```javascript
-nohup command > myout.file 2>&1 &
+nohup command >> myout.file 2>&1 &
 ```
 
 使用了`nohup`之后，很多人就这样不管了，其实这样有可能在当前账户非正常退出或者结束的时候，命令还是自己结束了。所以在使用`nohup`命令后台运行命令之后，需要使用`exit`正常退出当前账户，这样才能保证命令一直在后台运行
@@ -71,6 +71,11 @@ nohup command > myout.file 2>&1 &
     查看当前有多少在后台运行的命令。
    `jobs -l` 选项可显示所有任务的 PID，`jobs` 的状态可以是 running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的 shell 环境已知的列表中删除任务的进程标识。
 
-- command>out.file是将command的输出重定向到out.file文件，即输出内容不打印到屏幕上，而是输出到out.file文件中。
-- 2>&1 是将标准出错重定向到标准输出，这里的标准输出已经重定向到了out.file文件，即将标准出错也输出到out.file文件中。最后一个&， 是让该命令在后台执行。
-- 试想2>1代表什么，2与>结合代表错误重定向，而1则代表错误重定向到一个文件1，而不代表标准输出；换成2>&1，&与1结合就代表标准输出了，就变成错误重定向到标准输出.
+[shell 输出重定向](http://www.codebaoku.com/shell/shell-redirect.html)  
+- `command >> out.file`是将command的输出重定向到out.file文件，即输出内容不打印到屏幕上，而是输出到out.file文件中。
+- 标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
+- 标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。
+- 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
+
+- 2>&1 是将标准出和错误输出合并，这里是重定向到了out.file文件，即将标准出错也输出到out.file文件中。最后一个&， 是让该命令在后台执行。
+
