@@ -3,7 +3,7 @@
 set -e
 
 # 打包
-npm run build
+npm run docs:build
 
 # 进入目标文件夹
 cd dist
