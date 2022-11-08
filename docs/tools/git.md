@@ -185,6 +185,42 @@ git push origin new_branch_name
 git branch --set-upstream-to origin/new_branch_name
 ```
 
+## 查看远程仓库地址
+
+`git remote -v `
+
+### 修改远程仓库地址
+
+1. 直接修改
+   `git remote set-url origin <url>`
+
+2. 先删后加
+
+```javascript
+git remote rm origin
+git remote add origin [url]
+```
+
+3. .git 文件夹下修改
+
+打开 .git 文件夹下的 config 文件， 修改 remote origin url 地址
+
+```javascript
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = http://192.168.200.39:999/wangni/blsjgl.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+```
+
 ## 参考
 
 [git docs](https://git-scm.com/docs)

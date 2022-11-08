@@ -3,7 +3,7 @@ name: docs
 on:
   # 每当 push 到 master 分支时触发部署
   push:
-    branches: [master]
+    # branches: [master]
   # 手动触发部署
   workflow_dispatch:
 
@@ -11,7 +11,7 @@ jobs:
   # 定义名为 docs 的作业, 子键将定义作业的属性
   docs:
     # 将作业配置为在最新版本的 Ubuntu Linux 运行器上运行
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -36,9 +36,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # 如果缓存没有命中，安装依赖   
+      # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-      # 当安装有新依赖包时，注释此行
+        # 当安装有新依赖包时，注释此行
         # if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
