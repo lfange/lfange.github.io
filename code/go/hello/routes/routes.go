@@ -22,6 +22,13 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	meberRoutes.DELETE("/:id", controller.Delete)
 
 	//r.GET('/db', )
+	// dbolue select
+	dbolue := r.Group("/v1")
+	dbolue.GET("/list", controller.DbController)
+
+	craw := r.Group("/v1/")
+	craw.GET("/craw", controller.CrawController)
+
 
 	return r
 }

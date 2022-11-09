@@ -63,7 +63,7 @@ console.log('str:', str)
 
 ## 常见正则应用
 
-1.  \\( 常见手机号处理 手机号格式化 \\)
+1. 常见手机号处理 手机号格式化
 
 - 手机号 3-4-4 分割
 
@@ -89,7 +89,7 @@ const w = phone.replace(phoneReg, '$1-$2-$3')
 > $1--$9 是 RegExp 自带的。代表的是 **分组**，即小括号里面的小正则 捕获到的内容 是用来表示正则表达式子表达式相匹配的文本。
 > 这里的$1 就是代表的就是第一个括号内的内容
 
-2. \\( 提取连续重复的字符 \\)
+2. 提取连续重复的字符
 
 ```javascript
 const collectRepeatStr = (str) => {
@@ -129,7 +129,7 @@ const str2 = str1.replace(/\_\w?/g, (a, b) => {
 console.log('str2', str2) // You Are My SweetHeart
 ```
 
-3. \\( 实现一个 trim 函数 \\)
+3. 实现一个 trim 函数
 
 - 直接去除空格，是我们比较常用的,直接将空字符替换.
   \s 匹配任何空白字符，包括空格、制表符、换页符等等
@@ -148,7 +148,7 @@ const trim = (str) => {
 }
 ```
 
-4. \\( 数字价格千分位分割 \\)
+4. 数字价格千分位分割
 
 - 将 123456789 变成 123,456,789
 
@@ -156,7 +156,7 @@ const trim = (str) => {
 '123456789'.replace(/(?!^)(?=(\d{3})+$)/g, ',') // 123,456,789
 ```
 
-5. \\( 将字符串首字母转化为大写，剩下为小写 \\)
+5. 将字符串首字母转化为大写，剩下为小写
 
 ```javascript
 const capitalize = (string) => {
@@ -168,7 +168,7 @@ const capitalize = (string) => {
 }
 ```
 
-6. \\( 将字符串驼峰化 \\)
+6. 将字符串驼峰化
 
 ```javascript
 const camelCase = (string) => {
@@ -180,7 +180,7 @@ const camelCase = (string) => {
 }
 ```
 
-7. \\( 通过 name 获取 url query 参数 \\)
+7. 通过 name 获取 url query 参数
 
 ```javascript
 const getQueryByName = (name) => {
@@ -191,7 +191,7 @@ const getQueryByName = (name) => {
 }
 ```
 
-8. \\( 是否为中文 \\)
+8. 是否为中文
 
 ```javascript
 const reg = /[\u4e00-\u9fa5]/

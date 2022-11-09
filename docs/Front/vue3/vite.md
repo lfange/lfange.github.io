@@ -42,3 +42,9 @@ export default defineConfig(({ mode }) => {
   }
 })
 ```
+
+
+## Vite 插件开发
+
+[Vite2插件开发指南](https://zhuanlan.zhihu.com/p/364275970)
+[十分钟带你了解vite插件开发](https://juejin.cn/post/7067827608842403848)

@@ -34,7 +34,7 @@ func UController(ctx *gin.Context) {
 		response.Success(ctx,
 			gin.H{
 				"form": form,
-			}, "成功了啊")
+			}, "成功了啊!")
 
 	}
 }
@@ -55,18 +55,29 @@ func UList(ctx *gin.Context) {
 // 获取Get参数
 func GetUrl(c *gin.Context) {
 	db := common.GetDB()
-	name := c.DefaultQuery("name", "fanye")
-	job := c.Query("job")
-	println("name", name)
-	if job == "" {
-		println("job is null")
+	//var name string;
+	//name := c.DefaultQuery("name", "fanye")
+	//var job string;
+	//job := c.Query("job")
+
+	if job, isExist := c.GetQuery("job"); isExist == true {
+		println("jobjob", isExist, job)
+		if job != "" {
+			db = db.Where("job = ?", job)
+		}
 	}
 
-	println("job", job)
+	if name, isExist := c.GetQuery("name"); isExist == true {
+		println("namename", isExist, name == "")
+		if name != "" {
+			db = db.Where("name = ?", name)
+		}
+	}
+
 	var mebers []model.Meber
 	//results := db.Where(model.Meber{Name: name}).Find(&model.Meber{})
-	results := db.Where("name = ? and job = ?", name, job).Find(&mebers)
-	response.Success(c, gin.H{"result": results.Value }, "success!!!")
+	results := db.Find(&mebers)
+	response.Success(c, gin.H{"result": results.Value}, "success!!!")
 }
 
 // 获取路径中的参数
