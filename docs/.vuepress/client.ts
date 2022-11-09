@@ -5,6 +5,7 @@ import 'ant-design-vue/es/button/style/index.css';
 import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/NotFound.vue'
 import Comment from './components/comment.vue'
+import Demo from './components/NpmBadge.vue'
 
 // "@vssue/api-github-v4": "^1.4.7",
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
@@ -23,6 +24,7 @@ export default defineClientConfig({
     //   clientSecret: '9642dae529f47a9649217ffec15dca010dc00786 ', //  刚才保存下来的 Client secrets  只有在使用某些平台时需要
     // })
     app.component("Comment", Comment)
+    app.component("Demo", Demo)
     app.use(Button)
     app.use(Tabs)
     // app.component("Layouts", Layouts)
@@ -32,9 +34,8 @@ export default defineClientConfig({
     // console.log('siteData~', siteData)
   },
   setup() {},
-  rootComponents: [],
   layouts: {
     Layout,
     NotFound,
-  }
+  },
 })

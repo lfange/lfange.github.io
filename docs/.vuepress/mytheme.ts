@@ -5,7 +5,6 @@ import { getDirname, path } from '@vuepress/utils'
 // const __dirname = getDirname(import.meta.url)
 
 const fooTheme = (options) => {
-  console.log('layout', path.resolve(__dirname, 'theme/layouts.vue'))
   // 返回一个主题对象
   return {
     name: 'vuepress-theme-fo1o',
@@ -16,7 +15,7 @@ const fooTheme = (options) => {
     // 设置自定义 dev / build 模板
     // 如果没有指定模板，将会使用 `@vuepress/client` 提供的默认模板
     // templateBuild: path.resolve(__dirname, 'theme/layouts.vue'),
-    // templateDev: path.resolve(__dirname, 'theme/layouts.vue'),
+    templateDev: path.resolve(__dirname, './wrc.html'),
 
     // 使用插件
     plugins: [
