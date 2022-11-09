@@ -7,6 +7,7 @@
     "docs": "vuepress dev docs --temp .temp",
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "deploy": "source deploy.sh $1 2>err.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
