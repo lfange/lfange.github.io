@@ -100,7 +100,8 @@ const sidebar = {
     // }
   ],
   "/serve/": [
-    "/serve/linux.md"
+    "/serve/linux.md",
+    "/serve/frps.md",
   ]
 };
 
