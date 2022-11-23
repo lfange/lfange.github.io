@@ -29,6 +29,8 @@ func CollectRoutes(r *gin.Engine) *gin.Engine {
 	craw := r.Group("/v1/")
 	craw.GET("/craw", controller.CrawController)
 
+	camunda := r.Group("/camunda")
+	camunda.GET("/exteral", controller.ExteralController)
 
 	return r
 }
