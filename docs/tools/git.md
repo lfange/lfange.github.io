@@ -111,6 +111,12 @@ git stash create [<message>]
 git stash store [-m|--message <message>] [-q|--quiet] <commit>
 ```
 
+## git restore
+
+`git restore filename` 撤消工作区的修改返回到最近一次add(缓存区)的版本或者最近一次commit(当前版本库)的版本(内容恢复到没修改之前的状态)
+
+`git restore --staged filename` 将暂存区的文件从暂存区撤出，但不会更改文件的内容。
+
 ## git 同时推送 github 和 gitee
 
 1. 进入工程根目录打开.git 文件夹（需要显示隐藏文件夹）
