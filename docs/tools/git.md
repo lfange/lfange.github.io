@@ -61,6 +61,26 @@ git push -f
 git reset --hard origin/master
 ```
 
+## git tag
+
+1. 在控制台打印出当前仓库的所有标签：git tag
+
+2. 搜索符合模式的标签：git tag -l 'v0.0.*'
+
+3. 创建附注标签：git tag -a v0.0.1 -m "v0.0.1发布",  annotate
+
+4. 删除标签：git tag -d v0.0.1
+
+5. 查看标签的版本信息：git show v0.0.1
+
+6. 指向打v0.0.2标签时的代码状态：git checkout v0.0.2
+
+7. 将v0.0.1标签提交到git服务器：git push origin v0.0.1
+
+8. 将本地所有标签一次性提交到git服务器：git push origin –tags
+9. 以下命令就可以取得该 tag 对应的代码了： git checkout tag_name 
+10. 如果要在 tag 代码的基础上做修改，你需要一个分支，这样会从 tag 创建一个分支，然后就和普通的 git 操作一样了： git checkout -b branch_name tag_name
+
 ## git stash
 
 `git stash` 可以将当前未提交的修改(即，**工作区的修改和暂存区的修改**)先暂时储藏起来，这样工作区干净了后，就可以切换分支下拉一个 fix 分支。在完成线上 bug 的修复工作后又切换回来

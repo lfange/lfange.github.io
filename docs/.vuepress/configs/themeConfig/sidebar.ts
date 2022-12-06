@@ -47,7 +47,8 @@ const sidebar = {
   "/Front/vue3/": [
     Vue3Base("basic"), 
     Vue3Base("change"),
-    Vue3Base("vite")
+    Vue3Base("vite"),
+    Vue3Base("tsx")
   ],
   "/Front/JavaScript/": [
     jsBase("currie"),

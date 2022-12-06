@@ -45,10 +45,11 @@ const navbar = [
         text: "浏览器",
         link: "/Front/browser/README.md",
       },
+      '/Front/errlog.md',
       {
         text: "性能优化",
         link: "/Front/performance/README.md",
-      },
+      }
     ],
   },
   {
