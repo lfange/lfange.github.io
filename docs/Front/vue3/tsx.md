@@ -16,3 +16,6 @@ jsx语法中， v-if 和v-else 都不能使用，一般我们使用 三目运算
 To see the world in a grain of sand, a heaven in a wild flower,
 hold infinity in the palm of your hand and eternity in an hour
 双手握无限，刹那是永恒
+
+
+push cant`t be assumed due to unexpected token lsit
