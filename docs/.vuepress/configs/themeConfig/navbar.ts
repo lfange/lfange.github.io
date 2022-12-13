@@ -4,6 +4,7 @@ const navbar = [
     text: "算法",
     link: "/algorithms/",
   },
+  '/interview/READMD.md',
   {
     text: "计算机",
     link: "/computer/",
@@ -57,7 +58,7 @@ const navbar = [
     link: "/backend/",
     children: ["/backend/Golang/README.md"],
   },
-  { text: "服务", link: "/serve/", children: [ "/serve/linux.md"] },
+  { text: "服务", link: "/serve/", children: [ "/serve/linux.md", "/serve/ngnix.md", "/serve/frps.md"] },
   {
     text: "web3",
     link: "/web3/",

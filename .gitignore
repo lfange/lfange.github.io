@@ -4,4 +4,4 @@ node_modules/
 .temp
 .cache
 .vscode/
-/dist/
+dist/*
