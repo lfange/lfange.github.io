@@ -79,3 +79,163 @@ nohup command >> myout.file 2>&1 &
 
 - 2>&1 是将标准出和错误输出合并，这里是重定向到了out.file文件，即将标准出错也输出到out.file文件中。最后一个&， 是让该命令在后台执行。
 
+
+## 传送文件
+
+### scp
+
+本地和服务器之间用 [`scp`](https://www.runoob.com/linux/linux-comm-scp.html) 命令 相互传送文件， `secure copy`
+
+```javascript
+usage: scp [-346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+           [-l limit] [-o ssh_option] [-P port] [-S program] source ... target
+```
+
+1. 本地向服务器
+
+```javascript
+scp local_file remote_username@remote_ip:remote_folder 
+// 或者 
+scp local_file remote_username@remote_ip:remote_file 
+// 或者 
+scp local_file remote_ip:remote_folder 
+// 或者 
+scp local_file remote_ip:remote_file 
+```
+
+2. 从服务器获取
+
+```javascript
+scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3 
+scp -r www.runoob.com:/home/root/others/ /home/space/music/
+```
+
+### xshell软件里的xftp程序
+
+[xshell](https://www.xshell.com/zh/xshell/) 这个软件很好，强烈推荐哦！！！
+
+里面有个xftp小插件，可以支持文件在笔记本和服务器互传，这个小插件需要单独在网上下载，直接百度搜xftp，很方便。
+
+
+### rcp
+
+目标主机需要事先打开rcp功能，并设置好rcp的权限：把源主机加入到可信任主机列表中，否则无法在源主机上使用rcp远程复制文件到目标主机
+
+
+### wget
+
+wget [参数] ftp://<目标机器ip或主机名>/<文件的绝对路径>   #proftpd格式 
+
+```javascript
+wget ftp://remote_ip//home/work/source.txt  #从192.168.0.10上拷贝文件夹source.txt
+```
+
+## Linux设置开机启动
+
+### 添加命令
+
+编辑文件 `/etc/rc.local`
+```bash
+vim /etc/rc.local
+```
+
+在文件末尾加上你开机需要执行的命令即可（写绝对路径，添加到系统环境变量的除外），如：
+
+```bash
+nohup /usr/local/srs2/objs/srs -c /usr/local/srs2/conf/z.conf>/usr/local/srs2/log.txt &
+```
+
+### 添加Shell脚本
+
+将写好的脚本（.sh文件）放到目录 /etc/profile.d/ 下，系统启动后就会自动执行该目录下的所有shell脚本。
+
+### 添加服务
+
+新建`/etc/init.d/demo.sh` 文件 
+
+```bash
+#!/bin/sh
+# chkconfig: 2345 85 15
+# description:auto_run
+
+#程序根位置
+MY_ROOT=/usr/local/srs2/
+
+#运行程序位置
+MY_PATH="${MY_ROOT}objs/srs" 
+
+#LOG位置
+LOG_PATH="$MY_ROOT"log.txt
+
+#开始方法
+start() {
+    cd $MY_ROOT
+    nohup $MY_PATH -c conf/z.conf>$LOG_PATH &
+    echo "$MY_PATH start success."
+}
+
+#结束方法
+stop() {
+    kill -9 `ps -ef|grep $MY_PATH|grep -v grep|grep -v stop|awk '{print $2}'`
+    echo "$MY_PATH stop success."
+}
+
+case "$1" in
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+restart)
+    stop
+    start
+    ;;
+*)
+    echo "Userage: $0 {start|stop|restart}"
+    exit 1
+esac
+```
+
+1. 添加执行权限
+给sh文件和jar可执行权限
+
+```bash
+chmod +x /etc/init.d/srs.sh
+```
+
+2. 设置开机启动  
+   首先，添加为系统服务
+
+   ```bash
+   chkconfig --add srs.sh
+   ```
+   开机自启动
+
+   ```bash
+   chkconfig srs.sh on
+   ```
+
+   查看
+
+   ```bash
+   chkconfig --list
+   ```
+
+   启动
+
+   ```bash
+   service srs.sh start
+   ```
+
+   停用
+
+   ```bash
+   service srs.sh stop
+   ```
+
+   查看启动情况
+
+   ```bash
+   lsof -i:1935
+   ```

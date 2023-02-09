@@ -20,7 +20,7 @@ git reset HEAD <路径/文件名>
 
 git stash #把所有没有提交的修改暂存到 stash 里面。可用 git stash pop 恢复
 
-### 取消暂存区修改
+## 取消暂存区修改
 
 `git reset HEAD` 如果后面什么都不跟的话 就是上一次 add 里面的全部撤销了, 即取消暂存区的到工作区
 
@@ -60,6 +60,26 @@ git push -f
 ```javascript
 git reset --hard origin/master
 ```
+
+## git tag
+
+1. 在控制台打印出当前仓库的所有标签：git tag, 查看远程服务器标签 git ls-remote --tags
+
+2. 搜索符合模式的标签：git tag -l 'v0.0.\*'
+
+3. 创建附注标签：git tag -a v0.0.1 -m "v0.0.1 发布", annotate
+
+4. 删除标签：git tag -d v0.0.1
+
+5. 查看标签的版本信息：git show v0.0.1
+
+6. 指向打 v0.0.2 标签时的代码状态：git checkout v0.0.2
+
+7. 将 v0.0.1 标签提交到 git 服务器：git push origin v0.0.1
+
+8. 将本地所有标签一次性提交到 git 服务器：git push origin –tags
+9. 以下命令就可以取得该 tag 对应的代码了： git checkout tag_name
+10. 如果要在 tag 代码的基础上做修改，你需要一个分支，这样会从 tag 创建一个分支，然后就和普通的 git 操作一样了： git checkout -b branch_name tag_name
 
 ## git stash
 
@@ -113,7 +133,7 @@ git stash store [-m|--message <message>] [-q|--quiet] <commit>
 
 ## git restore
 
-`git restore filename` 撤消工作区的修改返回到最近一次add(缓存区)的版本或者最近一次commit(当前版本库)的版本(内容恢复到没修改之前的状态)
+`git restore filename` 撤消工作区的修改返回到最近一次 add(缓存区)的版本或者最近一次 commit(当前版本库)的版本(内容恢复到没修改之前的状态)
 
 `git restore --staged filename` 将暂存区的文件从暂存区撤出，但不会更改文件的内容。
 
@@ -227,6 +247,27 @@ git remote add origin [url]
 	merge = refs/heads/master
 ```
 
+## 合并 commit
+
+- 先从版本库回退内容到暂存区，再重新提交工作区的内容
+
+   使用 `git reset --soft` 回退版本库和暂存区的版本，同时保留工作区的变动，之后再重新提交工作区的内容就好了
+
+   合并 commit 之前，先拉取代码，保证本地是最新的，因为合并后要执行 `git push --force`操作，在 reset 后，本地索引和服务器已经不一致，所以要强制执行 git push
+
+   如果 push 失败，出现 Reject，则需要开启分支强制合入的选项，取消分支保护。
+
+   **Settings -> Repository -> Protected Branches -> Protected branch （找到分支） -> Unprotect**
+
+- git rebase
+
+	1. git log 查看分支
+	2. git rebase -i HEAD~n
+		使用 git rebase -i HEAD~5 压缩5个commit为1个，或者git rebase -i 51efaef517abdbf674478de6073c12239d78a56a （第一个commit的id）
+		- pick：使用commit。
+		- reword：使用commit，修改commit信息。
+		- squash：使用commit，将commit信息合入上一个commit。
+		- fixup：使用commit，丢弃commit信息。
 ## 参考
 
 [git docs](https://git-scm.com/docs)
