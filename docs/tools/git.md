@@ -20,7 +20,7 @@ git reset HEAD <路径/文件名>
 
 git stash #把所有没有提交的修改暂存到 stash 里面。可用 git stash pop 恢复
 
-### 取消暂存区修改
+## 取消暂存区修改
 
 `git reset HEAD` 如果后面什么都不跟的话 就是上一次 add 里面的全部撤销了, 即取消暂存区的到工作区
 
