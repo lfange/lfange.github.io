@@ -1,3 +1,12 @@
+<!--
+ * @Author: fange 653398363@qq.com
+ * @Date: 2023-02-09 14:18:02
+ * @LastEditors: fange 653398363@qq.com
+ * @LastEditTime: 2023-02-09 17:19:56
+ * @FilePath: \lfange.github.io\docs\interview\READMD.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+
 # Interview
 
 ## The Interviewer Series
@@ -13,68 +22,60 @@
 - 如何解析指令? 模板变量? html 标签
 - 用过 vue 的 render 吗? render 和 template 有什么关系
 
+## code
 
-## code 
 - 实现一个节流函数? 如果想要最后一次必须执行的话怎么实现?
 - 实现一个批量请求函数, 能够限制并发量?
 
+### 数组转树结构
+
 <details>
-<summary>数组转树结构</summary>
+<summary>
+  
+</summary>
 
 ```javascript
-  const arr = [{
-          id: 2,
-          name: '部门B',
-          parentId: 0
-      },
-      {
-          id: 3,
-          name: '部门C',
-          parentId: 1
-      },
-      {
-          id: 1,
-          name: '部门A',
-          parentId: 2
-      },
-      {
-          id: 4,
-          name: '部门D',
-          parentId: 1
-      },
-      {
-          id: 5,
-          name: '部门E',
-          parentId: 2
-      },
-      {
-          id: 6,
-          name: '部门F',
-          parentId: 3
-      },
-      {
-          id: 7,
-          name: '部门G',
-          parentId: 2
-      },
-      {
-          id: 8,
-          name: '部门H',
-          parentId: 4
-      }
-  ]
-  ```
+const arr = [
+  { id: 2, name: '部门B', parentId: 0 },
+  { id: 3, name: '部门C', parentId: 1 },
+  { id: 1, name: '部门A', parentId: 2 },
+  { id: 4, name: '部门D', parentId: 1 },
+  { id: 5, name: '部门E', parentId: 2 },
+  { id: 6, name: '部门F', parentId: 3 },
+  { id: 7, name: '部门G', parentId: 2 },
+  { id: 8, name: '部门H', parentId: 4 },
+]
+```
+
+```javascript
+// 方法一
+function getChildren(arr, id) {
+  const res = []
+  for (const item of arr) {
+    if (item.parentId === id) {
+      // 找到当前id的子元素
+      // 插入子元素，每个子元素的children通过回调生成
+      res.push({
+        ...item,
+        children: getChildren(arr, item.id),
+      })
+    }
+  }
+  return res
+}
+```
+
 </details>
 
 <details>
 <summary>去除字符串中出现次数最少的字符，不改变原字符串的顺序。</summary>
 
-  ```javascript
-  “ababac” —— “ababa”
-  “aaabbbcceeff” —— “aaabbb”
-  ```
-</details>
+```javascript
+“ababac” —— “ababa”
+“aaabbbcceeff” —— “aaabbb”
+```
 
+</details>
 
 <details>
 <summary>写出一个函数trans，将数字转换成汉语的输出，输入为不超过10000亿的数字。</summary>

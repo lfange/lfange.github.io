@@ -2,7 +2,7 @@
  * @Author: fange 653398363@qq.com
  * @Date: 2023-02-07 09:53:15
  * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-09 09:01:15
+ * @LastEditTime: 2023-02-09 16:32:49
  * @FilePath: \lfange.github.io\code\test.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,9 +10,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
 </head>
 
@@ -20,9 +20,96 @@
   <script>
     function depClone(source) {
       if (source instanceof Object === false) return source
-
-
     }
+
+    const arr = [{
+        id: 2,
+        name: '部门B',
+        parentId: 0
+      },
+      {
+        id: 3,
+        name: '部门C',
+        parentId: 1
+      },
+      {
+        id: 1,
+        name: '部门A',
+        parentId: 2
+      },
+      {
+        id: 4,
+        name: '部门D',
+        parentId: 1
+      },
+      {
+        id: 5,
+        name: '部门E',
+        parentId: 2
+      },
+      {
+        id: 6,
+        name: '部门F',
+        parentId: 3
+      },
+      {
+        id: 7,
+        name: '部门G',
+        parentId: 2
+      },
+      {
+        id: 8,
+        name: '部门H',
+        parentId: 4
+      }
+    ]
+
+    function getChildren(arr, id) {
+      const res = [];
+      for (const item of arr) {
+        if (item.parentId === id) { // 找到当前id的子元素
+          // 插入子元素，每个子元素的children通过回调生成
+          res.push({
+            ...item,
+            children: getChildren(arr, item.id)
+          });
+        }
+      }
+      return res;
+    }
+
+    function toTree(data) {
+      // 删除 所有 children,以防止多次调用
+      data.forEach(function (item) {
+        delete item.children;
+      });
+      // 将数据存储为 以 id 为 KEY 的 map 索引数据列
+      var map = {};
+      data.forEach(function (item) {
+        item.label = item.DWJC;
+        map[item.DWDM] = item;
+      });
+      var val = [];
+      data.forEach(function (item) {
+        // 以当前遍历项，的pid,去map对象中找到索引的id
+        var parent = map[item.SJDWBM];
+        // 好绕啊，如果找到索引，那么说明此项不在顶级当中,那么需要把此项添加到，他对应的父级中
+        if (parent) {
+          (parent.children || (parent.children = [])).push(item);
+        } else {
+          //如果没有在map中找到对应的索引ID,那么直接把 当前的item添加到 val结果集中，作为顶级
+          val.push(item);
+        }
+      });
+      if (val.length > 1) {
+        for (var i = 1; i < val.length; i++) {
+          val[0].children.push(val[i]);
+        }
+        val.splice(1);
+      }
+      return val;
+    }
+    console.log('getChildren', getChildren(arr, 0));
 
     var a = 1
 
@@ -30,11 +117,11 @@
       a = 2
       return function () {
         a++
-        console.log('aaa', a);
+        console.log('aaa', a)
       }
     }
-    console.log('fff', aaa()());
-    console.log('bbb', aaa()());
+    console.log('fff', aaa()())
+    console.log('bbb', aaa()())
   </script>
 </body>
 

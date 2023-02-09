@@ -104,6 +104,9 @@ const sidebar = {
   "/serve/": [
     "/serve/linux.md",
     "/serve/frps.md",
+  ],
+  "/interview/": [
+    "/interview/READMD.md"
   ]
 };
 
