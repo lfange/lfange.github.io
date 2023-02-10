@@ -2,7 +2,7 @@
  * @Author: fange 653398363@qq.com
  * @Date: 2023-02-09 14:18:02
  * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-09 17:19:56
+ * @LastEditTime: 2023-02-10 09:30:07
  * @FilePath: \lfange.github.io\docs\interview\READMD.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -36,23 +36,27 @@
 
 ```javascript
 const arr = [
-  { id: 2, name: '部门B', parentId: 0 },
-  { id: 3, name: '部门C', parentId: 1 },
-  { id: 1, name: '部门A', parentId: 2 },
-  { id: 4, name: '部门D', parentId: 1 },
-  { id: 5, name: '部门E', parentId: 2 },
-  { id: 6, name: '部门F', parentId: 3 },
-  { id: 7, name: '部门G', parentId: 2 },
-  { id: 8, name: '部门H', parentId: 4 },
+  { id: 2, name: '部门B', pid: 0 },
+  { id: 3, name: '部门C', pid: 1 },
+  { id: 1, name: '部门A', pid: 2 },
+  { id: 4, name: '部门D', pid: 1 },
+  { id: 5, name: '部门E', pid: 2 },
+  { id: 6, name: '部门F', pid: 3 },
+  { id: 7, name: '部门G', pid: 2 },
+  { id: 8, name: '部门H', pid: 4 },
 ]
 ```
 
 ```javascript
 // 方法一
+/**
+ * @param {arr: array 原数组数组, id: number 父节点id}
+ * @return {children: array 子数组}
+ */
 function getChildren(arr, id) {
   const res = []
   for (const item of arr) {
-    if (item.parentId === id) {
+    if (item.pid === id) {
       // 找到当前id的子元素
       // 插入子元素，每个子元素的children通过回调生成
       res.push({
@@ -63,6 +67,8 @@ function getChildren(arr, id) {
   }
   return res
 }
+
+// 方法二
 ```
 
 </details>

@@ -106,7 +106,8 @@ const sidebar = {
     "/serve/frps.md",
   ],
   "/interview/": [
-    "/interview/READMD.md"
+    "/interview/READMD.md",
+    "/interview/task.md",
   ]
 };
 
