@@ -2,7 +2,7 @@
  * @Author: fange 653398363@qq.com
  * @Date: 2023-02-09 14:18:02
  * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-10 09:30:07
+ * @LastEditTime: 2023-02-14 17:23:58
  * @FilePath: \lfange.github.io\docs\interview\READMD.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -11,7 +11,12 @@
 
 ## The Interviewer Series
 
-- 闭包是什么? 闭包的用途?
+### 闭包
+
+`闭包（closure）`是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合。换而言之，闭包让开发者可以从内部函数访问外部函数的作用域。在 JavaScript 中，闭包会随着函数的创建而被同时创建.
+
+`闭包`允许将函数与其所操作的某些数据（环境）关联起来
+
 - 简述事件循环原理
 - 虚拟 dom 是什么? 原理? 优缺点?
 - vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
