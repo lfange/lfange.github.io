@@ -2,8 +2,8 @@
  * @Author: fange 653398363@qq.com
  * @Date: 2023-02-10 10:01:18
  * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-10 10:03:14
- * @FilePath: Do not edit
+ * @LastEditTime: 2023-02-16 16:40:27
+ * @FilePath: \lfange.github.io\docs\Front\JavaScript\currie.md
  * @Description: lfange`s personal blog!!! Good memory than rotten written!!!
  *
  * Copyright (c) 2023 by lfange, All Rights Reserved.
@@ -96,6 +96,8 @@ function aaa() {
     console.log('aaa', a)
   }
 }
-console.log('fff', aaa()()) // 3
-console.log('bbb', aaa()()) // 3
+const a1 = aaa()()
+const b1 = aaa()()
+console.log('fff', a1) // 3
+console.log('bbb', b1) // 3
 ```
