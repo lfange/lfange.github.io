@@ -85,4 +85,5 @@ JavaScript 的任务分为 `同步` 和 `异步`
 
 ## refenrence
 
+[How browsers work](https://web.dev/howbrowserswork/)
 [browsers_work](https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work)
