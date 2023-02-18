@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">{{a}}</div>
+    <script src='./dist/vue.js'></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                a: 1
+            },
+            methods:{
+                aa(){
+                    console.log(2000)
+                }
+            },
+            //watch 基本使用方式
+            //1 属性 ：方法(函数)
+            //2 属性 ：数组
+            //3 属性 ：对象
+            //4 属性 ：字符串
+            watch: {
+                //   'a'(newValue,oldValue){
+                //       console.log(newValue)
+                //   }
+                // "a": [
+                //     (newValue, oldValue) => {
+                //         console.log(newValue)
+                //     },
+                //     (newValue, oldValue) => {
+                //         console.log(newValue)
+                //     },
+                // ]
+                a:{
+                    handler(){
+                        console.log('xxx')
+                    },
+                   immediate:true
+                    
+                }
+                // a:'aa'
+            }
+        })
+        vm.a = 100
+        console.log(vm)
+    </script>
+</body>
+
+</html>
+
+<!--  
+   1： 安装  vue
+   2:  watch 4种基本使用
+   3: 在自己vue 的初始化中进行格式化
+   4: watch 最终实现方式  $watch 
+ -->
