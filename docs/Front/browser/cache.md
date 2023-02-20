@@ -11,24 +11,25 @@ localStorage,sessionStorage,cookie 等等。这些功能主要用于缓存一些
 [Cookie](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies) 是服务器发送到用户浏览器并保存在本地的一小块数据。浏览器会存储 cookie 并在下次向同一服务器再发起请求时携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器——如保持用户的登录状态。Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。
 
 Cookie 主要用于以下三个方面
-  会话状态管理
-    如用户登录状态、购物车、游戏分数或其它需要记录的信息
+会话状态管理
+如用户登录状态、购物车、游戏分数或其它需要记录的信息
 
-  个性化设置
-    如用户自定义设置、主题和其他设置
+个性化设置
+如用户自定义设置、主题和其他设置
 
-  浏览器行为跟踪
-    如跟踪分析用户行为等
+浏览器行为跟踪
+如跟踪分析用户行为等
 
 浏览器的每次请求都会携带 Cookie 数据，会带来额外的性能开销（尤其是在移动环境下, 新的浏览器 API 已经允许开发者直接将数据存储到本地，如使用 Web storage API（localStorage 和 sessionStorage）或 IndexedDB 。
 
 [Document.cookie API](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie) 无法访问带有 HttpOnly 属性的 cookie
 
-## Web Storage API 
+## Web Storage API
 
 [Web Storage API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API) 提供了一种非常简单的语法，用于存储和检索较小的、由名称和相应值组成的数据项。当您只需要存储一些简单的数据时，比如用户的名字，用户是否登录，屏幕背景使用了什么颜色等等，这是非常有用的
 
 ### sessionStorage
+
 `sessionStorage` 为每一个给定的源（given origin）维持一个独立的存储区域，该存储区域在页面会话期间可用（即只要浏览器处于打开状态，包括页面重新加载和恢复）。
 
 - 页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。
@@ -39,18 +40,19 @@ Cookie 主要用于以下三个方面
 ### localStorage
 
 `localStorage` 同样的功能，但是在浏览器关闭，然后重新打开后数据仍然存在
+
 ## IndexedDB API
 
 [IndexedDB](https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API)是一种底层 API，用于在客户端存储大量的结构化数据（也包括文件/二进制大型对象（blobs））
 IndexedDB 可以在 Web Worker 中可用，IndexedDB 是一个事务型数据库系统，类似于基于 SQL 的 RDBMS。然而，不像 RDBMS 使用固定列表，IndexedDB 是一个基于 JavaScript 的面向对象数据库。IndexedDB 允许您存储和检索用键索引的对象；可以存储结构化克隆算法支持的任何对象。您只需要指定数据库模式，打开与数据库的连接，然后检索和更新一系列事务。
 
 ```javascript
-let db;
+let db
 function openDB() {
- const DBOpenRequest = window.indexedDB.open('toDoList');
- DBOpenRequest.onsuccess = (e) => {
-   db = DBOpenRequest.result;
- }
+  const DBOpenRequest = window.indexedDB.open('toDoList')
+  DBOpenRequest.onsuccess = (e) => {
+    db = DBOpenRequest.result
+  }
 }
 ```
 
@@ -78,7 +80,7 @@ web 缓存主要指的是两部分：浏览器缓存和 http 缓存。
 
 强制缓存，我们简称强缓存。
 
-从强制缓存的角度触发，如果浏览器判断请求的目标资源有效命中强缓存，如果命中，则可以直接从内存中读取目标资源，无需与服务器做任何通讯
+从强制缓存的角度触发，如果**浏览器判断请求**的目标资源有效命中强缓存，如果命中，则可以直接从内存中读取目标资源，无需与服务器做任何通讯
 
 #### Expires
 
@@ -183,6 +185,78 @@ res.setHeader('Cache-Control', 'no-cache')
 
 res.end(data)
 ```
+
+#### last-modifed 的不足
+
+通过 last-modified 所实现的协商缓存能够满足大部分的使用场景，但也存在两个比较明显的缺陷:
+● 首先它只是根据资源最后的修改时间戳进行判断的，虽然请求的文件资源进行了编辑，但内容并没有发生任何变化，时间戳也会更新，从而导致协商缓存时关于有效性的判断验证为失效，需要重新进行完整的资源请求。这无疑会造成网络带宽资源的浪费，以及延长用户获取到目标资源的时间。
+● 其次标识文件资源修改的时间戳单位是秒，如果文件修改的速度非常快，假设在几百毫秒内完成，那么上述通过时间戳的方式来验证缓存的有效性，是无法识别出该次文件资源的更新的。
+其实造成上述两种缺陷的原因相同，就是服务器无法仅依据资源修改的时间戳来识别出真正的更新，进而导致重新发起了请求，该重新请求却使用了缓存的 Bug 场景。
+
+#### 基于 ETag 的协商缓存
+
+为了弥补通过时间戳判断的不足，从 HTTP1.1 规范开始新增了一个 ETag 的头信息，即实体标签(EntityTag).
+
+其内容主要是服务器为不同资源进行哈希运算所生成的一个字符串，该字符串类似于文件指纹，只要文件 last 内容编码存在差异，对应的 ETag 标签值就会不同，因此可以使用 ETag 对文件资源进行更精准的变化感知。下面我们来看一个使用 ETag 进行协商缓存图片资源的示例，首次请求后的部分响应头关键信息如下:
+
+```javascript
+//响应头
+Content-Type: image/jpeg
+ETag:"c39046a19cd8354384c2de0c32ce7ca3"
+Last-Modified: Fri, 12 Jul 2019 06:45:17 GMT
+Content-Length: 9887
+```
+
+```javascript
+const data - fs.readFilesync( './img/04.jpg ')
+// 基于文件内容生成一个唯一的密码戳
+const ifNoneMatch - req.headers[ 'if-none-match ']
+if (ifNoneMatch etagContent) {
+  res.statusCode - 304
+  res.end()
+  return
+}
+
+//告诉客户端要进行协商缓存
+res.setHeader( 'Cache-Control', 'no-cache ' )
+//把该资源的内容密码戳发给客户端
+res.setHeader( 'etag ' , etagContent)res.end( data)
+```
+
+### 缓存决策
+
+前面我们较为详细地介绍了浏览器 HTTP 缓存的配置与验证细节，下面思考一下如何应用 HTTP 缓存技术来提升网站的性能。假设在不考虑客户端缓存容量与服务器算力的理想情况下，我们当然希望客户端浏览器上的缓存触发率尽可能高，留存时间尽可能长，同时还要 ETag 实现当资源更新时进行高效的重新验证。
+但实际情况往往是容量与算力都有限，因此就需要制定合适的缓存策略，来利用有限的资源达到最优的性能效果。明确能力的边界，力求在边界内做到最好。
+
+#### 缓存决策示例
+
+在使用缓存技术优化性能体验的过程中，有一个问题是不可逾越的:我们既希望缓存能在客户端尽可能久的保存，又希望它能在资源发生修改时进行及时更新。
+这是两个互斥的优化诉求，使用强制缓存并定义足够长的过期时间就能让缓存在客户端长期驻留，但由于强制缓存的优先级高于协商缓存，所以很难进行及时更新;若使用协商缓存，虽然能够保证及时更新，但频繁与服务器进行协商验证的响应速度肯定不及使用强制缓存快。那么如何兼顾二者的优势呢?
+
+我们可以将一个网站所需要的资源按照不同类型去拆解，为不同类型的资源制定相应的缓存策略，以下面的 HTML 文件资源为例:
+
+```html
+<! DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=""UTF-8"> <meta http-equiv=""x-UA-Compatible"
+    content="TE=edge">
+    <meta name="viewport" content="width=device-width， initial-scale=1.0" />
+    <title>HTTP缓存策略</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="photo.jpg" alt="poto" />
+    <script src="script.js "></script>
+  </body>
+</html>
+```
+
+该 HTML 文件中包含了一个 JavaScript 文件 script.js、一个样式表文件 style.css 和一个图片文件 photo.jpg，若要展示出该 HTML 中的内容就需要加载出其包含的所有外链文件。据此我们可针对它们进行如下设置。
+
+首先 HTML 在这里属于包含其他文件的主文件，为保证当其内容发生修改时能及时更新，应当将其设置为协商缓存，即为 cache-control 字段添加 no-cache 属性值;其次是图片文件，因为网站对图片的修改基本都是更换修改，同时考虑到图片文件的数量及大小可能对客户端缓存空间造成不小的开销，所以可采用强制缓存且过期时间不宜过长，故可设置 cache-control 字段值为 max-age=86400。
+
+接下来需要考虑的是样式表文件 style.css，由于其属于文本文件，可能存在内容的不定期修改，又想使用强制缓存来提高重用效率，故可以考虑在样式表文件的命名中增加文件指纹或版本号（比如添加文件指纹后的样式表文件名变为了 style.51ad84f7.css )，这样当发生文件修改后，不同的文件便会有不同的文件指纹，即需要请求的文件 URL 不同了，因此必然会发生对资源的重新请求。同时考虑到网络中浏览器与 CDN 等中间代理的缓存，其过期时间可适当延长到一年，即 cache-control: max-age=31536000。
 
 ## reference
 
