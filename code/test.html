@@ -17,10 +17,6 @@
 
   <body>
     <script>
-      function depClone(source) {
-        if (source instanceof Object === false) return source
-      }
-
       const arr = [
         {
           id: 2,
@@ -64,89 +60,34 @@
         },
       ]
 
-      function getChildren(arr, id) {
-        const res = []
-        arr.map((item) => {
-          if (item.pid === id) {
-            res.push({
-              ...item,
-              children: getChildren(arr, item.id),
-            })
-          }
-        })
-        return res
-      }
+      console.log('arr)', flat(recrui(arr)))
 
-      const tree = getChildren(arr, 0)
-
-      console.log('getChildren', tree)
-
-      function toArr(data) {
-        let arr = []
-
-        const recle = (ite) => {
-          if (ite.children && ite.children.length) {
-            ite.children.forEach((it) => {
-              recle(it)
-            })
-          }
-          delete ite.children
-          arr.push({
-            ...ite,
-          })
-        }
-        if (data.children.length) {
-          recle(data)
-        }
-
-        console.log('arr', arr)
-      }
-      console.log('toArr', toArr(...tree))
-
-      function fn(obj, res = []) {
+      function flat(obj, res = []) {
         // 默认初始结果数组为[]
         res.push(obj) // 当前元素入栈
         // 若元素包含children，则遍历children并递归调用使每一个子元素入栈
         if (obj.children && obj.children.length) {
           for (const item of obj.children) {
-            fn(item, res)
+            flat(item, res)
           }
         }
         return res
       }
 
-      console.log('fn', fn(...tree))
+      function recrui(data) {
+        const cache = {}
+        data.forEach((it) => {
+          cache[it.id] = it
+        })
 
-      function toTree(data) {
-        // 删除 所有 children,以防止多次调用
-        data.forEach(function (item) {
-          delete item.children
+        const res = []
+        data.forEach((it) => {
+          const parent = cache[it.pid]
+          if (parent) (parent.children || (parent.children = [])).push(it)
+          else res.push(it)
         })
-        // 将数据存储为 以 id 为 KEY 的 map 索引数据列
-        var map = {}
-        data.forEach(function (item) {
-          item.label = item.DWJC
-          map[item.DWDM] = item
-        })
-        var val = []
-        data.forEach(function (item) {
-          // 以当前遍历项，的pid,去map对象中找到索引的id
-          var parent = map[item.SJDWBM]
-          // 好绕啊，如果找到索引，那么说明此项不在顶级当中,那么需要把此项添加到，他对应的父级中
-          if (parent) {
-            ;(parent.children || (parent.children = [])).push(item)
-          } else {
-            //如果没有在map中找到对应的索引ID,那么直接把 当前的item添加到 val结果集中，作为顶级
-            val.push(item)
-          }
-        })
-        if (val.length > 1) {
-          for (var i = 1; i < val.length; i++) {
-            val[0].children.push(val[i])
-          }
-          val.splice(1)
-        }
-        return val
+
+        return res[0]
       }
     </script>
   </body>
