@@ -205,48 +205,76 @@ map: 只能遍历数组，不能中断，返回值是修改后的数组。
 
 ## 事件模型
 
-### DOM0 级模型
-
-这种模型不会传播，所以没有事件流的概念，但是现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过 js 属性来指定监听函数。这种方式是所有浏览器都兼容的。
-
-### IE 事件模型
-
-在该事件模型中，一次事件共有两个过程，事件处理阶段，和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件。然后是事件冒泡阶段，冒泡指的是事件从目标元素冒泡到 document，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。这种模型通过 attachEvent 来添加监听函数，可以添加多个监听函数，会按顺序依次执行。
-
-### DOM2 级事件模型
-
-在该事件模型中，一次事件共有三个过程，第一个过程是事件捕获阶段。捕获指的是事件从 document 一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。后面两个阶段和 IE 事件模型的两个阶段相同。这种事件模型，事件绑定的函数是 addEventListener，其中第三个参数可以指定事件是否在捕获阶段执行。
-
-### 事件委托
-
-事件委托指的是把一个元素的事件委托到另外一个元素上。一般来讲，会把一个或者一组元素的事件委托到它的父层或者更外层元素上，真正绑定事件的是外层元素，当事件响应到需要绑定的元素上时，会通过事件冒泡机制从而触发它的外层元素的绑定事件上，然后在外层元素上去执行函数。
-事件传播（三个阶段）
-
-1. 捕获阶段–事件从 window 开始，然后向下到每个元素，直到到达目标元素事件或 event.target。
-2. 目标阶段–事件已达到目标元素。
-3. 冒泡阶段–事件从目标元素冒泡，然后上升到每个元素，直到到达 window。
-
-### 事件捕获
-
-当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在捕获阶段，事件从 window 开始，一直到触发事件的元素。window----> document----> html----> body ---->目标元素
-
 ### 事件冒泡
 
 事件冒泡就是在一个对象上绑定事件，如果定义了事件的处理程序，就会调用处理程序。相反没有定义的话，这个事件会向对象的父级传播，直到事件被执行，最后到达最外层，document 对象上。
 
 事件冒泡刚好与事件捕获相反，当前元素---->body ----> html---->document ---->window。当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。
 
-### 阻止事件冒泡
+#### 阻止事件冒泡
 
-w3c 的方法是 e.stopPropagation()，IE 则是使用 e.cancelBubble = true。
+w3c 的方法是 `e.stopPropagation()`，IE 则是使用 `e.cancelBubble = true`。
 
 ```javascript
 window.event ? (window.event.cancelBubble = true) : e.stopPropagation()
 ```
 
-- 虚拟 dom 是什么? 原理? 优缺点?
-- vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
-- vue 和 react 里的 key 的作用是什么? 为什么不能用 Index？用了会怎样? 如果不加 key 会怎样?
+### 事件捕获
+
+事件捕获和事件冒泡是一个完全相反的过程，即事件从外一直向里传递。
+
+- 浏览器先检查外层的祖先 html，如果在捕获阶段注册了一个 onclick 事件，就运行。
+- 向里层元素传递，执行相同的操作，直到实际点击的元素上。
+
+现在的浏览器默认情况下，所有的事件处理程序都在冒泡阶段注册，所以点击子元素时，会执行子元素上的事件，向上冒泡，触发父元素上的事件。
+`addEventListener ` 函数的第三个参数是个布尔值。
+
+- 当布尔值是  false  时（默认值），表示向上冒泡触发事件；
+- 当布尔值是  true  时，表示向下捕获触发事件；
+
+### 事件对象中的方法
+
+- `stopPropagation()` 阻止事件冒泡，设置之后，点击该元素时父元素绑定的事件就不会再触发；
+- `preventDefault()` 阻止默认事件发生；
+- `stopImmediatePropagation()` 用来阻止监听同一事件的其他事件监听器被调用以及阻止事件冒泡
+
+`currentTarget` 指的是事件绑定元素， `target` 指的是事件触发元素，触发可能是它的子元素
+
+## getElementById 和 querySelect
+
+getElement(s)Byxxxx 获取的是**动态集合**，querySelector 获取的是**静态集合**
+
+querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素；
+
+> 注意： querySelector() 方法仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请用 querySelectorAll() 方法替代；
+> 语法： document.querySelector(CSS selectors)；
+> 参数值： String 必须。指定一个或多个匹配元素的 CSS 选择器。使用它们的 id, 类, 类型, 属性, 属性值等来选取元素。
+> 对于多个选择器，使用逗号隔开，返回一个匹配的元素。
+> 返回值: 匹配指定 CSS 选择器的第一个元素。 如果没有找到，返回 null。如果指定了非法选择器则 抛出 SYNTAX_ERR 异常。
+
+```javascript
+    <ul id="box">
+      <li class="a">测试1</li>
+      <li class="a">测试2</li>
+      <li class="a">测试3</li>
+    </ul>
+    <script type="text/javascript">
+      var ul = document.querySelector('ul')
+
+      var list = ul.querySelectorAll('li')
+      for (var i = 0; i < list.length; i++) {
+        ul.appendChild(document.createElement('li'))
+      }
+
+      console.log('list.length：', list.length) //输出的结果仍然是 3，不是此时 li 的数量 6
+      console.dir(document.getElementById('box').length) // 6
+    </script>
+```
+
+虚拟 dom 是什么? 原理? 优缺点?
+vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
+vue 和 react 里的 key 的作用是什么? 为什么不能用 Index？用了会怎样? 如果不加 key 会怎样?
+
 - vue 双向绑定的原理是什么?
 - vue 的 keep-alive 的作用是什么？怎么实现的？如何刷新的?
 - vue 是怎么解析 template 的? template 会变成什么?
