@@ -274,9 +274,8 @@ querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素�
 虚拟 dom 是什么? 原理? 优缺点?
 vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
 vue 和 react 里的 key 的作用是什么? 为什么不能用 Index？用了会怎样? 如果不加 key 会怎样?
-
-- vue 双向绑定的原理是什么?
-- vue 的 keep-alive 的作用是什么？怎么实现的？如何刷新的?
-- vue 是怎么解析 template 的? template 会变成什么?
-- 如何解析指令? 模板变量? html 标签
-- 用过 vue 的 render 吗? render 和 template 有什么关系
+vue 双向绑定的原理是什么?
+vue 的 keep-alive 的作用是什么？怎么实现的？如何刷新的?
+vue 是怎么解析 template 的? template 会变成什么?
+如何解析指令? 模板变量? html 标签
+用过 vue 的 render 吗? render 和 template 有什么关系
