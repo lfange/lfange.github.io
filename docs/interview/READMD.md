@@ -132,6 +132,118 @@ console.log(Person.__proto__ === Function.prototype) // true
 
 Instanceof 可以准确的判断引用数据类型，它的原理是检测构造函数的 prototype 属性是否在某个实例对象的原型链上
 
+### Object.prototype.toString.call()
+
+```javascript
+Object.prototype.toString.call('') // [object String]
+Object.prototype.toString.call(1) // [object Number]
+Object.prototype.toString.call(true) // [object Boolean]
+Object.prototype.toString.call(Symbol()) //[object Symbol]
+Object.prototype.toString.call(undefined) // [object Undefined]
+Object.prototype.toString.call(null) // [object Null]
+Object.prototype.toString.call(new Function()) // [object Function]
+Object.prototype.toString.call(new Date()) // [object Date]
+Object.prototype.toString.call([]) // [object Array]
+Object.prototype.toString.call(new RegExp()) // [object RegExp]
+Object.prototype.toString.call(new Error()) // [object Error]
+Object.prototype.toString.call(document) // [object HTMLDocument]
+Object.prototype.toString.call(window) //[object global] window 是全局对象 global 的引用
+```
+
+## for..in, for...of, forEach, map
+
+### for...in
+
+遍历对象自身的和继承的可枚举的属性, 不能直接获取属性值。可以中断循环。遍历对象键值(key),或者数组下标,**不推荐循环一个数组**
+
+```javascript
+let person = { name: 'fange', age: 18, city: 'chengdu' }
+let text = ''
+for (let i in person) {
+  text += person[i]
+}
+iterator
+// 输出：fange18chengdu
+
+//其次在尝试一些数组
+let arry = [1, 2, 3, 4, 5]
+for (let i in arry) {
+  console.log(arry[i])
+}
+//1 2 3 4 5
+```
+
+### for...of（不能遍历对象）
+
+在可迭代对象（具有 iterator 接口）（Array，Map，Set，String，arguments）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句，不能遍历对象
+
+```javascript
+let arr = ['前端', 'Fange', 'right']
+for (let item of arr) {
+  console.log(item)
+}
+//前端 Fange right
+
+//遍历对象
+let person = { name: 'Fange', age: 18, city: 'chengdu' }
+for (let item of person) {
+  console.log(item)
+}
+// 我们发现它是不可以的 我们可以搭配Object.keys使用
+for (let item of Object.keys(person)) {
+  console.log(person[item])
+}
+```
+
+### forEach
+
+forEach: 只能遍历数组，不能中断，没有返回值(或认为返回值是 undefined)
+
+### map
+
+map: 只能遍历数组，不能中断，返回值是修改后的数组。
+
+## 事件模型
+
+### DOM0 级模型
+
+这种模型不会传播，所以没有事件流的概念，但是现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过 js 属性来指定监听函数。这种方式是所有浏览器都兼容的。
+
+### IE 事件模型
+
+在该事件模型中，一次事件共有两个过程，事件处理阶段，和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件。然后是事件冒泡阶段，冒泡指的是事件从目标元素冒泡到 document，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。这种模型通过 attachEvent 来添加监听函数，可以添加多个监听函数，会按顺序依次执行。
+
+### DOM2 级事件模型
+
+在该事件模型中，一次事件共有三个过程，第一个过程是事件捕获阶段。捕获指的是事件从 document 一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。后面两个阶段和 IE 事件模型的两个阶段相同。这种事件模型，事件绑定的函数是 addEventListener，其中第三个参数可以指定事件是否在捕获阶段执行。
+
+### 事件委托
+
+事件委托指的是把一个元素的事件委托到另外一个元素上。一般来讲，会把一个或者一组元素的事件委托到它的父层或者更外层元素上，真正绑定事件的是外层元素，当事件响应到需要绑定的元素上时，会通过事件冒泡机制从而触发它的外层元素的绑定事件上，然后在外层元素上去执行函数。
+事件传播（三个阶段）
+
+1. 捕获阶段–事件从 window 开始，然后向下到每个元素，直到到达目标元素事件或 event.target。
+2. 目标阶段–事件已达到目标元素。
+3. 冒泡阶段–事件从目标元素冒泡，然后上升到每个元素，直到到达 window。
+
+### 事件捕获
+
+当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在捕获阶段，事件从 window 开始，一直到触发事件的元素。window----> document----> html----> body ---->目标元素
+
+### 事件冒泡
+
+事件冒泡就是在一个对象上绑定事件，如果定义了事件的处理程序，就会调用处理程序。相反没有定义的话，这个事件会向对象的父级传播，直到事件被执行，最后到达最外层，document 对象上。
+
+事件冒泡刚好与事件捕获相反，当前元素---->body ----> html---->document ---->window。当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。
+
+### 阻止事件冒泡
+
+w3c 的方法是 e.stopPropagation()，IE 则是使用 e.cancelBubble = true。
+
+```javascript
+window.event ? (window.event.cancelBubble = true) : e.stopPropagation()
+```
+
 - 虚拟 dom 是什么? 原理? 优缺点?
 - vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
 - vue 和 react 里的 key 的作用是什么? 为什么不能用 Index？用了会怎样? 如果不加 key 会怎样?
