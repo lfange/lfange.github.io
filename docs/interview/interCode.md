@@ -120,7 +120,7 @@ function toLine(data) {
 </details>
 
 <details>
-<summary>写出一个函数trans，将数字转换成汉语的输出，输入为不超过10000亿的数字。</summary>
+<summary>写出一个函数transs，将数字转换成汉语的输出，输入为不超过10000亿的数字。</summary>
 
 - [Gin 官方文档](https://gin-gonic.com/zh-cn/docs/)
 - [Gin 中文文档](https://www.kancloud.cn/shuangdeyu/gin_book/949411)
