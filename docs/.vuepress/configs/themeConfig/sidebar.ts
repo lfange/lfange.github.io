@@ -63,7 +63,10 @@ const sidebar = {
   ],
   '/Front/ts/': [TsBase('README'), TsBase('baseType')],
   '/Front/browser/': ['/Front/browser/README.md', '/Front/browser/cache.md'],
-  '/Front/performance/': ['/Front/performance/README.md'],
+  '/Front/performance/': [
+    '/Front/performance/README.md',
+    '/Front/performance/lighthouse.md',
+  ],
   '/computer/': [
     // {
     //   text: "计算机组成原理",
