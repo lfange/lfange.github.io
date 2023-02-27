@@ -17,112 +17,61 @@
 
   <body>
     <script>
-      let person2 = { name: 'fange', age: 18, city: 'chengdu' }
-      let text = ''
-      for (let i in person2) {
-        if (i === 'age') break
-        console.log('i', i)
-        text += person2[i]
-      }
-
-      // 输出：fange18chengdu
-
-      //其次在尝试一些数组
-      let arry = [{ keys: '1ss' }, { keys: '1ss' }]
-      for (let i of arry) {
-        console.log('arry[i]', i)
-      }
-      //1 2 3 4 5
-
-      // 构造函数（类）
-      function Person(name) {
-        this.name = name
-      }
-      // new了一个实例 （对象）
-      var person = new Person('构造函数')
-      console.log(person) //Person { name: '构造函数' }
-      console.log(Person.prototype) //构造函数（类）的原型对象
-      Person.prototype.count = 18 // 构造函数原型
-      console.log(person.count) // 18
-      console.log('prototype', Person.prototype.constructor === Person) //构造函数（类）的原型对象
-
-      function log() {
-        console.log.apply(console, arguments)
-      }
-
-      log(2222)
-      const arr = [
-        {
-          id: 2,
-          name: '部门B',
-          pid: 0,
-        },
-        {
-          id: 3,
-          name: '部门C',
-          pid: 1,
-        },
-        {
-          id: 1,
-          name: '部门A',
-          pid: 2,
-        },
-        {
-          id: 4,
-          name: '部门D',
-          pid: 1,
-        },
-        {
-          id: 5,
-          name: '部门E',
-          pid: 2,
-        },
-        {
-          id: 6,
-          name: '部门F',
-          pid: 3,
-        },
-        {
-          id: 7,
-          name: '部门G',
-          pid: 2,
-        },
-        {
-          id: 8,
-          name: '部门H',
-          pid: 4,
-        },
-      ]
-
-      console.log('arr)', flat(recrui(arr)))
-
-      function flat(obj, res = []) {
-        // 默认初始结果数组为[]
-        res.push(obj) // 当前元素入栈
-        // 若元素包含children，则遍历children并递归调用使每一个子元素入栈
-        if (obj.children && obj.children.length) {
-          for (const item of obj.children) {
-            flat(item, res)
+      function getC(p = 'google') {
+        let i = 0
+        let j = 0
+        console.log('str', str[0])
+        const next = getNext(p)
+        while (i < str.length && j < p.length) {
+          if (j === 0 || str[i] === p[j]) {
+            i++
+            j++
+          } else {
+            j = 0
           }
+          //   console.log('str', str[i])
         }
-        return res
+        console.log('j ', i, j)
+        console.log(
+          'i - p.length',
+          i - p.length,
+          str.substring([i - p.length], i)
+        )
+        if (j > p.length - 1) {
+          return i - p.length
+        } else {
+          console.log('pppp', next)
+          return 0
+        }
+      }
+      function getNext(p) {
+        const next = []
+        let len = 0
+        // next[0]的情况无法推出，手动初始化一下
+        next[0] = 0
+        // 通过循环推进i的下标
+        for (let i = 0; i < p.length; i++) {
+          // 对比当前公共前后缀的下一个字符
+          // 当len = 0，或者 找到了匹配的公共前后缀的时候，退出循环
+          while (len > 0 && p[i] !== p[len]) {
+            // 进入循环，说明当前的最长公共前后缀的下一个字符不匹配
+            // 就去找较短的最长公共前后缀
+            // 较短公共前后缀必然是较长公共前后缀的公共前后缀
+            // 通过next[next[i - 1] - 1],找到较短为的公共前后缀
+            // len = next[i - 1]
+            len = next[len - 1]
+          }
+
+          // p[i] === p[len]，表示找到了，在len的基础上 + 1就是next[i]的值
+          if (p[i] === p[len]) len++
+          // 如果 p[i] !== p[len]，表示没找到，此时len = 0，next[i] 也等于0
+          next[i] = len
+        }
+
+        return next
       }
 
-      function recrui(data) {
-        const cache = {}
-        data.forEach((it) => {
-          cache[it.id] = it
-        })
-
-        const res = []
-        data.forEach((it) => {
-          const parent = cache[it.pid]
-          if (parent) (parent.children || (parent.children = [])).push(it)
-          else res.push(it)
-        })
-
-        return res[0]
-      }
+      console.log('sssss', getC())
     </script>
 
     <ul id="box">
