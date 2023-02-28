@@ -1,7 +1,56 @@
 # Code
 
 - 实现一个节流函数? 如果想要最后一次必须执行的话怎么实现?
-- 实现一个批量请求函数, 能够限制并发量?
+<details>
+  <summary>
+   实现一个批量请求函数, 能够限制并发量? Promise控制并发请求个数
+  </summary>
+
+```javascript
+function multiRequest(urls, maxNum) {
+  const len = urls.length // 请求总数量
+  const res = new Array(len).fill(0) // 请求结果数组
+  let sendCount = 0 // 已发送的请求数量
+  let finishCount = 0 // 已完成的请求数量
+  return new Promise((resolve, reject) => {
+    // 首先发送 maxNum 个请求，注意：请求数可能小于 maxNum，所以也要满足条件2
+    // 同步的 创建maxNum个next并行请求 然后才去执行异步的fetch 所以一上来就有5个next并行执行
+    while (sendCount < maxNum && sendCount < len) {
+      next()
+    }
+    function next() {
+      let current = sendCount++ // 当前发送的请求数量，后加一 保存当前请求url的位置
+      // 递归出口
+      if (finishCount >= len) {
+        // 如果所有请求完成，则解决掉 Promise，终止递归
+        resolve(res)
+        return
+      }
+      const url = urls[current]
+      fetch(url).then(
+        (result) => {
+          finishCount++
+          res[current] = result
+          if (current < len) {
+            // 如果请求没有发送完，继续发送请求
+            next()
+          }
+        },
+        (err) => {
+          finishCount++
+          res[current] = err
+          if (current < len) {
+            // 如果请求没有发送完，继续发送请求
+            next()
+          }
+        }
+      )
+    }
+  })
+}
+```
+
+</details>
 
 ## 数组转树结构
 
