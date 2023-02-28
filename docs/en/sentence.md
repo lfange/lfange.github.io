@@ -1,4 +1,4 @@
-# long and difficult sentence
+# Sentence
 
 <details>
   <summary>
