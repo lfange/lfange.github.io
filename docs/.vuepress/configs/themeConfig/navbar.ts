@@ -1,6 +1,10 @@
 // navbar of headlink
 const navbar = [
   {
+    text: 'Interest',
+    link: '/en/',
+  },
+  {
     text: '算法',
     link: '/algorithms/',
   },
