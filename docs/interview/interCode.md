@@ -3,11 +3,18 @@
 - 实现一个节流函数? 如果想要最后一次必须执行的话怎么实现?
 - 实现一个批量请求函数, 能够限制并发量?
 
+<summary>
+
+</summary>
+<details>
+  BtnXXClick
+</details>
+
 ## 数组转树结构
 
 <details>
 <summary>
-  
+  数组与树的转换  
 </summary>
 
 ```javascript
@@ -110,7 +117,7 @@ function toLine(data) {
 </details>
 
 <details>
-<summary>去除字符串中出现次数最少的字符，不改变原字符串的顺序。</summary>
+  <summary>去除字符串中出现次数最少的字符，不改变原字符串的顺序。</summary>
 
 ```javascript
 “ababac” —— “ababa”

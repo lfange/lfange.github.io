@@ -29,7 +29,7 @@
           } else {
             j = 0
           }
-          //   console.log('str', str[i])
+          //    console.log('str', str[i])
         }
         console.log('j ', i, j)
         console.log(
@@ -72,23 +72,6 @@
       }
 
       console.log('sssss', getC())
-    </script>
-
-    <ul id="box">
-      <li class="a">测试1</li>
-      <li class="a">测试2</li>
-      <li class="a">测试3</li>
-    </ul>
-    <script type="text/javascript">
-      var ul = document.querySelector('ul')
-
-      var list = ul.querySelectorAll('li')
-      for (var i = 0; i < list.length; i++) {
-        ul.appendChild(document.createElement('li'))
-      }
-
-      console.log('list.length：', list.length) //输出的结果仍然是 3，不是此时 li 的数量 6
-      console.dir(document.getElementById('box').length) // 6
     </script>
   </body>
 </html>
