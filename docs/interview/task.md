@@ -1,12 +1,147 @@
 # task
 
-5 年前端 - 历时 1 个月收获 7 个 offer
-路从今夜白 前端 Q 2022-12-07 09:00 发表于广东
-点击上方 前端 Q，关注公众号
+## ES5、ES6 如何实现继承
 
-回复加群，加入前端 Q 技术交流群
+### 原型链继承
 
-作者：路从今夜白丶
+原型链继承的思想：一个引用类型继承另一个引用类型的属性和方法。
+
+```javascript
+function SuperType() {
+  this.a = ['Super Type function', 'web']
+}
+
+function SubType() {}
+
+SubType.prototype = new SuperType()
+SubType.prototype.constructor = SuperType
+
+const aty = new SubType()
+const at1 = new SubType()
+aty.a.push('Subtype i')
+console.log('aty', aty.a) // ['Super Type function', 'web', 'Subtype i']
+console.log('aty', at1.a) // ['Super Type function', 'web', 'Subtype i']
+```
+
+- 优点：
+  父类新增原型方法/原型属性，子类都能访问到。
+  简单、易于实现。
+
+- 缺点：
+  无法实现多继承。
+  由于原型中的引用值被共享，导致实例上的修改会直接影响到原型。
+  创建子类实例时，无法向父类构造函数传参。
+
+### 构造函数继承
+
+构造函数继承的思想：子类型构造函数中调用父类的构造函数，使所有需要继承的属性都定义在实例对象上。
+
+```javascript
+function SuperType(name) {
+  this.name = name
+  this.a = [1, 2, 3]
+}
+
+SuperType.prototype.say = function () {
+  console.log('SuperType say', this.name)
+}
+
+function SubType(name) {
+  SuperType.call(this, name)
+}
+
+var sub1 = new SubType()
+var sub2 = new SubType()
+// 传递参数
+var sub3 = new SubType('Hzfe')
+console.log(sub3.name) // Hzfe
+// sub1.say() // 使用构造函数继承并没有访问到原型链，say 方法不能调用
+sub1.a.push(4)
+
+// 解决了原型链继承中子类实例共享父类引用属性的问题
+console.log(sub1.a) // [1,2,3,4]
+console.log(sub2.a) // [1,2,3]
+console.log(sub1 instanceof SuperType) // false
+```
+
+- 优点：
+  解决了原型链继承中子类实例共享父类引用属性的问题。
+  可以在子类型构造函数中向父类构造函数传递参数。
+  可以实现多继承（call 多个父类对象）。
+
+- 缺点：
+  实例并不是父类的实例，只是子类的实例。
+  只能继承父类的实例属性和方法，不能继承原型属性和方法。
+  无法实现函数复用，每个子类都有父类实例函数的副本，影响性能。
+
+### 寄生组合式继承
+
+借用构造函数来继承属性，使用混合式原型链继承方法。
+
+```javascript
+function inheritPrototype(subType, superType) {
+  var prototype = Object.create(superType.prototype)
+  prototype.constructor = subType
+  subType.prototype = prototype
+}
+
+function SuperType(name) {
+  this.name = name
+}
+SuperType.prototype.sayName = function () {
+  return `Super call name is: ${this.name}`
+}
+
+function SubType(name, age) {
+  SuperType.call(this, name)
+  this.age = age
+}
+inheritPrototype(SubType, SuperType)
+
+SubType.prototype.sayAge = function () {
+  return `age is :${this.age}`
+}
+```
+
+### ES6 Class
+
+```javascript
+class SuperType {
+  constructor(a, b) {
+    this.a = a
+    this.b = b
+  }
+
+  getName() {
+    return this.a + this.b
+  }
+}
+
+class childs extends SuperType {
+  constructor(a, b, age) {
+    super(a, b)
+    this.age = age
+  }
+  toString() {
+    return `${this.getName()} is ${this.age}`
+  }
+}
+
+let junjie = new childs('junjie', 'man', 'baby')
+console.log('toString', junjie.toString()) // toString junjieman is baby
+```
+
+- 优点：
+  解决了原型链继承中子类实例共享父类引用属性的问题。
+  可以在子类型构造函数中向父类构造函数传递参数。
+  可以实现多继承（call 多个父类对象）。
+
+- 缺点：
+  实例并不是父类的实例，只是子类的实例。
+  只能继承父类的实例属性和方法，不能继承原型属性和方法。
+  无法实现函数复用，每个子类都有父类实例函数的副本，影响性能。
+
+###
 
 https://juejin.cn/post/7142690757722243102
 
@@ -45,52 +180,6 @@ vue 是怎么解析 template 的? template 会变成什么?
 用过 vue 的 render 吗? render 和 template 有什么关系
 【代码题】 实现一个节流函数? 如果想要最后一次必须执行的话怎么实现?
 
-【代码题】 实现一个批量请求函数, 能够限制并发量?
-
-二面
-【代码题】 数组转树结构
-
-const arr = [{
-id: 2,
-name: '部门 B',
-parentId: 0
-},
-{
-id: 3,
-name: '部门 C',
-parentId: 1
-},
-{
-id: 1,
-name: '部门 A',
-parentId: 2
-},
-{
-id: 4,
-name: '部门 D',
-parentId: 1
-},
-{
-id: 5,
-name: '部门 E',
-parentId: 2
-},
-{
-id: 6,
-name: '部门 F',
-parentId: 3
-},
-{
-id: 7,
-name: '部门 G',
-parentId: 2
-},
-{
-id: 8,
-name: '部门 H',
-parentId: 4
-}
-]
 终面
 【代码题】 去除字符串中出现次数最少的字符，不改变原字符串的顺序。
 
@@ -728,3 +817,7 @@ Output: 4
 你只会用前端数据埋点 SDK 吗？
 
 最后
+
+```
+
+```
