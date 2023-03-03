@@ -3,13 +3,11 @@
 <details>
   <summary>
     There is only one easy way of stemming this tide of unacceptable filth: forcing the sender’s identity to be made public. If their mum, partner or employer—and the police—knew what they are posting, plenty of keyboard warriors would soon change their tone.
-
     Questions：According to the author, a quick fix to filth-filled social media is__.
-      A.algorithm that eliminates hate speech
-      B.stricter regulation by internet giants
-      C.revealing identity of senders to the public
-      D.forbid the posting of unpleasant words
-
+    A.algorithm that eliminates hate speech
+    B.stricter regulation by internet giants
+    C.revealing identity of senders to the public
+    D.forbid the posting of unpleasant words
   </summary>
 
 - stem /stem/ 封堵，堵住
@@ -35,5 +33,23 @@ C. （向其他用户透露发言者的身份）对应第一句！
 D. （禁止发表令人不快的言论）D 选项错误。
 
 [原文](https://mp.weixin.qq.com/s/ZEithbnpXDFHJUkQUGGPtA)
+
+</details>
+
+<details>
+  <summary>
+    Asked whether any particular papers had impelled the change, McNutt said: “The creation of the ‘statistics board’ was motivated by concerns broadly with the application of statistics and data analysis in scientific research and is part of Science’s overall drive to increase reproducibility in the research we publish.”
+  </summary>
+  
+- impel/ imˈpel / v.促使；驱策；迫使
+- board / bɔ:d / n.(公司或其他机构的)董事会，委员会，理事会
+- motivate / ˈməutiveit / v.成为…的动机；是…的原因；激励
+- drive / draiv / n.驱动；推动；迫使
+- reproducibility / riprə,dju:sə'biliti / n.再现性；再生性
+
+Asked whether any particular papers had impelled the change, 是过去分词作状语的结构，省略了连词和主谓，原句应该是“When McNutt was asked whether any particular papers had impelled the change”。
+![impelled](./assets/20230303140818.jpg)
+
+翻译： 当被问及是否因为某些特定的论文而促成了这次改变，麦克纳特说：“‘统计委员会’的创建是受对科学研究中统计和数据分析应用的广泛关切的驱动，也是《科学》为提升其发表研究的可复制性的全面努力的一部分。”
 
 </details>
