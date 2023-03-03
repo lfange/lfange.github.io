@@ -103,6 +103,30 @@ SubType.prototype.sayAge = function () {
 }
 ```
 
+```javascript
+function SuperType(name, age) {
+  this.name = name
+  this.age = age
+}
+SuperType.prototype.say = function () {
+  return `name is ${this.name}, age is ${this.age}`
+}
+
+function Childs(name, age, color) {
+  SuperType.call(this, name, age)
+  const str = SuperType.prototype.say.call(this, name, age)
+  console.log('Childs', str, this)
+}
+
+//过渡函数的原型继承父对象
+function Over() {}
+Over.prototype = SuperType.prototype
+Childs.prototype = new Over()
+
+let junjie = new Childs('junjie', 'not zero year old', 'greee')
+console.log('junjie', junjie.say())
+```
+
 ### ES6 Class
 
 ```javascript

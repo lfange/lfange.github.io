@@ -105,7 +105,11 @@ const sidebar = {
     // }
   ],
   '/serve/': ['/serve/linux.md', '/serve/frps.md'],
-  '/interview/': ['/interview/READMD.md', '/interview/task.md'],
+  '/interview/': [
+    '/interview/READMD.md',
+    '/interview/interCode.md',
+    '/interview/task.md',
+  ],
   '/en/': ['/en/sentence.md'],
 }
 
