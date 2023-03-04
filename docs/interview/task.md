@@ -167,6 +167,23 @@ console.log('toString', junjie.toString()) // toString junjieman is baby
 
 ###
 
+## instanceOf 实现
+
+`instanceof` 运算符用于检测构造函数的 `prototype` 属性是否出现在某个实例对象的原型链上
+
+```javascript
+function MyinstanceOf(left, right) {
+  if (typeof left !== 'object' || left == null) return false
+  //**`Object.getPrototypeOf()`** 方法返回指定对象的原型 ( 即, 内部[[Prototype]]属性）。
+  let pro = Object.getPrototypeOf(left)
+  while (true) {
+    if (pro === right.prototype) return true
+    if (pro === null) return false
+    pro = Object.getPrototypeOf(pro)
+  }
+}
+```
+
 https://juejin.cn/post/7142690757722243102
 
 前言

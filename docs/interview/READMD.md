@@ -271,23 +271,6 @@ querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素�
     </script>
 ```
 
-## instanceOf 实现
-
-`instanceof` 运算符用于检测构造函数的 `prototype` 属性是否出现在某个实例对象的原型链上
-
-```javascript
-function MyinstanceOf(left, right) {
-  if (typeof left !== 'object' || left == null) return false
-  //**`Object.getPrototypeOf()`** 方法返回指定对象的原型 ( 即, 内部[[Prototype]]属性）。
-  let pro = Object.getPrototypeOf(left)
-  while (true) {
-    if (pro === right.prototype) return true
-    if (pro === null) return false
-    pro = Object.getPrototypeOf(pro)
-  }
-}
-```
-
 instanceof()
 
 虚拟 dom 是什么? 原理? 优缺点?
