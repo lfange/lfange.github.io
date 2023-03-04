@@ -227,7 +227,7 @@ window.event ? (window.event.cancelBubble = true) : e.stopPropagation()
 - 向里层元素传递，执行相同的操作，直到实际点击的元素上。
 
 现在的浏览器默认情况下，所有的事件处理程序都在冒泡阶段注册，所以点击子元素时，会执行子元素上的事件，向上冒泡，触发父元素上的事件。
-`addEventListener ` 函数的第三个参数是个布尔值。
+`addEventListener ` 函数的第三个参数是个布尔值。
 
 - 当布尔值是  false  时（默认值），表示向上冒泡触发事件；
 - 当布尔值是  true  时，表示向下捕获触发事件；
@@ -270,6 +270,25 @@ querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素�
       console.dir(document.getElementById('box').length) // 6
     </script>
 ```
+
+## instanceOf 实现
+
+`instanceof` 运算符用于检测构造函数的 `prototype` 属性是否出现在某个实例对象的原型链上
+
+```javascript
+function MyinstanceOf(left, right) {
+  if (typeof left !== 'object' || left == null) return false
+  //**`Object.getPrototypeOf()`** 方法返回指定对象的原型 ( 即, 内部[[Prototype]]属性）。
+  let pro = Object.getPrototypeOf(left)
+  while (true) {
+    if (pro === right.prototype) return true
+    if (pro === null) return false
+    pro = Object.getPrototypeOf(pro)
+  }
+}
+```
+
+instanceof()
 
 虚拟 dom 是什么? 原理? 优缺点?
 vue 和 react 在虚拟 dom 的 diff 上，做了哪些改进使得速度很快?
