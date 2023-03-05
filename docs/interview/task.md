@@ -80,9 +80,9 @@ console.log(sub1 instanceof SuperType) // false
 
 ```javascript
 function inheritPrototype(subType, superType) {
-  var prototype = Object.create(superType.prototype)
-  prototype.constructor = subType
-  subType.prototype = prototype
+  // prototype做一个浅拷贝
+  subType.prototype = Object.create(superType.prototype)
+  subType.prototype.constructor = subType
 }
 
 function SuperType(name) {
@@ -190,23 +190,6 @@ https://juejin.cn/post/7142690757722243102
 图片
 
 省流：最终拿到了 58、UMU、便利蜂、虾皮、快手、腾讯、字节的 offer。
-
-金三银四面试的, 这次整体面试通过率还挺高的, 面试前没有太多准备, 基本上是面试过程中不断复盘, 整理面试遇到的问题, 到最后面几家自己心仪的公司, 其实就会发现大家问的问题都差不多。
-
-滴滴
-第一家就面的滴滴, 啥都没准备, 中间很多没答好, 但是意外的到了 HR 面, 可能由于面试表现并不好, 所以给的薪资不及预期。
-
-其中印象比较深刻的是三面面试官：
-
-面试官：问 A 入职后和上级意见不合应该怎么处理
-
-我：我官话回答了半天说要考虑当时的背景、双方的观点正确与否再考虑, 最终选择最有利于业务发展的一方
-
-面试官：说这些都没用, 如果最终上司的方案确实不如 A 的, 但上司就是坚持自己的意见怎么办?
-
-我：那我不知道, 请问您有什么看法
-
-面试官：不招 A 就行了, 面试阶段就不能让他通过
 
 一面
 闭包是什么? 闭包的用途?
