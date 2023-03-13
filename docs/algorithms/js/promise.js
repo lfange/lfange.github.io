@@ -35,7 +35,7 @@ class Promise {
     }
   }
 
-  then(onFulfilled, onRejected) {
+  then (onFulfilled, onRejected) {
     //解决 onFufilled，onRejected 没有传值的问题
     //Promise/A+ 2.2.1 / Promise/A+ 2.2.5 / Promise/A+ 2.2.7.3 / Promise/A+ 2.2.7.4
     onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : v => v
@@ -83,7 +83,7 @@ class Promise {
           }, 0)
         })
 
-        this.onRejectedCallbacks.push(()=> {
+        this.onRejectedCallbacks.push(() => {
           setTimeout(() => {
             try {
               let x = onRejected(this.reason)
@@ -95,7 +95,7 @@ class Promise {
         })
       }
     })
-  
+
     return promise2
   }
 }
@@ -103,24 +103,24 @@ class Promise {
 
 const resolvePromise = (promise2, x, resolve, reject) => {
   // 自己等待自己完成是错误的实现，用一个类型错误，结束掉 promise  Promise/A+ 2.3.1
-  if (promise2 === x) { 
+  if (promise2 === x) {
     return reject(new TypeError('Chaining cycle detected for promise #<Promise>'))
   }
   console.log(x)
   // Promise/A+ 2.3.3.3.3 只能调用一次
   let called
   // 后续的条件要严格判断 保证代码能和别的库一起使用
-  if ((typeof x === 'object' && x != null) || typeof x === 'function') { 
+  if ((typeof x === 'object' && x != null) || typeof x === 'function') {
     try {
       // 为了判断 resolve 过的就不用再 reject 了（比如 reject 和 resolve 同时调用的时候）  Promise/A+ 2.3.3.1
       let then = x.then
-      if (typeof then === 'function') { 
+      if (typeof then === 'function') {
         // 不要写成 x.then，直接 then.call 就可以了 因为 x.then 会再次取值，Object.defineProperty  Promise/A+ 2.3.3.3
         then.call(x, y => { // 根据 promise 的状态决定是成功还是失败
           if (called) return
           called = true
           // 递归解析的过程（因为可能 promise 中还有 promise） Promise/A+ 2.3.3.3.1
-          resolvePromise(promise2, y, resolve, reject) 
+          resolvePromise(promise2, y, resolve, reject)
         }, r => {
           // 只要失败就失败 Promise/A+ 2.3.3.3.2
           if (called) return
@@ -147,8 +147,16 @@ const promise = new Promise((resolve, reject) => {
   resolve('失败');
 }).then(res => {
   console.log('res', res)
-}).then().then(data=>{
+}).then().then(data => {
   console.log(data);
-},err=>{
-  console.log('err',err);
+}, err => {
+  console.log('err', err);
+})
+
+const arrs = new Promise((resolve, reject) => {
+  console.log('PromisePromise');
+})
+
+arrs.then(R => {
+  console.log('eeeeeeee');
 })
