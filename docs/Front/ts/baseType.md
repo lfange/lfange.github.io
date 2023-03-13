@@ -5,19 +5,19 @@
 ### String 类型
 
 ```javascript
-let name: string = "Hello Bug!";
+let name: string = 'Hello Bug!'
 ```
 
 ### Boolean 类型
 
 ```javascript
-const flag: boolean = true;
+const flag: boolean = true
 ```
 
 ### Number 类型
 
 ```javascript
-const count: number = 10;
+const count: number = 10
 ```
 
 ### Enum 类型
@@ -86,8 +86,8 @@ var color = [0 /* RED */, 1 /* PINK */, 2 /* BLUE */];
 对数组类型的定义有两种方式:
 
 ```javascript
-const arr: number[] = [1, 2, 3];
-const arr2: Array<number> = [1, 2, 3];
+const arr: number[] = [1, 2, 3]
+const arr2: Array<number> = [1, 2, 3]
 ```
 
 ### 元组（tuple）类型
@@ -97,7 +97,7 @@ const arr2: Array<number> = [1, 2, 3];
 元组（ Tuple ）表示一个已知数量和类型的数组,可以理解为他是一种特殊的数组
 
 ```javascript
-const tuple: [number, string] = [1, "zhangmazi"];
+const tuple: [number, string] = [1, 'zhangmazi']
 ```
 
 需要注意的是，元组类型只能表示一个已知元素数量和类型的数组，长度已指定，越界访问会提示错误。例如，一个数组中可能有多种类型，数量和类型都不确定，那就直接 any[]。
@@ -107,22 +107,22 @@ const tuple: [number, string] = [1, "zhangmazi"];
 默认情况下 null 和 undefined 是所有类型的子类型。也就是说你可以把 null 和 undefined 赋值给其他类型。
 
 ```javascript
-let a: undefined = undefined;
-let b: null = null;
+let a: undefined = undefined
+let b: null = null
 
-let str: string = "zhangmazi";
-str = null; // 编译正确
-str = undefined; // 编译正确
+let str: string = 'zhangmazi'
+str = null // 编译正确
+str = undefined // 编译正确
 ```
 
 如果你在 tsconfig.json 指定了"strictNullChecks":true ，即开启严格模式后， null 和 undefined 只能赋值给 void 和它们各自的类型。
 
 ```javascript
 // 启用 --strictNullChecks
-let x: number;
-x = 1; // 编译正确
-x = undefined; // 编译错误
-x = null; // 编译错误
+let x: number
+x = 1 // 编译正确
+x = undefined // 编译错误
+x = null // 编译错误
 ```
 
 ### any 类型
@@ -130,10 +130,10 @@ x = null; // 编译错误
 any 会跳过类型检查器对值的检查，任何值都可以赋值给 any 类型
 
 ```javascript
-let value: any = 1;
-value = "zhangmazi"; // 编译正确
-value = []; // 编译正确
-value = {}; // 编译正确
+let value: any = 1
+value = 'zhangmazi' // 编译正确
+value = [] // 编译正确
+value = {} // 编译正确
 ```
 
 ### void 类型
@@ -142,7 +142,7 @@ void 意思就是无效的, 一般只用在函数上，告诉别人这个函数�
 
 ```javascript
 function sayHello(): void {
-  console.log("hello 啊，树哥！");
+  console.log('hello 啊，树哥！')
 }
 ```
 
@@ -159,12 +159,12 @@ never 类型表示的是那些永不存在的值的类型。例如 never 类型�
 // 返回never的函数必须存在无法达到的终点
 function error(message: string): never {
   // 编译正确
-  throw new Error(message);
+  throw new Error(message)
 }
 
 // 推断的返回值类型为never
 function fail() {
-  return error("Something failed");
+  return error('Something failed')
 }
 
 // 返回never的函数必须存在无法达到的终点
@@ -178,9 +178,9 @@ function infiniteLoop(): never {
 unknown 与 any 一样，所有类型都可以分配给 unknown:
 
 ```javascript
-let value: unknown = 1;
-value = "zhangmazi"; // 编译正确
-value = false; // 编译正确
+let value: unknown = 1
+value = 'zhangmazi' // 编译正确
+value = false // 编译正确
 ```
 
 **Tips** unknown 与 any 的最大区别是：
@@ -195,7 +195,7 @@ value = false; // 编译正确
 
 ```javascript
 function identity<T>(arg: T): T {
-  return arg;
+  return arg
 }
 ```
 
@@ -205,7 +205,7 @@ any 类型会导致这个函数可以接收任何类型的 arg 参数，这样�
 :::
 
 ```javascript
-let output = identity < string > "myString"; // type of output will be 'string'
+let output = identity < string > 'myString' // type of output will be 'string'
 ```
 
 这里我们明确的指定了 T 是 string 类型，并做为一个参数传给函数，使用了<>括起来而不是()。
@@ -213,7 +213,7 @@ let output = identity < string > "myString"; // type of output will be 'string'
 第二种方法更普遍。利用了[类型推论](#类型推论) -- 即编译器会根据传入的参数自动地帮助我们确定 T 的类型：
 
 ```javascript
-let output = identity("myString"); // type of output will be 'string'
+let output = identity('myString') // type of output will be 'string'
 ```
 
 注意我们没必要使用尖括号（<>）来明确地传入类型；编译器可以查看 myString 的值，然后把 T 设置为它的类型。 类型推论帮助我们保持代码精简和高可读性。如果编译器不能够自动地推断出类型的话，只能像上面那样明确的传入 T 的类型，在一些复杂的情况下，这是可能出现的。
@@ -230,15 +230,15 @@ object 表示非原始类型，也就是除 number，string，boolean，symbol�
 在严格模式下，null 和 undefined 类型也不能赋给 object。
 
 ```javascript
-declare function create(o: object | null): void;
+declare function create(o: object | null): void
 
-create({ prop: 0 }); // OK
-create(null); // OK
+create({ prop: 0 }) // OK
+create(null) // OK
 
-create(42); // Error
-create("string"); // Error
-create(false); // Error
-create(undefined); // Error
+create(42) // Error
+create('string') // Error
+create(false) // Error
+create(undefined) // Error
 ```
 
 ### Object
@@ -246,13 +246,13 @@ create(undefined); // Error
 大 Object 代表所有拥有 toString、hasOwnProperty 方法的类型 所以所有原始类型、非原始类型都可以赋给 Object(严格模式下 null 和 undefined 不可以)
 
 ```javascript
-let bigObject: Object;
-object = 1; // 编译正确
-object = "a"; // 编译正确
-object = true; // 编译正确
-object = null; // 报错
-ObjectCase = undefined; // 报错
-ObjectCase = {}; // ok
+let bigObject: Object
+object = 1 // 编译正确
+object = 'a' // 编译正确
+object = true // 编译正确
+object = null // 报错
+ObjectCase = undefined // 报错
+ObjectCase = {} // ok
 ```
 
 ### {}
@@ -265,14 +265,14 @@ ObjectCase = {}; // ok
 
 ```javascript
 class Person {
-  name: string;
-  age: number;
+  name: string
+  age: number
   constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
+    this.name = name
+    this.age = age
   }
   sayHi(): void {
-    console.log(`Hi, ${this.name}`);
+    console.log(`Hi, ${this.name}`)
   }
 }
 ```
@@ -283,7 +283,7 @@ class Person {
 
 ```javascript
 function add(x: number, y: number): number {
-  return x + y;
+  return x + y
 }
 ```
 
@@ -291,8 +291,8 @@ function add(x: number, y: number): number {
 
 ```javascript
 const add = function (x: number, y: number): number {
-  return x + y;
-};
+  return x + y
+}
 ```
 
 - 接口定义函数
@@ -307,7 +307,7 @@ interface Add {
 
 ```javascript
 function add(x: number, y?: number): number {
-  return y ? x + y : x;
+  return y ? x + y : x
 }
 ```
 
@@ -315,7 +315,7 @@ function add(x: number, y?: number): number {
 
 ```javascript
 function add(x: number, y: number = 0): number {
-  return x + y;
+  return x + y
 }
 ```
 
@@ -323,11 +323,11 @@ function add(x: number, y: number = 0): number {
 
 ```javascript
 function add(...numbers: number[]): number {
-  let sum = 0;
+  let sum = 0
   for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
+    sum += numbers[i]
   }
-  return sum;
+  return sum
 }
 ```
 
@@ -349,16 +349,18 @@ function add(x: any, y: any): any {
 函数重载真正执行的是同名函数最后定义的函数体 在最后一个函数体定义之前全都属于函数类型定义 不能写具体的函数实现方法 只能定义类型
 :::
 
-## 类型推论
+## 类型
+
+### 类型推论
 
 如果没有明确的指定类型，那么 TypeScript 会依照类型推论的规则推断出一个类型。
 
 ```javascript
-let x = 1;
-x = true; // 报错
+let x = 1
+x = true // 报错
 // equal to
-let x: number = 1;
-x = true; // 报错
+let x: number = 1
+x = true // 报错
 ```
 
 变量 x 的类型被推断为数字。 这种推断发生在初始化变量和成员，设置默认参数值和决定函数返回值时,大多数情况下，类型推论是直截了当地
@@ -366,12 +368,12 @@ x = true; // 报错
 而如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查：
 
 ```javascript
-let x;
-x = 1; // 编译正确
-x = true; // 编译正确
+let x
+x = 1 // 编译正确
+x = true // 编译正确
 ```
 
-## 类型断言
+### 类型断言
 
 某些情况下，我们可能比 typescript 更加清楚的知道某个变量的类型，所以我们可能希望手动指定一个值的类型
 类型断言有两种方式
@@ -390,26 +392,26 @@ let str: any = "you are right";
 let strLength: number = (str as string).length;
 ```
 
-## 联合类型
+### 联合类型
 
 联合类型用|分隔，表示取值可以为多种类型中的一种
 
 ```javascript
-let status: string | number;
-status = "you are right";
-status = 1;
+let status: string | number
+status = 'you are right'
+status = 1
 ```
 
-## 类型别名
+### 类型别名
 
 类型别名用来给一个类型起个新名字。它只是起了一个新名字，并没有创建新类型。类型别名常用于联合类型。
 
 ```javascript
-type count = number | number[];
+type count = number | number[]
 function hello(value: count) {}
 ```
 
-## 交叉类型
+### 交叉类型
 
 交叉类型就是跟联合类型相反，用&操作符表示，交叉类型就是两个类型必须存在
 
@@ -424,10 +426,10 @@ interface IpersonB {
 }
 
 let person: IpersonA & IpersonB = {
-  name: "Fange",
+  name: 'Fange',
   age: 18,
-  gender: "男",
-};
+  gender: '男',
+}
 ```
 
 person 即是 IpersonA 类型，又是 IpersonB 类型
@@ -444,12 +446,101 @@ interface IpersonB {
 }
 
 function testAndFn(params: IpersonA & IpersonB) {
-  console.log(params);
+  console.log(params)
 }
 
-testAndFn({ name: "Fange" });
+testAndFn({ name: 'Fange' })
 // error TS2322: Type 'string' is not assignable to type 'never'.
 ```
 
+## type 和 interface 的区别
 
-Typescript更多内容查看[官网](https://www.tslang.cn/docs/handbook/basic-types.html)
+### type
+
+`type` 关键字是声明类型别名的关键字。它的语法如下：
+
+```ts
+type AliasName = Type
+```
+
+- type：声明类型别名的关键字
+- AliasName：类型别名的名称
+- Type：类型别名关联的具体类型
+
+### interface
+
+通过关键字 interface 可以定义一个接口类型。它能合并众多类型声明至一个类型声明。
+
+接口声明只存在于编译阶段，在编译后生成的 JS 代码中不包含任何接口代码。
+
+```ts
+interface InterfaceName {
+  TypeMember;
+  TypeMember;
+  ...
+}
+```
+
+`interface：`定义接口的关键字 `InterfaceName：`接口名，首字母需要大写 `TypeMember`：接口的类型成员
+
+#### 相同点
+
+都可以用来定义 对象 或者 函数 的结构，而严谨的来说，type 是引用，而 interface 是定义
+
+#### 不同点
+
+- type 在声明类型别名之后实际上是一个赋值操作，它需要将别名与类型关联起来。也就是说类型别名不会创建出一种新的类型，它只是给已有类型命名并直接进行引用。interface 是定义了一个接口类型。
+- type 能够表示非对象类型， 而 interface 则只能表示对象类型。
+- interface 可以继承其他的接口、类等对象类型， type 不支持继承。
+
+> 好多文章里都说 type 也支持继承，但是我认为这种说法不严谨。对于类型别名来说，它可以借助交叉类型来实现继承的效果。而且这种方法也只适用于表示对象类型的类型别名，对于非对象类型是无法使用的
+
+```ts
+type Shape = { name: string }
+
+type Circle = Shape & { radius: number }
+
+function foo(circle: Circle) {
+  const name = circle.name
+  const radius = circle.radius
+}
+```
+
+interface 接口名总是会直接显示在编译器的诊断信息和代码编辑器的智能提示中，而 type 的名字只在特定情况下才会显示出来——只有当类型别名表示数组类型、元组类型以及类或者接口的泛型实例类型时才展示。
+
+```ts
+type NumericType = number | bigint
+
+interface Circle {
+  radius: number
+}
+
+function f(value: NumericType, circle: Circle) {
+  const bar: boolean = value
+  //    ~~~
+  // 	  Type 'number | bigint' is not assignable to type 'boolean'
+  // 		这里没有显示类型别名
+
+  const baz: boolean = circle
+  // 	  ~~~
+  // 		Type 'Circle' is not assignable to type 'boolean'
+}
+```
+
+- interface 具有声明合并的行为，而 type 不会，这也意味着我们可以通过声明合并的方式给 interface 定义的类型进行属性扩展
+
+- type 可以通过 typeof 来获取实例的类型从而进行赋值操作
+
+### 总结
+
+对于 type 来说，更多的是对类型的一种复用，比如在项目中需要用到一些比较复杂的或者书写起来很长的类型。我们可以使用 type 来直接引用该类型：
+
+```ts
+type FType = boolean | string | number
+```
+
+而对于 `interface` 来说，它是正儿八经的用来定义接口类型（约束数类型和属性）的，且接口类型是支持继承和声明合并的。
+
+所以在对于对象结构的类型定义上，建议尽可能的使用 interface，而在合适的场景使用 type。
+
+Typescript 更多内容查看[官网](https://www.tslang.cn/docs/handbook/basic-types.html)
