@@ -4,10 +4,12 @@
   <summary>
     There is only one easy way of stemming this tide of unacceptable filth: forcing the sender’s identity to be made public. If their mum, partner or employer—and the police—knew what they are posting, plenty of keyboard warriors would soon change their tone.
     Questions：According to the author, a quick fix to filth-filled social media is__.
+
     A.algorithm that eliminates hate speech
     B.stricter regulation by internet giants
     C.revealing identity of senders to the public
     D.forbid the posting of unpleasant words
+
   </summary>
 
 - stem /stem/ 封堵，堵住
@@ -51,5 +53,33 @@ Asked whether any particular papers had impelled the change, 是过去分词作�
 ![impelled](./assets/20230303140818.jpg)
 
 翻译： 当被问及是否因为某些特定的论文而促成了这次改变，麦克纳特说：“‘统计委员会’的创建是受对科学研究中统计和数据分析应用的广泛关切的驱动，也是《科学》为提升其发表研究的可复制性的全面努力的一部分。”
+
+</details>
+
+<details>
+  <summary>
+    Today no such severe lack exists as that ordered by Frederick. Nevertheless, some children are still backward in speaking. Most often the reason for this is that the mother is insensitive to the signals of the infant, whose brain is programmed to learn language rapidly. If these sensitive periods are neglected, the ideal time for acquiring skills passes and they might never be learned so easily again. A bird learns to sing and to fly rapidly at the right time, but the process is slow and hard once the critical stage has passed.
+
+    The reason some children are backward in speaking is most probably that ________.
+
+    [A] they are incapable of learning language rapidly
+    [B] they are exposed to too much language at once
+    [C] their mothers respond inadequately to their attempts to speak
+    [D] their mothers are not intelligent enough to help them
+
+  </summary>
+
+1. severe 严重的
+2. backward 向后的
+3. insensitive 不敏感的
+4. infant 婴儿
+5. neglect 忽视
+6. incapable 无能力的
+7. inadequately 不足的
+
+![Object](./assets/20230314132931.png)
+参考译文：今天不存在像 Frederick 所要求的那种（照顾）的严重缺失。
+
+![Object](./assets/20230314133145.png)
 
 </details>
