@@ -23,8 +23,9 @@ module.exports = (options, ctx) => {
       (base) => themeConfig.locales[base].algolia
     )
   return {
-    //
-    alias() {
+    // https://github.com/xugaoyi/vuepress-theme-vdoing
+    // https://github.com/vuejs/vuepress
+    alias () {
       return {
         '@AlgoliaSearchBox': isAlgoliaSearch
           ? path.resolve(__dirname, 'components/AlgoliaSearchBox.vue')
