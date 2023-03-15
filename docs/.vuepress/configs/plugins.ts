@@ -5,14 +5,12 @@ console.log('Myplugin', MyPlugin.name)
 
 const plugins = [
   backToTopPlugin(),
-  ['vuepress-plugin-auto-sidebar', {
-    
-  }],
+  ['vuepress-plugin-auto-sidebar', {}],
   MyPlugin({
-    id: 'source'
-  })
+    id: 'source',
+  }),
   // ['@vssue/vuepress-plugin-vssue', {
-  //   // 设置平台，而不是 `api` 
+  //   // 设置平台，而不是 `api`
   //   platform: 'github-v4',
   //   // 其他的 Vssue 配置
   //   owner: 'lfange', // 仓库的拥有者的名称
@@ -23,4 +21,4 @@ const plugins = [
   // }]
 ]
 
-export default (() => plugins) 
+export default () => plugins
