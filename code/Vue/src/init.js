@@ -18,7 +18,7 @@ export function initMixin (Vue) {
     vm.$options = mergeOptions(Vue.options, options) // 需要将用户自定义的options 合并 谁和谁合并
     //初始化 状态 （将数据做一个初始化的劫持，当我改变数据时应跟新视图）
     //vue组件中有很多状态 data,props watch computed
-    console.log(vm.$options)
+    console.log('VmOptions', vm.$options)
     callHook(vm, "beforeCreate")
     initState(vm) //初始化状态
     callHook(vm, "created")
@@ -56,6 +56,7 @@ export function initMixin (Vue) {
       const render = compileToFunction(template)
       options.render = render
     }
+    console.log('BLSJZXLC', vm);
     // console.log(options.render) // 渲染到页面的都是这个render方法
     //需要挂载这个组件
     mountComponent(vm, el)
