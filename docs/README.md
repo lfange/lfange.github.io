@@ -1,23 +1,24 @@
 ---
+layout: Layout
 home: true
-# heroImage: /hero.png  
+# heroImage: /hero.png
+heroImage: /images/icons/study.png
 heroText: Best for the Best!
 tagline: 学而时习之，不亦说乎
 actionText: 11 →
 actionLink: /vue3/
-features:
-# - title: 诫子书
-#   details: 不明确志向就不能在学习上获得成就。纵欲放荡、消极怠慢就不能勉励心志使精神振作，冒险草率、急躁不安就不能修养性情。年华随时光而飞驰，意志随岁月逐渐消逝。最终枯败零落，大多不接触世事、不为社会所用，只能悲哀地困守在自己穷困的破舍里，到时悔恨又怎么来得及
-# - title: 简洁至上
-#   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-# - title: 简洁至上
-#   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-# footer: MIT Licensed | Copyright © 2018-present Evan You
-footer: 蜀ICP备2022007922号-1
+# features:
+#   - title: 诫子书
+#     details: 不明确志向就不能在学习上获得成就。纵欲放荡、消极怠慢就不能勉励心志使精神振作，冒险草率、急躁不安就不能修养性情。年华随时光而飞驰，意志随岁月逐渐消逝。最终枯败零落，大多不接触世事、不为社会所用，只能悲哀地困守在自己穷困的破舍里，到时悔恨又怎么来得及
+#   - title: 简洁至上
+#     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+#   - title: 简洁至上
+#     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+
+footer: 蜀ICP备2022007922号-1  MIT Licensed | Copyright © 2021-present Fan Ge
 ---
 
 夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也，非学无以广才，非志无以成学。淫慢则不能励精，险躁则不能治性。年与时驰，意与日去，遂成枯落，多不接世，悲守穷庐，将复何及！
-
 
 #### 好记性不如烂笔头
 
