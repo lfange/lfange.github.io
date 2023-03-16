@@ -13,5 +13,5 @@ export default defineUserConfig({
   head,
   theme,
   // theme: fooTheme,
-  ...Plugins
+  ...Plugins,
 })

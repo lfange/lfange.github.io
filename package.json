@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/lfange/lfange.github.io#readme",
   "dependencies": {
-    "ant-design-vue": "^3.2.11",
+    "ant-design-vue": "^3.2.15",
     "gitalk": "^1.8.0"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@vuepress/client": "2.0.0-beta.49",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.49",
     "ant-design-vue": "^3.2.11",
-    "vue": "^3.2.37",
+    "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.49",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-types": "^0.9.4"

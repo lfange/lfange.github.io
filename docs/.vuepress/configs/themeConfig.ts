@@ -1,5 +1,4 @@
 import { defaultTheme } from '@vuepress/theme-default'
-import Mytheme from '../theme/index'
 import navbar from './themeConfig/navbar'
 import sidebar from './themeConfig/sidebar'
 

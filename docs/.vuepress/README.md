@@ -2,7 +2,7 @@
 layout: Layout
 home: true
 # heroImage: /hero.png
-heroImage: /images/icons/study.png
+heroImage: ./assets/bk1.jpg
 heroText: Hero 标题
 tagline: Hero 副标题
 actionText: 快速上手 →

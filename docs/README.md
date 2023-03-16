@@ -1,8 +1,7 @@
 ---
-layout: Layout
 home: true
-# heroImage: /hero.png
-heroImage: /images/icons/study.png
+layout: Layout
+heroImage: /assets/bk1.jpg
 heroText: Best for the Best!
 tagline: 学而时习之，不亦说乎
 actionText: 11 →
