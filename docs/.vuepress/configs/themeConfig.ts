@@ -1,5 +1,6 @@
 // import { defaultTheme } from '@vuepress/theme-default'
 import { vhope } from '../theme/index'
+import { defaultTheme } from '@vuepress/theme-default'
 import navbar from './themeConfig/navbar'
 import sidebar from './themeConfig/sidebar'
 // import { hopeTheme } from 'vuepress-theme-hope'

@@ -1,6 +1,6 @@
-import { getDirname, path } from '@vuepress/utils'
+// import { getDirname, path } from '@vuepress/utils'
 
-// const path = require('path')
+import path from 'path'
 
 // const __dirname = getDirname(import.meta.url)
 

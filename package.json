@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/lfange/lfange.github.io#readme",
   "dependencies": {
-    "ant-design-vue": "^3.2.11",
+    "ant-design-vue": "^3.2.15",
     "gitalk": "^1.8.0"
   },
   "devDependencies": {
