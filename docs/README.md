@@ -1,5 +1,4 @@
 ---
-layout: Layout
 home: true
 # heroImage: /hero.png
 heroImage: /images/icons/study.png

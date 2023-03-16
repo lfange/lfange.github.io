@@ -1,10 +1,10 @@
-import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+// import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import MyPlugin from './Myplugin'
 
 console.log('Myplugin', MyPlugin.name)
 
 const plugins = [
-  backToTopPlugin(),
+  // backToTopPlugin(),
   ['vuepress-plugin-auto-sidebar', {}],
   MyPlugin({
     id: 'source',

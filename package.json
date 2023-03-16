@@ -6,9 +6,12 @@
   "scripts": {
     "docs": "vuepress dev docs --temp .temp",
     "dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "docs:build": "vuepress build vhope",
     "deploy": "source deploy.sh >err.txt",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:clean-dev": "vuepress dev vhope --clean-cache",
+    "docs:dev": "vuepress dev vhope",
+    "docs:update-package": "pnpm dlx vp-update"
   },
   "repository": {
     "type": "git",
@@ -26,12 +29,16 @@
   },
   "devDependencies": {
     "@ant-design/icons-vue": "^6.1.0",
-    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.49",
+    "@vuepress/theme-default": "^1.9.9",
+    "@vuepress/utils": "2.0.0-alpha.1",
     "ant-design-vue": "^3.2.11",
-    "vue": "^3.2.37",
-    "vuepress": "2.0.0-beta.49",
+    "chalk": "^5.2.0",
+    "vue": "^3.2.47",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
+    "vuepress-theme-hope": "2.0.0-beta.193",
     "vuepress-types": "^0.9.4"
   },
   "browserslist": {

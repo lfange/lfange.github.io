@@ -1,6 +1,6 @@
 <template>
   <div class="theme-container">
-    Content Content:::: Content::::
+    LayoutLayout
     <Content />
     Content
   </div>

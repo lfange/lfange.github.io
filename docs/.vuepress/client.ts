@@ -27,7 +27,7 @@ export default defineClientConfig({
     app.component('Demo', Demo)
     app.use(Button)
     app.use(Tabs)
-    // app.component("Layouts", Layouts)
+    // app.component('Layouts', Layout)
     // app.use(Layouts)
     // console.log('enhance', app)
     // console.log('router', router)
