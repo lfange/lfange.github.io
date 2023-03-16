@@ -11,7 +11,7 @@ import Demo from './components/NpmBadge.vue'
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
 
 export default defineClientConfig({
-  enhance({ app, router, siteData }) {
+  enhance ({ app, router, siteData }) {
     // app.use(Vssue, {
     //    // 设置要使用的平台 api
     //   api: GithubV4,
@@ -33,9 +33,9 @@ export default defineClientConfig({
     // console.log('router', router)
     // console.log('siteData~', siteData)
   },
-  setup() {},
+  setup () { },
   layouts: {
-    Layout,
+    // Layout,
     NotFound,
   },
 })
