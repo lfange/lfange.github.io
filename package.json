@@ -32,7 +32,7 @@
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.61",
     "@vuepress/theme-default": "2.0.0-beta.61",
-    "@vuepress/utils": "2.0.0-alpha.1",
+    "@vuepress/utils": "2.0.0-beta.61",
     "ant-design-vue": "^3.2.11",
     "chalk": "^5.2.0",
     "vue": "^3.2.47",

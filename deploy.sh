@@ -18,10 +18,10 @@ touch .nojekyll
 # 提交到本地仓库
 
 # echo "提交到本地仓库 $(git status)"
-echo "提交 commit $1"
+echo "commit $1"
 git init
 git add -A
-git commit -m "\$1的值: $1"
+git commit -m "commit > $1"
 
 echo "\$1的值 $1, status:>>   $(git status)"
 
