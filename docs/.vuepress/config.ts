@@ -26,6 +26,6 @@ export default defineUserConfig({
   // theme: fooTheme,
   ...Plugins,
   build: {
-    chunkSizeWarningLimit: 1600,
+    chunkSizeWarningLimit: 3500,
   },
 })

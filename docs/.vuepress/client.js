@@ -35,7 +35,7 @@ export default defineClientConfig({
   },
   setup () { },
   build: {
-    chunkSizeWarningLimit: 1600
+    chunkSizeWarningLimit: 3500
   },
   layouts: {
     // Layout,
