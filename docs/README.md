@@ -1,9 +1,18 @@
 ---
 home: true
+bacKImg:
+  [
+    /assets/bk1.jpg,
+    /assets/bk2.jpg,
+    /assets/bk3.jpg,
+    /assets/bk4.jpg,
+    /assets/bk5.jpg,
+    /assets/bk6.jpg,
+  ]
 layout: Layout
-heroImage: /assets/bk3.jpg
+heroImage: /assets/logV.png
 heroText: Best for the Best!
-tagline: 学而时习之，不亦说乎
+tagline: Isn't it a pleasure to study and practice what you have learned?
 actionText: 11 →
 actionLink: /vue3/
 # features:

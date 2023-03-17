@@ -1,8 +1,10 @@
 :root {
   scroll-behavior: smooth;
+  --theme-color: #5c92d1;
 }
+
 body {
-  cursor: url(/images/icons/blue.cur),auto
+  cursor: url(/images/icons/blue.cur), auto
 }
 
 @media (min-width: 751px) {
@@ -13,10 +15,12 @@ body {
 
 /* 滚动条整体 */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #e9e8ec;
   border-radius: 8px;
 }
+
 /* 两个滚动条交接处 -- x轴和y轴 */
 ::-webkit-scrollbar-corner {
   background-color: transparent;
@@ -26,9 +30,9 @@ body {
 ::-webkit-scrollbar-thumb {
   width: 8px;
   height: 8px;
-  border-radius: 10px;
+  border-radius: 6px;
+  background: var(--theme-color);
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #d6d3d3;
 }
 
 /* 滚动条轨道 */
@@ -38,9 +42,13 @@ body {
   background: #ededed;
 }
 
-/* 滚动条两端按钮 */
-::-webkit-scrollbar-button {
+::-webkit-scrollbar-track-piece {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .1);
 }
+
+/* 滚动条两端按钮 */
+::-webkit-scrollbar-button {}
 
 
 .sidebar-item-children {
@@ -51,7 +59,9 @@ body {
   }
 }
 
-ul, ol, p {
+ul,
+ol,
+p {
   line-height: 1.5;
 }
 
@@ -68,13 +78,17 @@ ul, ol, p {
 
 
   .full-screen {
-    height: calc(100vh - var(--navbar-height))!important;
+    height: calc(100vh - var(--navbar-height)) !important;
     position: relative;
 
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: var(--navbar-height);
+    margin: var(--navbar-height) 0;
+    color: #eee;
+    font-family: var(--font-family-fancy);
+    user-select: none;
+
     // mrhope.site/
     .mask {
       position: absolute;
@@ -82,8 +96,8 @@ ul, ol, p {
       left: 0;
       right: 0;
       bottom: 0;
-      background-position-y: top!important;
-      
+      background-position-y: top !important;
+
       &::after {
         content: " ";
         position: absolute;
@@ -97,19 +111,64 @@ ul, ol, p {
         opacity: .2;
       }
     }
+
+    :not(.mask) {
+      position: relative;
+      z-index: 2;
+    }
+
     img {
-      width: 100%;
       max-width: 100vw !important;
-      height: calc(100vh - var(--navbar-height)) !important;
       max-height: calc(100vh - var(--navbar-height)) !important;
       margin: var(--navbar-height) auto 0 !important;
     }
 
-    // #main-title {
-    //   position: fixed;
-    //   top: 42vh;
-    //   width: 100%;
-    // }
+    .description {
+      color: #eee;
+    }
 
+    .slide-down-button {
+      border-width: 0;
+      background: transparent;
+      cursor: pointer;
+      position: absolute;
+      bottom: 0;
+      left: calc(50vw - 30px);
+      display: none;
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      display: block;
+
+      &>:first-child {
+        color: #ffffff26;
+      }
+
+      &>:nth-child(2) {
+        color: #ffffff80;
+      }
+
+      .icon {
+        width: 30px;
+        margin: -15px 0;
+        animation-name: bounce-down;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    }
+
+  }
+}
+
+
+@keyframes bounce-down {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(0, 8px);
   }
 }
