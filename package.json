@@ -30,7 +30,7 @@
   "devDependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "@vuepress/client": "2.0.0-beta.61",
-    "@vuepress/plugin-back-to-top": "2.0.0-beta.49",
+    "@vuepress/plugin-back-to-top": "2.0.0-beta.61",
     "@vuepress/theme-default": "2.0.0-beta.61",
     "@vuepress/utils": "2.0.0-alpha.1",
     "ant-design-vue": "^3.2.11",

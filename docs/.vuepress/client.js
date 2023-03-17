@@ -34,6 +34,9 @@ export default defineClientConfig({
     // console.log('siteData~', siteData)
   },
   setup () { },
+  build: {
+    chunkSizeWarningLimit: 1600
+  },
   layouts: {
     // Layout,
     NotFound,
