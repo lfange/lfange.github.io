@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@ant-design/icons-vue": "^6.1.0",
+    "@vuepress/bundler-vite": "^2.0.0-beta.61",
     "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/plugin-back-to-top": "2.0.0-beta.61",
     "@vuepress/theme-default": "2.0.0-beta.61",

@@ -14,7 +14,6 @@ import { computed, h } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '@vuepress/theme-default/lib/shared/index.js'
 import { useDarkMode } from '@vuepress/theme-default/lib/client/composables/index.js'
 
-const isArray = Array.isArray
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
 const isDarkMode = useDarkMode()
@@ -56,7 +55,13 @@ const tagline = computed(() => {
 
 const BackGroundDiv: FunctionalComponent = () => {
   if (!backImgs.value) return null
-  let backIndex: number | string = window.localStorage.getItem('backIndex') || 0
+  let backIndex: number | string
+  if (typeof window !== 'undefined') {
+    backIndex = window.localStorage.getItem('backIndex') || 0
+  } else {
+    backIndex = Math.floor(Math.random() * backImgs.value.length)
+  }
+
   let index = +backIndex >= backImgs.value.length - 1 ? 0 : ++backIndex
 
   console.log('cbackImgs.value.length', index)
@@ -71,7 +76,7 @@ const BackGroundDiv: FunctionalComponent = () => {
     alt: backImgs.value[index],
   })
 
-  window.localStorage.setItem('backIndex', index)
+  if (typeof window !== 'undefined') window.localStorage.setItem('backIndex', index)
   if (frontmatter.value.heroImageDark === undefined) return div
 
   // wrap hero image with <ClientOnly> to avoid ssr-mismatch

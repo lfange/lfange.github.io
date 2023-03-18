@@ -1,4 +1,5 @@
 import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 
 import path from 'path'
 // import { getDirname, path } from '@vuepress/utils'
@@ -25,7 +26,13 @@ export default defineUserConfig({
   },
   // theme: fooTheme,
   ...Plugins,
-  build: {
-    chunkSizeWarningLimit: 100000,
-  },
+  bundler: viteBundler({
+    viteOptions: {
+      build: {
+        chunkSizeWarningLimit: 5000,
+      }
+    },
+    vuePluginOptions: {},
+  })
+ 
 })
