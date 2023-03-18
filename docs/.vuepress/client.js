@@ -6,6 +6,7 @@ import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
 import Comment from './components/comment.vue'
 import Demo from './components/NpmBadge.vue'
+import Proud from "proud-ui";
 
 // "@vssue/api-github-v4": "^1.4.7",
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
@@ -25,6 +26,7 @@ export default defineClientConfig({
     // })
     app.component('Comment', Comment)
     app.component('Demo', Demo)
+    Vue.use(Proud);
     app.use(Button)
     app.use(Tabs)
     // app.component('Layouts', Layout)
