@@ -17,15 +17,15 @@ export default defineUserConfig({
   head,
   theme,
   alias: {
-    '@theme/Home.vue': path.resolve(__dirname, './components/MyHome.vue'),
-    '@theme/HomeHero.vue': path.resolve(
-      __dirname,
-      './components/MyHomeHero.vue'
-    ),
+    // '@theme/Home.vue': path.resolve(__dirname, './components/MyHome.vue'),
+    // '@theme/HomeHero.vue': path.resolve(
+    //   __dirname,
+    //   './components/MyHomeHero.vue'
+    // ),
   },
   // theme: fooTheme,
   ...Plugins,
   build: {
-    chunkSizeWarningLimit: 3500,
+    chunkSizeWarningLimit: 100000,
   },
 })

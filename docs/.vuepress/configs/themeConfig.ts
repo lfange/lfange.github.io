@@ -1,5 +1,5 @@
-// import { defaultTheme } from '@vuepress/theme-default'
-import { vhope } from '../theme/index'
+import { defaultTheme } from '@vuepress/theme-default'
+// import { vhope } from '../theme/index'
 import navbar from './themeConfig/navbar'
 import sidebar from './themeConfig/sidebar'
 // import { hopeTheme } from 'vuepress-theme-hope'
@@ -7,7 +7,7 @@ import sidebar from './themeConfig/sidebar'
 // console.log('defaultTheme', defaultTheme.toString())
 // console.log('Mytheme', Mytheme.toString())
 
-const theme = vhope({
+const theme = defaultTheme({
   navbar,
   sidebar,
 

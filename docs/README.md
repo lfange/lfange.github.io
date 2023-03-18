@@ -1,13 +1,12 @@
 ---
-home: true
+home: false
 bacKImg:
   [
     /assets/bk1.jpg,
     /assets/bk2.jpg,
     /assets/bk3.jpg,
     /assets/bk4.jpg,
-    /assets/bk5.jpg,
-    /assets/bk6.jpg,
+    /assets/bk5.jpg
   ]
 layout: Layout
 heroImage: /assets/logV.png

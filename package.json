@@ -6,7 +6,7 @@
   "scripts": {
     "docs": "vuepress dev docs --temp .temp",
     "dev": "vuepress dev docs",
-    "docs:build": "vuepress build vhope",
+    "docs:build": "vuepress build docs",
     "deploy": "source deploy.sh >err.txt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:clean-dev": "vuepress dev vhope --clean-cache",

@@ -67,7 +67,7 @@ const actions = computed(() => {
 const BackGroundDiv: FunctionalComponent = () => {
   console.log('bacKImg', backImgs, backImgs.value.length)
   if (!backImgs.value) return null
-  let backIndex = localStorage.getItem('backIndex') || 0
+  let backIndex: number | string = window.localStorage.getItem('backIndex') || 0
   let index = +backIndex >= backImgs.value.length - 1 ? 0 : ++backIndex
 
   console.log('cbackImgs.value.length', index)
@@ -80,7 +80,7 @@ const BackGroundDiv: FunctionalComponent = () => {
     alt: heroAlt.value,
   })
 
-  localStorage.setItem('backIndex', index)
+  window.localStorage.setItem('backIndex', index)
   if (frontmatter.value.heroImageDark === undefined) return div
 
   // wrap hero image with <ClientOnly> to avoid ssr-mismatch

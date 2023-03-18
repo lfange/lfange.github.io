@@ -1,6 +1,6 @@
 ---
 layout: Layout
-home: true
+home: false
 # heroImage: /hero.png
 heroImage: ./assets/bk1.jpg
 heroText: Hero 标题

@@ -34,11 +34,11 @@ export default defineClientConfig({
     // console.log('siteData~', siteData)
   },
   setup () { },
-  build: {
-    chunkSizeWarningLimit: 3500
+  bundler: {
+    chunkSizeWarningLimit: 10000
   },
   layouts: {
-    // Layout,
+    Layout,
     NotFound,
   },
 })
