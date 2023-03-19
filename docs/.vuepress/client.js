@@ -6,13 +6,12 @@ import Layout from './theme/layouts/Layout.vue'
 import NotFound from './theme/layouts/NotFound.vue'
 import Comment from './components/comment.vue'
 import Demo from './components/NpmBadge.vue'
-import Proud from "proud-ui";
 
 // "@vssue/api-github-v4": "^1.4.7",
 // "@vssue/vuepress-plugin-vssue": "^1.4.8"
 
 export default defineClientConfig({
-  enhance ({ app, router, siteData }) {
+  async enhance ({ app, router, siteData, isServer }) {
     // app.use(Vssue, {
     //    // 设置要使用的平台 api
     //   api: GithubV4,

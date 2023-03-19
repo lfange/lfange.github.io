@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const obj = {
+      arr: [1, 2, 5, 3],
+    }
+
+    Object.defineProperty(obj, 'arr', {
+      get() {
+        console.log('objobjobj')
+        return obj.arr
+      },
+      set(value, olds) {
+        console.log('set   set ', value, olds)
+      },
+    })
+    console.log('obj arr', obj.arr)
+    obj.arr[2] = 12
+  </script>
+</html>

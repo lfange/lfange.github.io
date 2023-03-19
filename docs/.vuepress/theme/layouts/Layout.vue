@@ -54,34 +54,37 @@ const tagline = computed(() => {
 
 
 const BackGroundDiv: FunctionalComponent = () => {
-  if (!backImgs.value) return null
-  let backIndex: number | string
-  if (typeof window !== 'undefined') {
-    backIndex = window.localStorage.getItem('backIndex') || 0
-  } else {
-    backIndex = Math.floor(Math.random() * backImgs.value.length)
-  }
+  setTimeout(() => {
 
-  let index = +backIndex >= backImgs.value.length - 1 ? 0 : ++backIndex
+    if (!backImgs.value) return null
+    let backIndex: number | string
+    if (typeof window !== 'undefined') {
+      backIndex = window.localStorage.getItem('backIndex') || 0
+    } else {
+      backIndex = Math.floor(Math.random() * backImgs.value.length)
+    }
 
-  console.log('cbackImgs.value.length', index)
-  const div = h('div', {
-    style: {
-      background: `url(${withBase(backImgs.value[index])}) center center / cover no-repeat`,
-      // opacity: isDarkMode.value ? 0.3 : 'inherit'
-      filter: isDarkMode.value ? 'brightness(0.5)' : 'inherit'
-    },
-    class: 'mask',
-    // background: `url(${withBase(heroImage.value)})`,
-    alt: backImgs.value[index],
-  })
+    let index = +backIndex >= backImgs.value.length - 1 ? 0 : ++backIndex
 
-  if (typeof window !== 'undefined') window.localStorage.setItem('backIndex', index)
-  if (frontmatter.value.heroImageDark === undefined) return div
+    console.log('cbackImgs.value.length', index)
+    const div = h('div', {
+      style: {
+        background: `url(${withBase(backImgs.value[index])}) center center / cover no-repeat`,
+        // opacity: isDarkMode.value ? 0.3 : 'inherit'
+        filter: isDarkMode.value ? 'brightness(0.5)' : 'inherit'
+      },
+      class: 'mask',
+      // background: `url(${withBase(heroImage.value)})`,
+      alt: backImgs.value[index],
+    })
 
-  // wrap hero image with <ClientOnly> to avoid ssr-mismatch
-  // when using a different hero image in dark mode
-  return h(ClientOnly, () => div)
+    if (typeof window !== 'undefined') window.localStorage.setItem('backIndex', index)
+    if (frontmatter.value.heroImageDark === undefined) return div
+
+    // wrap hero image with <ClientOnly> to avoid ssr-mismatch
+    // when using a different hero image in dark mode
+    return h(ClientOnly, () => div)
+  }, 2000)
 }
 
 const HomeHeroImage: FunctionalComponent = () => {

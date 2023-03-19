@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+*.log
+explorations
+TODOs.md
+dist/
+dist/vue.common.min.js
+.vscode

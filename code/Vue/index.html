@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
       /* div{
           background-color:blue;
           font-size: 20px
       } */
-     
     </style>
-</head>
+  </head>
 
-<body>
-    <div id='app' style="color:red"> 
-         <h2>
-             {{arr}}
-             {{msg}}
-         </h2>
+  <body>
+    <div id="app" style="color: red">
+      <h2>{{arr}} {{msg}}</h2>
     </div>
     <!-- render(){} -->
     <script src="dist/vue.js"></script>
     <script>
-        let vm = new Vue({
-            el: '#app', //挂载元素
-            data() {
-                return {
-                     arr:[{a:1}],
-                     name:'小明',
-                     msg:'hello'
-                }
-            },
-            //
-            created(){ // 生命周期就是一个，函数的调用，现在vue中定阅号， 后续会触发此方法
-                console.log('created')
-            },
-            updated(){
-                console.log('updated')
-            }
-            //内部原理 将我们是生命周期组合成一个数组[created1,created2]
-        })
-        //步骤1
-        // vm.name = '张三' //重新调用_render(重新到vm上取值)  在调用_updata（重新更新页面）
-        console.log(vm)
-        // vm._updata(vm._render())  //错误找不到 最新的元素  删除元素没有返回最新的
-        setTimeout(() => { //nextTick 
-            //注意数据更新多次 ，vm._updata(vm._render()) 只需要执行一次
-            //批量处理=》vue 异步 数据更新后，不会马上执行
-           vm.arr.push({b:6})
-           vm.arr.push({b:5})
-           vm.msg = '张三' //如果更新数据 watcher.updata() 方法
+      let vm = new Vue({
+        el: '#app', //挂载元素
+        data() {
+          return {
+            arr: [{ a: 1 }],
+            name: '小明',
+            msg: 'hello',
+          }
+        },
+        //
+        created() {
+          // 生命周期就是一个，函数的调用，现在vue中定阅号， 后续会触发此方法
+          console.log('created')
+        },
+        updated() {
+          console.log('updated')
+        },
+        //内部原理 将我们是生命周期组合成一个数组[created1,created2]
+      })
+      //步骤1
+      // vm.name = '张三' //重新调用_render(重新到vm上取值)  在调用_updata（重新更新页面）
+      console.log(vm)
+      // vm._updata(vm._render())  //错误找不到 最新的元素  删除元素没有返回最新的
+      setTimeout(() => {
+        //nextTick
+        //注意数据更新多次 ，vm._updata(vm._render()) 只需要执行一次
+        //批量处理=》vue 异步 数据更新后，不会马上执行
+        //  vm.arr.push({b:6})
+        //  vm.arr.push({b:5})
+        //  vm.msg = '张三' //如果更新数据 watcher.updata() 方法
         //    vm._updata(vm._render())  //重新封装成一个渲染 watcher
-        vm.$nextTick(()=>{ //用户
-              console.log(vm.$el.innerHTML )
-        })
-        }, 1000);
-        //回归
-        //1收集依赖 ：实现自动更改（ vm._updata(vm._render())）
-        //2 创建watcher 类 进行扩展
-        //3  data 和dep 关系  dep和watcher  关系
-        //  3.1 data属性和dep 是一一对象的关系
-        //  3.2  dep 和watcher 关系 多对多 后面的计算属性
+        // vm.$nextTick(()=>{ //用户
+        //       console.log(vm.$el.innerHTML )
+        // })
+      }, 1000)
+      vm.name = ' 18 05 17 32 06 22'
+      console.log('vvm', vm)
+      //回归
+      //1收集依赖 ：实现自动更改（ vm._updata(vm._render())）
+      //2 创建watcher 类 进行扩展
+      //3  data 和dep 关系  dep和watcher  关系
+      //  3.1 data属性和dep 是一一对象的关系
+      //  3.2  dep 和watcher 关系 多对多 后面的计算属性
     </script>
-</body>
-
+  </body>
 </html>

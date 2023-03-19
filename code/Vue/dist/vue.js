@@ -205,7 +205,6 @@
 
       //1 给所有的对象类型添加一个dep 属性
       this.dep = new Dep(); // 注意 （1）{}  (2) [] 不是给里面属性添加dep
-      // console.log(data)
       //使用defineProperty 重新定义属性 作用用来观测数据已经劫持过来
       //判断一个对象是否被观察过看他有没有 __ob__这个属性
 
@@ -246,6 +245,7 @@
         //循环
         var keys = Object.keys(data); //获取对象的key  注意这个key 只是 对象的最外层的
 
+        console.log('keyskeyskeys', keys);
         keys.forEach(function (item) {
           defineReactive(data, item, data[item]); //Vue.util 中有的
         });
@@ -259,7 +259,8 @@
   function defineReactive(data, key, value) {
     // Object.defineProperty
     var chilidDep = Observer(value); //获取到数组对应的dep 
-    //1给我们的每个属性添加一个dep
+
+    console.log('chilidDepchilidDep', chilidDep); //1给我们的每个属性添加一个dep
 
     var dep = new Dep(); //2将dep 存放起来，当页面取值时，说明这个值用来渲染，在将这个watcher和这个属性对应起来
 
@@ -393,11 +394,11 @@
   function initData(vm) {
     //数据进行初始化
     var data = vm.$options.data;
-    data = vm._data = typeof data === 'function' ? data.call(vm) : data; // console.log(data)
-    //数据的劫持方案对象Object.defineProperty
+    data = vm._data = typeof data === 'function' ? data.call(vm) : data; //数据的劫持方案对象Object.defineProperty
     //将data中的属性代理到vm  上
 
     for (var key in data) {
+      console.log('key', key);
       proxy(vm, "_data", key);
     }
 
@@ -464,7 +465,7 @@
       //     handler() //如果有这个immediate 立即执行
       //  }
     };
-  } //nextTick 原理 
+  } //nextTick 原理
   // watch 基本使用  init
 
   var ncname = "[a-zA-Z_][\\-\\.0-9_a-zA-Z]*"; // 小a-z 大A到Z 标签名称： div  span a-aa
@@ -1066,7 +1067,7 @@
       //初始化 状态 （将数据做一个初始化的劫持，当我改变数据时应跟新视图）
       //vue组件中有很多状态 data,props watch computed
 
-      console.log(vm.$options);
+      console.log('VmOptions', vm.$options);
       callHook(vm, "beforeCreate");
       initState(vm); //初始化状态
 
@@ -1107,9 +1108,10 @@
 
         var render = compileToFunction(template);
         options.render = render;
-      } // console.log(options.render) // 渲染到页面的都是这个render方法
-      //需要挂载这个组件
+      }
 
+      console.log('BLSJZXLC', vm); // console.log(options.render) // 渲染到页面的都是这个render方法
+      //需要挂载这个组件
 
       mountComponent(vm);
     };
