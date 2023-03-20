@@ -18,62 +18,63 @@ const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
 const isDarkMode = useDarkMode()
 
-const backImgs = computed(() => {
-  if (frontmatter.value.bacKImg !== undefined) {
-    return frontmatter.value.bacKImg
-  }
-})
+const backImgs = [
+  '../assets/bk1.jpg',
+  '../assets/bk2.jpg',
+  '../assets/bk3.jpg',
+  '../assets/bk4.jpg',
+  '../assets/bk5.jpg',
+]
 
 const heroImage = computed(() => {
   if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
     return frontmatter.value.heroImageDark
   }
-  return frontmatter.value.heroImage
+  return frontmatter.value.heroImage || '/assets/logV.png'
 })
 const heroAlt = computed(
-  () => frontmatter.value.heroAlt || heroText.value || 'hero'
+  () => frontmatter.value.heroAlt || heroText.value || 'Best for the Best!'
 )
 
 const heroText = computed(() => {
-  if (frontmatter.value.heroText === null) {
-    return null
+  if (frontmatter.value.heroText === null || frontmatter.value.heroText === undefined) {
+    return 'Best for the Best!'
   }
-  return frontmatter.value.heroText || siteLocale.value.title || 'Hello'
+  return frontmatter.value.heroText || siteLocale.value.title || 'Best for the Best!'
 })
 
 const tagline = computed(() => {
-  if (frontmatter.value.tagline === null) {
-    return null
+  if (frontmatter.value.tagline === null || frontmatter.value.tagline === undefined) {
+    return `Isn't it a pleasure to study and practice what you have learned ? `
   }
   return (
     frontmatter.value.tagline ||
     siteLocale.value.description ||
-    'Welcome to your VuePress site'
+    `Isn't it a pleasure to study and practice what you have learned ? `
   )
 })
 
-
 const BackGroundDiv: FunctionalComponent = () => {
-  if (!backImgs.value) return null
+  if (!backImgs) return null
   let backIndex: number | string
   if (typeof window !== 'undefined') {
     backIndex = window.localStorage.getItem('backIndex') || 0
   } else {
-    backIndex = Math.floor(Math.random() * backImgs.value.length)
+    backIndex = Math.floor(Math.random() * backImgs.length)
   }
 
-  let index = +backIndex >= backImgs.value.length - 1 ? 0 : ++backIndex
+  let index = +backIndex >= backImgs.length - 1 ? 0 : ++backIndex
 
   console.log('cbackImgs.value.length', index)
   const div = h('div', {
     style: {
-      background: `url(${withBase(backImgs.value[index])}) center center / cover no-repeat`,
+      background: `url(${withBase(backImgs[index])}) center center / cover no-repeat`,
       // opacity: isDarkMode.value ? 0.3 : 'inherit'
       filter: isDarkMode.value ? 'brightness(0.5)' : 'inherit'
     },
     class: 'mask',
     // background: `url(${withBase(heroImage.value)})`,
-    alt: backImgs.value[index],
+    alt: backImgs[index],
   })
 
   if (typeof window !== 'undefined') window.localStorage.setItem('backIndex', index)
@@ -85,7 +86,6 @@ const BackGroundDiv: FunctionalComponent = () => {
 }
 
 const HomeHeroImage: FunctionalComponent = () => {
-  console.log('frontmatter', frontmatter)
   if (!heroImage.value) return null
   const img = h('img', {
     src: withBase(heroImage.value),

@@ -33,7 +33,6 @@
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
 
   onMounted(() => {
-
     change('dobule')
   })
 

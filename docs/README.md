@@ -1,19 +1,19 @@
 ---
-home: false
-bacKImg:
-  [
-    /assets/bk1.jpg,
-    /assets/bk2.jpg,
-    /assets/bk3.jpg,
-    /assets/bk4.jpg,
-    /assets/bk5.jpg
-  ]
+home: true
+# bacKImg:
+#   [
+#     ../assets/bk1.jpg,
+#     ../assets/bk2.jpg,
+#     ../assets/bk3.jpg,
+#     ../assets/bk4.jpg,
+#     ../assets/bk5.jpg,
+#   ]
 layout: Layout
-heroImage: /assets/logV.png
-heroText: Best for the Best!
-tagline: Isn't it a pleasure to study and practice what you have learned?
-actionText: 11 →
-actionLink: /vue3/
+# heroImage: /assets/logV.png
+# heroText: -
+# tagline: Isn't it a pleasure to study and practice what you have learned?
+# actionText: 11 →
+# actionLink: /vue3/
 # features:
 #   - title: 诫子书
 #     details: 不明确志向就不能在学习上获得成就。纵欲放荡、消极怠慢就不能勉励心志使精神振作，冒险草率、急躁不安就不能修养性情。年华随时光而飞驰，意志随岁月逐渐消逝。最终枯败零落，大多不接触世事、不为社会所用，只能悲哀地困守在自己穷困的破舍里，到时悔恨又怎么来得及
@@ -27,7 +27,7 @@ footer: 蜀ICP备2022007922号-1  MIT Licensed | Copyright © 2021-present Fan G
 
 夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。夫学须静也，才须学也，非学无以广才，非志无以成学。淫慢则不能励精，险躁则不能治性。年与时驰，意与日去，遂成枯落，多不接世，悲守穷庐，将复何及！
 
-#### 好记性不如烂笔头
+### 好记性不如烂笔头
 
 学习的重点之一是习惯的养成，写博客、做总结是学习很好的方法，导致工作两三年后水平停滞不前，最终工资被倒挂，甚至无力跳槽，这其中有一个重要的原因就是在入门的时候没有养成良好的学习习惯，比如看书必须记笔记，有了感悟最好写博客记录一下，发现知识盲区一定要去搜索权威文档而不是听信二手知识等等。
 

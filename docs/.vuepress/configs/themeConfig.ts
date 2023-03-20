@@ -10,13 +10,13 @@ import sidebar from './themeConfig/sidebar'
 const theme = defaultTheme({
   navbar,
   sidebar,
-
+  logo: './assets/dragon.png',
   repo: 'lfange',
   docsDir: 'docs', // 编辑的文件夹
   docsBranch: 'master', // 假如文档放在一个特定的分支下
   editLink: true,
   // 默认为 "Edit this page"
-  editLinkText: '帮助我改善此页面！',
+  // editLinkText: '帮助我改善此页面！',
   toggleSidebar: 'toggleSidebar',
 })
 
