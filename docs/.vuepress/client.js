@@ -25,7 +25,6 @@ export default defineClientConfig({
     // })
     app.component('Comment', Comment)
     app.component('Demo', Demo)
-    Vue.use(Proud);
     app.use(Button)
     app.use(Tabs)
     // app.component('Layouts', Layout)

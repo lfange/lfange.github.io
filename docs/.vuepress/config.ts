@@ -30,9 +30,8 @@ export default defineUserConfig({
     viteOptions: {
       build: {
         chunkSizeWarningLimit: 5000,
-      }
+      },
     },
     vuePluginOptions: {},
-  })
- 
+  }),
 })

@@ -36,7 +36,6 @@
     "@vuepress/utils": "2.0.0-beta.61",
     "ant-design-vue": "^3.2.11",
     "chalk": "^5.2.0",
-    "proud-ui": "^0.1.2",
     "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-auto-sidebar": "^2.3.2",

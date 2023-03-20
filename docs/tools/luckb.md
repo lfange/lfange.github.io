@@ -3,8 +3,8 @@
 <a-button type="primary" @click="getPrize()">Start</a-button>
 
 <a-tabs v-model:activeKey="active" @change="change">
-  <a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
-  <a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
+<a-tab-pane key="dobule" tab="dobule ball"></a-tab-pane>
+<a-tab-pane key="lucky" tab="lucky ball" force-render></a-tab-pane>
 </a-tabs>
 
 <div class="ball-container">
@@ -26,13 +26,16 @@
 </script>
 
 <script setup lang="ts">
-  import { ref, reactive, watch, computed, provide } from "vue";
+  import { ref, reactive, watch, computed, provide, onMounted } from "vue";
   const luckArr = ref<[]>([[]])
   const active = ref<string>('dobule')
 
   const isdoblue = computed<Boolean>(() => active.value === 'dobule')
 
-  change('dobule')
+  onMounted(() => {
+
+    change('dobule')
+  })
 
   const len = computed<number>(() => isdoblue.value ? 6 : 5)
 
@@ -77,7 +80,14 @@
 
     luckArr.value.push([...redB, ...blueB])
 
-    localStorage.setItem(active.value, JSON.stringify(luckArr.value))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(active.value, JSON.stringify(luckArr.value))
+    } else {
+      backIndex = Math.floor(Math.random() * backImgs.value.length)
+      console.log(`ssr render, localStorage is unavailable, ${luckArr.value}`)
+    }
+
+    
   }
 
   function change(tab) {
