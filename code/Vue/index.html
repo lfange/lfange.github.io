@@ -20,6 +20,21 @@
     <!-- render(){} -->
     <script src="dist/vue.js"></script>
     <script>
+      //umd  Vue
+      //  console.log(Vue)
+      //响应式  vue2  mvvm
+      // Vue.Mixin({
+      //   //全局
+      //   created: function a() {
+      //     console.log('a----2')
+      //   },
+      // })
+      // Vue.Mixin({
+      //   //全局
+      //   created: function b() {
+      //     console.log('b----2')
+      //   },
+      // })
       let vm = new Vue({
         el: '#app', //挂载元素
         data() {
@@ -32,16 +47,22 @@
         //
         created() {
           // 生命周期就是一个，函数的调用，现在vue中定阅号， 后续会触发此方法
-          console.log('created')
+          // console.log('created')
         },
         updated() {
           console.log('updated')
         },
         //内部原理 将我们是生命周期组合成一个数组[created1,created2]
+
+        watch: {
+          name(v, o) {
+            console.log('V, O', v, o)
+          },
+        },
       })
       //步骤1
       // vm.name = '张三' //重新调用_render(重新到vm上取值)  在调用_updata（重新更新页面）
-      console.log(vm)
+
       // vm._updata(vm._render())  //错误找不到 最新的元素  删除元素没有返回最新的
       setTimeout(() => {
         //nextTick
@@ -55,8 +76,10 @@
         //       console.log(vm.$el.innerHTML )
         // })
       }, 1000)
-      vm.name = ' 18 05 17 32 06 22'
+      vm.name = '18 05 17 32 06 22'
       console.log('vvm', vm)
+
+      // vm.$watch(() =>)
       //回归
       //1收集依赖 ：实现自动更改（ vm._updata(vm._render())）
       //2 创建watcher 类 进行扩展

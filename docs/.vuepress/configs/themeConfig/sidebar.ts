@@ -43,6 +43,7 @@ const sidebar = {
     Vue2Base('advanced/vuecli'),
     Vue2Base('advanced/Vuewebpack'),
     Vue2Base('advanced/Vuescoped'),
+    Vue2Base('advanced/VueRouter'),
   ],
   '/Front/vue3/': [
     Vue3Base('basic'),
