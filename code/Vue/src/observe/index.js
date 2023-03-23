@@ -45,7 +45,6 @@ function defineReactive (data, key, value) {
   // Object.defineProperty
   let chilidDep = Observer(value) //获取到数组对应的dep 
 
-  console.log('chilidDepchilidDep', chilidDep);
   //1给我们的每个属性添加一个dep
   let dep = new Dep();
   //2将dep 存放起来，当页面取值时，说明这个值用来渲染，在将这个watcher和这个属性对应起来

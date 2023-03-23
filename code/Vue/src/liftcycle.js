@@ -7,12 +7,12 @@ export function mountComponent (vm, el) {
   //源码方式
   callHook(vm, "beforeMount")
   //挂载  重新封装一下 变成一个类，这个类他是响应式变的，数据改变了我们就调用这个方法
-  //   vm._updata(vm._render()) 
-  let updataComponent = () => {
-    vm._updata(vm._render())
+  //   vm._update(vm._render()) 
+  let updateComponent = () => {
+    vm._update(vm._render())
   }
   //这个watcher 是用于渲染的 目前没有任何功能 ，updataComponent 
-  new Watcher(vm, updataComponent, () => {
+  new Watcher(vm, updateComponent, () => {
     callHook(vm, 'updated')
   }, true) //Watcher 有什么用  和之前差不多，1把实例缠绕进去 ,2在给他传入一个方法
   //true 标识渲染的  ，（）=》{} 跟新逻辑
@@ -21,7 +21,7 @@ export function mountComponent (vm, el) {
 
 //创建这两个方法
 export function liftcycleMixin (Vue) { //这个方法在那个地方使用的
-  Vue.prototype._updata = function (vnode) {
+  Vue.prototype._update = function (vnode) {
     //   console.log(vnode)
     const vm = this
     vm.$el = patch(vm.$el, vnode) //获取到最新的渲染值

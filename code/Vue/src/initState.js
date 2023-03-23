@@ -1,3 +1,4 @@
+import Watcher from './observe/watcher'
 import { Observer } from "./observe/index.js";
 import { nextTick } from "./utils/nextTick.js";
 
@@ -5,15 +6,16 @@ export function initState (vm) {
   // console.log(vm)
   //
   const opts = vm.$options
+  if (opts.data) {
+    initData(vm);
+  }
   if (opts.props) {
     initProps(vm);
   }
   if (opts.watch) {
     initWatch(vm);
   }
-  if (opts.data) {
-    initData(vm);
-  }
+
   if (opts.computed) {
     initComputed(vm);
   }
@@ -46,7 +48,6 @@ function initData (vm) { //数据进行初始化
   //数据的劫持方案对象Object.defineProperty
   //将data中的属性代理到vm  上
   for (let key in data) {
-    console.log('key', key);
     proxy(vm, "_data", key)
   }
   Observer(data)
@@ -71,7 +72,6 @@ function initWatch (vm) {
       createrWatcher(vm, key, handler)
     }
   }
-
 }
 
 //vm.$watch(()=>{return 'a'}) // 返回的值就是  watcher 上的属性 user = false
@@ -95,15 +95,23 @@ export function stateMixin (vm) {
   vm.prototype.$nextTick = function (cb) { //nextTick: 数据更新之后获取到最新的DOM
     //  console.log(cb)
     nextTick(cb)
-  },
-    vm.prototype.$watch = function (exprOrfn, handler, options) { //上面格式化处理
-      console.log(exprOrfn, handler, options)
-      //实现watch 方法 就是new  watcher //渲染走 渲染watcher $watch 走 watcher  user false
-      //
-      //  if(options.immediate){
-      //     handler() //如果有这个immediate 立即执行
-      //  }
+  }
+
+
+  vm.prototype.$watch = function (exprOrfn, handler, options) { //上面格式化处理
+
+    console.log('exprOrfn', exprOrfn, handler, options)
+    //实现watch 方法 就是new  watcher //渲染走 渲染watcher $watch 走 watcher  user false
+    //
+    const watch = new Watcher(this, exprOrfn, handler, options)
+    if (options.immediate) {
+      handler.call(this)
     }
+    // const watch = new Watcher(vm, exprOrfn, handler, options)
+    //  if(options.immediate){
+    //     handler() //如果有这个immediate 立即执行
+    //  }
+  }
 
 }
 
