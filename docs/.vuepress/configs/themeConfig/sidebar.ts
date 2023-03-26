@@ -110,7 +110,7 @@ const sidebar = {
     '/interview/interCode.md',
     '/interview/task.md',
   ],
-  '/en/': ['/en/sentence.md'],
+  '/en/': ['/en/sentence.md', '/en/words.md'],
 }
 
 export default sidebar

@@ -1,7 +1,8 @@
 // import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import MyPlugin from './Myplugin'
+// import viteImagemin from 'vite-plugin-imagemin'
 
-console.log('Myplugin', MyPlugin.name)
+// console.log('viteImagemin', viteImagemin.toString())
 
 const plugins = [
   // backToTopPlugin(),
@@ -9,6 +10,34 @@ const plugins = [
   MyPlugin({
     id: 'source',
   }),
+  // viteImagemin({
+  //   verbose: true,
+  //   gifsicle: {
+  //     optimizationLevel: 7,
+  //     interlaced: false,
+  //   },
+  //   optipng: {
+  //     optimizationLevel: 7,
+  //   },
+  //   mozjpeg: {
+  //     quality: 20,
+  //   },
+  //   pngquant: {
+  //     quality: [0.8, 0.9],
+  //     speed: 4,
+  //   },
+  //   svgo: {
+  //     plugins: [
+  //       {
+  //         name: 'removeViewBox',
+  //       },
+  //       {
+  //         name: 'removeEmptyAttrs',
+  //         active: false,
+  //       },
+  //     ],
+  //   },
+  // }),
   // ['@vssue/vuepress-plugin-vssue', {
   //   // 设置平台，而不是 `api`
   //   platform: 'github-v4',
