@@ -57,9 +57,7 @@ Asked whether any particular papers had impelled the change, 是过去分词作�
 <details>
   <summary>
     Today no such severe lack exists as that ordered by Frederick. Nevertheless, some children are still backward in speaking. Most often the reason for this is that the mother is insensitive to the signals of the infant, whose brain is programmed to learn language rapidly. If these sensitive periods are neglected, the ideal time for acquiring skills passes and they might never be learned so easily again. A bird learns to sing and to fly rapidly at the right time, but the process is slow and hard once the critical stage has passed.
-
-    The reason some children are backward in speaking is most probably that ________.
-
+    The reason some children are backward in speaking is most probably that ________.  
     [A] they are incapable of learning language rapidly
     [B] they are exposed to too much language at once
     [C] their mothers respond inadequately to their attempts to speak
@@ -113,7 +111,7 @@ D 选项的主语对了，但是和母亲的智力没有关系！
 
 [A] 他们不能很快的学习语言。
 
-[B] 他们同时面对太多的语言，Be exposed to = be confronted with 面对 （绝对必考短语！）
+[B] 他们同时面对太多的语言，**Be exposed to** = **be confronted with** 面对 （绝对必考短语！）
 [C] 他们的母亲对于他们说话的尝试没有做出充分的回应
 [D] 他们的母亲不够聪明没法帮他们。
 
