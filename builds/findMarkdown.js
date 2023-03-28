@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function findMarkdown(dir, callback) {
+function findMarkdown (dir, callback) {
   fs.readdir(dir, function (err, files) {
     if (err) throw err;
     files.forEach(fileName => {
@@ -19,3 +19,5 @@ function findMarkdown(dir, callback) {
     });
   });
 }
+
+module.exports = findMarkdown
