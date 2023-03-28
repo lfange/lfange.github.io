@@ -97,6 +97,7 @@ const sidebar = {
     '/tools/camunda/',
     '/tools/git/',
     '/tools/regular',
+    '/tools/GPT',
     // {
     //   text: '工具类',
     //   link: '/tools/',
