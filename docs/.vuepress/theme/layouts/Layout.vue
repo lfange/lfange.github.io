@@ -18,14 +18,6 @@ const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
 const isDarkMode = useDarkMode()
 
-const backImgs = [
-  '../assets/bk1.jpg',
-  '../assets/bk2.jpg',
-  '../assets/bk3.jpg',
-  '../assets/bk4.jpg',
-  '../assets/bk5.jpg',
-]
-
 const heroImage = computed(() => {
   if (isDarkMode.value && frontmatter.value.heroImageDark !== undefined) {
     return frontmatter.value.heroImageDark
@@ -55,30 +47,17 @@ const tagline = computed(() => {
 })
 
 const BackGroundDiv: FunctionalComponent = () => {
-  if (!backImgs) return null
-  let backIndex: number | string
-  if (typeof window !== 'undefined') {
-    backIndex = window.localStorage.getItem('backIndex') || 0
-  } else {
-    backIndex = Math.floor(Math.random() * backImgs.length)
-  }
 
-  let index = +backIndex >= backImgs.length - 1 ? 0 : ++backIndex
-
-  console.log('cbackImgs.value.length', index)
   const div = h('div', {
     style: {
-      background: `url(${withBase(backImgs[index])}) center center / cover no-repeat`,
+      background: `url(${"http://file.mo7.cc/api/public/bz"}) center center / cover no-repeat`,
       // opacity: isDarkMode.value ? 0.3 : 'inherit'
       filter: isDarkMode.value ? 'brightness(0.5)' : 'inherit'
     },
     class: 'mask',
     // background: `url(${withBase(heroImage.value)})`,
-    alt: backImgs[index],
+    // alt: '',
   })
-
-  if (typeof window !== 'undefined') window.localStorage.setItem('backIndex', index)
-  if (frontmatter.value.heroImageDark === undefined) return div
 
   // wrap hero image with <ClientOnly> to avoid ssr-mismatch
   // when using a different hero image in dark mode
@@ -158,7 +137,9 @@ const tobuttom = (e) => {
   </div>
 
   <ParentLayout>
-    少时诵诗书ss
+    <template #page-bottom>
+      <CommentService :darkmode="isDarkMode" />
+    </template>
   </ParentLayout>
 </template>
 

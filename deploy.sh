@@ -5,7 +5,7 @@
 set -e
 
 # 打包
-npm run docs:build
+npm run talkbuild
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
