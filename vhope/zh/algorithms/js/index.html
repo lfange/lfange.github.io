@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="" style="height: 10000px; background: skyblue;">
+			<p>
+			  <input type="checkbox" id="cbox1" value="first_checkbox">
+			  <label for="cbox1">This is the first checkbox
+					<div >
+						id=""id=""
+						id=""
+					</div>
+				
+				</label>
+			</p>
+			<p>
+			  <input type="checkbox" id="cbox2" value="second_checkbox" checked="checked">
+			  <label for="cbox2">This is the second checkbox, which is checked</label>
+			</p>
+			
+		</div>
+		<!-- <script src="函数柯里化.js"></script> -->
+		<!-- <script src="./callApply.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script src="./promiseA.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js原型链.js" type="text/javascript" charset="utf-8"></script>
+		<script src="防抖和节流.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fns() {
+				console.log('事件触发事件触发')
+			}
+
+			function sdebounce() {
+				console.log('debounce 防抖')
+			}
+			
+			function jieliu(fn, delay) {
+				let oldtime = new Date()
+				return function(...args) {
+					console.log('...', args, arguments)
+					const newtime = new Date()
+					if (delay - (newtime - oldtime) <= 0) {
+						fn.apply(null, args)
+						oldtime = new Date()
+					}
+				}
+			}
+			// const ff = throttled(fns, 2000)
+			// const ff = throttle(fns, 2000)
+			const ff = jieliu(fns, 2000)
+
+			// const ww = debounce(sdebounce, 1000)
+
+			const oo = fangdou(sdebounce, 2000)
+			window.onresize = function(e) {
+				ff('this is a arugments', 'args')
+				// oo()
+			}
+
+			const str = '-925516588.356899829'
+
+			// const arr = str.split('.')[0].split('')
+			// let count = 0
+			// for (let i = arr.length-1; i >= 0; i--)
+			// {
+			// 	if(count <= 3) {
+			// 		count++
+			// 		console.log('arr[i]', i, arr[i])
+			// 		count = 0
+			// 	}
+			// }
+			// console.log('arr', arr)
+			
+			const reg = /((?!^)(?=((\d{3})+\.)))/g
+			// const reg = /((?<=(\.(\d{3})+))(?!$)/g
+			const str1 = str.replace(reg, (a, b) => {
+				return a + ','
+			})
+			console.log('str1', str1)
+
+			// const reg = /(?!^)(?=(\d{3})+\.)/g
+
+			// let newStr = str.replace(reg, (a,b) => {
+			// 	console.log('保留', a, b)
+			// 	return a + ','
+			// })
+			// console.log('reg', newStr)
+			// const reg1 = /(?<=(\.(\d{3})+))/g
+			// newStr = str.replace(reg1, ',')
+			// console.log('reg', newStr)
+			
+		</script>
+	</body>
+</html>

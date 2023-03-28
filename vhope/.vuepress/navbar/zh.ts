@@ -1,30 +1,108 @@
-import { navbar } from "vuepress-theme-hope";
+import { navbar } from 'vuepress-theme-hope'
 
-export const zhNavbar = navbar([
-  "/zh/",
-  { text: "案例", icon: "discover", link: "/zh/demo/" },
+export const zhNavbarConfig = navbar([
+  '/zh/',
+  // { text: "案例", icon: "discover", link: "/zh/demo/" },
+  // {
+  //   text: "指南",
+  //   icon: "creative",
+  //   prefix: "/zh/guide/",
+  //   children: [
+  //     {
+  //       text: "Bar",
+  //       icon: "creative",
+  //       prefix: "bar/",
+  //       children: ["baz", { text: "...", icon: "more", link: "" }],
+  //     },
+  //     {
+  //       text: "Foo",
+  //       icon: "config",
+  //       prefix: "foo/",
+  //       children: ["ray", { text: "...", icon: "more", link: "" }],
+  //     },
+  //   ],
+  // },
+  // {
+  //   text: 'V2 文档',
+  //   icon: 'note',
+  //   link: 'https://theme-hope.vuejs.press/zh/',
+  // },
   {
-    text: "指南",
-    icon: "creative",
-    prefix: "/zh/guide/",
+    text: 'Interest',
+    icon: 'discover',
+    link: 'en/',
+  },
+  {
+    text: '算法',
+    icon: 'creative',
+    link: 'algorithms/',
+  },
+  '/interview/READMD.md',
+  {
+    text: '计算机',
+    icon: 'note',
+    link: 'computer/',
+    children: [
+      // '/computer/os/README.md',
+      '/computer/net/network-architecture',
+      // '/computer/pocc/README.md',
+    ],
+  },
+  {
+    text: '前端',
+    link: 'Front/',
     children: [
       {
-        text: "Bar",
-        icon: "creative",
-        prefix: "bar/",
-        children: ["baz", { text: "...", icon: "more", link: "" }],
+        text: 'Vue Base',
+        link: '/Front/vue/basic/vuebase',
       },
       {
-        text: "Foo",
-        icon: "config",
-        prefix: "foo/",
-        children: ["ray", { text: "...", icon: "more", link: "" }],
+        text: 'Vue advanced',
+        link: '/Front/vue/advanced/vuecli',
+        // children: [
+        //   '/Front/vue/README.md',
+        //   '/Front/vue/VueScoped.md'
+        // ]
+      },
+      {
+        text: 'Vue3',
+        link: '/Front/Vue3/basic',
+      },
+      {
+        text: 'JavaScript',
+        link: '/Front/JavaScript/currie',
+      },
+      {
+        text: 'TypeScript',
+        link: '/Front/ts/',
+      },
+      {
+        text: '浏览器',
+        link: '/Front/browser/README.md',
+      },
+      '/Front/errlog.md',
+      {
+        text: '性能优化',
+        link: '/Front/performance/README.md',
       },
     ],
   },
   {
-    text: "V2 文档",
-    icon: "note",
-    link: "https://theme-hope.vuejs.press/zh/",
+    text: '后端',
+    link: '/backend/',
+    children: ['/backend/Golang/README.md'],
   },
-]);
+  {
+    text: '服务',
+    link: '/serve/',
+    children: ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
+  },
+  {
+    text: 'web3',
+    link: '/web3/',
+  },
+  {
+    text: '工具',
+    link: '/tools/',
+  },
+])

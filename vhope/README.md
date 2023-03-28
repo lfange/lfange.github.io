@@ -1,10 +1,14 @@
 ---
 home: true
+layout: BlogHome
 icon: home
-title: Project home
-heroImage: /logo.svg
-heroText: Project name
-tagline: You can place the description of the project here.
+title: 哓番茄
+heroImage: /logV.png
+heroText: 哓番茄
+tagline: Isn't it a pleasure to study and practice what you have learned ?
+# Special thank to @mo7
+bgImage: http://file.mo7.cc/api/public/bz
+heroFullScreen: true
 actions:
   - text: How to Use 💡
     link: /demo/
@@ -100,7 +104,8 @@ features:
     link: https://theme-hope.vuejs.press/guide/feature/
 
 copyright: false
-footer: Theme by <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+# footer: Theme by <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+footer: MIT Licensed | Copyright © 2021-present Fan Ge
 ---
 
 This is an example of a project homepage. You can place your main content here.

@@ -1,172 +1,217 @@
-import { hopeTheme } from 'vuepress-theme-hope'
-import { enNavbar, zhNavbar } from './navbar/index.js'
-import { enSidebar, zhSidebar } from './sidebar/index.js'
+import { hopeTheme } from 'vuepress-theme-hope/perf'
 
+import { zhNavbarConfig } from './navbar/zh'
+import { zhSidebarConfig } from './sidebar/index.js'
+// enSidebarConfig,
 export default hopeTheme({
-  hostname: 'https://vuepress-theme-hope-docs-demo.netlify.app',
+  hostname: 'https://lfange.github.io',
 
   author: {
-    name: 'Mr.Hope',
+    name: 'lfange',
     url: 'https://mrhope.site',
   },
 
-  iconAssets: 'iconfont',
+  favicon: '/images/icons/p.png',
 
-  logo: '/logo.svg',
+  iconAssets: '//at.alicdn.com/t/font_2410206_vuzkjonf4s9.css',
 
-  repo: 'vuepress-theme-hope/vuepress-theme-hope',
+  logo: '/assets/dragon.png',
 
-  docsDir: 'demo/theme-docs/src',
+  repo: 'lfange/lfange.github.io',
+
+  repoDisplay: false,
+
+  docsDir: 'vhope',
 
   locales: {
     '/': {
-      // navbar
-      navbar: enNavbar,
+      navbar: zhNavbarConfig,
+      sidebar: zhSidebarConfig,
 
-      // sidebar
-      sidebar: enSidebar,
+      footer: 'MIT Licensed | Copyright © 2021-present Fan Ge',
 
-      footer: 'Default footer',
+      copyright: '基于 MIT 协议，© 2017-至今 Fange',
 
-      displayFooter: true,
-
-      metaLocales: {
-        editLink: 'Edit this page on GitHub',
+      blog: {
+        description:
+          'Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems',
+        // intro: '/about/',
+        medias: {
+          GitHub: 'https://github.com/Lfage',
+          // BiliBili: 'https://space.bilibili.com/630395917',
+          QQ: 'http://wpa.qq.com/msgrd?v=3&uin=653398363&site=qq&menu=yes',
+          Qzone: 'https://653398363.qzone.qq.com/',
+          Gmail: 'mailto:a653398363@outlook.com',
+          Zhihu: 'https://www.zhihu.com/people/bo-la-tu-de-li-xiang-guo-67',
+          // Steam: 'https://steamcommunity.com/id/Mr-Hope/',
+          Weibo: 'https://weibo.com/misterhope',
+          Gitee: 'https://gitee.com/lfange',
+          Twitter: 'https://twitter.com/@_653398363',
+          // Telegram: 'https://t.me/Mister_Hope',
+        },
       },
     },
 
-    /**
-     * Chinese locale config
-     */
-    '/zh/': {
-      // navbar
-      navbar: zhNavbar,
+    '/en/': {
+      // navbar: enNavbarConfig,
+      // sidebar: enSidebarConfig,
 
-      // sidebar
-      sidebar: zhSidebar,
+      footer:
+        'Theme by <a href="https://theme-hope.vuejs.press">vuepress-theme-hope</a>',
 
-      footer: '默认页脚',
+      copyright: 'MIT Licensed, © 2019-present Mr.Hope',
 
-      displayFooter: true,
-
-      // page meta
-      metaLocales: {
-        editLink: '在 GitHub 上编辑此页',
+      blog: {
+        description:
+          "VuePress project member, front-end developer, studying for a master's degree in theoretical physics",
+        intro: '/en/about/',
+        medias: {
+          Gmail: 'mailto:mister-hope@outlook.com',
+          Steam: 'https://steamcommunity.com/id/Mr-Hope/',
+          GitHub: 'https://github.com/Mister-Hope',
+          Twitter: 'https://twitter.com/Mister_Hope',
+          Telegram: 'https://t.me/Mister_Hope',
+        },
       },
     },
   },
 
-  encrypt: {
-    config: {
-      '/demo/encrypt.html': ['1234'],
-      '/zh/demo/encrypt.html': ['1234'],
-    },
-  },
+  displayFooter: true,
+  copyright: 'Copyright © 2019-present Mr.Hope',
 
   plugins: {
-    comment: {
-      // @ts-expect-error: You should generate and use your own comment service
-      provider: 'Waline',
+    blog: {
+      excerptLength: 0,
     },
 
-    // all features are enabled for demo, only preserve features you need here
+    comment: {
+      provider: 'Waline',
+      serverURL: 'https://comment.mrhope.site',
+    },
+
+    feed: {
+      atom: true,
+      json: true,
+      rss: true,
+    },
+
     mdEnhance: {
       align: true,
-      attrs: true,
-      chart: true,
       codetabs: true,
       demo: true,
-      echarts: true,
-      figure: true,
       flowchart: true,
-      gfm: true,
+      footnote: true,
       imgLazyload: true,
+      imgMark: true,
       imgSize: true,
-      include: true,
-      katex: true,
-      mark: true,
+      mathjax: true,
       mermaid: true,
-      playground: {
-        presets: ['ts', 'vue'],
-      },
-      presentation: {
-        plugins: ['highlight', 'math', 'search', 'notes', 'zoom'],
-      },
-      stylize: [
-        {
-          matcher: 'Recommended',
-          replacer: ({ tag }) => {
-            if (tag === 'em')
-              return {
-                tag: 'Badge',
-                attrs: { type: 'tip' },
-                content: 'Recommended',
-              }
-          },
-        },
-      ],
+      presentation: true,
       sub: true,
       sup: true,
-      tabs: true,
       vPre: true,
-      vuePlayground: true,
     },
 
-    // uncomment these if you want a pwa
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cachePic: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
+    pwa: {
+      themeColor: '#5c92d1',
+      cacheHTML: false,
+      maxSize: 3072,
+      apple: {
+        icon: '/assets/icon/apple-touch-icon.png',
+        statusBarColor: 'white',
+      },
+      msTile: {
+        image: '/assets/icon/ms-icon-144.png',
+        color: '#ffffff',
+      },
+      manifest: {
+        name: '哓番茄 的个人博客',
+        short_name: '哓番茄 Blog',
+        description: '哓番茄 的个人博客',
+        theme_color: '#5c92d1',
+        icons: [
+          {
+            src: '/assets/icon/chrome-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/assets/icon/chrome-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/assets/icon/chrome-mask-192.png',
+            sizes: '192x192',
+            purpose: 'maskable',
+            type: 'image/png',
+          },
+          {
+            src: '/assets/icon/chrome-mask-512.png',
+            sizes: '512x512',
+            purpose: 'maskable',
+            type: 'image/png',
+          },
+        ],
+        shortcuts: [
+          {
+            name: '分类',
+            short_name: '分类',
+            icons: [
+              {
+                src: '/assets/icon/category-maskable.png',
+                sizes: '192x192',
+                purpose: 'maskable',
+                type: 'image/png',
+              },
+            ],
+            url: '/category/',
+            description: '文章分类分组',
+          },
+          {
+            name: '标签',
+            short_name: '标签',
+            icons: [
+              {
+                src: '/assets/icon/tag-maskable.png',
+                sizes: '192x192',
+                purpose: 'maskable',
+                type: 'image/png',
+              },
+            ],
+            url: '/tag/',
+            description: '文章标签分组',
+          },
+          {
+            name: '时间线',
+            short_name: '时间线',
+            icons: [
+              {
+                src: '/assets/icon/timeline-maskable.png',
+                sizes: '192x192',
+                purpose: 'maskable',
+                type: 'image/png',
+              },
+            ],
+            url: '/timeline/',
+            description: '时间线文章列表',
+          },
+          {
+            name: '个人介绍',
+            short_name: '个人介绍',
+            icons: [
+              {
+                src: '/assets/icon/about-maskable.png',
+                sizes: '192x192',
+                purpose: 'maskable',
+                type: 'image/png',
+              },
+            ],
+            url: '/about/',
+            description: '个人介绍',
+          },
+        ],
+      },
+    },
   },
 })
