@@ -2,6 +2,7 @@ import { hopeTheme } from 'vuepress-theme-hope'
 
 import { zhNavbarConfig } from './navbar'
 import { zhSidebarConfig } from './sidebar'
+
 // enSidebarConfig,
 export default hopeTheme({
   hostname: 'https://lfange.github.io',
@@ -43,7 +44,7 @@ export default hopeTheme({
           Gmail: 'mailto:a653398363@outlook.com',
           Zhihu: 'https://www.zhihu.com/people/bo-la-tu-de-li-xiang-guo-67',
           // Steam: 'https://steamcommunity.com/id/lfange/',
-          Weibo: 'https://weibo.com/misterhope',
+          Weibo: 'https://weibo.com/lfange',
           Gitee: 'https://gitee.com/lfange',
           Twitter: 'https://twitter.com/@_653398363',
           // Telegram: 'https://t.me/Mister_Hope',
