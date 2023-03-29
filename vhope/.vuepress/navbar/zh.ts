@@ -1,7 +1,7 @@
 import { navbar } from 'vuepress-theme-hope'
 
 export const zhNavbarConfig = navbar([
-  '/zh/',
+  '/',
   // { text: "案例", icon: "discover", link: "/zh/demo/" },
   // {
   //   text: "指南",
@@ -30,18 +30,17 @@ export const zhNavbarConfig = navbar([
   {
     text: 'Interest',
     icon: 'discover',
-    link: 'en/',
+    link: '/eng/',
   },
   {
     text: '算法',
     icon: 'creative',
-    link: 'algorithms/',
+    link: '/algorithms/',
   },
-  '/interview/READMD.md',
   {
     text: '计算机',
     icon: 'note',
-    link: 'computer/',
+    link: '/computer/',
     children: [
       // '/computer/os/README.md',
       '/computer/net/network-architecture',
@@ -50,45 +49,46 @@ export const zhNavbarConfig = navbar([
   },
   {
     text: '前端',
-    link: 'Front/',
-    children: [
-      {
-        text: 'Vue Base',
-        link: '/Front/vue/basic/vuebase',
-      },
-      {
-        text: 'Vue advanced',
-        link: '/Front/vue/advanced/vuecli',
-        // children: [
-        //   '/Front/vue/README.md',
-        //   '/Front/vue/VueScoped.md'
-        // ]
-      },
-      {
-        text: 'Vue3',
-        link: '/Front/Vue3/basic',
-      },
-      {
-        text: 'JavaScript',
-        link: '/Front/JavaScript/currie',
-      },
-      {
-        text: 'TypeScript',
-        link: '/Front/ts/',
-      },
-      {
-        text: '浏览器',
-        link: '/Front/browser/README.md',
-      },
-      '/Front/errlog.md',
-      {
-        text: '性能优化',
-        link: '/Front/performance/README.md',
-      },
-    ],
+    icon: 'ability',
+    link: '/Front/',
+    // children: [
+    //   {
+    //     text: 'Vue Base',
+    //     link: '/Front/vue/basic/vuebase',
+    //   },
+    //   {
+    //     text: 'Vue advanced',
+    //     link: '/Front/vue/advanced/vuecli',
+    //     // children: [
+    //     //   '/Front/vue/README.md',
+    //     //   '/Front/vue/VueScoped.md'
+    //     // ]
+    //   },
+    //   {
+    //     text: 'Vue3',
+    //     link: '/Front/Vue3/basic',
+    //   },
+    //   {
+    //     text: 'JavaScript',
+    //     link: '/Front/JavaScript/currie',
+    //   },
+    //   {
+    //     text: 'TypeScript',
+    //     link: '/Front/ts/',
+    //   },
+    //   {
+    //     text: '浏览器',
+    //     link: '/Front/browser/README.md',
+    //   },
+    //   {
+    //     text: '性能优化',
+    //     link: '/Front/performance/README.md',
+    //   },
+    // ],
   },
   {
     text: '后端',
+    icon: 'engine',
     link: '/backend/',
     children: ['/backend/Golang/README.md'],
   },
@@ -97,12 +97,13 @@ export const zhNavbarConfig = navbar([
     link: '/serve/',
     children: ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
   },
-  {
-    text: 'web3',
-    link: '/web3/',
-  },
+  // {
+  //   text: 'web3',
+  //   link: '/web3/',
+  // },
   {
     text: '工具',
+    icon: 'launch',
     link: '/tools/',
   },
 ])

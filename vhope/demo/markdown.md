@@ -55,7 +55,7 @@ Safely use {{ variable }} in Markdown.
 A custom information container with `code`, [link](#custom-container).
 
 ```js
-const a = 1;
+const a = 1
 ```
 
 :::
@@ -311,9 +311,9 @@ $$
 ```
 
 ```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("Very powerful!");
-});
+document.querySelector('#very').addEventListener('click', () => {
+  alert('Very powerful!')
+})
 ```
 
 ```css
@@ -328,7 +328,7 @@ span {
 
 #### Stylize
 
-Donate Mr.Hope a cup of coffee. _Recommended_
+Donate lfange a cup of coffee. _Recommended_
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize.html)
 
@@ -339,11 +339,11 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 @file index.ts
 
 ```ts
-const msg = "hello world";
+const msg = 'hello world'
 
-const speak = (msg: string) => console.log(msg);
+const speak = (msg: string) => console.log(msg)
 
-speak(msg);
+speak(msg)
 ```
 
 :::
@@ -358,9 +358,9 @@ speak(msg);
 
 ```vue
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const msg = ref("Hello World!");
+const msg = ref('Hello World!')
 </script>
 
 <template>
@@ -393,7 +393,7 @@ A paragraph with some text and a [link](https://mrhope.site)
 ## Slide 3.1
 
 ```js
-const a = 1;
+const a = 1
 ```
 
 --

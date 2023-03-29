@@ -2,10 +2,10 @@
 home: true
 layout: BlogHome
 icon: home
-title: 哓番茄
-heroImage: /logV.png
-heroText: 哓番茄
-tagline: 学而时习之，不亦说乎
+title: lfange
+heroImage: /logo.svg
+heroText: lfange
+tagline: Where there is light, there is hope
 # Special thank to @mo7
 bgImage: http://file.mo7.cc/api/public/bz
 heroFullScreen: true

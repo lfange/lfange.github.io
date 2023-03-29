@@ -1,7 +1,7 @@
-import { hopeTheme } from 'vuepress-theme-hope/perf'
+import { hopeTheme } from 'vuepress-theme-hope'
 
-import { zhNavbarConfig } from './navbar/zh'
-import { zhSidebarConfig } from './sidebar/index.js'
+import { zhNavbarConfig } from './navbar'
+import { zhSidebarConfig } from './sidebar'
 // enSidebarConfig,
 export default hopeTheme({
   hostname: 'https://lfange.github.io',
@@ -17,7 +17,7 @@ export default hopeTheme({
 
   logo: '/assets/dragon.png',
 
-  repo: 'lfange/lfange.github.io',
+  repo: 'lfange',
 
   repoDisplay: false,
 
@@ -33,11 +33,10 @@ export default hopeTheme({
       copyright: '基于 MIT 协议，© 2017-至今 Fange',
 
       blog: {
-        description:
-          'Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems',
+        description: '自我驱动',
         // intro: '/about/',
         medias: {
-          GitHub: 'https://github.com/Lfage',
+          GitHub: 'https://github.com/lfage',
           // BiliBili: 'https://space.bilibili.com/630395917',
           QQ: 'http://wpa.qq.com/msgrd?v=3&uin=653398363&site=qq&menu=yes',
           Qzone: 'https://653398363.qzone.qq.com/',
@@ -56,28 +55,28 @@ export default hopeTheme({
       // navbar: enNavbarConfig,
       // sidebar: enSidebarConfig,
 
-      footer:
-        'Theme by <a href="https://theme-hope.vuejs.press">vuepress-theme-hope</a>',
+      footer: 'MIT Licensed | Copyright © 2021-present Fan Ge',
 
-      copyright: 'MIT Licensed, © 2019-present Mr.Hope',
+      copyright: 'MIT Licensed, © 2019-present lfange',
 
       blog: {
         description:
-          "VuePress project member, front-end developer, studying for a master's degree in theoretical physics",
+          'Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems',
+
         intro: '/en/about/',
         medias: {
-          Gmail: 'mailto:mister-hope@outlook.com',
-          Steam: 'https://steamcommunity.com/id/Mr-Hope/',
-          GitHub: 'https://github.com/Mister-Hope',
-          Twitter: 'https://twitter.com/Mister_Hope',
-          Telegram: 'https://t.me/Mister_Hope',
+          Gmail: 'mailto:a653398363@outlook.com',
+          // Steam: 'https://steamcommunity.com/id/Mr-Hope/',
+          GitHub: 'https://github.com/lfange',
+          Twitter: 'https://twitter.com/@_653398363',
+          // Telegram: 'https://t.me/Mister_Hope',
         },
       },
     },
   },
 
   displayFooter: true,
-  copyright: 'Copyright © 2019-present Mr.Hope',
+  copyright: 'Copyright © 2017-present lfange',
 
   plugins: {
     blog: {
