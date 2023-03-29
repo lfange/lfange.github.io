@@ -2,7 +2,7 @@
 icon: ability
 title: 前端
 category:
-  # - 前端
+  - 前端
 ---
 
 ## node-gyp configure got "gyp ERR! find VS"
