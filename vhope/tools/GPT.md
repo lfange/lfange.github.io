@@ -3,7 +3,7 @@ icon: launch
 category:
   - Tools
   - GPT
-tags:
+tag:
   - GPT
   - Quickly Start
 ---

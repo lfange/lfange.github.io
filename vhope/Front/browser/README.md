@@ -2,7 +2,7 @@
 icon: frame
 category:
   - Brower
-tags:
+tag:
   - Interview
 ---
 

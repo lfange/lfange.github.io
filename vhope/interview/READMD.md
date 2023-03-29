@@ -1,11 +1,11 @@
-<!--
- * @Author: fange 653398363@qq.com
- * @Date: 2023-02-09 14:18:02
- * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-15 08:49:53
- * @FilePath: \lfange.github.io\docs\interview\READMD.md
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+---
 
 # The Interviewer Series
 

@@ -2,7 +2,7 @@
 icon: article
 category:
   - Javascript
-tags:
+tag:
   - handlewrite
   - Interview
 ---

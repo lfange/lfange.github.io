@@ -3,7 +3,7 @@ icon: article
 title: Post
 category:
   - language
-tags:
+tag:
   - english
 ---
 

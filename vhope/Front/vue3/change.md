@@ -3,7 +3,7 @@ icon: article
 category:
   - Vue3
 
-tags:
+tag:
   - Interview
 ---
 

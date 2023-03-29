@@ -3,7 +3,7 @@ icon: back-stage
 title: gorm
 category:
   - 后端
-tags:
+tag:
   - Golang
 ---
 

@@ -3,7 +3,7 @@ icon: article
 category:
   - Javascript
 
-tags:
+tag:
   - 算法
 ---
 

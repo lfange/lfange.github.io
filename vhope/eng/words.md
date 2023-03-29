@@ -3,7 +3,7 @@ icon: article
 title: Recite
 category:
   - language
-tags:
+tag:
   - english
 ---
 

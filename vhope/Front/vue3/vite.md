@@ -3,7 +3,7 @@ icon: article
 category:
   - Vite
 
-tags:
+tag:
   - Quickly Start
   - 前端工程化
 ---

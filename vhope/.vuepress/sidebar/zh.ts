@@ -144,9 +144,9 @@ export const zhSidebarConfig = sidebar({
   ],
   '/serve/': ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
   '/interview/': [
-    'interview/READMD.md',
-    'interview/interCode.md',
-    'interview/task.md',
+    '/interview/READMD.md',
+    '/interview/interCode.md',
+    // 'interview/task.md',
   ],
   '/eng/': 'structure',
 })

@@ -1,5 +1,9 @@
 ---
+icon: article
 category:
+  - JavaScript
+
+tag:
   - Interview
 ---
 

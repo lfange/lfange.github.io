@@ -2,7 +2,7 @@
 icon: article
 category:
   - 前端性能优化
-tags:
+tag:
   - SPA
   - 性能
 ---

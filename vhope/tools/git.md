@@ -3,7 +3,7 @@ icon: tool
 title: Git
 category:
   - Git
-tags:
+tag:
   - Git
 ---
 

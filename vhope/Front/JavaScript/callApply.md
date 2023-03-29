@@ -3,7 +3,7 @@ icon: article
 category:
   - JavaScript
 
-tags:
+tag:
   - Interview
 ---
 

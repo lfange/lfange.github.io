@@ -3,7 +3,7 @@ icon: tool
 title: Vuepress blog
 category:
   - vuepress
-tags:
+tag:
   - vuepress
 ---
 

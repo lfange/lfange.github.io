@@ -12,6 +12,7 @@
     "docs:clean-dev": "vuepress dev vhope --clean-cache",
     "docs:dev": "vuepress dev vhope",
     "docs:update-package": "pnpm dlx vp-update",
+    "build:vite": "vuepress build vhope",
     "talkbuild": "node ./builds/addComponents.js && vuepress build docs"
   },
   "repository": {

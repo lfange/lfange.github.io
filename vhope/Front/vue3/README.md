@@ -4,6 +4,6 @@ title: Vue
 category:
   - Vue
 
-tags:
+tag:
   - Quickly Start
 ---

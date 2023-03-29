@@ -3,7 +3,7 @@ icon: tool
 title: 正则表达式
 category:
   - 正则表达式
-tags:
+tag:
   - regular
 ---
 

@@ -3,7 +3,7 @@ icon: article
 title: Sentence
 category:
   - language
-tags:
+tag:
   - english
 ---
 
