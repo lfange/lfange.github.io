@@ -8,7 +8,7 @@ export default hopeTheme({
 
   author: {
     name: 'lfange',
-    url: 'https://mrhope.site',
+    url: 'https://lfange.github.io/',
   },
 
   favicon: '/images/icons/p.png',
@@ -36,13 +36,13 @@ export default hopeTheme({
         description: '自我驱动',
         // intro: '/about/',
         medias: {
-          GitHub: 'https://github.com/lfage',
+          GitHub: 'https://github.com/lfange',
           // BiliBili: 'https://space.bilibili.com/630395917',
           QQ: 'http://wpa.qq.com/msgrd?v=3&uin=653398363&site=qq&menu=yes',
           Qzone: 'https://653398363.qzone.qq.com/',
           Gmail: 'mailto:a653398363@outlook.com',
           Zhihu: 'https://www.zhihu.com/people/bo-la-tu-de-li-xiang-guo-67',
-          // Steam: 'https://steamcommunity.com/id/Mr-Hope/',
+          // Steam: 'https://steamcommunity.com/id/lfange/',
           Weibo: 'https://weibo.com/misterhope',
           Gitee: 'https://gitee.com/lfange',
           Twitter: 'https://twitter.com/@_653398363',
@@ -66,7 +66,7 @@ export default hopeTheme({
         intro: '/en/about/',
         medias: {
           Gmail: 'mailto:a653398363@outlook.com',
-          // Steam: 'https://steamcommunity.com/id/Mr-Hope/',
+          // Steam: 'https://steamcommunity.com/id/lfange/',
           GitHub: 'https://github.com/lfange',
           Twitter: 'https://twitter.com/@_653398363',
           // Telegram: 'https://t.me/Mister_Hope',
@@ -84,8 +84,19 @@ export default hopeTheme({
     },
 
     comment: {
-      provider: 'Waline',
-      serverURL: 'https://comment.mrhope.site',
+      provider: 'Giscus',
+      serverURL: 'https://lfange/lfange.github.io/',
+      repo: 'lfange/lfange.github.io',
+      repoId: 'MDEwOlJlcG9zaXRvcnkzODI2MTU2Nzg=',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOFs5Afs4CVYd0',
+      mapping: 'pathname',
+      strict: '',
+      lazyLoading: true,
+      reactionsEnabled: '1',
+      inputPosition: 'top',
+      lightTheme: 'preferred_color_scheme',
+      darkTheme: 'dark_tritanopia',
     },
 
     feed: {
