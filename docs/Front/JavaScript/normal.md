@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+---
+
 # day
 
 ## 返回两个数组中相同的值

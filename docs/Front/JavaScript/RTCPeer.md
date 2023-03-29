@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+---
+
 # 前端获取唯一标识
 
 有时候业务需要在客户端生成浏览器唯一稳定 ID。
@@ -59,26 +68,26 @@ function RTCGetIp() {
     window.RTCPeerConnection =
       window.RTCPeerConnection ||
       window.mozRTCPeerConnection ||
-      window.webkitRTCPeerConnection;
+      window.webkitRTCPeerConnection
     var pc = new RTCPeerConnection({
       iceServers: [],
-    });
-    let myIP;
-    const noop = () => {};
-    pc.createDataChannel("bogus"); // 随便创建 create a bogus data channel
+    })
+    let myIP
+    const noop = () => {}
+    pc.createDataChannel('bogus') // 随便创建 create a bogus data channel
     const reg =
-      /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g;
-    pc.createOffer(pc.setLocalDescription.bind(pc), noop); // create offer and set local description
+      /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g
+    pc.createOffer(pc.setLocalDescription.bind(pc), noop) // create offer and set local description
     pc.onicecandidate = function (ice) {
       // ice.candidate.address: xxx.xxx.xxx.xxx
       if (ice && ice.candidate && ice.candidate.candidate) {
-        myIP = ice.candidate.address; // 也可以通过解析candidate字符串获取ip reg.exec(ice.candidate.candidate)[1]
-        pc.onicecandidate = noop;
-        resolve(myIP);
+        myIP = ice.candidate.address // 也可以通过解析candidate字符串获取ip reg.exec(ice.candidate.candidate)[1]
+        pc.onicecandidate = noop
+        resolve(myIP)
       }
-    };
-  });
-};
+    }
+  })
+}
 
 await RTCGetIp()
 ```

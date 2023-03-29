@@ -1,3 +1,13 @@
+---
+icon: launch
+category:
+  - Tools
+  - GPT
+tag:
+  - GPT
+  - Quickly Start
+---
+
 # GPT account && Upgrade
 
 ## GPT account registration

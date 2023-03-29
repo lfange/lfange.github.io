@@ -1,3 +1,13 @@
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+  - 模块化
+---
+
 # 前端模块化
 
 前端模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。目前流行的 js 模块化规范有 CommonJS、AMD、CMD 以及 ES6 的模块系统
@@ -35,21 +45,21 @@ http.createService(...).listen(3000);
 
 ```javascript
 /** 网页中引入require.js及main.js **/
-<script src="js/require.js" data-main="js/main"></script>;
+;<script src="js/require.js" data-main="js/main"></script>
 
 /** main.js 入口文件/主模块 **/
 // 首先用config()指定各模块路径和引用名
 require.config({
-  baseUrl: "js/lib",
+  baseUrl: 'js/lib',
   paths: {
-    jquery: "jquery.min", //实际路径为js/lib/jquery.min.js
-    underscore: "underscore.min",
+    jquery: 'jquery.min', //实际路径为js/lib/jquery.min.js
+    underscore: 'underscore.min',
   },
-});
+})
 // 执行基本操作
-require(["jquery", "underscore"], function ($, _) {
+require(['jquery', 'underscore'], function ($, _) {
   // some code here
-});
+})
 ```
 
 引用模块的时候，我们将模块名放在`[]`中作为`reqiure()`的**第一参数**；如果我们定义的模块本身也依赖其他模块,那就需要将它们放在`[]`中作为`define()`的第一参数。
@@ -57,32 +67,32 @@ require(["jquery", "underscore"], function ($, _) {
 ```javascript
 // 定义math.js模块
 define(function () {
-  var basicNum = 0;
+  var basicNum = 0
   var add = function (x, y) {
-    return x + y;
-  };
+    return x + y
+  }
   return {
     add: add,
     basicNum: basicNum,
-  };
-});
+  }
+})
 // 定义一个依赖underscore.js的模块
-define(["underscore"], function (_) {
+define(['underscore'], function (_) {
   var classify = function (list) {
     _.countBy(list, function (num) {
-      return num > 30 ? "old" : "young";
-    });
-  };
+      return num > 30 ? 'old' : 'young'
+    })
+  }
   return {
     classify: classify,
-  };
-});
+  }
+})
 
 // 引用模块，将模块放在[]内
-require(["jquery", "math"], function ($, math) {
-  var sum = math.add(10, 20);
-  $("#sum").html(sum);
-});
+require(['jquery', 'math'], function ($, math) {
+  var sum = math.add(10, 20)
+  $('#sum').html(sum)
+})
 ```
 
 ## CMD 和 sea.js
@@ -90,51 +100,51 @@ require(["jquery", "math"], function ($, math) {
 `require.js`在申明依赖的模块时会在第一时间加载并执行模块内的代码
 
 ```javascript
-define(["a", "b", "c", "d", "e", "f"], function (a, b, c, d, e, f) {
+define(['a', 'b', 'c', 'd', 'e', 'f'], function (a, b, c, d, e, f) {
   // 等于在最前面声明并初始化了要用到的所有模块
   if (false) {
     // 即便没用到某个模块 b，但 b 还是提前执行了
-    b.foo();
+    b.foo()
   }
-});
+})
 ```
 
 `CMD`也是一种模块化方式，不同点在于：**AMD 推崇依赖前置、提前执行**，**CMD 推崇依赖就近、延迟执行**。此规范其实是在 sea.js 推广过程中产生的。
 
 ```javascript
 /** AMD写法 **/
-define(["a", "b", "c", "d", "e", "f"], function (a, b, c, d, e, f) {
+define(['a', 'b', 'c', 'd', 'e', 'f'], function (a, b, c, d, e, f) {
   // 等于在最前面声明并初始化了要用到的所有模块
-  a.doSomething();
+  a.doSomething()
   if (false) {
     // 即便没用到某个模块 b，但 b 还是提前执行了
-    b.doSomething();
+    b.doSomething()
   }
-});
+})
 
 /** CMD写法 **/
 define(function (require, exports, module) {
-  var a = require("./a"); //在需要时申明
-  a.doSomething();
+  var a = require('./a') //在需要时申明
+  a.doSomething()
   if (false) {
-    var b = require("./b");
-    b.doSomething();
+    var b = require('./b')
+    b.doSomething()
   }
-});
+})
 
 /** sea.js **/
 // 定义模块 math.js
 define(function (require, exports, module) {
-  var $ = require("jquery.js");
+  var $ = require('jquery.js')
   var add = function (a, b) {
-    return a + b;
-  };
-  exports.add = add;
-});
+    return a + b
+  }
+  exports.add = add
+})
 // 加载模块
-seajs.use(["math.js"], function (math) {
-  var sum = math.add(1 + 2);
-});
+seajs.use(['math.js'], function (math) {
+  var sum = math.add(1 + 2)
+})
 ```
 
 ## ES6 Module
@@ -145,16 +155,16 @@ ES6 在语言标准的层面上，实现了模块功能，而且实现得相当�
 
 ```javascript
 /** 定义模块 math.js **/
-var basicNum = 0;
+var basicNum = 0
 var add = function (a, b) {
-  return a + b;
-};
-export { basicNum, add };
+  return a + b
+}
+export { basicNum, add }
 
 /** 引用模块 **/
-import { basicNum, add } from "./math";
+import { basicNum, add } from './math'
 function test(ele) {
-  ele.textContent = add(99 + basicNum);
+  ele.textContent = add(99 + basicNum)
 }
 ```
 
@@ -163,11 +173,11 @@ function test(ele) {
 ```javascript
 /** export default **/
 //定义输出
-export default { basicNum, add };
+export default { basicNum, add }
 //引入
-import math from "./math";
+import math from './math'
 function test(ele) {
-  ele.textContent = math.add(99 + math.basicNum);
+  ele.textContent = math.add(99 + math.basicNum)
 }
 ```
 
@@ -192,26 +202,29 @@ require() 返回的是 module.exports 而不是 exports
 若对 exports 重新赋值，则断开了 exports 对 module.exports 的指向
 
 require 和 import 都可引用
+
 ### module.exports
+
 ```javascript
 //foo.js
-exports.foo="foo"
+exports.foo = 'foo'
 //等同于
-module.exports.foo="foo"
- 
+module.exports.foo = 'foo'
+
 //bar.js
 const { foo } = require('./foo.js')
-console.log(foo);//'foo'
+console.log(foo) //'foo'
 ```
 
 ### exports
+
 ```javascript
 //foo.js
 exports = { foo: 'foo' }
 //bar.js
 const { foo } = require('./foo.js')
 //reuqire 返回的是 module.exports 对象， 默认为 {}
-console.log(foo);//undefined
+console.log(foo) //undefined
 ```
 
 ## reference

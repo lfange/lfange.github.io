@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - 前端性能优化
+tag:
+  - SPA
+  - 性能
+---
+
 # Lighthouse
 
 ## FCP

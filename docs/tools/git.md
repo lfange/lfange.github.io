@@ -1,4 +1,11 @@
-# git order
+---
+icon: tool
+title: Git
+category:
+  - Git
+tag:
+  - Git
+---
 
 ## 工作区域
 
@@ -251,23 +258,24 @@ git remote add origin [url]
 
 - 先从版本库回退内容到暂存区，再重新提交工作区的内容
 
-   使用 `git reset --soft` 回退版本库和暂存区的版本，同时保留工作区的变动，之后再重新提交工作区的内容就好了
+  使用 `git reset --soft` 回退版本库和暂存区的版本，同时保留工作区的变动，之后再重新提交工作区的内容就好了
 
-   合并 commit 之前，先拉取代码，保证本地是最新的，因为合并后要执行 `git push --force`操作，在 reset 后，本地索引和服务器已经不一致，所以要强制执行 git push
+  合并 commit 之前，先拉取代码，保证本地是最新的，因为合并后要执行 `git push --force`操作，在 reset 后，本地索引和服务器已经不一致，所以要强制执行 git push
 
-   如果 push 失败，出现 Reject，则需要开启分支强制合入的选项，取消分支保护。
+  如果 push 失败，出现 Reject，则需要开启分支强制合入的选项，取消分支保护。
 
-   **Settings -> Repository -> Protected Branches -> Protected branch （找到分支） -> Unprotect**
+  **Settings -> Repository -> Protected Branches -> Protected branch （找到分支） -> Unprotect**
 
 - git rebase
 
-	1. git log 查看分支
-	2. git rebase -i HEAD~n
-		使用 git rebase -i HEAD~5 压缩5个commit为1个，或者git rebase -i 51efaef517abdbf674478de6073c12239d78a56a （第一个commit的id）
-		- pick：使用commit。
-		- reword：使用commit，修改commit信息。
-		- squash：使用commit，将commit信息合入上一个commit。
-		- fixup：使用commit，丢弃commit信息。
+  1.  git log 查看分支
+  2.  git rebase -i HEAD~n
+      使用 git rebase -i HEAD~5 压缩 5 个 commit 为 1 个，或者 git rebase -i 51efaef517abdbf674478de6073c12239d78a56a （第一个 commit 的 id）
+      - pick：使用 commit。
+      - reword：使用 commit，修改 commit 信息。
+      - squash：使用 commit，将 commit 信息合入上一个 commit。
+      - fixup：使用 commit，丢弃 commit 信息。
+
 ## 参考
 
 [git docs](https://git-scm.com/docs)

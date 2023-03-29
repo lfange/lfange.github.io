@@ -1,4 +1,9 @@
-# Vue基础
+---
+icon: article
+title: Vue基础
+category:
+  - Vue
+---
 
 ## MVVM 模式
 
@@ -34,64 +39,64 @@ A：MVVM 模式，第一个 M 代表数据模型，V 代表视图，VM 代表视
 <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
 <script>
   var vm = new Vue({
-    el: "#app",
+    el: '#app',
     data: {
-      msg: "Vue的生命周期",
+      msg: 'Vue的生命周期',
     },
     beforeCreate: function () {
-      console.group("------beforeCreate创建前状态------");
-      console.log("el     : " + this.$el); //undefined
-      console.log("data   : " + this.$data); //undefined
-      console.log("msg: " + this.msg); //undefined
+      console.group('------beforeCreate创建前状态------')
+      console.log('el     : ' + this.$el) //undefined
+      console.log('data   : ' + this.$data) //undefined
+      console.log('msg: ' + this.msg) //undefined
     },
     created: function () {
-      console.group("------created创建完毕状态------");
-      console.log("el     : " + this.$el); //undefined
-      console.log("data   : " + this.$data); //已被初始化
-      console.log("msg: " + this.msg); //已被初始化
+      console.group('------created创建完毕状态------')
+      console.log('el     : ' + this.$el) //undefined
+      console.log('data   : ' + this.$data) //已被初始化
+      console.log('msg: ' + this.msg) //已被初始化
     },
     beforeMount: function () {
-      console.group("------beforeMount挂载前状态------");
-      console.log(this.$el); // <div id="app">{{msg}}</div> 挂载前状态
+      console.group('------beforeMount挂载前状态------')
+      console.log(this.$el) // <div id="app">{{msg}}</div> 挂载前状态
     },
     mounted: function () {
-      console.group("------mounted 挂载结束状态------");
-      console.log(this.$el); // <div id="app">Vue的生命周期</div>   msg内容被挂载并渲染到页面
+      console.group('------mounted 挂载结束状态------')
+      console.log(this.$el) // <div id="app">Vue的生命周期</div>   msg内容被挂载并渲染到页面
     },
     // 当data被修改之前
     beforeUpdate: function () {
-      console.group("beforeUpdate 更新前状态===============》");
-      console.log("el     : " + this.$el);
-      console.log(this.$el);
-      console.log("data   : " + this.$data);
-      console.log("msg: " + this.msg);
+      console.group('beforeUpdate 更新前状态===============》')
+      console.log('el     : ' + this.$el)
+      console.log(this.$el)
+      console.log('data   : ' + this.$data)
+      console.log('msg: ' + this.msg)
     },
     // 触发beforeUpdate之后，虚拟DOM重新渲染并应用更新
     // 当data被修改之后
     updated: function () {
-      console.group("updated 更新完成状态===============》");
-      console.log("el     : " + this.$el);
-      console.log(this.$el);
-      console.log("data   : " + this.$data);
-      console.log("msg: " + this.msg);
+      console.group('updated 更新完成状态===============》')
+      console.log('el     : ' + this.$el)
+      console.log(this.$el)
+      console.log('data   : ' + this.$data)
+      console.log('msg: ' + this.msg)
     },
     // 调用vm.$destroy() 销毁前
     beforeDestroy: function () {
-      console.group("beforeDestroy 销毁前状态===============》");
-      console.log("el     : " + this.$el);
-      console.log(this.$el);
-      console.log("data   : " + this.$data);
-      console.log("msg: " + this.msg);
+      console.group('beforeDestroy 销毁前状态===============》')
+      console.log('el     : ' + this.$el)
+      console.log(this.$el)
+      console.log('data   : ' + this.$data)
+      console.log('msg: ' + this.msg)
     },
     // 调用vm.$destroy() 销毁后
     destroyed: function () {
-      console.group("destroyed 销毁完成状态===============》");
-      console.log("el     : " + this.$el);
-      console.log(this.$el);
-      console.log("data   : " + this.$data);
-      console.log("msg: " + this.msg);
+      console.group('destroyed 销毁完成状态===============》')
+      console.log('el     : ' + this.$el)
+      console.log(this.$el)
+      console.log('data   : ' + this.$data)
+      console.log('msg: ' + this.msg)
     },
-  });
+  })
 </script>
 ```
 
@@ -99,8 +104,10 @@ A：MVVM 模式，第一个 M 代表数据模型，V 代表视图，VM 代表视
 
 [API](https://cn.vuejs.org/v2/guide/conditional.html#v-if-vs-v-show)
 
-`v-if` 根据渲染条件决定是否把元素渲染到DOM页面，而`v-show`不管渲染条件是什么，都会把元素渲染到DOM页面，只是简单的切换CSS的显示隐藏。
+`v-if` 根据渲染条件决定是否把元素渲染到 DOM 页面，而`v-show`不管渲染条件是什么，都会把元素渲染到 DOM 页面，只是简单的切换 CSS 的显示隐藏。
+
 <!-- more -->
+
 如果需要非常频繁地切换，则使用 `v-show` 较好；如果在运行时条件很少改变，则使用 `v-if` 较好。
 
 ## 计算属性 vs 方法 vs 侦听属性
@@ -108,11 +115,12 @@ A：MVVM 模式，第一个 M 代表数据模型，V 代表视图，VM 代表视
 [API](https://cn.vuejs.org/v2/guide/computed.html#计算属性缓存-vs-方法)
 
 如果一个功能同时可以使用计算属性(computed)、方法(methods)、侦听属性(watch)来实现的时候推荐使用计算属性。
+
 <!-- more -->
+
 | 计算属性                                 | 方法                                               | 侦听属性                                     |
 | ---------------------------------------- | -------------------------------------------------- | -------------------------------------------- |
 | 计算属性是基于它们的响应式依赖进行缓存的 | 每当触发重新渲染时，调用方法将**总会**再次执行函数 | 有缓存，但相比计算属性，实现起来要复杂很多。 |
-
 
 ## 列表渲染
 
@@ -142,8 +150,8 @@ Vue 将被侦听的数组的变异方法进行了包裹，所以它们也将会�
 
 ```js
 example1.items = example1.items.filter(function (item) {
-  return item.message.match(/Foo/);
-});
+  return item.message.match(/Foo/)
+})
 ```
 
 你可能认为这将导致 Vue 丢弃现有 DOM 并重新渲染整个列表。幸运的是，事实并非如此。Vue 为了使得 DOM 元素得到最大范围的重用而实现了一些智能的启发式方法，所以用一个含有相同元素的数组去替换原来的数组是非常高效的操作。
@@ -159,21 +167,21 @@ example1.items = example1.items.filter(function (item) {
 
 ```js
 // Vue.set
-Vue.set(vm.items, indexOfItem, newValue);
+Vue.set(vm.items, indexOfItem, newValue)
 // Array.prototype.splice
-vm.items.splice(indexOfItem, 1, newValue);
+vm.items.splice(indexOfItem, 1, newValue)
 ```
 
 你也可以使用 [`vm.$set`](https://cn.vuejs.org/v2/api/#vm-set) 实例方法，该方法是全局方法 `Vue.set` 的一个别名：
 
 ```js
-vm.$set(vm.items, indexOfItem, newValue);
+vm.$set(vm.items, indexOfItem, newValue)
 ```
 
 为了解决第二类问题，你可以使用 `splice`：
 
 ```js
-vm.items.splice(newLength);
+vm.items.splice(newLength)
 ```
 
 ### 对象变更检测注意事项
@@ -191,10 +199,10 @@ var vm = new Vue({
   data: {
     a: 1,
   },
-});
+})
 // `vm.a` 现在是响应式的
 
-vm.b = 2;
+vm.b = 2
 // `vm.b` 不是响应式的
 ```
 
@@ -206,22 +214,22 @@ vm.b = 2;
 var vm = new Vue({
   data: {
     userProfile: {
-      name: "Anika",
+      name: 'Anika',
     },
   },
-});
+})
 ```
 
 你可以添加一个新的 `age` 属性到嵌套的 `userProfile` 对象：
 
 ```js
-Vue.set(vm.userProfile, "age", 27);
+Vue.set(vm.userProfile, 'age', 27)
 ```
 
 你还可以使用 `vm.$set` 实例方法，它只是全局 `Vue.set` 的别名：
 
 ```js
-vm.$set(vm.userProfile, "age", 27);
+vm.$set(vm.userProfile, 'age', 27)
 ```
 
 有时你可能需要为已有对象赋值多个新属性，比如使用 `Object.assign()` 或 `_.extend()`。在这种情况下，你应该用两个对象的属性创建一个新的对象。所以，如果你想添加新的响应式属性，不要像这样：
@@ -229,8 +237,8 @@ vm.$set(vm.userProfile, "age", 27);
 ```js
 Object.assign(vm.userProfile, {
   age: 27,
-  favoriteColor: "Vue Green",
-});
+  favoriteColor: 'Vue Green',
+})
 ```
 
 你应该这样做：
@@ -238,8 +246,8 @@ Object.assign(vm.userProfile, {
 ```js
 vm.userProfile = Object.assign({}, vm.userProfile, {
   age: 27,
-  favoriteColor: "Vue Green",
-});
+  favoriteColor: 'Vue Green',
+})
 ```
 
 ### 总结
@@ -269,13 +277,14 @@ Vue.set(object, propertyName, value)
 
 > vm.$set() 实例方法是 Vue.set() 全局方法的别名
 
-
-## Mixin混入
+## Mixin 混入
 
 ### 基础
 
 混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。
+
 <!-- more -->
+
 > 组件选项：指的是组件对象中的 `data`、`created`、`methods` 等等选项。
 >
 > 可通过 `this.$options` 查看选项
@@ -291,20 +300,19 @@ var myMixin = {
   methods: {
     hello: function () {
       console.log('hello from mixin!')
-    }
-  }
+    },
+  },
 }
 
 // 定义一个使用混入对象的组件
 var Component = Vue.extend({
-  mixins: [myMixin]
+  mixins: [myMixin],
 })
 
 var component = new Component() // => "hello from mixin!"
 ```
 
 **通俗讲，就是把组件的部分代码抽离出来，再"混合"进入组件。当多个组件有相同的选项代码时，可以把相同的选项代码抽离到一个文件，再混入到每个组件，从而达到共享部分代码的目的。**
-
 
 ### 选项合并
 
@@ -317,9 +325,9 @@ var mixin = {
   data: function () {
     return {
       message: 'hello',
-      foo: 'abc'
+      foo: 'abc',
     }
-  }
+  },
 }
 
 new Vue({
@@ -327,14 +335,14 @@ new Vue({
   data: function () {
     return {
       message: 'goodbye',
-      bar: 'def'
+      bar: 'def',
     }
   },
   created: function () {
     console.log(this.$data)
     // => { message: "goodbye", foo: "abc", bar: "def" }
     // message同名，组件数据优先，而foo被混入
-  }
+  },
 })
 ```
 
@@ -344,14 +352,14 @@ new Vue({
 var mixin = {
   created: function () {
     console.log('混入对象的钩子被调用')
-  }
+  },
 }
 
 new Vue({
   mixins: [mixin],
   created: function () {
     console.log('组件钩子被调用')
-  }
+  },
 })
 
 // => "混入对象的钩子被调用"
@@ -368,8 +376,8 @@ var mixin = {
     },
     conflicting: function () {
       console.log('from mixin')
-    }
-  }
+    },
+  },
 }
 
 var vm = new Vue({
@@ -380,8 +388,8 @@ var vm = new Vue({
     },
     conflicting: function () {
       console.log('from self')
-    }
-  }
+    },
+  },
 })
 
 vm.foo() // => "foo"
@@ -391,8 +399,7 @@ vm.conflicting() // => "from self"
 
 注意：`Vue.extend()` 也使用同样的策略进行合并。
 
-
-### 某项目中使用的Mixin示例
+### 某项目中使用的 Mixin 示例
 
 抽离各组件相同的代码：
 
@@ -400,9 +407,7 @@ vm.conflicting() // => "from self"
 // mixin.js
 export const playlistMixin = {
   computed: {
-    ...mapGetters([
-      'playlist'
-    ])
+    ...mapGetters(['playlist']),
   },
   mounted() {
     this.handlePlaylist(this.playlist)
@@ -413,14 +418,14 @@ export const playlistMixin = {
   watch: {
     playlist(newVal) {
       this.handlePlaylist(newVal)
-    }
+    },
   },
   methods: {
     // 根据选项合并策略，此方法和组件中的方法同名时，则被覆盖。如组件中没有相同名称方法时则会使用此方法，从而抛出错误。
     handlePlaylist() {
       throw new Error('component must implement handlePlaylist method')
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -438,4 +443,3 @@ export default {
     }
 }
 ```
-

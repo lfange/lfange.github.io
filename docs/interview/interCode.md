@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+---
+
 # Code
 
 - 实现一个节流函数? 如果想要最后一次必须执行的话怎么实现?

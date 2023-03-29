@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - JavaScript
+
+tag:
+  - Interview
+---
+
 # window.print 打印
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/print)

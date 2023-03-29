@@ -1,3 +1,15 @@
+---
+icon: article
+
+category:
+  - Serve
+  - Guide
+
+tag:
+  - linux
+  - Quickly Start
+---
+
 # Linux
 
 [Linux Tutorial](http://www.codebaoku.com/linux/linux-index.html)
@@ -71,14 +83,14 @@ nohup command >> myout.file 2>&1 &
     查看当前有多少在后台运行的命令。
    `jobs -l` 选项可显示所有任务的 PID，`jobs` 的状态可以是 running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的 shell 环境已知的列表中删除任务的进程标识。
 
-[shell 输出重定向](http://www.codebaoku.com/shell/shell-redirect.html)  
-- `command >> out.file`是将command的输出重定向到out.file文件，即输出内容不打印到屏幕上，而是输出到out.file文件中。
-- 标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
-- 标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。
-- 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
+[shell 输出重定向](http://www.codebaoku.com/shell/shell-redirect.html)
 
-- 2>&1 是将标准出和错误输出合并，这里是重定向到了out.file文件，即将标准出错也输出到out.file文件中。最后一个&， 是让该命令在后台执行。
+- `command >> out.file`是将 command 的输出重定向到 out.file 文件，即输出内容不打印到屏幕上，而是输出到 out.file 文件中。
+- 标准输入文件(stdin)：stdin 的文件描述符为 0，Unix 程序默认从 stdin 读取数据。
+- 标准输出文件(stdout)：stdout 的文件描述符为 1，Unix 程序默认向 stdout 输出数据。
+- 标准错误文件(stderr)：stderr 的文件描述符为 2，Unix 程序会向 stderr 流中写入错误信息。
 
+- 2>&1 是将标准出和错误输出合并，这里是重定向到了 out.file 文件，即将标准出错也输出到 out.file 文件中。最后一个&， 是让该命令在后台执行。
 
 ## 传送文件
 
@@ -94,47 +106,46 @@ usage: scp [-346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
 1. 本地向服务器
 
 ```javascript
-scp local_file remote_username@remote_ip:remote_folder 
-// 或者 
-scp local_file remote_username@remote_ip:remote_file 
-// 或者 
-scp local_file remote_ip:remote_folder 
-// 或者 
-scp local_file remote_ip:remote_file 
+scp local_file remote_username@remote_ip:remote_folder
+// 或者
+scp local_file remote_username@remote_ip:remote_file
+// 或者
+scp local_file remote_ip:remote_folder
+// 或者
+scp local_file remote_ip:remote_file
 ```
 
 2. 从服务器获取
 
 ```javascript
-scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3 
+scp root@www.runoob.com:/home/root/others/music /home/space/music/1.mp3
 scp -r www.runoob.com:/home/root/others/ /home/space/music/
 ```
 
-### xshell软件里的xftp程序
+### xshell 软件里的 xftp 程序
 
 [xshell](https://www.xshell.com/zh/xshell/) 这个软件很好，强烈推荐哦！！！
 
-里面有个xftp小插件，可以支持文件在笔记本和服务器互传，这个小插件需要单独在网上下载，直接百度搜xftp，很方便。
-
+里面有个 xftp 小插件，可以支持文件在笔记本和服务器互传，这个小插件需要单独在网上下载，直接百度搜 xftp，很方便。
 
 ### rcp
 
-目标主机需要事先打开rcp功能，并设置好rcp的权限：把源主机加入到可信任主机列表中，否则无法在源主机上使用rcp远程复制文件到目标主机
-
+目标主机需要事先打开 rcp 功能，并设置好 rcp 的权限：把源主机加入到可信任主机列表中，否则无法在源主机上使用 rcp 远程复制文件到目标主机
 
 ### wget
 
-wget [参数] ftp://<目标机器ip或主机名>/<文件的绝对路径>   #proftpd格式 
+wget [参数] ftp://<目标机器 ip 或主机名>/<文件的绝对路径> #proftpd 格式
 
 ```javascript
 wget ftp://remote_ip//home/work/source.txt  #从192.168.0.10上拷贝文件夹source.txt
 ```
 
-## Linux设置开机启动
+## Linux 设置开机启动
 
 ### 添加命令
 
 编辑文件 `/etc/rc.local`
+
 ```bash
 vim /etc/rc.local
 ```
@@ -145,13 +156,13 @@ vim /etc/rc.local
 nohup /usr/local/srs2/objs/srs -c /usr/local/srs2/conf/z.conf>/usr/local/srs2/log.txt &
 ```
 
-### 添加Shell脚本
+### 添加 Shell 脚本
 
-将写好的脚本（.sh文件）放到目录 /etc/profile.d/ 下，系统启动后就会自动执行该目录下的所有shell脚本。
+将写好的脚本（.sh 文件）放到目录 /etc/profile.d/ 下，系统启动后就会自动执行该目录下的所有 shell 脚本。
 
 ### 添加服务
 
-新建`/etc/init.d/demo.sh` 文件 
+新建`/etc/init.d/demo.sh` 文件
 
 ```bash
 #!/bin/sh
@@ -162,7 +173,7 @@ nohup /usr/local/srs2/objs/srs -c /usr/local/srs2/conf/z.conf>/usr/local/srs2/lo
 MY_ROOT=/usr/local/srs2/
 
 #运行程序位置
-MY_PATH="${MY_ROOT}objs/srs" 
+MY_PATH="${MY_ROOT}objs/srs"
 
 #LOG位置
 LOG_PATH="$MY_ROOT"log.txt
@@ -198,7 +209,7 @@ esac
 ```
 
 1. 添加执行权限
-给sh文件和jar可执行权限
+   给 sh 文件和 jar 可执行权限
 
 ```bash
 chmod +x /etc/init.d/srs.sh
@@ -210,6 +221,7 @@ chmod +x /etc/init.d/srs.sh
    ```bash
    chkconfig --add srs.sh
    ```
+
    开机自启动
 
    ```bash

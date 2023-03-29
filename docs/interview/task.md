@@ -1,3 +1,8 @@
+---
+category:
+  - Interview
+---
+
 # task
 
 ## ES5、ES6 如何实现继承

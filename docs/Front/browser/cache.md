@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - Brower
+
+tag:
+  - Interview
+---
+
 # 客户端存储
 
 客户端存储是由 JavaScript APIs 组成的因此允许你在客户端存储数据 (比如在用户的机器上)，而且可以在需要的时候重新取得需要的数据。这有很多明显的用处

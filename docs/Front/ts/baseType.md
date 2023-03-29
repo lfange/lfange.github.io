@@ -1,3 +1,13 @@
+---
+icon: article
+
+category:
+  - TypeScript
+
+tag:
+  - TypeScript
+---
+
 # typescript 类型
 
 ## 基本类型

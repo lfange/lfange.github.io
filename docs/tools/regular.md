@@ -1,4 +1,11 @@
-# regular
+---
+icon: tool
+title: 正则表达式
+category:
+  - 正则表达式
+tag:
+  - regular
+---
 
 > 正向表达式就是所匹配要操作的字符串在前，表达式 pattern 在后;
 > 反向表达式则是表达式 pattern 在前，所匹配要操作的字符串在后。

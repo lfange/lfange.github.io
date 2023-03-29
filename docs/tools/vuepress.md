@@ -1,4 +1,11 @@
-# vuepress blog
+---
+icon: tool
+title: Vuepress blog
+category:
+  - vuepress
+tag:
+  - vuepress
+---
 
 ## vuepress 集成 ant-design-vue
 
@@ -17,17 +24,17 @@ vuepress2.x 版本修改用于客户端应用增强的 docs/.vuepress/client.ts
 修改后文件如下：
 
 ```javascript
-import { defineClientConfig } from "@vuepress/client";
-import { Button } from "ant-design-vue";
-import "ant-design-vue/dist/antd.css";
+import { defineClientConfig } from '@vuepress/client'
+import { Button } from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
 
 export default defineClientConfig({
   enhance({ app, router, siteData }) {
-    app.use(Button);
+    app.use(Button)
   },
   setup() {},
   rootComponents: [],
-});
+})
 ```
 
 ### 使用

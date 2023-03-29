@@ -1,3 +1,9 @@
+---
+title: 网络体系结构
+category:
+  - 计算机网络
+---
+
 # 网络体系结构
 
 `OSI` 的七层协议体系结构的概念清楚，理论完善，但它既复杂又不实用，而 `TCP/IP` 体系结构已得到非常广泛的应用。
@@ -26,11 +32,11 @@
 
 运输层主要使用以下两种协议：
 
-+ **传输控制协议 TCP（Transmission Control Protocol）**
+- **传输控制协议 TCP（Transmission Control Protocol）**
 
   提供面向连接的、可靠的数据传输服务，其数据传输的单位是报文段（segment）。
 
-+ **用户数据报协议 UDP（User Datagram Protocol）**
+- **用户数据报协议 UDP（User Datagram Protocol）**
 
   提供无连接的、尽最大努力的数据传输服务（不保证数据传输的可靠性），其数据传输的单位是用户数据报。
 

@@ -7,12 +7,8 @@
     "docs": "vuepress dev docs --temp .temp",
     "dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "source deploy.sh >err.txt",
+    "deploy": "deploy.sh >err.log",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:clean-dev": "vuepress dev vhope --clean-cache",
-    "docs:dev": "vuepress dev vhope",
-    "docs:update-package": "pnpm dlx vp-update",
-    "build:vite": "vuepress build vhope",
     "talkbuild": "node ./builds/addComponents.js && vuepress build docs"
   },
   "repository": {

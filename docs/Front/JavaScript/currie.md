@@ -1,14 +1,11 @@
-<!--
- * @Author: fange 653398363@qq.com
- * @Date: 2023-02-10 10:01:18
- * @LastEditors: fange 653398363@qq.com
- * @LastEditTime: 2023-02-16 16:40:27
- * @FilePath: \lfange.github.io\docs\Front\JavaScript\currie.md
- * @Description: lfange`s personal blog!!! Good memory than rotten written!!!
- *
- * Copyright (c) 2023 by lfange, All Rights Reserved.
- *
--->
+---
+icon: article
+category:
+  - Javascript
+tag:
+  - handlewrite
+  - Interview
+---
 
 # 函数柯里化
 

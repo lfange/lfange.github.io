@@ -1,6 +1,16 @@
+---
+icon: article
+category:
+  - Vite
+
+tag:
+  - Quickly Start
+  - 前端工程化
+---
+
 # Vite
 
-## vue3 + vite env环境配置 
+## vue3 + vite env 环境配置
 
 [Vite 环境变量](https://cn.vitejs.dev/guide/env-and-mode.html)
 
@@ -17,6 +27,7 @@ VITE_APP_BASE_API = /stage-api
 ### 创建代码提示 env.d.ts
 
 src/types/env.d.ts
+
 ```javascript
 interface ImportMetaEnv {
   VITE_APP_BASE_API: string;
@@ -26,7 +37,7 @@ interface ImportMetaEnv {
 ### 组件中使用
 
 ```javascript
-import.meta.env.VITE_APP_BASE_API; 
+import.meta.env.VITE_APP_BASE_API
 ```
 
 ### vite.config.ts 中使用
@@ -43,8 +54,7 @@ export default defineConfig(({ mode }) => {
 })
 ```
 
-
 ## Vite 插件开发
 
-[Vite2插件开发指南](https://zhuanlan.zhihu.com/p/364275970)
-[十分钟带你了解vite插件开发](https://juejin.cn/post/7067827608842403848)
+[Vite2 插件开发指南](https://zhuanlan.zhihu.com/p/364275970)
+[十分钟带你了解 vite 插件开发](https://juejin.cn/post/7067827608842403848)

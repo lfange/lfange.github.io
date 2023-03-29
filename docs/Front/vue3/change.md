@@ -1,3 +1,12 @@
+---
+icon: article
+category:
+  - Vue3
+
+tag:
+  - Interview
+---
+
 # 响应式原理
 
 `Vue2` 响应式原理基础是**Object.defineProperty**；`Vue3` 响应式原理基础是 <Badge text="Proxy" vertical="middle" />。
@@ -9,20 +18,20 @@
 **Tips:** `writable` 和 `value` 与 `getter` 和 `setter` 不共存。
 
 ```javascript
-let obj = {};
-let name = "lfan";
-Object.defineProperty(obj, "name", {
+let obj = {}
+let name = 'lfan'
+Object.defineProperty(obj, 'name', {
   enumerable: true, // 可枚举（是否可通过for...in 或 Object.keys()进行访问）
   configurable: true, // 可配置（是否可使用delete删除，是否可再次设置属性）
   // value: '', // 任意类型的值，默认undefined
   // writable: true, // 可重写
   get: function () {
-    return name;
+    return name
   },
   set: function (value) {
-    name = value;
+    name = value
   },
-});
+})
 ```
 
 `Vue2` 核心源码，略删减
@@ -197,38 +206,38 @@ import {
   createElementBlock as _createElementBlock,
   pushScopeId as _pushScopeId,
   popScopeId as _popScopeId,
-} from "vue";
+} from 'vue'
 
 const _withScopeId = (n) => (
-  _pushScopeId("scope-id"), (n = n()), _popScopeId(), n
-);
-const _hoisted_1 = { id: "app" };
+  _pushScopeId('scope-id'), (n = n()), _popScopeId(), n
+)
+const _hoisted_1 = { id: 'app' }
 const _hoisted_2 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode("h1", null, "技术摸鱼", -1 /* HOISTED */)
-);
+  /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */)
+)
 const _hoisted_3 = /*#__PURE__*/ _withScopeId(() =>
   /*#__PURE__*/ _createElementVNode(
-    "p",
+    'p',
     null,
-    "今天天气真不错",
+    '今天天气真不错',
     -1 /* HOISTED */
   )
-);
+)
 
 export function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (
     _openBlock(),
-    _createElementBlock("div", _hoisted_1, [
+    _createElementBlock('div', _hoisted_1, [
       _hoisted_2,
       _hoisted_3,
       _createElementVNode(
-        "div",
+        'div',
         null,
         _toDisplayString(_ctx.name),
         1 /* TEXT */
       ),
     ])
-  );
+  )
 }
 ```
 
@@ -275,47 +284,47 @@ import {
   createElementBlock as _createElementBlock,
   pushScopeId as _pushScopeId,
   popScopeId as _popScopeId,
-} from "vue";
+} from 'vue'
 
 const _withScopeId = (n) => (
-  _pushScopeId("scope-id"), (n = n()), _popScopeId(), n
-);
-const _hoisted_1 = { id: "app" };
+  _pushScopeId('scope-id'), (n = n()), _popScopeId(), n
+)
+const _hoisted_1 = { id: 'app' }
 const _hoisted_2 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode("h1", null, "技术摸鱼", -1 /* HOISTED */)
-);
+  /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */)
+)
 const _hoisted_3 = /*#__PURE__*/ _withScopeId(() =>
   /*#__PURE__*/ _createElementVNode(
-    "p",
+    'p',
     null,
-    "今天天气真不错",
+    '今天天气真不错',
     -1 /* HOISTED */
   )
-);
+)
 const _hoisted_4 = /*#__PURE__*/ _withScopeId(() =>
   /*#__PURE__*/ _createElementVNode(
-    "span",
-    { onCLick: "() => {}" },
-    [/*#__PURE__*/ _createElementVNode("span")],
+    'span',
+    { onCLick: '() => {}' },
+    [/*#__PURE__*/ _createElementVNode('span')],
     -1 /* HOISTED */
   )
-);
+)
 
 export function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (
     _openBlock(),
-    _createElementBlock("div", _hoisted_1, [
+    _createElementBlock('div', _hoisted_1, [
       _hoisted_2,
       _hoisted_3,
       _createElementVNode(
-        "div",
+        'div',
         null,
         _toDisplayString(_ctx.name),
         1 /* TEXT */
       ),
       _hoisted_4,
     ])
-  );
+  )
 }
 ```
 
@@ -572,21 +581,21 @@ function patchKeyedChildren(c1, c2, container, parentAnchor, parentComponent, pa
 以 nextTick 为例子，在 Vue2 中，全局 API 暴露在 Vue 实例上，即使未使用，也无法通过 tree-shaking 进行消除
 
 ```javascript
-import Vue from "vue";
+import Vue from 'vue'
 
 Vue.nextTick(() => {
   // 一些和DOM有关的东西
-});
+})
 ```
 
 Vue3 中针对全局 和内部的 API 进行了重构，并考虑到 tree-shaking 的支持。因此，全局 API 现在只能作为 ES 模块构建的命名导出进行访问。
 
 ```javascript
-import { nextTick } from "vue";
+import { nextTick } from 'vue'
 
 nextTick(() => {
   // 一些和DOM有关的东西
-});
+})
 ```
 
 通过这一更改，只要模块绑定器支持 tree-shaking，则 Vue 应用程序中未使用的 api 将从最终的捆绑包中消除，获得最佳文件大小。受此更改影响的全局 API 有如下。
@@ -607,10 +616,10 @@ Vue3 提供的 createApp 默认是将 template 映射成 html。但若想生成 
 
 ```javascript
 // 自定义runtime-render函数
-import { createApp } from "./runtime-render";
-import App from "./src/App";
+import { createApp } from './runtime-render'
+import App from './src/App'
 
-createApp(App).mount("#app");
+createApp(App).mount('#app')
 ```
 
 ## TypeScript 支持
@@ -620,14 +629,13 @@ Vue3 由 TS 重写，相对于 Vue2 有更好地 TypeScript 支持。
 - Vue2 Option API 中 option 是个简单对象，而 TS 是一种类型系统，面向对象的语法，不是特别匹配。
 - Vue2 需要 vue-class-component 强化 vue 原生组件，也需要 vue-property-decorator 增加更多结合 Vue 特性的装饰器，写法比较繁琐。
 
-
 ## reference
 
-[Vue3.0性能优化之重写虚拟Dom](https://blog.csdn.net/summer_zhh/article/details/108080930)  
-[记一次思否问答的问题思考：Vue为什么不能检测数组变动](https://segmentfault.com/a/1190000015783546)  
+[Vue3.0 性能优化之重写虚拟 Dom](https://blog.csdn.net/summer_zhh/article/details/108080930)  
+[记一次思否问答的问题思考：Vue 为什么不能检测数组变动](https://segmentfault.com/a/1190000015783546)  
 [Vue3 源码解析系列 - 响应式原理（reactive 篇）](https://zhuanlan.zhihu.com/p/87899787)  
 [Vue 源码解读（3）—— 响应式原理](https://juejin.cn/post/6950826293923414047#heading-12)  
-[Vue 3 Virtual Dom Diff源码阅读](https://segmentfault.com/a/1190000038654183)  
-[Vue 2 迁移](https://v3.vuejs.org/guide/migration/migration-build.html#overview)  
+[Vue 3 Virtual Dom Diff 源码阅读](https://segmentfault.com/a/1190000038654183)  
+[Vue 2 迁移](https://v3.vuejs.org/guide/migration/migration-build.html#overview)
 
 [Vue3 原理](https://juejin.cn/post/6979039113689169957)

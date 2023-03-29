@@ -1,37 +1,52 @@
 import { defineUserConfig } from 'vuepress'
-import { viteBundler } from '@vuepress/bundler-vite'
-
-import path from 'path'
-// import { getDirname, path } from '@vuepress/utils'
-import theme from './configs/themeConfig'
-// import { fooTheme } from './mytheme'
-import Plugins from './configs/plugins'
-import head from './configs/head'
-// const __dirname = getDirname(import.meta.url)
+import theme from './theme'
 
 export default defineUserConfig({
-  lang: 'zh-CN',
-  title: '哓番茄',
-  description: '个人学习笔记',
-  port: 6868,
   base: '/',
-  head,
-  theme,
-  alias: {
-    // '@theme/Home.vue': path.resolve(__dirname, './components/MyHome.vue'),
-    // '@theme/HomeHero.vue': path.resolve(
-    //   __dirname,
-    //   './components/MyHomeHero.vue'
-    // ),
-  },
-  // theme: fooTheme,
-  ...Plugins,
-  bundler: viteBundler({
-    viteOptions: {
-      build: {
-        chunkSizeWarningLimit: 5000,
+  head: [
+    ['meta', { name: 'application-name', content: '哓番茄 Lfange Blog!' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-title', content: '哓番茄 Lfange Blog!!' },
+    ],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
+    ['link', { rel: 'icon', href: '/images/icons/p.png' }],
+    ['meta', { name: 'baidu-site-verification', content: 'code-4j7CtE1noP' }],
+    [
+      'meta',
+      {
+        name: 'keywords',
+        content: '哓番茄, Lfange Blog!, JavaScript, linux, git',
       },
+    ],
+    // ['meta', { name: 'baidu-site-verification', content: '4H7tszevS8' }],
+    // ['meta', { name: 'baidu-site-verification', content: 'nGf5yi0Gec' }],
+    [
+      'link',
+      {
+        rel: 'mask-icon',
+        href: '/assets/safari-pinned-tab.svg',
+        color: '#5c92d1',
+      },
+    ],
+  ],
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: '哓番茄',
+      description: '个人博客，记录',
     },
-    vuePluginOptions: {},
-  }),
+    '/en/': {
+      lang: 'en-US',
+      title: 'lfange',
+      description: 'description about me!',
+    },
+  },
+  theme,
+
+  // Enable it with pwa
+  shouldPrefetch: false,
 })

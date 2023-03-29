@@ -1,6 +1,13 @@
-# gorm
+---
+icon: back-stage
+title: gorm
+category:
+  - 后端
+tag:
+  - Golang
+---
 
-[gorm快速入门](https://gorm.io/zh_CN/docs/index.html#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
+[gorm 快速入门](https://gorm.io/zh_CN/docs/index.html#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
 
 ## 数据库连接
 
@@ -30,7 +37,6 @@ username:password@protocol(address)/dbname?param=value
 ## 参数处理
 
 [params](http://www.codebaoku.com/gin/gin-parameter.html)
-
 
 - 设置默认值
 

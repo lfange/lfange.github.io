@@ -1,3 +1,13 @@
+---
+icon: article
+
+category:
+  - Algorithms
+
+tag:
+  - Interview
+---
+
 # 算法
 
 > 算法是编程基础，可以不用，但必须要有!!!
@@ -33,7 +43,7 @@
 
 ```ts
 const swap = (arr: number[], i: number, j: number) => {
-  [arr[j], arr[i]] = [arr[i], arr[j]]
+  ;[arr[j], arr[i]] = [arr[i], arr[j]]
 }
 ```
 
@@ -130,7 +140,11 @@ const partition = (arr: number[], left: number, right: number) => {
   return index - 1
 }
 
-const quickSort = (arr: number[], left = 0, right = arr.length - 1): number[] => {
+const quickSort = (
+  arr: number[],
+  left = 0,
+  right = arr.length - 1
+): number[] => {
   if (left < right) {
     const partitionIndex = partition(arr, left, right)
     quickSort(arr, left, partitionIndex - 1)

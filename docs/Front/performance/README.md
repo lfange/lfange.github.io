@@ -1,4 +1,13 @@
-# SPA 首屏加载优化
+---
+icon: config
+category:
+  - 前端性能优化
+tag:
+  - SPA
+  - 性能
+---
+
+# SPA 优化
 
 减少首屏渲染时间的方法有很多，总的来讲可以分成两大部分 ：**资源加载优化** 和 **页面渲染优化**
 
@@ -41,8 +50,8 @@ performance.getEntriesByName("first-contentful-paint")[0].startTime
 在 webpack 的 dev 开发模式配置中
 
 ```javascript
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-plugins: [new BundleAnalyzerPlugin()];
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+plugins: [new BundleAnalyzerPlugin()]
 ```
 
 执行`npm run build --report`, 浏览器会自动打开分析结果
@@ -70,10 +79,10 @@ routes:[
 在日常使用 UI 框架，例如 element-UI、或者 antd，我们经常性直接引用整个 UI 库,
 
 ```javascript
-import { Button, Input, Pagination } from "element-ui";
-Vue.use(Button);
-Vue.use(Input);
-Vue.use(Pagination);
+import { Button, Input, Pagination } from 'element-ui'
+Vue.use(Button)
+Vue.use(Input)
+Vue.use(Pagination)
 ```
 
 ### 组件重复打包
@@ -83,7 +92,7 @@ Vue.use(Pagination);
 解决方案：在 webpack 的 config 文件中，修改 CommonsChunkPlugin 的配置
 
 ```javascript
-minChunks: 3;
+minChunks: 3
 ```
 
 `minChunks`为 3 表示会把使用 3 次及以上的包抽离出来，放进公共依赖文件，避免了重复加载组件
@@ -137,7 +146,7 @@ gizp 压缩是一种 http 请求优化方式，通过减少文件体积来提高
 在 vue.congig.js 中引入并修改 webpack 配置
 
 ```javascript
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin')
 
 plugins: [
   new CompressionWebpackPlugin({
@@ -145,7 +154,7 @@ plugins: [
     threshold: 10240, //对超过10k的数据进行压缩
     deleteOriginalAssets: false, //是否删除原文件
   }),
-];
+]
 ```
 
 启用 gzip 压缩打包之后，会变成下面这样，自动生成 gz 包。目前大部分主流浏览器客户端都是支持 gzip 的，就算小部分非主流浏览器不支持也不用担心，不支持 gzip 格式文件的会默认访问源文件的，所以不要配置清除源文件。
@@ -159,8 +168,8 @@ plugins: [
 服务器是用 express 框架搭建的 只要安装一下 compression 就能使用
 
 ```javascript
-const compression = require("compression");
-app.use(compression()); // 在其他中间件使用之前调用
+const compression = require('compression')
+app.use(compression()) // 在其他中间件使用之前调用
 ```
 
 ### webpack 相关配置优化
@@ -168,19 +177,18 @@ app.use(compression()); // 在其他中间件使用之前调用
 1. 使用 uglifyjs-webpack-plugin 插件代替 webpack 自带 UglifyJsPlugin 插件来压缩 JS 文件；生产环境关闭源码映射，一方面能减少代码包的大小，另一方面也有利于系统代码安全；清除打印日志和 debugger 信息；配置 SplitChunks 抽取公有代码，提升你的应用的性能
 2. 使用 mini-xss-extract-plugin 提取 CSS 到单独的文件, 并使用 optimize-css-assets-webpack-plugin 来压缩 CSS 文件 。
 
-
 ## 感知性能优化
 
-### loading动画
+### loading 动画
 
-首屏优化，在JS没解析执行前，让用户能看到Loading动画，减轻等待焦虑。通常会在index.html上写简单的CSS动画，直到Vue挂载后替换挂载节点的内容，但这种做法实测也会出现短暂的白屏，建议手动控制CSS动画关
+首屏优化，在 JS 没解析执行前，让用户能看到 Loading 动画，减轻等待焦虑。通常会在 index.html 上写简单的 CSS 动画，直到 Vue 挂载后替换挂载节点的内容，但这种做法实测也会出现短暂的白屏，建议手动控制 CSS 动画关
 
 ### 首屏骨架加载
 
-首屏优化，APP内常见的加载时各部分灰色色块。针对骨架屏页的自动化生成
+首屏优化，APP 内常见的加载时各部分灰色色块。针对骨架屏页的自动化生成
 
 ### 渐进加载图片
 
 一般来说，图片加载有两种方式，一种是自上而下扫描，一种则是原图的模糊展示，然后逐渐/加载完清晰。前者在网速差的时候用户体验较差，后者的渐进/交错式加载则能减轻用户的等待焦虑，带来更好的体验
 
-先加载小图，模糊化渲染，图片加载完成后替换为原图，最典型的例子就是Medium，模糊化可以用filter或者canvas处理
+先加载小图，模糊化渲染，图片加载完成后替换为原图，最典型的例子就是 Medium，模糊化可以用 filter 或者 canvas 处理

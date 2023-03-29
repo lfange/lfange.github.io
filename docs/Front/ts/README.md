@@ -1,7 +1,17 @@
-# 介绍
+---
+icon: article
 
-[TypeScript官网](https://www.typescriptlang.org/)  
-[TypeScript中文网](https://www.tslang.cn/)
+category:
+  - TypeScript
+
+tag:
+  - TypeScript
+---
+
+# TypeScript
+
+[TypeScript 官网](https://www.typescriptlang.org/)  
+[TypeScript 中文网](https://www.tslang.cn/)
 
 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
 
@@ -31,20 +41,20 @@ tsc -v  // 查看版本
 tsc --init
 ```
 
-执行命令后就可以生成了一个 tsconfig.json 文件，[ts配置](https://www.tslang.cn/docs/handbook/tsconfig-json.html)可在此文件内编写
+执行命令后就可以生成了一个 tsconfig.json 文件，[ts 配置](https://www.tslang.cn/docs/handbook/tsconfig-json.html)可在此文件内编写
 
 在我们 helloworld.ts 文件中,随便写点什么
 
 ```javascript
-const s: string = "今朝有酒今朝醉";
-console.log(s);
+const s: string = '今朝有酒今朝醉'
+console.log(s)
 ```
 
 控制台执行 tsc helloworld.ts 命令，目录下生成了一个同名的 helloworld.js 文件，代码如下
 
 ```javascript
-var s = "今朝有酒今朝醉";
-console.log(s);
+var s = '今朝有酒今朝醉'
+console.log(s)
 ```
 
 通过 tsc 命令， typescript 代码被转换成 js 代码
@@ -73,6 +83,6 @@ ts-node helloworld.ts
 
 可以看到我们的打印结果已经输出,后续我们的示例都可以通过这个命令来进行验证
 
-## TypeScript基本类型
+## TypeScript 基本类型
 
-[TypeScript基本类型](https://www.tslang.cn/docs/handbook/basic-types.html)
+[TypeScript 基本类型](https://www.tslang.cn/docs/handbook/basic-types.html)

@@ -7,7 +7,7 @@ export default hopeTheme({
   hostname: 'https://lfange.github.io',
 
   author: {
-    name: 'lfange',
+    name: '哓番茄',
     url: 'https://lfange.github.io/',
   },
 

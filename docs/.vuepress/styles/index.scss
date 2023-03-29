@@ -1,3 +1,4 @@
+// place your custom styles here
 :root {
   scroll-behavior: smooth;
   --light-grey: #666;
@@ -9,191 +10,43 @@ body {
   cursor: url(/images/icons/blue.cur), auto
 }
 
-@media (min-width: 751px) {
-  #docsearch-container:lang(zh-CN) {
-    min-width: 184.66px;
-  }
-}
 
 /* 滚动条整体 */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: #e9e8ec;
-  border-radius: 8px;
-}
+// ::-webkit-scrollbar {
+//   width: 6px;
+//   height: 6px;
+//   background-color: #e9e8ec;
+//   border-radius: 8px;
+// }
 
-/* 两个滚动条交接处 -- x轴和y轴 */
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
+// /* 两个滚动条交接处 -- x轴和y轴 */
+// ::-webkit-scrollbar-corner {
+//   background-color: transparent;
+// }
 
-/* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-  width: 8px;
-  height: 8px;
-  border-radius: 6px;
-  background: var(--theme-color);
-  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-}
+// /* 滚动条滑块 */
+// ::-webkit-scrollbar-thumb {
+//   width: 8px;
+//   height: 8px;
+//   border-radius: 6px;
+//   background: var(--theme-color);
+//   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+// }
 
-/* 滚动条轨道 */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  background: #ededed;
-}
+// /* 滚动条轨道 */
+// ::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+//   border-radius: 10px;
+//   background: #ededed;
+// }
 
-::-webkit-scrollbar-track-piece {
-  border-radius: 6px;
-  background: rgba(0, 0, 0, .1);
-}
+// ::-webkit-scrollbar-track-piece {
+//   border-radius: 6px;
+//   background: rgba(0, 0, 0, .1);
+// }
 
-/* 滚动条两端按钮 */
-::-webkit-scrollbar-button {}
-
-
-.sidebar-item-children {
-  li a {
-    font-size: 1em;
-    font-weight: bold;
-    padding: 0.2rem 1rem 0.2rem 2rem !important;
-  }
-}
-
-ul,
-ol,
-p {
-  line-height: 1.5;
-}
-
-.home-main {
-  padding: 0;
-  width: 100%;
-
-  .full-screen {
-    height: calc(100vh - var(--navbar-height)) !important;
-    position: relative;
-    text-align: center;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: var(--navbar-height) 0 0;
-    color: #eee;
-    font-family: var(--font-family-fancy);
-    user-select: none;
-
-    // mrhope.site/
-    .mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-position-y: top !important;
-
-      &::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        display: block;
-        background: var(--light-grey);
-        opacity: .2;
-      }
-    }
-
-    :not(.mask) {
-      position: relative;
-      z-index: 2;
-    }
-
-    img {
-      height: 15rem;
-      max-height: calc(100vh - var(--navbar-height)) !important;
-      margin: var(--navbar-height) auto 0 !important;
-    }
-
-    #main-title {
-      font-size: 2.5rem;
-      line-height: 0.6;
-
-      animation: move-letter 3.5s linear forwards; //forwards当动画完成后，保持最后一帧的状态
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color: #fff;
-    }
-
-    @keyframes move-letter {
-      0% {
-        opacity: 0;
-        letter-spacing: -20px;
-        filter: blur(5px);
-      }
-
-      25% {
-        opacity: 1;
-      }
-
-      50% {}
-
-      100% {
-        letter-spacing: 2px;
-      }
-    }
-
-    .description {
-      font-size: 1.5rem;
-      max-width: 35rem;
-      margin: 0 auto;
-      color: #eee;
-      overflow-wrap: break-word;
-      // filter: url(#wave);
-      font-family: var(--font-family-fancy);
-    }
-
-    .slide-down-button {
-      border-width: 0;
-      background: transparent;
-      cursor: pointer;
-      position: absolute;
-      bottom: 0;
-      left: calc(50vw - 30px);
-      display: none;
-      width: 60px;
-      height: 60px;
-      padding: 10px;
-      display: block;
-
-      &>:first-child {
-        color: #ffffff26;
-      }
-
-      &>:nth-child(2) {
-        color: #ffffff80;
-      }
-
-      .icon {
-        width: 30px;
-        margin: -15px 0;
-        animation-name: bounce-down;
-        animation-duration: 1.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-    }
-
-  }
-
-  &+.theme-container .page {
-    padding-top: 0;
-  }
-}
-
+// /* 滚动条两端按钮 */
+// ::-webkit-scrollbar-button {}
 
 @keyframes bounce-down {
   from {
