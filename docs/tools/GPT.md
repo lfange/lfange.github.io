@@ -2,17 +2,20 @@
 icon: launch
 category:
   - Tools
-  - GPT
+  - ChatGPT
+isOriginal: true
+sticky: 2
+article: true
+banner: /assets/money.png
+description: ChatGPT account && Upgrade、ChatGPT 账号注册、升级介绍。
 tag:
-  - GPT
+  - ChatGPT
   - Quickly Start
 ---
 
-# GPT account && Upgrade
+## ChatGPT account registration
 
-## GPT account registration
-
-### [GPT](https://beta.openai.com/signup) **全程需要科学上网**
+### [ChatGPT](https://beta.openai.com/signup) **全程需要科学上网**
 
 [科学上网 VPN](https://xn--5hqx9equq.com/#/register?code=3HW5vzT2)
 
@@ -75,7 +78,7 @@ but！！！！现在等着送钱抢先体验 GPT4 的人络绎不绝，openai �
   > 1. 某宝搜关键字：plus、美国、信用卡（购买漂亮国虚拟信用卡，且保证其中至少充值 20 刀，因为订阅费为 20 刀/月）
   > 2. 换科学网络节点，不要人太多的！！找个干净机场，可以多换几个机场（网络问题占据无法绑定信用卡的 90%）。
 
-好了，付费完成后！正式切换 GPT-4，开始新的旅途~
+好了，付费完成后！正式切换 ChatGPT-4，开始新的旅途~
 
 ![trial](./assets/GTP.png)
 
