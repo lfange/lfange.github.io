@@ -13,6 +13,8 @@ tag:
   - Quickly Start
 ---
 
+# ChatGPT
+
 ## ChatGPT account registration
 
 ### [ChatGPT](https://beta.openai.com/signup) **全程需要科学上网**
