@@ -1,4 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
+import { onMounted } from 'vue'
 import { Button, Tabs } from 'ant-design-vue'
 import 'ant-design-vue/es/tabs/style/index.css'
 import 'ant-design-vue/es/button/style/index.css'
@@ -24,7 +25,42 @@ export default defineClientConfig({
     // app.component('Layouts', Layout)
     // app.use(Layouts)
   },
-  setup() {},
+  setup() {
+    onMounted(() => {
+      console.log(
+        '%c Guys, what are you looking for Something!',
+        'color: fuchsia; '
+      )
+
+      console.log(
+        '%ccontact me:     %c653398363@qq.com',
+        'background-color: fuchsia ; color: white ; font-weight: bold ; ' +
+          'font-size: 20px ; font-style: italic ; text-decoration: underline ; ' +
+          "font-family: 'american typewriter' ; text-shadow: 1px 1px 3px black ;",
+        'color: red'
+      )
+      console.log(String.raw`
+      _      ______                     
+      | |    |  ____|                    
+      | |    | |__ __ _ _ __   __ _  ___ 
+      | |    |  __/ _\` | '_ \ / _\` |/ _ \
+      | |____| | | (_| | | | | (_| |  __/
+      |______|_|  \__,_|_| |_|\__, |\___|
+                               __/ |     
+                              |___/      
+
+        __          __  _                            _                            _     _             _ 
+        \ \        / / | |                          | |                          | |   | |           | |
+        \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___    _ __ ___  _   _  | |__ | | ___   __ _| |
+          \ \/  \/ / _ \ |/ __/ _ \| '_ ${'`'} _ \ / _ \ | __/ _ \  | '_ ${'`'} _ \| | | | | '_ \| |/ _ \ / _${'`'} | |
+          \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | | | | | | |_| | | |_) | | (_) | (_| |_|
+            \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  |_| |_| |_|\__, | |_.__/|_|\___/ \__, (_)
+                                                                          __/ |                 __/ |  
+                                                                          |___/                 |___/   
+
+        `)
+    })
+  },
   // bundler: {
   //   chunkSizeWarningLimit: 10000,
   // },
