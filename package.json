@@ -36,6 +36,7 @@
     "ant-design-vue": "^3.2.11",
     "chalk": "^5.2.0",
     "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.61",
@@ -57,6 +58,7 @@
     ]
   },
   "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,md,json}": "prettier --write"
+    "*.{vue,js,ts,jsx,tsx,md,json}": "prettier --write",
+    "*.{js,css,md}": "prettier --write"
   }
 }
