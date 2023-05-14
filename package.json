@@ -9,7 +9,8 @@
     "docs:build": "vuepress build docs",
     "deploy": "deploy.sh >err.log",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "talkbuild": "node ./builds/addComponents.js && vuepress build docs"
+    "talkbuild": "node ./builds/addComponents.js && vuepress build docs",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,8 @@
     "@vuepress/utils": "2.0.0-beta.61",
     "ant-design-vue": "^3.2.11",
     "chalk": "^5.2.0",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.8",
     "vue": "^3.2.47",
     "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
@@ -52,5 +55,8 @@
       "not dead",
       "not op_mini all"
     ]
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "prettier --write"
   }
 }
