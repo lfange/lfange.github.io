@@ -3,13 +3,13 @@
   scroll-behavior: smooth;
   --light-grey: #666;
   --theme-color: #5c92d1;
-  --font-family-fancy: Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif
+  --font-family-fancy: Georgia Pro, Crimson, Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif;
 }
 
 body {
-  cursor: url(/images/icons/blue.cur), auto
+  cursor: url(/images/icons/blue.cur), auto;
 }
-
 
 /* 滚动条整体 */
 // ::-webkit-scrollbar {
@@ -56,4 +56,18 @@ body {
   to {
     transform: translate(0, 8px);
   }
+}
+
+// 滚动样式设置
+@keyframes scaleProgress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress {
+  animation-timeline: scroll();
 }
