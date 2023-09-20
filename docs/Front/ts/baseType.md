@@ -201,6 +201,37 @@ any 是任意类型，具有所有类型的行为，可被执行，可访问属�
 
 unknown 则是类型更安全的 any，同样可以将任何类型赋给它，但不能执行任何操作，必须用类型断言来显示说明类型才能去执行操作。
 
+```js
+declare const user: known;
+
+// 报错，unknown 不能被使用
+user.toLowerCase();
+
+// 开发者认为 user 是个字符串
+// 使用 as 进行类型推断才能使用
+(user as string).toLowerCase()
+```
+
+```js
+type ParsedType = {
+  id: number
+}
+
+const parseApiResponse(
+  response: Record<string, unknown>
+): ParsedType => {
+  const convertedResponse = (response as ParsedType)
+
+  // without doing the type cast we would
+  // get a type error here
+  if(convertedResponse.id >= 0) {
+    return convertedResponse
+  } else {
+    throw Error.new("Invalid response"
+  }
+}
+```
+
 never 是无法观测的类型，比如不会执行完的函数的返回值，合并结果不存在的交叉类型。在类型编程中非常活跃，常用于丢弃一些子类型。
 
 ## 泛型
