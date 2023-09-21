@@ -125,6 +125,11 @@ export const zhSidebarConfig = sidebar({
       children: [
         // comBase("net/README"),
         comBase('net/network-architecture'),
+        comBase('net/applicationlayer'),
+        comBase('net/transmission'),
+        comBase('net/networklayer'),
+        comBase('net/datalinklayer'),
+        comBase('net/physicallayer'),
       ],
     },
     // "/computer/README.md", "/computer/network-architecture.md"],
