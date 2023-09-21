@@ -44,6 +44,7 @@ export const zhNavbarConfig = navbar([
     children: [
       // '/computer/os/README.md',
       '/computer/net/network-architecture',
+      '/computer/os',
       // '/computer/pocc/README.md',
     ],
   },

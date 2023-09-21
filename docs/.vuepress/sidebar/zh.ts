@@ -115,10 +115,18 @@ export const zhSidebarConfig = sidebar({
     //   text: "计算机组成原理",
     //   children: [comBase("pocc/README")],
     // },
-    // {
-    //   text: "操作系统",
-    //   children: [comBase("os/README")],
-    // },
+    {
+      text: '操作系统',
+      icon: 'SettingOutlined',
+      children: [
+        comBase('os/README'),
+        comBase('os/equipment'),
+        comBase('os/link'),
+        comBase('os/lock'),
+        comBase('os/memeory'),
+        comBase('os/process'),
+      ],
+    },
     {
       text: '计算机网络',
       icon: 'network',
