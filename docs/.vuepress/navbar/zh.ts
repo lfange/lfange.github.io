@@ -96,7 +96,7 @@ export const zhNavbarConfig = navbar([
   {
     text: '服务',
     link: '/serve/',
-    children: ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
+    children: ['/serve/linux/README.md', '/serve/ngnix.md', '/serve/frps.md'],
   },
   // {
   //   text: 'web3',

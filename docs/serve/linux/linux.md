@@ -43,8 +43,7 @@ kill -9 进程号
 
 ### &
 
-当在前台运行某个作业时，终端被该作业占据；可以在命令后面加上& 实现后台运行。例如：`sh test.sh &`
-适合在后台运行的命令有 f i n d、费时的排序及一些 s h e l l 脚本。
+当在前台运行某个作业时，终端被该作业占据；可以在命令后面加上& 实现后台运行。例如：`sh test.sh &` 适合在后台运行的命令有 f i n d、费时的排序及一些 s h e l l 脚本。
 
 在后台运行作业时要当心：需要用户交互的命令不要放在后台执行，因为这样你的机器就会在那里傻等。不过，作业在后台运行一样会将结果输出到屏幕上，干扰你的工作。如果放在后台运行的作业会产生大量的输出，最好使用下面的方法把它的输出重定向到某个文件中：
 
@@ -80,8 +79,7 @@ nohup command >> myout.file 2>&1 &
 2. Ctrl + c  
    终止前台命令。
 3. jobs  
-    查看当前有多少在后台运行的命令。
-   `jobs -l` 选项可显示所有任务的 PID，`jobs` 的状态可以是 running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的 shell 环境已知的列表中删除任务的进程标识。
+   查看当前有多少在后台运行的命令。 `jobs -l` 选项可显示所有任务的 PID，`jobs` 的状态可以是 running, stopped, Terminated。但是如果任务被终止了（kill），shell 从当前的 shell 环境已知的列表中删除任务的进程标识。
 
 [shell 输出重定向](http://www.codebaoku.com/shell/shell-redirect.html)
 
@@ -208,8 +206,7 @@ restart)
 esac
 ```
 
-1. 添加执行权限
-   给 sh 文件和 jar 可执行权限
+1. 添加执行权限给 sh 文件和 jar 可执行权限
 
 ```bash
 chmod +x /etc/init.d/srs.sh
