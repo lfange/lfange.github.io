@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Circle with Glow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .red-envelope {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      overflow: hidden;
+      animation: shineEffect 2s ease-in-out infinite;
+    }
+
+    .shine::before,
+    .shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, transparent 30%, gold 60%, transparent 80%);
+      transform: scale(0);
+      opacity: 0;
+      animation: shineAnimation 2s ease-in-out infinite;
+    }
+
+    .shine::after {
+      animation-delay: 1s;
+    }
+
+    .line {
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 50%, gold 50%, transparent 50%);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      animation: rotateLine 2s linear infinite, lineWidth 4s ease-in-out infinite, lineColor 4s ease-in-out infinite;
+    }
+
+    .button {
+      width: 40px;
+      height: 40px;
+      background-color: gold;
+      border-radius: 50%;
+      position: absolute;
+      top: 80px;
+      left: 80px;
+      z-index: 1;
+    }
+
+    @keyframes shineEffect {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes shineAnimation {
+      0%,
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotateLine {
+      0% {
+        transform: translateX(-50%) rotate(45deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(405deg);
+      }
+    }
+
+    @keyframes lineWidth {
+      0%,
+      100% {
+        width: 4px;
+      }
+      50% {
+        width: 10px;
+      }
+    }
+
+    @keyframes lineColor {
+      0%,
+      100% {
+        background: linear-gradient(to bottom, transparent 50%, gold 50%, transparent 50%);
+      }
+      50% {
+        background: linear-gradient(to bottom, transparent 50%, darkgoldenrod 50%, transparent 50%);
+      }
+    }
+  </style>
+  <body>
+    <div class="red-envelope">
+      <div class="shine"></div>
+      <div class="line"></div>
+      <div class="button"></div>
+    </div>
+  </body>
+</html>
