@@ -21,10 +21,8 @@
       height: 100px;
       background-color: red;
       position: relative;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
       overflow: hidden;
-      animation: shineEffect 2s ease-in-out infinite;
+      /* animation: shineEffect 2s ease-in-out infinite; */
     }
 
     .shine::before,
@@ -117,8 +115,30 @@
         background: linear-gradient(to bottom, transparent 50%, darkgoldenrod 50%, transparent 50%);
       }
     }
+
+    .red-gradient {
+      width: 200px;
+      height: 100px;
+      background: radial-gradient(circle, transparent 20%, red 80%); /* 使用径向渐变背景 */
+      position: relative;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    @keyframes fadeBackground {
+      0%,
+      100% {
+        background: radial-gradient(circle, transparent 20%, red 80%);
+      }
+      50% {
+        background: radial-gradient(circle, transparent 20%, lightcoral 80%); /* 将红色替换为其他浅色 */
+      }
+    }
   </style>
   <body>
+    <div class="red-gradient">
+      <!-- 内容 -->
+    </div>
     <div class="red-envelope">
       <div class="shine"></div>
       <div class="line"></div>
