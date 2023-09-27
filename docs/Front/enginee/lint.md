@@ -7,7 +7,7 @@
 ### 安装 eslint
 
 ```js
-pnpm install eslint
+pnpm add eslint -D
 ```
 
 ### 快速构建 eslint 配置文件
@@ -43,7 +43,7 @@ pnpm init @eslint/config
 #### 在项目根目录下运行以下命令安装 `husky`
 
 ```js
-pnpm install husky --save-dev
+pnpm add husky --save-dev
 ```
 
 #### 启用 git 钩子
@@ -86,7 +86,7 @@ npm run prepare
 1. 创建钩子脚本文件
 
 ```js
-npx husky add .husky/pre-commit "npm test"
+npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 执执行成功，.husky 目录多出一个 pre-commit 文件
@@ -135,7 +135,7 @@ npx --no-install 命令用于从远程下载并执行指定的命令。
 ### 安装
 
 ```js
-pnpm install lint-staged --save-dev
+pnpm add lint-staged --save-dev
 ```
 
 在 package.json 文件中添加以下配置：
@@ -165,7 +165,7 @@ pnpm install lint-staged --save-dev
 
 在项目根目录下运行以下命令安装 prettier：
 
-`pnpm install prettier --save-dev` 建 .prettierrc.js 文件，并定义你想要的代码样式，例如：
+`pnpm add prettier --save-dev` 建 .prettierrc.js 文件，并定义你想要的代码样式，例如：
 
 ```js
 module.exports = {
@@ -209,7 +209,7 @@ module.exports = {
 - 确保你的项目已经初始化并安装了 pnpm。打开命令行终端，并在项目根目录下运行以下命令来安装 commitizen 和 cz-conventional-changelog：使用 pnpm：
 
 ```js
-pnpm install --save-dev commitizen cz-conventional-changelog
+pnpm add --save-dev commitizen cz-conventional-changelog
 ```
 
 - 安装完成后，在 package.json 中添加一个 config.commitizen 的字段，并设置它的值为 cz-conventional-changelog。示例如下：
@@ -284,7 +284,7 @@ npm run commit
 有时，ESLint 的规则和 Prettier 的规则可能存在冲突，导致代码格式化不一致。使用 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) 可以关闭 ESLint 中与 Prettier 冲突的规则。
 
 ```js
-pnpm i eslint-config-prettier eslint-plugin-prettier -D
+pnpm add eslint-config-prettier eslint-plugin-prettier -D
 ```
 
 - `eslint-config-prettier` ：关闭 eslint 中与 prettier 相互冲突的规则
