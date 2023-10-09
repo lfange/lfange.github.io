@@ -6,9 +6,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .glow-border {
+      width: 200px;
+      height: 200px;
+      background-color: transparent;
+      position: relative;
+      border: 2px solid transparent; /* 设置初始边框颜色为透明 */
+      border-radius: 10px;
+      animation: glowAnimation 2s linear infinite;
+    }
+
+    .glow-border::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 4px solid transparent; /* 设置伪元素边框颜色为透明 */
+      border-radius: 14px; /* 大于正常边框的半径，用于创建流光效果 */
+      animation: glowAnimation 2s linear infinite reverse; /* 反向动画以创建流光效果 */
+    }
+
+    @keyframes glowAnimation {
+      0% {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #00bcd4; /* 设置流光颜色 */
+      }
+      100% {
+        border-color: transparent;
+      }
+    }
+
+    .scrolling-light {
+      font-size: 24px;
+      color: transparent;
+      background-image: linear-gradient(90deg, #00bcd4, #ff5722, #009688, #ffc107); /* 定义流光颜色 */
+      background-clip: text; /* 使用文本作为背景剪裁区域 */
+      -webkit-background-clip: text; /* 兼容WebKit浏览器 */
+      animation: scrollAnimation 5s linear infinite; /* 滚动动画 */
+    }
+
+    @keyframes scrollAnimation {
+      0% {
+        background-position: 0 0; /* 初始背景位置 */
+      }
+      100% {
+        background-position: 100% 0; /* 最终背景位置 */
+      }
+    }
+
+    .glowing-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: transparent;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .glowing-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      animation: glowAnimation 2s linear infinite;
+    }
+
+    @keyframes glowAnimation {
+      0% {
+        transform: translateX(-100%);
+        border-color: transparent;
+      }
+      100% {
+        transform: translateX(100%);
+        border-color: #00bcd4; /* 设置流光颜色 */
+      }
+    }
+
+    .glowing-border {
+      width: 200px;
+      height: 200px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      position: relative;
+      animation: glowAnimation 4s linear infinite;
+    }
+
+    .glowing-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      animation: borderAnimation 4s linear infinite;
+    }
+
+    @keyframes glowAnimation {
+      0% {
+        box-shadow: 0 0 10px 0px rgba(0, 0, 255, 0.7); /* 初始的阴影效果 */
+      }
+      100% {
+        box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0); /* 最终的阴影效果 */
+      }
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        border-color: transparent; /* 初始的边框颜色 */
+      }
+      100% {
+        border-color: #00bcd4; /* 最终的边框颜色 */
+      }
+    }
+
+    .mflow-box {
+      width: 200px;
+      height: 120px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mflow-box::before {
+      content: '';
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+      background: #000000;
+      border-radius: 20px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 2;
+    }
+
+    .mflow-box::after {
+      content: '';
+      width: 300%;
+      height: 300%;
+      background-image: conic-gradient(#eeeeee22, #35fde6, #f0c237, #eeeeee22 30%);
+      border-radius: 20px;
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      z-index: 1;
+      animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .box-s {
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 100;
+    }
+  </style>
   <body>
     children
+    <div class="scrolling-light">
+      <p>这是一段文本，带有流光滚动效果。</p>
+    </div>
 
+    <div class="glow-border"> </div>
+
+    <div class="glowing-border"></div>
+
+    <button class="glowing-button">点击我</button>
+
+    <div class="mflow-box">
+      <div class="box-s"></div>
+    </div>
     <script>
       console.log('i1111', i)
       for (var i = 0; i < 5; i++) {
