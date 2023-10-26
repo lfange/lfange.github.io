@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://lfange.github.io/en/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>https://lfange.github.io/en/</id>
+  <title>lfange</title>
+  <subtitle>description about me!</subtitle>
+  <icon>https://lfange.github.io/images/icons/p.png</icon>
+  <rights>MIT Licensed, © 2019-present lfange</rights>
+  <updated>2023-10-26T08:56:47.109Z</updated>
+  <generator>vuepress-plugin-feed2</generator>
+  <link rel="self" href="https://lfange.github.io/en/atom.xml"/>
+  <link rel="alternate" href="https://lfange.github.io/en/"/>
+</feed>

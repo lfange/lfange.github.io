@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://lfange.github.io/en/rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://lfange.github.io/en/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>lfange</title>
+    <link>https://lfange.github.io/en/</link>
+    <description>description about me!</description>
+    <language>en-US</language>
+    <pubDate>Thu, 26 Oct 2023 08:56:47 GMT</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2023 08:56:47 GMT</lastBuildDate>
+    <generator>vuepress-plugin-feed2</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <copyright>MIT Licensed, © 2019-present lfange</copyright>
+  </channel>
+</rss>

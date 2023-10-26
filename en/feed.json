@@ -1,0 +1,9 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "lfange",
+  "home_page_url": "https://lfange.github.io/en/",
+  "feed_url": "https://lfange.github.io/en/feed.json",
+  "description": "description about me!",
+  "favicon": "https://lfange.github.io/images/icons/p.png",
+  "items": []
+}
