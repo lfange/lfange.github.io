@@ -516,6 +516,8 @@ type AliasName = Type
 - AliasName：类型别名的名称
 - Type：类型别名关联的具体类型
 
+想表示 JS 中的原始类型（undefined, null, boolean, string，number）只能交给 type 老大哥
+
 ### interface
 
 通过关键字 interface 可以定义一个接口类型。它能合并众多类型声明至一个类型声明。
@@ -531,6 +533,28 @@ interface InterfaceName {
 ```
 
 `interface：`定义接口的关键字 `InterfaceName：`接口名，首字母需要大写 `TypeMember`：接口的类型成员
+
+type 可以动态计算属性，interface 没那么强大
+
+在 interface 中，我们可以这么来表示一个对象
+
+```javascript
+interface Y {
+   [k: string]: number
+}
+
+type Keys = "小王" | "小文"
+
+type X = {
+  [key in Keys]: string
+}
+
+type XX = keyof Keys;
+
+interface Y {
+    [k: XX]: number
+}
+```
 
 #### 相同点
 

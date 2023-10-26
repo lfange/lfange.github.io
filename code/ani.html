@@ -265,5 +265,16 @@
       <div class="line"></div>
       <div class="button"></div>
     </div>
+
+    <script>
+      let a = {
+        name: 'zhangsan',
+      }
+      let b = {
+        name: '',
+      }
+
+      console.log(`output->Object.assign`, { ...a, ...b }, Object.assign(a, b))
+    </script>
   </body>
 </html>
