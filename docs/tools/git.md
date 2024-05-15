@@ -9,14 +9,12 @@ tag:
 
 ## 工作区域
 
-1. 工作区
-   即自己当前分支所修改的代码，git add xx 之前的！不包括 git add xx 和 git commit xxx 之后的。
+1. 工作区即自己当前分支所修改的代码，git add xx 之前的！不包括 git add xx 和 git commit xxx 之后的。
 
 2. 暂存区  
    已经 `git add xxx` 进去，且未 `git commit xxx` 的
 
-3. 本地分支
-   已经 git commit -m xxx 提交到本地分支的
+3. 本地分支已经 git commit -m xxx 提交到本地分支的
 
 git reset HEAD <路径/文件名>
 
@@ -172,13 +170,11 @@ git stash store [-m|--message <message>] [-q|--quiet] <commit>
 ### 忽略已存在缓冲区的文件
 
 该情况可能出现在，修改了配置文件，或者修改一些配置适应本地环境的文件。  
-使用 `git update-index --assume-unchanged PATH/FILE` 来不追踪该文件更新与否。
-PATH/FILE 特定文件比如 config/config.php 等等。
+使用 `git update-index --assume-unchanged PATH/FILE` 来不追踪该文件更新与否。 PATH/FILE 特定文件比如 config/config.php 等等。
 
 ### 已经存在缓冲区，但是希望其以后从缓冲区移除
 
-该情况可能出现在，某些文件可能不需要添加到缓冲区，但是不小心添加到缓冲区，需要忽略，可以先从缓冲区移除，在从.gitignore 文件中忽略
-`git rm --cached testFile` //将该文件从缓冲区移除永远不追踪该文件
+该情况可能出现在，某些文件可能不需要添加到缓冲区，但是不小心添加到缓冲区，需要忽略，可以先从缓冲区移除，在从.gitignore 文件中忽略 `git rm --cached testFile` //将该文件从缓冲区移除永远不追踪该文件
 
 ```javascript
 $ git rm --cached .vscode/
@@ -200,10 +196,16 @@ git branch -m new_branch_name
 git branch -m old_branch_name new_branch_name
 ```
 
+- 删除本地分支
+
+```javascript
+git branch -d localBranchName
+```
+
 - 删除远程分支
 
 ```javascript
-git push --delete origin old_branch_name
+git push origin --delete old_branch_name
 ```
 
 - 上传新命名的本地分支
@@ -224,8 +226,7 @@ git branch --set-upstream-to origin/new_branch_name
 
 ### 修改远程仓库地址
 
-1. 直接修改
-   `git remote set-url origin <url>`
+1. 直接修改 `git remote set-url origin <url>`
 
 2. 先删后加
 
@@ -269,8 +270,7 @@ git remote add origin [url]
 - git rebase
 
   1.  git log 查看分支
-  2.  git rebase -i HEAD~n
-      使用 git rebase -i HEAD~5 压缩 5 个 commit 为 1 个，或者 git rebase -i 51efaef517abdbf674478de6073c12239d78a56a （第一个 commit 的 id）
+  2.  git rebase -i HEAD~n 使用 git rebase -i HEAD~5 压缩 5 个 commit 为 1 个，或者 git rebase -i 51efaef517abdbf674478de6073c12239d78a56a （第一个 commit 的 id）
       - pick：使用 commit。
       - reword：使用 commit，修改 commit 信息。
       - squash：使用 commit，将 commit 信息合入上一个 commit。
