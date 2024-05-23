@@ -282,87 +282,49 @@ A 仓库地址为：git@github.com:xxx/notebook.git B 仓库地址为：git@e.co
 
 1. 下载需要进行合并的仓库 B
 
-   ```javascript
-   git clone git@e.coding.net:xxx/xxxx/xxx.git
-   ```
+```javascript
+git clone git@e.coding.net:xxx/notebook/notebook.git
+```
 
 2. 添加需要被合并的远程仓库 A
 
-   ```javascript
-   git remote add base git@github.com:xxx/xxx.git
-   ```
+```javascript
+git remote add base git@github.com:xxx/notebook.git
+```
 
-   添加后可以使用 `git remote` 查看远程链接地址
+将 base 作为远程仓库，添加到 本地仓库(origin)中，设置别名为 base(自定义，为了方便与本地仓库 origin 作区分) 3. 把 base 远程仓库（A）中数据抓取到本仓库（B）
 
-   将 base 作为远程仓库，添加到 本地仓库(origin)中，设置别名为 base(自定义，为了方便与本地仓库 origin 作区分)
+```
+git fetch base
+```
 
-3. 把 base 远程仓库（A）中数据抓取到本仓库（B）
-
-   ```
-   git fetch base
-   ```
-
-   第 2 步 git remote add xxx 我们仅仅是新增了远程仓库的引用，这一步真正将远程仓库的数据抓取到本地，准备后续的更新
+第 2 步 git remote add xxx 我们仅仅是新增了远程仓库的引用，这一步真正将远程仓库的数据抓取到本地，准备后续的更新
 
 4. 基于 base 仓库的 master 分支，新建一个分支，并切换到该分支，命名为 "githubB"
 
-   ```javascript
-   git checkout -b githubB base/master
-   ```
+```javascript
+git checkout -b githubB base/master
+```
 
-   此时使用 git branch 查看所有分支
+此时使用 git branch 查看所有分支 5. 我们切换到需要合并的分支 master, `git checkout master` 6. 合并
 
-5. 我们切换到需要合并的分支 master, `git checkout master`
-6. 合并
+```javascript
+git merge githubB --allow-unrelated-histories
+```
 
-   ```javascript
-   git merge githubB --allow-unrelated-histories
-   ```
+如果不加 `--allow-unrelated-histories` 关键字会报错
 
-   如果不加 `--allow-unrelated-histories` 关键字会报错
+```javascript
+fatal: refusing to merge unrelated histories
+```
 
-   ```javascript
-   fatal: refusing to merge unrelated histories
-   ```
+如果在流程中报上述错误加该关键词`--allow-unrelated-histories`即可。
 
-   如果在流程中报上述错误加该关键词`--allow-unrelated-histories`即可。
+合并过程中可能会遇到各种冲突，如果有冲突解决就可以了。 7. 提交
 
-   合并过程中可能会遇到各种冲突，如果有冲突解决就可以了。 7. 提交
-
-   ```javascript
-   git push origin master
-   ```
-
-   合并完成后，我们就可以删除 githubB 分支了
-
-   ```javascript
-   git branch -d githubB
-   ```
-
-   删除后，我们再使用 git branch 查看分支，就只剩下本地仓库 origin 的 master 分支了。
-
-7. 推送到远程仓库
-8. 同一仓库也可以连接两个不同的 git 远程地址
-
-   ```javascript
-     fatal: The upstream branch of your current branch does not match
-     the name of your current branch.  To push to the upstream branch
-     on the remote, use
-
-         git push base HEAD:dev
-
-     To push to the branch of the same name on the remote, use
-
-         git push base HEAD
-
-     To choose either option permanently, see push.default in 'git help config'.
-
-     To avoid automatically configuring an upstream branch when its name
-     won't match the local branch, see option 'simple' of branch.autoSetupMerge
-     in 'git help config'.
-   ```
-
-   在本地修改后，通过 `git push base HEAD:dev` 或者 `git push base HEAD` 推送到远程仓库
+```javascript
+git push origin master
+```
 
 ## 参考
 
