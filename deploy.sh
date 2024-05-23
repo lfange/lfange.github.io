@@ -2,7 +2,7 @@
 
 # deploy.sh
 # 错误时停止
-set -e
+# set -e
 
 # 打包
 npm run docs:build
@@ -32,7 +32,7 @@ cd ..
 
 echo "cd ..>> $(pwd)"
 
-rm -r-f dist && rmdir dist
+rm -rf dist && rmdir dist
 
 
 echo "finish!!!"
