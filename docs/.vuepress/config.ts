@@ -1,18 +1,14 @@
 import { defineUserConfig } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import theme from './theme'
 
 export default defineUserConfig({
+  bundler: viteBundler({}),
   base: '/',
   head: [
     ['meta', { name: 'application-name', content: '哓番茄 Lfange Blog!' }],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-title', content: '哓番茄 Lfange Blog!!' },
-    ],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-    ],
+    ['meta', { name: 'apple-mobile-web-app-title', content: '哓番茄 Lfange Blog!!' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'icon', href: '/images/icons/p.png' }],
     ['meta', { name: 'baidu-site-verification', content: 'code-4j7CtE1noP' }],
     [

@@ -24,7 +24,7 @@ vuepress2.x 版本修改用于客户端应用增强的 docs/.vuepress/client.ts
 修改后文件如下：
 
 ```javascript
-import { defineClientConfig } from '@vuepress/client'
+import { defineClientConfig } from 'vuepress/client'
 import { Button } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 

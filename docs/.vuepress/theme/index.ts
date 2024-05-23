@@ -1,7 +1,7 @@
 // import type { Theme } from '@vuepress/core'
 import { defaultTheme, type DefaultThemeOptions } from '@vuepress/theme-default'
-// import { getDirname, path } from '@vuepress/utils'
-// import { path } from '@vuepress/utils'
+// import { getDirname, path } from 'vuepress/utils'
+// import { path } from 'vuepress/utils'
 // const __dirname = getDirname(import.meta.url)
 import path from 'path'
 // const setFrontmatter = require('./node_utils/setFrontmatter')
@@ -39,10 +39,7 @@ export const vhope = (options: DefaultThemeOptions): Theme => {
 
     alias() {
       return {
-        '@theme/HomeHero.vue': path.resolve(
-          __dirname,
-          '../components/MyHomeHero.vue'
-        ),
+        '@theme/HomeHero.vue': path.resolve(__dirname, '../components/MyHomeHero.vue'),
         // '@AlgoliaSearchBox': isAlgoliaSearch
         // '@AlgoliaSearchBox': isAlgoliaSearch
         //   ? path.resolve(__dirname, 'components/AlgoliaSearchBox.vue')
