@@ -40,11 +40,11 @@ jobs:
       - name: Install dependencies
         # 当安装有新依赖包时，注释此行
         # if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: pnpm install --frozen-lockfile
+        run: yarn --frozen-lockfile
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: npm docs:build
+        run: yarn docs:build
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
