@@ -59,5 +59,8 @@
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,md,json}": "prettier --write",
     "*.{js,css,md}": "prettier --write"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
