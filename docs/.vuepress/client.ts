@@ -27,10 +27,7 @@ export default defineClientConfig({
   },
   setup() {
     onMounted(() => {
-      console.log(
-        '%c Guys, what are you looking for Something!',
-        'color: fuchsia; '
-      )
+      console.log('%c Guys, what are you looking for Something!', 'color: fuchsia; ')
 
       console.log(
         '%ccontact me:     %c653398363@qq.com',
