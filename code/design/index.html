@@ -7,17 +7,37 @@
   </head>
 
   <body>
-    <button id="demobutton">control</button>
-    <script src="./model.js"></script>
-    <script>
-      console.log(Model)
+    <div id="app"></div>
+    <!--  -->
 
-      function main() {
-        const model = new Model()
-        const controller = new Controller(model)
-        const views = new Views(controller)
-      }
-      main()
+    <button id="demobutton">control</button>
+    <script type="module">
+      import Vue from './src/index.js'
+
+      window.app = new Vue({
+        el: '#app',
+        data: {
+          name: 11111111,
+        },
+      })
+      //
+      console.log('Vue', window.app)
+    </script>
+    <!-- <script src="./model.js"></script> -->
+    <script>
+      // const app = new Vue({
+      //   data: {
+      //     aaa: 111111,
+      //   },
+      // })
+      // console.log(Model)
+
+      // function main() {
+      //   const model = new Model()
+      //   const controller = new Controller(model)
+      //   const views = new Views(controller)
+      // }
+      // main()
     </script>
   </body>
 </html>

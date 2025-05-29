@@ -1,7 +1,17 @@
 //
 
-function Model() {
+function Model(obj) {
   this.title = 'title 1111111'
+
+  const key = 'title'
+  Object.defineProperties(obj, key, {
+    get() {
+      //
+    },
+    set() {
+      //
+    },
+  })
 }
 
 function Controller(model) {
