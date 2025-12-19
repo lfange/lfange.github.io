@@ -383,3 +383,26 @@ vulnerable［ˈv ʌln ərəbl］a.易受攻击的，易受伤害的该单词可�
 185 clash[kl æʃ ] n.冲突；不协调；撞击声 v.冲突，争论去游乐场玩过碰碰车吗?对面的哥哥开着碰碰车，可来(clash 单词的发音，前半部分类似 “可来”)啦。然后就“碰撞”你的车子了。crash 中的 r(想成花)，《美女与野兽》里的玫瑰花 ，一片片地“坠毁”了，变成了 sma(想象成 small:小的)，smash 就是小灰( ash 是 “灰尘 ，灰烬”)，变成了 ash(灰烬)，野兽多伤心啊，感叹这需要多少的开支(发音类似 cash) 才能让一个美女爱上我? crash［kr æʃ］v.撞碎，坠毁 smash［sm æʃ］v.粉碎 ash［æʃ］n.灰烬 cash［kæʃ］n.现金 explore[ɪk ˈspl ɔ:(r)] v.勘查，探测；研究巧记 explore，exploit，explode 前缀 ex-表示 ：往外。 explore：ex-表示“往外”，plo 的发音似汉语“扑 姥”，re 的发音似汉语“阿姨”，连在一起解释就是你姥姥和阿姨来你家做客，你朝外扑向姥姥和阿姨，为什么呢?向她们“探索”那过去的事情啊。 exploit：这个不是扑向姥姥了，是扑向 it(它)，把它想成“山、海”都行，人类扑到海里、山里，干什么? → 开采，开发。 explode:把 plo 想成爆炸的声音，de 表示“往下”，想象我们放烟火，烟火朝外爆炸后又落下来，所以此单词意思是“爆炸，爆发”。【派生】 explosion［ɪk ˈspl əʊʒ n］n.爆炸； 激增 explosive［ɪk ˈspl əʊ sɪv］ n.爆炸物，炸药 a.爆炸（性）的，爆发（性）的；极易引起争论的 explorer［ɪk ˈspl ɔː rə(r)］n.探险家，探测器 exploration［ˌekspləˈre ɪʃn］n.探索，勘察 exploratory[ɪk ˈspl ɒr ətə rɪ]ａ.探索的，探测的 quest[kwest] ｎ.寻求，搜索 in questof 寻找，设法找到 tune [tju:n] n.曲调， 调子 vt.（为音乐）调音；调整，调节
 
 186 这个单词的发音类似于:调(哦)→ 调音；曲调。 tone [təʊ n] n.语气，音调，声调，色调 bribery[ˈbra ɪb ərɪ] ｎ.行贿；行贿的财物巧记 bride，tribe，bribery tribe[traɪb]ｎ.部落；群；族 tri-三，be 谐音“波”，三波人马构成 → 部落 bride[bra ɪd]ｎ.新娘 b-联想为 boy 男生，ride 骑，白马王子骑着白马来迎娶自己的 → 新娘 bribery 跟上面两个词的最大区别是有两个 b，想象成爸爸，编故事记忆:部落( tribe)里的白马王子迎娶自己的新娘(bride)，但是需要贿赂(bribery)新娘的爸爸。 loan [ləʊ n] n.（借出的）贷款巧记 loan，load loan:可以把 n 想象成门，在银行门口装（load）钱 → 贷款 load：我们打游戏的同学都知道，开始之前会有一个英文单词 loading，加载 ，所以 load 可以表示装载。 staff [stɑ :f] n.全体人员 vt.为配备（人员）区别 stuff［stʌ f］ n.材料，填充物，素材，东西 v.塞满 staff 中是 a，stuff 中是 u；污染这么严重，人就不要张嘴了(写法上 ，a 就是闭着嘴的，u 就是张着嘴的）。 crew［kru ː］ n.全体机务人员；全体人员（集体名词，没有复数) faculty［ˈfæ klt ɪ］ n.全体教员；系，科；才能，能力（faculty 集体名词，没有复数）
+
+| word           | Description                             |
+| -------------- | --------------------------------------- |
+| reliable       | a.可靠的，可信赖的，确实的              |
+| relief         | n.(痛苦等)减轻，解除: 援救，救济        |
+| relieve        | v.减轻，解除，援救，救济，换班          |
+| religion       | n.宗教，信仰                            |
+| religious      | a.宗教的，信教的，虔诚的                |
+| remarkable     | a.值得注意的; 显著的，非凡的            |
+| remote         | a.远的，遥远的，疏远的，偏僻的，细微的  |
+| renew          | v.(使)更新，恢复，重新开始，继续        |
+| replace        | vt.取代，替换，代替，把...放回原处      |
+| replacement    | n.取代，替换; 替换物，代替物            |
+| represent      | v.描述，表示: 代表，代理: 阐明，说明    |
+| representation | n.代表; 表现                            |
+| representative | n.代表，代理人 a.(of)典型的，有代表性的 |
+| reproduce      | a.(of)典型的，有代表性的                |
+| reproduction   | v.生殖，繁殖; 复制，仿造                |
+| reputation     | n.名誉，名声，声望                      |
+| reservation    | n.保留，保留意见: 预定，预订            |
+| reserve        | n.储备(物)，储备金;v.保留，储备; 预定   |
+| residence      | n.住处，住宅                            |
+| resident       | n.居民，常住者 a.居住的                 |

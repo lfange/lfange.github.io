@@ -7,6 +7,7 @@
   </head>
 
   <body>
+    <input type="text" id="input">
     <div id="app"></div>
     <!--  -->
 
@@ -22,6 +23,19 @@
       })
       //
       console.log('Vue', window.app)
+
+
+      const input = document.querySelector('#input')
+      input.addEventListener('input', function (e) {
+        window.app.name = e.target.value
+
+        console.log(`output->app.name`,app.name)
+      })
+
+      const button = document.querySelector('#demobutton')
+      button.addEventListener('click', function () {
+        window.app.name = 'hello'
+      })
     </script>
     <!-- <script src="./model.js"></script> -->
     <script>
