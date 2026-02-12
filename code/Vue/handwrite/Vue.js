@@ -130,21 +130,24 @@ function Observer(data) {
   return new observe(data)
 }
 
-export const HOOKS = [
-  "beforeCreate",
-  "created",
-  "beforeMount",
-  "mounted",
-  "beforeUpdate",
-  "updated",
-  "beforeDestory",
-  "destroyed"
-]
+const HOOKS = ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'beforeDestory', 'destroyed']
 
 const starts = {}
-HOOKS.forEach(hook => {
+HOOKS.forEach((hook) => {
   starts[hook] = mergeHook
 })
+
+function mergeHook(parent, child) {
+  if (child) {
+    if (parent) {
+      return parent.concat(child)
+    } else {
+      return [child]
+    }
+  } else {
+    return parent
+  }
+}
 
 function initGobalApi(Vue) {
   Vue.options = {}
@@ -162,13 +165,17 @@ function mergeOptions(parent, children) {
     mergeField(key)
   }
 
+  for (let key in children) {
+    if (!parent.hasOwnProperty(key)) {
+      mergeField(key)
+    }
+  }
 
-
-  function mergeField (key) {
+  function mergeField(key) {
     if (starts[key]) {
-      options[key]
+      options[key] = starts[key](parent[key], children[key])
     } else {
-
+      options[key] = children[key]
     }
   }
 }
