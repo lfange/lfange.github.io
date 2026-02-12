@@ -6,22 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script src="./Vue.js"></script>
   <script>
-    const obj = {
-      arr: [1, 2, 5, 3],
-    }
+    Vue.Mixin({
+      created() {},
+    })
 
-    Object.defineProperty(obj, 'arr', {
-      get() {
-        console.log('objobjobj')
-        return obj.arr
-      },
-      set(value, olds) {
-        console.log('set   set ', value, olds)
+    const aa = new Vue({
+      el: '#app',
+      data() {
+        return {
+          name: 'zhangsan',
+          all: {
+            file: 'good file',
+          },
+          arr: [{ name: 'faneee' }],
+        }
       },
     })
-    console.log('obj arr', obj.arr)
-    obj.arr[2] = 12
+    aa._data.name = '王五'
+    aa._data.all.file = '王五'
+
+    aa.arr.push({ namge: 'checked' })
+    console.log('push', aa)
+    // const obj = {
+    //   arr: [1, 2, 5, 3],
+    // }
+
+    // Object.defineProperty(obj, 'arr', {
+    //   get() {
+    //     console.log('objobjobj')
+    //     return obj.arr
+    //   },
+    //   set(value, olds) {
+    //     console.log('set   set ', value, olds)
+    //   },
+    // })
+    // console.log('obj arr', obj.arr)
+    // obj.arr[2] = 12
   </script>
 </html>

@@ -2,6 +2,7 @@
 import { initMixin } from './init.js'
 
 function Vue(options) {
+  console.log(`output->options`, options)
   this._init(options)
 }
 
@@ -13,6 +14,7 @@ const aaa = new Vue({
     return {
       name: '张三',
       age: 21,
+      arr: [{ argue: 'argue' }],
     }
   },
   beforeCreate() {
@@ -21,22 +23,49 @@ const aaa = new Vue({
   created() {
     console.log(`output->created`)
   },
-  beforeMount() {
-    console.log(`output->beforeMount`)
-  },
+  // beforeMount() {
+  //   console.log(`output->beforeMount`)
+  // },
   mounted() {
     console.log(`output->mounted`)
   },
-  beforeUpdate() {
-    console.log(`output->beforeUpdate`)
+  // beforeUpdate() {
+  //   console.log(`output->beforeUpdate`)
+  // },
+  // updated() {
+  //   console.log(`output->update`)
+  // },
+  // beforeDestory() {
+  //   console.log(`output->beforeDestory`)
+  // },
+  methods: {
+    test() {
+      console.log(`test-> beforeDestory`)
+    },
   },
-  updated() {
-    console.log(`output->update`)
-  },
-  beforeDestory() {
-    console.log(`output->beforeDestory`)
+})
+
+// console.log(`->实例`, aaa.name)
+// aaa.name = '王八蛋'
+// console.log(`->aaa.__data`, aaa._data)
+// aaa.name = '2222'
+console.log(`aaa.__data->实例`, aaa._data, aaa._data.arr.push({ scatter: 'the wind scatter the leaves to yarild' }))
+
+const data = {
+  usename: '李开浪',
+  age: 33,
+}
+const aa = new Proxy(data, {
+  get(target, key, receiver) {
+    console.log(`get->get`)
+    return Reflect.get(target, key, receiver)
   },
 
-  methods: {},
+  set: function (target, key, nval, receiver) {
+    if (value === nval) return
+    console.log(`setting ${key}!`)
+    return Reflect.set(target, key, nval, receiver)
+  },
 })
-console.log(`->实例`, aaa)
+
+console.log(`output->aa.age`, aa.age)
