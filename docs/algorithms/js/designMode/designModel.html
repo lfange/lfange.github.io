@@ -8,7 +8,6 @@
     <div id="messages"></div>
 
     <script>
-      
       function creatEventSource(buyer) {
         const eventSource = new EventSource(`http://localhost:8080/api/subscribe/${buyer}`)
 
@@ -23,6 +22,20 @@
           console.error('EventSource failed:', err)
           eventSource.close()
         }
+      }
+
+      const eventSource = new EventSource(`http://localhost:8080/api/stream`)
+
+      eventSource.addEventListener('message-event', function (e) {
+        const messageElement = document.createElement(`divstream`)
+        console.log(`output->e`, e)
+        messageElement.textContent = e.data
+        document.getElementById('messages').appendChild(messageElement)
+      })
+
+      eventSource.onerror = function (err) {
+        console.error('EventSource failed:', err)
+        eventSource.close()
       }
 
       creatEventSource(1)

@@ -1,96 +1,184 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<div id="" style="height: 10000px; background: skyblue;">
-			<p>
-			  <input type="checkbox" id="cbox1" value="first_checkbox">
-			  <label for="cbox1">This is the first checkbox
-					<div >
-						id=""id=""
-						id=""
-					</div>
-				
-				</label>
-			</p>
-			<p>
-			  <input type="checkbox" id="cbox2" value="second_checkbox" checked="checked">
-			  <label for="cbox2">This is the second checkbox, which is checked</label>
-			</p>
-			
-		</div>
-		<!-- <script src="函数柯里化.js"></script> -->
-		<!-- <script src="./callApply.js" type="text/javascript" charset="utf-8"></script> -->
-		<!-- <script src="./promiseA.js" type="text/javascript" charset="utf-8"></script> -->
-		<script src="js原型链.js" type="text/javascript" charset="utf-8"></script>
-		<script src="防抖和节流.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			function fns() {
-				console.log('事件触发事件触发')
-			}
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷动画首页</title>
+    <style>
+        /* --- 全局和基础样式 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			function sdebounce() {
-				console.log('debounce 防抖')
-			}
-			
-			function jieliu(fn, delay) {
-				let oldtime = new Date()
-				return function(...args) {
-					console.log('...', args, arguments)
-					const newtime = new Date()
-					if (delay - (newtime - oldtime) <= 0) {
-						fn.apply(null, args)
-						oldtime = new Date()
-					}
-				}
-			}
-			// const ff = throttled(fns, 2000)
-			// const ff = throttle(fns, 2000)
-			const ff = jieliu(fns, 2000)
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* 防止水平滚动条 */
+            background-color: #0f0f1e;
+            color: #fff;
+        }
 
-			// const ww = debounce(sdebounce, 1000)
+        /* --- 动态背景 --- */
+        .animated-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
 
-			const oo = fangdou(sdebounce, 2000)
-			window.onresize = function(e) {
-				ff('this is a arugments', 'args')
-				// oo()
-			}
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* --- 英雄区域 --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
 
-			const str = '-925516588.356899829'
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
 
-			// const arr = str.split('.')[0].split('')
-			// let count = 0
-			// for (let i = arr.length-1; i >= 0; i--)
-			// {
-			// 	if(count <= 3) {
-			// 		count++
-			// 		console.log('arr[i]', i, arr[i])
-			// 		count = 0
-			// 	}
-			// }
-			// console.log('arr', arr)
-			
-			const reg = /((?!^)(?=((\d{3})+\.)))/g
-			// const reg = /((?<=(\.(\d{3})+))(?!$)/g
-			const str1 = str.replace(reg, (a, b) => {
-				return a + ','
-			})
-			console.log('str1', str1)
+        /* --- 打字机效果 --- */
+        .typewriter {
+            overflow: hidden; /* 隐藏文字超出部分 */
+            border-right: .15em solid #f50057; /* 光标 */
+            white-space: nowrap; /* 保持文字在一行 */
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
 
-			// const reg = /(?!^)(?=(\d{3})+\.)/g
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
 
-			// let newStr = str.replace(reg, (a,b) => {
-			// 	console.log('保留', a, b)
-			// 	return a + ','
-			// })
-			// console.log('reg', newStr)
-			// const reg1 = /(?<=(\.(\d{3})+))/g
-			// newStr = str.replace(reg1, ',')
-			// console.log('reg', newStr)
-			
-		</script>
-	</body>
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #f50057; }
+        }
+
+        /* --- 内容区域 --- */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .content-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px); /* 毛玻璃效果 */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- 渐入动画 --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="animated-bg"></div>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <h1 class="typewriter">欢迎来到未来</h1>
+        <p>探索无限可能，体验极致动画</p>
+    </section>
+
+    <!-- 内容区域 -->
+    <section class="content-section">
+        <h2 class="fade-in">我们的服务</h2>
+        <div class="cards-container">
+            <div class="card fade-in">
+                <h3>创新设计</h3>
+                <p>引领潮流的前端设计，打造独一无二的用户体验。</p>
+            </div>
+            <div class="card fade-in">
+                <h3>强大性能</h3>
+                <p>经过优化的代码，确保网站闪电般快速响应。</p>
+            </div>
+            <div class="card fade-in">
+                <h3>无缝兼容</h3>
+                <p>完美适配各种设备和浏览器，随时随地访问。</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- 渐入动画的 JavaScript 逻辑 ---
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.2, // 当元素有20%进入视窗时触发
+            rootMargin: "0px 0px -100px 0px" // 提前100px触发
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+    </script>
+
+</body>
 </html>
