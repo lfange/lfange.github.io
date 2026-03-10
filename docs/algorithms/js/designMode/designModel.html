@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<script src="行为型/观察者模式.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <script src="创建型/单例模式.js" type="text/javascript" charset="utf-8"></script> -->
-		<script type="text/javascript">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <div id="messages"></div>
 
-		</script>
-	</body>
+    <script>
+      function creatEventSource(buyer) {
+        const eventSource = new EventSource(`http://localhost:8080/api/subscribe/${buyer}`)
+
+        eventSource.addEventListener('sse', function (e) {
+          const messageElement = document.createElement(`div${buyer}`)
+          console.log(`output->e`, e)
+          messageElement.textContent = e.data
+          document.getElementById('messages').appendChild(messageElement)
+        })
+
+        eventSource.onerror = function (err) {
+          console.error('EventSource failed:', err)
+          eventSource.close()
+        }
+      }
+
+      const eventSource = new EventSource(`http://localhost:8080/api/stream`)
+
+      eventSource.addEventListener('message-event', function (e) {
+        const messageElement = document.createElement(`divstream`)
+        console.log(`output->e`, e)
+        messageElement.textContent = e.data
+        document.getElementById('messages').appendChild(messageElement)
+      })
+
+      eventSource.onerror = function (err) {
+        console.error('EventSource failed:', err)
+        eventSource.close()
+      }
+
+      creatEventSource(1)
+      creatEventSource(3)
+    </script>
+    <!-- <script src="行为型/观察者模式.js" type="text/javascript" charset="utf-8"></script> -->
+    <!-- <script src="创建型/单例模式.js" type="text/javascript" charset="utf-8"></script> -->
+
+    <script type="text/javascript"></script>
+  </body>
 </html>

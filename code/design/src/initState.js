@@ -12,12 +12,15 @@ export const initState = function (vm) {
   }
 }
 
-function proxy(vm, data, key) {
+function proxy (vm, data, key) {
+  console.log(`proxy ta`, data)
   Object.defineProperty(vm, key, {
     get() {
+      console.log(`get`,vm[data][key])
       return vm[data][key]
     },
-    set(newvalue) {
+    set (newvalue) {
+      console.log(`output->set`,newvalue)
       vm[data][key] = newvalue
     },
   })
