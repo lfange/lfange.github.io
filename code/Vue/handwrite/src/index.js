@@ -6,6 +6,26 @@ function Vue(options) {
   this._init(options)
 }
 
+let str = 'user.name'
+
+const uar = str.split('.')
+
+let obbj = {
+  user: {
+    name: 'Kim'
+  }
+}
+
+
+
+
+console.log(`uar->str.reduce()`, uar.reduce((pre, cur) => {
+  console.log(`output->pre, cur`, pre, cur)
+  // ooo = pre[cur]
+  return pre[cur]
+}, obbj))
+
+
 initMixin(Vue)
 
 const aaa = new Vue({
@@ -44,12 +64,11 @@ const aaa = new Vue({
     },
   },
 })
-
 // console.log(`->实例`, aaa.name)
 // aaa.name = '王八蛋'
 // console.log(`->aaa.__data`, aaa._data)
 // aaa.name = '2222'
-console.log(`aaa.__data->实例`, aaa._data, aaa._data.arr.push({ scatter: 'the wind scatter the leaves to yarild' }))
+// console.log(`aaa.__data->实例`, aaa._data, aaa._data.arr.push({ scatter: 'the wind scatter the leaves to yarild' }))
 
 const data = {
   usename: '李开浪',
