@@ -6,6 +6,7 @@ toast('程序开始执行')
 events.observeNotification()
 events.on('notification', function (n) {
   device.wakeUp()
+  log('notification:' + n)
   // 监听来自QQ且包含“打卡”字样的消息
   if (n.getPackageName() == 'com.tencent.mobileqq') {
     log('收到打卡指令，开始执行...')
@@ -25,20 +26,19 @@ events.on('notification', function (n) {
   // 钉钉
   if (n.getPackageName() == 'com.alibaba.android.rimet') {
     if (n.getText().indexOf('打卡成功') != -1) {
-      callBack(n)
+      callBack(n.getText())
     }
   }
 })
 
 function doCheckIn() {
   // 1. 点亮并打开屏幕
-  if (!device.isScreenOn()) {
-    device.wakeUp()
-    sleep(1000)
-    // OPPO 向上滑动解锁（如果没有密码）
-    swipe(500, 1800, 500, 500, 500)
-    sleep(1000)
-  }
+  device.wakeUp()
+  home()
+  sleep(1000)
+  // OPPO 向上滑动解锁（如果没有密码）
+  swipe(500, 1800, 500, 500, 500)
+  sleep(1000)
 
   // 2. 启动钉钉
   log('正在启动钉钉...')
@@ -53,6 +53,7 @@ function doCheckIn() {
 
   // 5. 回到主页
   log('打卡动作完成，返回主页')
+  callBack('打卡动作完成，返回主页')
   home()
   sleep(1000)
 
@@ -82,10 +83,20 @@ function callBack(n) {
   http.postJson(url, {
     deviceName: device.product,
     checkType: 'checkinSuccess',
-    rawMessage: n.getText(),
+    rawMessage: n,
   })
 
   callFlag = false
 }
 
 log('脚本已启动，正在监听通知...')
+
+// 设置一小时自动点亮
+function keepActive () {
+  device.wakeUp()
+  // OPPO 向上滑动解锁（如果没有密码）
+  swipe(500, 1800, 500, 500, 500)
+  home(1000)
+}
+
+setInterval(keepActive, 1000 * 60 * 60)
