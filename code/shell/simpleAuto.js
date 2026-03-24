@@ -25,9 +25,9 @@ events.on('notification', function (n) {
 
   // 钉钉
   if (n.getPackageName() == 'com.alibaba.android.rimet') {
-    if (n.getText().indexOf('打卡成功') != -1) {
+    // if (n.getText().indexOf('打卡成功') != -1) {
       callBack(n.getText())
-    }
+    // }
   }
 })
 
@@ -46,7 +46,7 @@ function doCheckIn() {
 
   // 3. 等待钉钉加载（假设你开启了“极速打卡”）
   // 极速打卡通常进入页面5-10秒内会自动触发
-  sleep(6000)
+  sleep(10000)
 
   // 4. (可选) 如果没有极速打卡，需要手动点击
   // 这里建议开启钉钉的“极速打卡”功能最为稳妥
@@ -82,7 +82,7 @@ function callBack(n) {
   var url = base_url + '/iot/checkin'
   http.postJson(url, {
     deviceName: device.product,
-    checkType: 'checkinSuccess',
+    checkType: 'success',
     rawMessage: n,
   })
 
@@ -96,7 +96,7 @@ function keepActive () {
   device.wakeUp()
   // OPPO 向上滑动解锁（如果没有密码）
   swipe(500, 1800, 500, 500, 500)
-  home(1000)
+ // home(1000)
 }
 
-setInterval(keepActive, 1000 * 60 * 60)
+// setInterval(keepActive, 1000 * 60 * 60)
