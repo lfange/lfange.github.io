@@ -128,7 +128,7 @@
                 if (nextIndex < tasks.length) {
                   _run()
                 } else if (finishCount === tasks.length) {
-                  resolve()
+                  resolve(res)
                 }
               })
               .catch((err) => {
@@ -148,12 +148,15 @@
         arrs.push(
           new Promise((resolve, reject) => {
             setTimeout(() => {
+              console.log('i', i)
               resolve(i)
             }, i * 1000)
           })
         )
       }
-      paralleTask(arrs)
+      paralleTask(arrs).then((res) => {
+        console.log('ffffffffffff', res)
+      })
     </script>
   </body>
 </html>
