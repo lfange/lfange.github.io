@@ -31,7 +31,7 @@ function paralleTask(tasks, parallelCount = 2) {
       const task = tasks[nextIndex]
       nextIndex++
 
-      task()
+      task
         .then((res) => {
           console.log(`output->res`, res)
           finishCount++
