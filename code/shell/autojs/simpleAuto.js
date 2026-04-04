@@ -7,27 +7,31 @@ events.observeNotification()
 events.on('notification', function (n) {
   device.wakeUp()
   log('notification:' + n)
-  // 监听来自QQ且包含“打卡”字样的消息
-  if (n.getPackageName() == 'com.tencent.mobileqq') {
-    log('收到打卡指令，开始执行...')
-    if (n.getText().indexOf('打卡') != -1) {
-      doCheckIn()
+  try {
+    // 监听来自QQ且包含“打卡”字样的消息
+    if (n.getPackageName() == 'com.tencent.mobileqq') {
+      log('收到打卡指令，开始执行...')
+      if (n.getText().indexOf('打卡') != -1) {
+        doCheckIn()
+      }
+
+      if (n.getText().indexOf('测试') != -1) {
+        doAutoTest(n)
+      }
+
+      if (n.getText().indexOf('首页') != -1) {
+        home()
+      }
     }
 
-    if (n.getText().indexOf('测试') != -1) {
-      doAutoTest(n)
-    }
-
-    if (n.getText().indexOf('首页') != -1) {
-      home()
-    }
-  }
-
-  // 钉钉
-  if (n.getPackageName() == 'com.alibaba.android.rimet') {
-    // if (n.getText().indexOf('打卡成功') != -1) {
+    // 钉钉
+    if (n.getPackageName() == 'com.alibaba.android.rimet') {
+      // if (n.getText().indexOf('考勤打卡') != -1) {
       callBack(n.getText())
-    // }
+      // }
+    }
+  } catch (err) {
+    callBack(err)
   }
 })
 
@@ -79,24 +83,23 @@ var callFlag = false
 function callBack(n) {
   if (callFlag) return
   callFlag = true
-  var url = base_url + '/iot/checkin'
-  http.postJson(url, {
+  http.postJson('http://117.72.47.76/api/iot/checkin', {
     deviceName: device.product,
     checkType: 'success',
     rawMessage: n,
   })
-
+  log('callBackcallBack', n)
   callFlag = false
 }
 
 log('脚本已启动，正在监听通知...')
 
 // 设置一小时自动点亮
-function keepActive () {
+function keepActive() {
   device.wakeUp()
   // OPPO 向上滑动解锁（如果没有密码）
   swipe(500, 1800, 500, 500, 500)
- // home(1000)
+  // home(1000)
 }
 
 // setInterval(keepActive, 1000 * 60 * 60)

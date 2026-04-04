@@ -18,14 +18,14 @@ if (cluster.isMaster) {
     cluster.fork()
   })
 
-    // 模拟：主进程向所有子进程发送消息
+  // 模拟：主进程向所有子进程发送消息
   setTimeout(() => {
-    const workers = Object.values(cluster.workers);
-    console.log(`主进程向 ${workers.length} 个子进程广播任务...`);
-    workers.forEach(worker => {
-      worker.send({ cmd: 'broadcast', text: 'Hello from Master' });
-    });
-  }, 3000);
+    const workers = Object.values(cluster.workers)
+    console.log(`主进程向 ${workers.length} 个子进程广播任务...`)
+    workers.forEach((worker) => {
+      worker.send({ cmd: 'broadcast', text: 'Hello from Master' })
+    })
+  }, 3000)
 
   // 主进程：处理 IPC 消息
   cluster.on('message', (msg) => {
@@ -40,13 +40,12 @@ if (cluster.isMaster) {
   const server = http.createServer((req, res) => {
     res.writeHead(200)
     res.end(`Hello from worker ${process.pid}\n`)
-  
   })
 
   server.listen(3000, () => {
     // console.log(`子进程 ${process.pid} 监听 3000 端口`)
 
-      process.send({
+    process.send({
       type: 'request',
       pid: process.pid,
       time: Date.now(),
