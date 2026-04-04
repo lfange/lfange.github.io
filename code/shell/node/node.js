@@ -3,7 +3,7 @@ const http = require('http')
 const os = require('os')
 
 const cpus = os.cpus()
-console.log(`output->cpus count: ${cpus.length}`)
+console.log(`output->cpus count: ${JSON.stringify(cpus)}`)
 
 // 处理来自父进程的消息 (如果有的话)
 process.on('message', (msg) => {

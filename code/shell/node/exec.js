@@ -23,6 +23,14 @@ const child1 = exec('echo 1+2', (error, stdout, stderr) => {
   }
   console.log(stdout)
 })
+
+exec('node -e "console.log(\'hi\')"', (error, stdout, stderr) => {
+  if (error) {
+    console.log(`output->error`, error)
+    throw error
+  }
+  console.log(stdout)
+})
 /*
 execFile 与 exec 的区别：
 1. execFile 直接调用可执行文件，不经过 shell，因此更安全、性能更好，不支持 shell 语法（如通配符、管道）。
