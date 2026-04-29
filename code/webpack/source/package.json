@@ -1,0 +1,15 @@
+{
+  "name": "mini-webpack-source",
+  "version": "1.0.0",
+  "description": "A mini webpack-like bundler",
+  "main": "mini-webpack.js",
+  "scripts": {
+    "build": "node example.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/parser": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/traverse": "^7.23.0"
+  }
+}
