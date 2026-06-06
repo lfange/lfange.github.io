@@ -2,8 +2,46 @@
 auto.waitFor()
 
 toast('程序开始执行')
-// 监听通知消息
-events.observeNotification()
+
+// 安全地启动通知监听
+function startNotificationObserver() {
+  try {
+    // 检查是否已经开启了通知监听权限
+    var enabledListeners = android.provider.Settings.Secure.getString(
+      context.getContentResolver(),
+      'enabled_notification_listeners'
+    )
+    var isEnabled = enabledListeners && enabledListeners.indexOf(context.getPackageName()) != -1
+
+    if (!isEnabled) {
+      toastLog('请授予通知监听权限')
+      try {
+        // 尝试打开标准通知监听设置页
+        app.startActivity({
+          action: 'android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS',
+        })
+      } catch (e) {
+        // 如果标准的失败了，尝试 Auto.js 可能在用的那个（虽然它可能导致了报错）
+        try {
+          app.startActivity({
+            action: 'android.settings.ACTION_NOTIFICATION_ACCESS_SETTINGS',
+          })
+        } catch (e2) {
+          log('无法自动打开设置页: ' + e2)
+          toastLog('请手动开启通知访问权限')
+        }
+      }
+    }
+
+    // 监听通知消息
+    events.observeNotification()
+  } catch (err) {
+    log('启动通知监听失败: ' + err)
+    toastLog('通知监听启动异常，请检查权限')
+  }
+}
+
+startNotificationObserver()
 events.on('notification', function (n) {
   device.wakeUp()
   log('notification:' + n)
@@ -35,14 +73,40 @@ events.on('notification', function (n) {
   }
 })
 
-function doCheckIn() {
-  // 1. 点亮并打开屏幕
+// 检查 Android 版本并执行滑动
+function safeSwipe(x1, y1, x2, y2, duration) {
+  if (device.sdkInt < 24) {
+    // Android 7.0 以下 (SDK 24 以下)
+    log('当前系统版本低于 Android 7.0，无法使用无障碍滑动')
+    return false
+  }
+  try {
+    swipe(x1, y1, x2, y2, duration)
+    return true
+  } catch (e) {
+    log('滑动失败: ' + e)
+    return false
+  }
+}
+
+// 强力唤醒并解锁（适用于无密码情况）
+function robustWakeUp() {
   device.wakeUp()
+  sleep(500)
+  // 连续尝试回到主页，通常第一次点亮屏幕，第二次进入桌面
   home()
   sleep(1000)
-  // OPPO 向上滑动解锁（如果没有密码）
-  swipe(500, 1800, 500, 500, 500)
+  home()
+  sleep(500)
+
+  // 配合滑动（如果是 7.0+ 会执行，否则跳过）
+  safeSwipe(500, 1800, 500, 500, 500)
   sleep(1000)
+}
+
+function doCheckIn() {
+  // 1. 点亮并打开屏幕
+  robustWakeUp()
 
   // 2. 启动钉钉
   log('正在启动钉钉...')
@@ -96,10 +160,7 @@ log('脚本已启动，正在监听通知...')
 
 // 设置一小时自动点亮
 function keepActive() {
-  device.wakeUp()
-  // OPPO 向上滑动解锁（如果没有密码）
-  swipe(500, 1800, 500, 500, 500)
-  // home(1000)
+  robustWakeUp()
 }
 
 // setInterval(keepActive, 1000 * 60 * 60)

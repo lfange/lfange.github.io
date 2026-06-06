@@ -145,7 +145,11 @@ export const zhSidebarConfig = sidebar({
   '/backend/Golang/': ['/backend/Golang/README.md', '/backend/Golang/Tutorial.md', '/backend/Golang/gorm.md'],
   '/tools/': ['/tools/', '/tools/vuepress', '/tools/camunda', '/tools/git', '/tools/regular', '/tools/GPT'],
   // '/serve/': ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
+  '/serve/': ['/serve/', '/serve/node/', '/serve/frps', '/serve/Database', '/serve/linux/linux',
+    '/serve/performance', '/serve/sign', '/serve/start'],
   '/serve/linux/': 'structure',
+  '/serve': 'structure',
+  '/serve/node': 'structure',
   '/interview/': [
     '/interview/READMD.md',
     '/interview/interCode.md',

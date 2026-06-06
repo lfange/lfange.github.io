@@ -1,3 +1,17 @@
+---
+icon: article
+
+category:
+  - Database
+  - Guide
+
+tag:
+  - mysql
+  - Quickly Start
+---
+
+# mysql
+
 ## CentOS 8.2
 
 mysql --version

@@ -6,17 +6,19 @@ const path = require('node:path')
 console.log('--- spawn 示例 ---')
 const ls = spawn(process.platform === 'win32' ? 'cmd.exe' : 'ls', process.platform === 'win32' ? ['/c', 'dir'] : ['-lh'])
 
-ls.stdout.on('data', (data) => {
-  console.log(`spawn stdout: ${data}`)
-})
+// ls.stdout.on('data', (data) => {
+//   console.log(`spawn stdout: ${data}`)
+// })
 
-ls.stderr.on('data', (data) => {
-  console.error(`spawn stderr: ${data}`)
-})
+// ls.stderr.on('data', (data) => {
+//   console.error(`spawn stderr: ${data}`)
+// })
 
-ls.on('close', (code) => {
-  console.log(`spawn 子进程退出，退出码: ${code}`)
-})
+// ls.on('close', (code) => {
+//   console.log(`spawn 子进程退出，退出码: ${code}`)
+// })
+
+const listQueue = new Map()
 
 // 2. fork: spawn 的特殊形式，专门用于派生新的 Node.js 进程
 // 它会自动建立 IPC (进程间通信) 通道，允许父子进程之间发送对象消息
@@ -24,19 +26,33 @@ ls.on('close', (code) => {
 console.log('\n--- fork 示例 ---')
 // 假设当前目录下有一个 node.js 文件
 const childScript = path.join(__dirname, 'node.js')
-const child = fork(childScript)
+const childA = fork(childScript)
 
-// 在父进程中发送消息给子进程
-child.send({ hello: 'world' })
+// // 监听来自子进程的消息
+// childA.on('message', (msg) => {
+//   this.listQueue.set(msg.from, msg.reply)
+//   console.log('父进程收到消息:', msg)
+// })
 
-// 监听来自子进程的消息
-child.on('message', (msg) => {
+// childA.on('exit', (code) => {
+//   console.log(`fork 子进程退出，退出码: ${code}`)
+// })
+
+process.on('message', (msg) => {
   console.log('父进程收到消息:', msg)
 })
 
-child.on('exit', (code) => {
-  console.log(`fork 子进程退出，退出码: ${code}`)
-})
+setTimeout(() => {
+  const childB = fork('./node copy.js')
+
+  childB.on('message', (msg) => {
+    console.log('父进程收到消息:', msg)
+  })
+
+  childB.on('exit', (code) => {
+    console.log(`fork 子进程退出，退出码: ${code}`)
+  })
+}, 3000)
 
 /*
 spawn vs fork 的核心区别：

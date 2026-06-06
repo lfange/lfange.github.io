@@ -34,7 +34,6 @@ echo "cd ..>> $(pwd)"
 
 rm -rf dist && rmdir dist
 
-
 echo "finish!!!"
 
 cd -
