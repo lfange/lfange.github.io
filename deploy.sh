@@ -36,4 +36,4 @@ rm -rf dist && rmdir dist
 
 echo "finish!!!"
 
-cd -
+cd ../../

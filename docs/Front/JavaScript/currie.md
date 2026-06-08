@@ -99,6 +99,8 @@ console.log('fff', a1) // 3
 console.log('bbb', b1) // 3
 ```
 
+### 通用函数柯里化的方法
+
 ```javascript
 function curry(fn) {
   //获取原函数需要的参数个数
