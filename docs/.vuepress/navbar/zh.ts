@@ -97,7 +97,6 @@ export const zhNavbarConfig = navbar([
     text: '服务',
     icon: 'engine',
     link: '/serve/',
-    children: ['/serve/linux/README.md', '/serve/ngnix.md', '/serve/node/README.md',],
   },
   // {
   //   text: 'web3',
