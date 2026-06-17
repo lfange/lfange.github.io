@@ -15,6 +15,6 @@ export const initMixin = function (Vue) {
 
     callHook(vm, 'beforeCreate')
     initState(vm)
-    // 
+    //
   }
 }
