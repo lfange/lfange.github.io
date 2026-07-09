@@ -1,47 +1,54 @@
-
 name: 部署文档
 
 on:
   push:
     branches:
-      # 确保这是你正在使用的分支名称
-      - main
+      # 仓库默认分支为 master
+      - master
+  # 支持手动触发
+  workflow_dispatch:
+
+# JamesIves 部署动作需要写权限以推送到 gh-pages 分支
+permissions:
+  contents: write
 
 jobs:
-  deploy-gh-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          # “最近更新时间”等 git 日志相关信息需要拉取全部提交记录
           fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
 
       - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 7
-          run_install: true
-
+          # 与 pnpm-lock.yaml 的 lockfileVersion: 6.0 匹配（pnpm 7 无法读取）
+          version: 8
 
       - name: 设置 Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
 
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm run docs:build
-          > vhope/.vuepress/dist/.nojekyll
+          echo "" > docs/.vuepress/dist/.nojekyll
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 这是文档部署到的分支名称
+          # 部署到 gh-pages 分支
           branch: gh-pages
-          folder: vhope/.vuepress/dist
+          # VuePress 默认输出目录
+          folder: docs/.vuepress/dist
