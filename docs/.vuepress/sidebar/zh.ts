@@ -142,14 +142,16 @@ export const zhSidebarConfig = sidebar({
     },
     // "/computer/README.md", "/computer/network-architecture.md"],
   ],
-  '/backend/Golang/': ['/backend/Golang/README.md', '/backend/Golang/Tutorial.md', '/backend/Golang/gorm.md'],
+  '/backend/': 'structure',
   '/tools/': 'structure',
   // '/serve/': ['/serve/linux.md', '/serve/ngnix.md', '/serve/frps.md'],
   '/serve/': 'structure',
   '/interview/': [
-    '/interview/READMD.md',
+    '/interview/README.md',
     '/interview/interCode.md',
     // 'interview/task.md',
   ],
   '/eng/': 'structure',
+  '/ai/': 'structure',
+  '/web3/': 'structure',
 })

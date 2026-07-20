@@ -91,12 +91,21 @@ export const zhNavbarConfig = navbar([
     text: '后端',
     icon: 'engine',
     link: '/backend/',
-    children: ['/backend/Golang/README.md'],
+    children: [
+      '/backend/Golang/README.md',
+      '/backend/Node/README.md',
+      '/backend/database/README.md',
+    ],
   },
   {
     text: '服务',
     icon: 'engine',
     link: '/serve/',
+  },
+  {
+    text: 'AI',
+    icon: 'robot',
+    link: '/ai/',
   },
   // {
   //   text: 'web3',
