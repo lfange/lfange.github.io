@@ -149,6 +149,9 @@ export const zhSidebarConfig = sidebar({
   '/interview/': [
     '/interview/README.md',
     '/interview/interCode.md',
+    '/interview/frontend.md',
+    '/interview/react.md',
+    '/interview/uniapp.md',
     // 'interview/task.md',
   ],
   '/eng/': 'structure',
