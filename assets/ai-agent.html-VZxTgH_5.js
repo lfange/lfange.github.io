@@ -1,0 +1,3356 @@
+import{_ as n}from"./plugin-vue_export-helper-DlAUqK2U.js";import{c as e,o as i,a as s}from"./app-DFE3w5Wj.js";const l="/assets/image-C9xvqFcE.png",d="/assets/image1-8W6wEyxK.png",a="/assets/image2-BiYpczAm.png",t="/assets/image3-DuYgQR7E.png",u="/assets/image5-cUUM4k3q.png",r="/assets/ec8acbd7-722c-40a2-8f2e-5e6258712e4e-Do_WZXP7.png",v="/assets/cfb67d27-0b5c-4283-9999-bd1597195b18-DxaeCMp8.png",o="/assets/4a390db6-5bd6-4f0e-a2fd-05104572daca-B88Hctw8.png",c="/assets/dc2bc194-f915-4a14-bd93-6943cb583a0a-CBkGy5PL.png",m="/assets/8cb70305-47dc-4d01-b258-d08052631960-Zl8jmSHj.png",b="/assets/fbbc8dce-39aa-4a0d-87ba-c0c1cc9ae17e-YrWGoWPp.png",q="/assets/ebe34bda-6839-47de-b9c5-f3a3d1aa7e31-RxWwSM8e.png",p="/assets/52d7afb0-7aa5-45f6-8143-e56e816d97a5-sfJAtfdn.png",h="/assets/ab547e22-e4e6-44af-9875-41ac3f7c0610-B9vNwdRQ.png",g="/assets/3391ad4a-4849-4834-8c65-1778a11332e6-CGfePLGH.png",_="/assets/afbb3d3c-19b2-4c20-969a-ed4844823ffb-BdOtSuru.png",f="/assets/933d80c5-4048-4fbd-b760-3868fe2961d6-Cbkvuvi4.png",y="/assets/a76cc39f-9a43-4dac-b7d8-f7a155c5c173-HPYXQgRi.png",x="/assets/6d5fa09c-1f4c-47d2-9d6e-40138cfe2acc-C1XKNruQ.png",P="/assets/5d3726af-d24d-4543-90f7-bea965602d5b-BFpE6fym.png",A="/assets/be596a52-e7fb-4999-a153-5f42ffaa7a4a-ByR-90Kl.png",k="/assets/047b1685-c995-4ff5-a6c3-bd645cfd0c51-D_rGwF6B.png",T="/assets/e38a09d2-c049-46ae-bcb9-e6979e7a2611-nZzzq4Xt.png",w="/assets/efe75aa7-6087-4f0b-a754-fa1f8edeb6e2-Bb5HXbZb.png",C={},I=s('<h1 id="大模型-ai-agent-知识从-0-1-笔记-万字详解版本" tabindex="-1"><a class="header-anchor" href="#大模型-ai-agent-知识从-0-1-笔记-万字详解版本"><span>大模型 AI Agent 知识从 0-1 笔记-万字详解版本！</span></a></h1><h1 id="【agent-入门到实战】深度理解-agent-全链路内容和深度优化、系统评估" tabindex="-1"><a class="header-anchor" href="#【agent-入门到实战】深度理解-agent-全链路内容和深度优化、系统评估"><span>【Agent 入门到实战】深度理解 Agent 全链路内容和深度优化、系统评估</span></a></h1><hr><p><img src="'+l+'" alt="Image" loading="lazy"></p><h2 id="什么是-agent-为什么说它是-ai-的下一个战场" tabindex="-1"><a class="header-anchor" href="#什么是-agent-为什么说它是-ai-的下一个战场"><span><strong>什么是 Agent？为什么说它是 AI 的下一个战场</strong></span></a></h2><h3 id="_1-1-从-chatgpt-到-agent-的进化" tabindex="-1"><a class="header-anchor" href="#_1-1-从-chatgpt-到-agent-的进化"><span>1.1 从 ChatGPT 到 Agent 的进化</span></a></h3><p>想象一下这个场景：</p><p><strong>传统的 ChatGPT 对话：</strong></p><ul><li><p><strong>你：「帮我规划一次周末去京都的旅行」</strong></p></li><li><p><strong>ChatGPT：「当然！京都是个美丽的城市，你可以考虑参观清水寺、金阁寺...建议提前预订酒店...」</strong></p></li><li><p><strong>你：（需要自己去各个网站查机票、订酒店、规划路线）</strong></p></li></ul><p><strong>AI Agent 的体验：</strong></p><p><img src="'+d+'" alt="Image" loading="lazy"></p><ul><li><p>你：「帮我规划一次周末去京都的旅行，预算 5000 元」</p></li><li><p>Agent：（自动搜索机票价格）→（比较酒店并筛选）→（规划每日行程）→（计算预算）</p></li><li><p>Agent：「已为您完成规划！往返机票 1800 元，住宿 2 晚 1200 元，包含清水寺、金阁寺等 5 个景点的详细行程，总预算 4800 元。[查看完整计划.pdf]」</p></li></ul><p><strong>这就是最本质的区别：ChatGPT 给建议，Agent 帮你干活。</strong></p><h3 id="_1-2-agent-的核心定义" tabindex="-1"><a class="header-anchor" href="#_1-2-agent-的核心定义"><span>1.2 Agent 的核心定义</span></a></h3><p><strong>AI Agent（智能体）</strong> 是一个具备以下三大能力的智能系统：</p><ol><li><p><strong>自主感知</strong>：能够理解当前环境和任务需求</p></li><li><p><strong>自主决策</strong>：能够制定执行计划并动态调整</p></li><li><p><strong>自主执行</strong>：能够调用工具完成实际任务</p></li></ol><p><strong>用一句话总结：Agent = LLM（大脑） + 工具（手脚） + 记忆（经验） + 规划（智慧）</strong></p><p><img src="'+a+'" alt="Image" loading="lazy"></p><hr><h2 id="agent-核心架构深度剖析" tabindex="-1"><a class="header-anchor" href="#agent-核心架构深度剖析"><span>Agent 核心架构深度剖析</span></a></h2><h3 id="_2-1-agent-整体架构图" tabindex="-1"><a class="header-anchor" href="#_2-1-agent-整体架构图"><span>2.1 Agent 整体架构图</span></a></h3><p><strong>让我们先看一张完整的 Agent 架构图，理解各个组件如何协同工作：</strong></p><p><img src="'+t+`" alt="Image" loading="lazy"></p><h3 id="_2-2-架构分层解析" tabindex="-1"><a class="header-anchor" href="#_2-2-架构分层解析"><span>2.2 架构分层解析</span></a></h3><p>这个架构可以分为<strong>四个核心层</strong>：</p><h4 id="第一层-感知层-perception-layer" tabindex="-1"><a class="header-anchor" href="#第一层-感知层-perception-layer"><span>第一层：感知层（Perception Layer）</span></a></h4><ul><li><p><strong>作用</strong>：接收并理解用户输入</p></li><li><p><strong>组件</strong>：用户输入 → 大语言模型理解</p></li><li><p><strong>类比</strong>：就像人的耳朵和眼睛</p></li></ul><h4 id="第二层-认知层-cognition-layer" tabindex="-1"><a class="header-anchor" href="#第二层-认知层-cognition-layer"><span>第二层：认知层（Cognition Layer）</span></a></h4><ul><li><p><strong>作用</strong>：分析、推理、规划</p></li><li><p><strong>组件</strong>：LLM Brain + 规划模块 + 推理引擎</p></li><li><p><strong>类比</strong>：就像人的大脑</p></li></ul><h4 id="第三层-执行层-execution-layer" tabindex="-1"><a class="header-anchor" href="#第三层-执行层-execution-layer"><span>第三层：执行层（Execution Layer）</span></a></h4><ul><li><p><strong>作用</strong>：调用各种工具完成任务</p></li><li><p><strong>组件</strong>：工具集（搜索、代码、API 等）</p></li><li><p><strong>类比</strong>：就像人的手脚</p></li></ul><h4 id="第四层-记忆层-memory-layer" tabindex="-1"><a class="header-anchor" href="#第四层-记忆层-memory-layer"><span>第四层：记忆层（Memory Layer）</span></a></h4><ul><li><p><strong>作用</strong>：存储和检索信息</p></li><li><p><strong>组件</strong>：短期记忆 + 长期记忆</p></li><li><p><strong>类比</strong>：就像人的记忆系统</p></li></ul><h3 id="_2-3-数据流转过程" tabindex="-1"><a class="header-anchor" href="#_2-3-数据流转过程"><span>2.3 数据流转过程</span></a></h3><p>让我用一个具体例子说明数据如何在架构中流转：</p><p><strong>任务</strong>：「找出 2024 年诺贝尔物理学奖获得者，并总结他们的主要贡献」</p><div class="language-SQL line-numbers-mode" data-ext="SQL" data-title="SQL"><pre class="language-SQL"><code>步骤1: 用户输入
+   → 进入规划模块：识别需要「搜索」和「总结」两个步骤
+
+步骤2: 规划完成
+   → 进入推理引擎（ReAct框架）
+
+步骤3: 第一轮思考-行动-观察循环
+   Thought: &quot;我需要搜索2024年诺贝尔物理学奖获得者&quot;
+   Action: 调用搜索工具search(&quot;2024 Nobel Prize Physics&quot;)
+   Observation: 获得搜索结果→ &quot;John Hopfield和Geoffrey Hinton&quot;
+
+步骤4: 第二轮思考-行动-观察循环
+   Thought: &quot;我需要了解他们的贡献&quot;
+   Action: 调用搜索工具search(&quot;Hopfield Hinton 神经网络贡献&quot;)
+   Observation: 获得详细信息→ &quot;人工神经网络和机器学习基础&quot;
+
+步骤5: 综合信息
+   → LLM整合所有观察结果
+   → 生成结构化答案
+   → 存入记忆模块（长期记忆）
+
+步骤6: 输出结果
+   → 返回完整答案给用户
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个过程中，<strong>Agent 不是一次性生成答案</strong>，而是<strong>通过多轮思考-行动-观察的循环</strong>，逐步接近最终答案。这就是 Agent 比传统 LLM 强大的地方。</p><h2 id="agent-的四大组成部分详解" tabindex="-1"><a class="header-anchor" href="#agent-的四大组成部分详解"><span>Agent 的四大组成部分详解</span></a></h2><h3 id="_3-1-组成部分总览" tabindex="-1"><a class="header-anchor" href="#_3-1-组成部分总览"><span>3.1 组成部分总览</span></a></h3><p><img src="`+u+`" alt="Image" loading="lazy"></p><h3 id="_3-2-组成部分一-大语言模型-llm-brain" tabindex="-1"><a class="header-anchor" href="#_3-2-组成部分一-大语言模型-llm-brain"><span>3.2 组成部分一：大语言模型（LLM Brain）</span></a></h3><h4 id="作用与地位" tabindex="-1"><a class="header-anchor" href="#作用与地位"><span>作用与地位</span></a></h4><p>LLM 是 Agent 的「大脑」，负责：</p><ul><li><p>理解用户意图</p></li><li><p>生成推理过程</p></li><li><p>决策选择工具</p></li><li><p>综合信息输出</p></li></ul><h4 id="当前主流选择" tabindex="-1"><a class="header-anchor" href="#当前主流选择"><span>当前主流选择</span></a></h4><h4 id="实际代码示例" tabindex="-1"><a class="header-anchor" href="#实际代码示例"><span>实际代码示例</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain_openai import ChatOpenAI
+
+# 初始化 LLM 作为 Agent 的大脑
+llm = ChatOpenAI(
+    model=&quot;gpt-4&quot;,
+    temperature=0,  # 降低随机性，提高推理稳定性
+)
+
+# LLM的推理能力展示
+response = llm.invoke(
+    &quot;你需要查找2024年奥运会金牌榜，然后比较中美两国的金牌数。请分步思考如何完成这个任务。&quot;
+)
+print(response.content)
+
+# 输出示例：
+# 思考步骤：
+# 1. 首先需要调用搜索工具查找&quot;2024奥运会金牌榜&quot;
+# 2. 从搜索结果中提取中国和美国的金牌数
+# 3. 进行数值比较
+# 4. 生成比较结果
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>关键点</strong>：</p><ul><li><p><code>temperature=0</code>：让 Agent 在推理时更稳定、更可预测</p></li><li><p>提示词需要引导「分步思考」，这是 CoT（Chain of Thought）的核心</p></li></ul><h3 id="_3-3-组成部分二-规划模块-planning" tabindex="-1"><a class="header-anchor" href="#_3-3-组成部分二-规划模块-planning"><span>3.3 组成部分二：规划模块（Planning）</span></a></h3><h4 id="为什么需要规划" tabindex="-1"><a class="header-anchor" href="#为什么需要规划"><span>为什么需要规划？</span></a></h4><p>举个例子：如果任务是「帮我准备一场技术分享会」，没有规划的 Agent 会：</p><ul><li><p>不知道从哪开始</p></li><li><p>可能遗漏重要步骤</p></li><li><p>浪费大量 token 重复思考</p></li></ul><p>有规划的 Agent 会：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>确定主题和目标听众
+搜索相关技术资料
+设计PPT大纲
+准备演示Demo
+生成演讲稿
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="两种主流规划方法" tabindex="-1"><a class="header-anchor" href="#两种主流规划方法"><span>两种主流规划方法</span></a></h4><p><strong>方法一：ReAct 框架（边想边做）</strong></p><p><img src="`+r+'" alt="Image" loading="lazy"></p><p><strong>ReAct 特点</strong>：</p><ul><li><p>✅ 灵活：可以根据中间结果调整计划</p></li><li><p>✅ 适合探索性任务</p></li><li><p>❌ Token 消耗大：每一步都要调用 LLM</p></li></ul><p><strong>方法二：Plan-and-Execute（先计划后执行）</strong></p><p><img src="'+v+`" alt="Image" loading="lazy"></p><p><strong>Plan-and-Execute 特点</strong>：</p><ul><li><p>✅ 高效：只需调用一次 LLM 规划</p></li><li><p>✅ 可并行执行多个任务</p></li><li><p>❌ 不灵活：难以根据中间结果调整</p></li></ul><h4 id="实际代码对比" tabindex="-1"><a class="header-anchor" href="#实际代码对比"><span>实际代码对比</span></a></h4><p><strong>ReAct 实现</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import create_react_agent, AgentExecutor
+from langchain.tools import Tool
+
+# 定义工具
+search_tool = Tool(
+    name=&quot;Search&quot;,
+    func=search_function,
+    description=&quot;搜索互联网信息&quot;
+)
+
+# 创建ReAct Agent
+agent = create_react_agent(llm, [search_tool])
+agent_executor = AgentExecutor(agent=agent, tools=[search_tool], verbose=True)
+
+# 执行任务
+result = agent_executor.invoke({
+    &quot;input&quot;: &quot;找出DeepSeek-R1的训练成本，并与GPT-4对比&quot;
+})
+
+# 输出过程（verbose=True会显示）：
+# Thought: 我需要搜索DeepSeek-R1的信息
+# Action: Search(&quot;DeepSeek-R1 training cost&quot;)
+# Observation: [搜索结果]
+# Thought: 接下来需要搜索GPT-4的成本
+# Action: Search(&quot;GPT-4 training cost&quot;)
+# Observation: [搜索结果]
+# Thought: 现在可以进行对比了
+# Final Answer: [对比结果]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Plan-and-Execute 实现</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import Plan, Execute
+
+# 第一步：规划
+planner = create_planner(llm)
+plan = planner.plan(&quot;分析2024年AI Agent市场趋势&quot;)
+
+# 输出的计划：
+# Task 1: 搜索2024年AI Agent市场报告
+# Task 2: 提取市场规模数据
+# Task 3: 识别主要参与者
+# Task 4: 总结趋势和预测
+
+# 第二步：执行
+executor = create_executor(tools)
+results = executor.execute(plan)  # 按计划依次执行
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="选择建议" tabindex="-1"><a class="header-anchor" href="#选择建议"><span>选择建议</span></a></h4><ul><li><p><strong>探索性任务</strong>（不知道中间会遇到什么）→ 用 ReAct</p></li><li><p><strong>流程明确的任务</strong>（步骤固定）→ 用 Plan-and-Execute</p></li><li><p><strong>复杂混合任务</strong> → 两者结合</p></li></ul><h3 id="_3-4-组成部分三-记忆模块-memory" tabindex="-1"><a class="header-anchor" href="#_3-4-组成部分三-记忆模块-memory"><span>3.4 组成部分三：记忆模块（Memory）</span></a></h3><h4 id="为什么记忆很重要" tabindex="-1"><a class="header-anchor" href="#为什么记忆很重要"><span>为什么记忆很重要？</span></a></h4><p>想象你在和一个朋友聊天：</p><ul><li><p><strong>没有记忆</strong>：每次对话都是新的，对方完全不记得你之前说过什么</p></li><li><p><strong>有记忆</strong>：对方记得你的喜好、之前的讨论，对话更流畅</p></li></ul><p>Agent 也一样。记忆分为两类：</p><h4 id="短期记忆-short-term-memory" tabindex="-1"><a class="header-anchor" href="#短期记忆-short-term-memory"><span>短期记忆（Short-term Memory）</span></a></h4><p><strong>作用</strong>：保存当前任务的上下文</p><p><strong>存储内容</strong>：</p><ul><li><p>当前对话历史</p></li><li><p>中间步骤的结果</p></li><li><p>临时变量和状态</p></li></ul><p><strong>技术实现</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.memory import ConversationBufferMemory
+
+# 创建对话记忆
+memory = ConversationBufferMemory(
+    memory_key=&quot;chat_history&quot;,
+    return_messages=True
+)
+
+# Agent执行时自动记录
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    memory=memory,  # 添加记忆
+    verbose=True
+)
+
+# 第一轮对话
+agent_executor.invoke({&quot;input&quot;: &quot;我叫张三，在北京工作&quot;})
+
+# 第二轮对话（Agent会记得上下文）
+agent_executor.invoke({&quot;input&quot;: &quot;帮我推荐北京的餐厅&quot;})
+# Agent会知道你在北京，直接推荐北京的餐厅
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>短期记忆的挑战</strong>：</p><ul><li><p>📊 <strong>Token 限制</strong>：GPT-4 有 128K token 限制，长对话会超出</p></li><li><p>💰 <strong>成本问题</strong>：每次调用都要把整个历史发送给 LLM</p></li></ul><p><strong>解决方案</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.memory import ConversationSummaryMemory
+
+# 使用摘要记忆：自动总结历史对话
+summary_memory = ConversationSummaryMemory(
+    llm=llm,
+    max_token_limit=2000  # 超过限制时自动总结
+)
+
+# 效果：
+# 原始历史（5000 tokens）→ 总结后（500 tokens）
+# &quot;用户是张三，在北京工作，偏好川菜，预算500元以内&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="长期记忆-long-term-memory" tabindex="-1"><a class="header-anchor" href="#长期记忆-long-term-memory"><span>长期记忆（Long-term Memory）</span></a></h4><p><strong>作用</strong>：存储可复用的知识和经验</p><p><strong>存储内容</strong>：</p><ul><li><p>用户的个人信息和偏好</p></li><li><p>历史任务的成功经验</p></li><li><p>领域知识库</p></li><li><p>工具使用的最佳实践</p></li></ul><p><strong>技术实现</strong>：使用向量数据库</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.vectorstores import Chroma
+from langchain.embeddings import OpenAIEmbeddings
+
+# 1. 创建向量数据库（长期记忆）
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma(
+    collection_name=&quot;agent_memory&quot;,
+    embedding_function=embeddings
+)
+
+# 2. 存储经验
+vectorstore.add_texts([
+    &quot;用户张三偏好川菜，预算500元&quot;,
+    &quot;北京最佳川菜馆：川办、巴国布衣&quot;,
+    &quot;搜索餐厅时应该考虑：位置、评分、价格、口味&quot;
+])
+
+# 3. Agent执行任务时检索相关记忆
+query = &quot;帮张三推荐餐厅&quot;
+relevant_memories = vectorstore.similarity_search(query, k=3)
+
+# 4. 将记忆注入到prompt中
+prompt = f&quot;&quot;&quot;
+相关记忆：
+{relevant_memories}
+
+用户请求：{query}
+
+请根据记忆中的信息给出推荐。
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="记忆架构图" tabindex="-1"><a class="header-anchor" href="#记忆架构图"><span>记忆架构图</span></a></h4><p><img src="`+o+`" alt="Image" loading="lazy"></p><h4 id="记忆模块的高级技巧" tabindex="-1"><a class="header-anchor" href="#记忆模块的高级技巧"><span>记忆模块的高级技巧</span></a></h4><p><strong>技巧 1：自动清理不重要的记忆</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#基于重要性评分的记忆管理
+def should_store_in_long_term(message):
+    # 让LLM判断是否重要
+    importance = llm.predict(f&quot;这条信息的重要性（1-10）：{message}&quot;)
+    return int(importance) &gt;= 7  # 只存储重要度&gt;=7的信息
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>技巧 2：记忆的时效性管理</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#给记忆加上时间戳
+from datetime import datetime, timedelta
+
+memory_item = {
+    &quot;content&quot;: &quot;用户偏好川菜&quot;,
+    &quot;timestamp&quot;: datetime.now(),
+    &quot;expiry&quot;: datetime.now() + timedelta(days=30)  # 30天后过期
+}
+
+# 检索时过滤过期记忆
+def get_valid_memories():
+    return [m for m in memories if m[&quot;expiry&quot;] &gt; datetime.now()]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-5-组成部分四-工具集-tools" tabindex="-1"><a class="header-anchor" href="#_3-5-组成部分四-工具集-tools"><span>3.5 组成部分四：工具集（Tools）</span></a></h3><h4 id="工具是-agent-的「超能力」" tabindex="-1"><a class="header-anchor" href="#工具是-agent-的「超能力」"><span>工具是 Agent 的「超能力」</span></a></h4><p>如果说 LLM 是 Agent 的大脑，那工具就是 Agent 的「手脚」和「超能力」。通过工具，Agent 可以：</p><ul><li><p>🔍 搜索互联网</p></li><li><p>💻 执行代码</p></li><li><p>📊 操作数据库</p></li><li><p>🔧 调用 API</p></li><li><p>🖥️ 控制电脑</p></li></ul><h4 id="工具的定义与实现" tabindex="-1"><a class="header-anchor" href="#工具的定义与实现"><span>工具的定义与实现</span></a></h4><p><strong>一个工具的标准结构</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.tools import Tool
+
+def calculate(expression: str) -&gt; str:
+    &quot;&quot;&quot;执行数学计算&quot;&quot;&quot;
+    try:
+        result = eval(expression)  # 实际生产中不要用eval
+        return f&quot;计算结果：{result}&quot;
+    except Exception as e:
+        return f&quot;计算错误：{str(e)}&quot;
+
+# 定义工具
+calculator_tool = Tool(
+    name=&quot;Calculator&quot;,  # 工具名称（Agent会看到）
+    func=calculate,     # 工具函数
+    description=&quot;&quot;&quot;
+    用于数学计算。
+    输入：数学表达式字符串，如 &quot;2 + 2&quot; 或 &quot;sqrt(16)&quot;
+    输出：计算结果
+    何时使用：当需要进行精确数学计算时
+    &quot;&quot;&quot;  # 描述很重要！Agent通过描述来决定是否使用该工具
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>关键要素</strong>：</p><ol><li><p><strong>清晰的名称</strong>：Agent 通过名称快速识别工具</p></li><li><p><strong>详细的描述</strong>：告诉 Agent 什么时候用、怎么用</p></li><li><p><strong>标准的输入输出</strong>：保证工具能被正确调用</p></li></ol><h4 id="常用工具类型与实现" tabindex="-1"><a class="header-anchor" href="#常用工具类型与实现"><span>常用工具类型与实现</span></a></h4><ol><li><strong>搜索工具</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.tools import DuckDuckGoSearchRun
+
+search = DuckDuckGoSearchRun()
+
+search_tool = Tool(
+    name=&quot;WebSearch&quot;,
+    func=search.run,
+    description=&quot;搜索互联网获取最新信息。适用于需要实时数据的场景。&quot;
+)
+
+# 使用示例
+result = search.run(&quot;2024年诺贝尔物理学奖&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2"><li><strong>代码执行工具</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def python_executor(code: str) -&gt; str:
+    &quot;&quot;&quot;执行Python代码&quot;&quot;&quot;
+    import io
+    import sys
+    from contextlib import redirect_stdout
+
+    f = io.StringIO()
+    try:
+        with redirect_stdout(f):
+            exec(code)
+        return f.getvalue()
+    except Exception as e:
+        return f&quot;错误：{str(e)}&quot;
+
+code_tool = Tool(
+    name=&quot;PythonExecutor&quot;,
+    func=python_executor,
+    description=&quot;执行Python代码。适用于数据处理、计算、可视化等任务。&quot;
+)
+
+# Agent可以这样用：
+# code_tool.run(&quot;&quot;&quot;
+# import pandas as pd
+# data = [1, 2, 3, 4, 5]
+# print(f&quot;平均值：{sum(data)/len(data)}&quot;)
+# &quot;&quot;&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3"><li><strong>API 调用工具</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import requests
+
+def weather_api(city: str) -&gt; str:
+    &quot;&quot;&quot;查询天气&quot;&quot;&quot;
+    # 假设调用某个天气API
+    response = requests.get(f&quot;https://api.weather.com/{city}&quot;)
+    return response.json()
+
+weather_tool = Tool(
+    name=&quot;WeatherAPI&quot;,
+    func=weather_api,
+    description=&quot;查询指定城市的天气信息。输入城市名，返回温度、湿度等信息。&quot;
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4"><li><strong>数据库工具</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import sqlite3
+
+def query_database(sql: str) -&gt; str:
+    &quot;&quot;&quot;查询数据库&quot;&quot;&quot;
+    conn = sqlite3.connect(&#39;my_database.db&#39;)
+    cursor = conn.cursor()
+    try:
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return str(results)
+    except Exception as e:
+        return f&quot;查询错误：{str(e)}&quot;
+    finally:
+        conn.close()
+
+db_tool = Tool(
+    name=&quot;DatabaseQuery&quot;,
+    func=query_database,
+    description=&quot;执行SQL查询。适用于需要从数据库获取数据的场景。&quot;
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="工具组合的实际案例" tabindex="-1"><a class="header-anchor" href="#工具组合的实际案例"><span>工具组合的实际案例</span></a></h4><p><strong>案例：构建一个数据分析 Agent</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import create_react_agent, AgentExecutor
+from langchain_openai import ChatOpenAI
+
+# 1. 准备工具集
+tools = [
+    search_tool,      # 搜索数据
+    code_tool,        # 数据处理
+    db_tool,          # 数据库查询
+]
+
+# 2. 创建Agent
+llm = ChatOpenAI(model=&quot;gpt-4&quot;, temperature=0)
+agent = create_react_agent(llm, tools)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+# 3. 执行复杂任务
+result = agent_executor.invoke({
+    &quot;input&quot;: &quot;&quot;&quot;
+    帮我分析一下：
+    1. 从数据库中查询2024年的销售数据
+    2. 搜索行业平均增长率
+    3. 用Python计算我们的增长率
+    4. 对比并给出结论
+    &quot;&quot;&quot;
+})
+
+# Agent的执行过程：
+# Thought: 需要先从数据库获取数据
+# Action: DatabaseQuery(&quot;SELECT * FROM sales WHERE year=2024&quot;)
+# Observation: [...数据...]
+#
+# Thought: 需要搜索行业数据
+# Action: WebSearch(&quot;2024年销售行业平均增长率&quot;)
+# Observation: [...行业数据...]
+#
+# Thought: 现在可以计算了
+# Action: PythonExecutor(&quot;
+#     our_growth = (current - previous) / previous * 100
+#     industry_avg = 15.2
+#     print(f&#39;我们的增长率：{our_growth}%，行业平均：{industry_avg}%&#39;)
+# &quot;)
+# Observation: 我们的增长率：18.5%，行业平均：15.2%
+#
+# Thought: 可以给出结论了
+# Final Answer: [完整分析报告]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="工具使用的最佳实践" tabindex="-1"><a class="header-anchor" href="#工具使用的最佳实践"><span>工具使用的最佳实践</span></a></h4><p><strong>实践 1：工具描述要精确</strong></p><p>❌ <strong>不好的描述</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>description=&quot;一个搜索工具&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>✅ <strong>好的描述</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>description=&quot;&quot;&quot;
+搜索互联网获取最新信息。
+- 输入：搜索关键词（字符串）
+- 输出：相关网页内容摘要
+- 适用场景：需要实时数据、最新新闻、当前事件
+- 不适用场景：历史数据、个人信息、数学计算
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>实践 2：工具要有错误处理</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def safe_tool(input_data):
+    try:
+        # 工具的实际逻辑
+        result = process(input_data)
+        return result
+    except Exception as e:
+        # 返回友好的错误信息，帮助Agent调整策略
+        return f&quot;工具执行失败：{str(e)}。建议：尝试其他方法或简化输入。&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>实践 3：工具要有使用日志</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import logging
+
+def logged_tool(input_data):
+    logging.info(f&quot;工具被调用，输入：{input_data}&quot;)
+    result = execute(input_data)
+    logging.info(f&quot;工具执行完成，输出：{result}&quot;)
+    return result
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="agent-的工作原理与理解方式" tabindex="-1"><a class="header-anchor" href="#agent-的工作原理与理解方式"><span>Agent 的工作原理与理解方式</span></a></h2><h3 id="_4-1-react-框架深度解析" tabindex="-1"><a class="header-anchor" href="#_4-1-react-框架深度解析"><span>4.1 ReAct 框架深度解析</span></a></h3><p>ReAct（Reasoning + Acting）是目前最主流的 Agent 工作框架，由 Google Brain 研究团队提出。</p><h4 id="react-的核心循环" tabindex="-1"><a class="header-anchor" href="#react-的核心循环"><span>ReAct 的核心循环</span></a></h4><p><img src="`+c+`" alt="Image" loading="lazy"></p><h4 id="完整的-react-示例" tabindex="-1"><a class="header-anchor" href="#完整的-react-示例"><span>完整的 ReAct 示例</span></a></h4><p><strong>任务</strong>：「2024 年哪个国家赢得了最多的奥运金牌？这个国家的首都是哪里？」</p><p><strong>Agent 的完整思考过程</strong>：</p><div class="language-YAML line-numbers-mode" data-ext="YAML" data-title="YAML"><pre class="language-YAML"><code>=== 第一轮循环 ===
+
+Thought 1:
+&quot;我需要找到2024年奥运会的金牌榜信息。这需要搜索最新的数据。&quot;
+
+Action 1:
+Tool: WebSearch
+Input: &quot;2024奥运会金牌榜&quot;
+
+Observation 1:
+&quot;2024年巴黎奥运会，美国队以40枚金牌位居榜首，中国队38枚金牌第二...&quot;
+
+=== 第二轮循环 ===
+
+Thought 2:
+&quot;好的，美国赢得了最多的金牌。现在我需要确认美国的首都。虽然我知道是华盛顿D.C.，但为了确保准确性，我应该验证一下。&quot;
+
+Action 2:
+Tool: WebSearch
+Input: &quot;美国首都&quot;
+
+Observation 2:
+&quot;美国的首都是华盛顿哥伦比亚特区（Washington, D.C.）...&quot;
+
+=== 完成 ===
+
+Thought 3:
+&quot;我已经获得了所有需要的信息，可以回答了。&quot;
+
+Final Answer:
+&quot;2024年巴黎奥运会，美国赢得了最多的金牌（40枚）。美国的首都是华盛顿哥伦比亚特区（Washington, D.C.）。&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="react-的代码实现" tabindex="-1"><a class="header-anchor" href="#react-的代码实现"><span>ReAct 的代码实现</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import create_react_agent, AgentExecutor
+from langchain_openai import ChatOpenAI
+from langchain.tools import Tool
+from langchain.prompts import PromptTemplate
+
+# 1. 定义ReAct的提示词模板
+react_prompt = PromptTemplate.from_template(&quot;&quot;&quot;
+你是一个AI助手，通过推理和行动来解决问题。
+
+可用工具：
+{tools}
+
+使用以下格式：
+
+Question: 需要回答的问题
+Thought: 你应该思考该做什么
+Action: 要采取的行动，必须是[{tool_names}]之一
+Action Input: 行动的输入
+Observation: 行动的结果
+... (这个Thought/Action/Action Input/Observation可以重复N次)
+Thought: 我现在知道最终答案了
+Final Answer: 原始问题的最终答案
+
+开始！
+
+Question: {input}
+Thought: {agent_scratchpad}
+&quot;&quot;&quot;)
+
+# 2. 创建工具
+def search(query):
+    # 简化的搜索实现
+    if &quot;金牌&quot; in query:
+        return &quot;2024年巴黎奥运会美国队40枚金牌第一&quot;
+    elif &quot;首都&quot; in query:
+        return &quot;美国首都是华盛顿D.C.&quot;
+
+search_tool = Tool(
+    name=&quot;Search&quot;,
+    func=search,
+    description=&quot;搜索互联网信息&quot;
+)
+
+# 3. 创建Agent
+llm = ChatOpenAI(model=&quot;gpt-4&quot;, temperature=0)
+agent = create_react_agent(
+    llm=llm,
+    tools=[search_tool],
+    prompt=react_prompt
+)
+
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=[search_tool],
+    verbose=True,  # 显示详细过程
+    max_iterations=5  # 最多5轮循环
+)
+
+# 4. 执行任务
+result = agent_executor.invoke({
+    &quot;input&quot;: &quot;2024年哪个国家赢得了最多的奥运金牌？这个国家的首都是哪里？&quot;
+})
+
+print(result[&quot;output&quot;])
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-2-其他-agent-工作模式" tabindex="-1"><a class="header-anchor" href="#_4-2-其他-agent-工作模式"><span>4.2 其他 Agent 工作模式</span></a></h3><p>除了 ReAct，还有其他几种重要的工作模式：</p><h4 id="模式-1-chain-of-thought-cot-纯推理" tabindex="-1"><a class="header-anchor" href="#模式-1-chain-of-thought-cot-纯推理"><span>模式 1：Chain of Thought (CoT) - 纯推理</span></a></h4><p><img src="`+m+`" alt="Image" loading="lazy"></p><p><strong>特点</strong>：</p><ul><li><p>只有思考，没有行动</p></li><li><p>适合纯逻辑推理问题</p></li><li><p>Token 消耗少</p></li></ul><p><strong>示例</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>问题：&quot;如果一个房间有3只猫，每只猫前面有2只猫，那一共有多少只猫？&quot;
+
+CoT推理：
+思考1：题目说&quot;每只猫前面有2只猫&quot;
+思考2：这意味着猫排成一排
+思考3：但只有3只猫，所以是循环的或者交叉的排列
+思考4：实际上还是3只猫
+答案：3只猫
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="模式-2-plan-and-execute-先计划后执行" tabindex="-1"><a class="header-anchor" href="#模式-2-plan-and-execute-先计划后执行"><span>模式 2：Plan-and-Execute - 先计划后执行</span></a></h4><p><img src="`+b+`" alt="Image" loading="lazy"></p><p><strong>特点</strong>：</p><ul><li><p>先一次性规划，再按计划执行</p></li><li><p>可以并行执行任务</p></li><li><p>适合流程明确的复杂任务</p></li></ul><p><strong>代码示例</strong>：</p><div class="language-Bash line-numbers-mode" data-ext="Bash" data-title="Bash"><pre class="language-Bash"><code>#1. 规划阶段
+planner_prompt = &quot;&quot;&quot;
+将任务分解为子任务：
+任务：{task}
+
+请输出JSON格式的任务列表：
+[
+    {&quot;id&quot;: 1, &quot;description&quot;: &quot;...&quot;, &quot;dependencies&quot;: []},
+    {&quot;id&quot;: 2, &quot;description&quot;: &quot;...&quot;, &quot;dependencies&quot;: [1]},
+    ...
+]
+&quot;&quot;&quot;
+
+plan = llm.invoke(planner_prompt.format(
+    task=&quot;分析竞争对手的产品策略&quot;
+))
+
+# 2. 执行阶段
+for task in plan:
+    if all_dependencies_completed(task):
+        result = execute_task(task)
+        store_result(task.id, result)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="模式-3-self-ask-自问自答" tabindex="-1"><a class="header-anchor" href="#模式-3-self-ask-自问自答"><span>模式 3：Self-Ask - 自问自答</span></a></h4><p><img src="`+q+`" alt="Image" loading="lazy"></p><p><strong>示例</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>主问题：&quot;iPhone 15的屏幕比iPhone 14大多少？&quot;
+
+Agent自问自答：
+Q1: &quot;iPhone 15的屏幕尺寸是多少？&quot;
+→ 搜索得到：6.1英寸
+
+Q2: &quot;iPhone 14的屏幕尺寸是多少？&quot;
+→ 搜索得到：6.1英寸
+
+Q3: &quot;6.1英寸 - 6.1英寸 = ?&quot;
+→ 计算得到：0英寸
+
+最终答案：&quot;iPhone 15和iPhone 14的屏幕尺寸相同，都是6.1英寸。&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-理解-agent-的三种视角" tabindex="-1"><a class="header-anchor" href="#_4-3-理解-agent-的三种视角"><span>4.3 理解 Agent 的三种视角</span></a></h3><h4 id="视角-1-把-agent-看作「员工」" tabindex="-1"><a class="header-anchor" href="#视角-1-把-agent-看作「员工」"><span>视角 1：把 Agent 看作「员工」</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>你（老板）：「帮我准备明天的演讲PPT」
+
+Agent（员工）：
+理解需求（演讲主题、目标听众）
+搜索资料（行业数据、案例）
+设计大纲（结构规划）
+制作PPT（使用工具）
+审核优化（自我检查）
+交付成果（PPT文件）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>这个视角帮助你</strong>：</p><ul><li><p>设计 Agent 的职责范围</p></li><li><p>定义输入输出格式</p></li><li><p>考虑错误处理</p></li></ul><h4 id="视角-2-把-agent-看作「循环系统」" tabindex="-1"><a class="header-anchor" href="#视角-2-把-agent-看作「循环系统」"><span>视角 2：把 Agent 看作「循环系统」</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>输入 → [感知 → 思考 → 决策 → 行动 → 观察] → 输出
+         ↑_______________________________|
+              反馈循环
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>这个视角帮助你</strong>：</p><ul><li><p>优化循环次数</p></li><li><p>设置终止条件</p></li><li><p>调试中间过程</p></li></ul><h4 id="视角-3-把-agent-看作「大脑-工具」" tabindex="-1"><a class="header-anchor" href="#视角-3-把-agent-看作「大脑-工具」"><span>视角 3：把 Agent 看作「大脑+工具」</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>大脑（LLM）：
+    理解语言
+    推理规划
+    生成文本
+
+↕ 通信
+
+工具箱：
+    搜索引擎
+    计算器
+    API接口
+    数据库
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>这个视角帮助你</strong>：</p><ul><li><p>扩展 Agent 能力（添加新工具）</p></li><li><p>优化工具选择（描述要精确）</p></li><li><p>提升执行效率（工具要快）</p></li></ul><h2 id="构建-agent-的五大难点与解决方案" tabindex="-1"><a class="header-anchor" href="#构建-agent-的五大难点与解决方案"><span>构建 Agent 的五大难点与解决方案</span></a></h2><h3 id="_5-1-难点一-无限循环与任务卡死" tabindex="-1"><a class="header-anchor" href="#_5-1-难点一-无限循环与任务卡死"><span>5.1 难点一：无限循环与任务卡死</span></a></h3><h4 id="问题描述" tabindex="-1"><a class="header-anchor" href="#问题描述"><span>问题描述</span></a></h4><p>Agent 可能陷入死循环：</p><div class="language-YAML line-numbers-mode" data-ext="YAML" data-title="YAML"><pre class="language-YAML"><code>Thought: 我需要搜索信息
+Action: Search(&quot;2024 AI&quot;)
+Observation: [搜索结果]
+
+Thought: 我需要搜索更详细的信息
+Action: Search(&quot;2024 AI详细&quot;)
+Observation: [搜索结果]
+
+Thought: 我需要搜索更详细的信息
+Action: Search(&quot;2024 AI更详细&quot;)
+...（永远循环）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="解决方案" tabindex="-1"><a class="header-anchor" href="#解决方案"><span>解决方案</span></a></h4><p><strong>方案 1：设置最大迭代次数</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    max_iterations=10,  # 最多执行10轮
+    max_execution_time=60,  # 最多执行60秒
+    early_stopping_method=&quot;generate&quot;  # 超时时生成答案
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 2：优化提示词，明确终止条件</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>prompt = &quot;&quot;&quot;
+你必须在5步内完成任务。
+如果5步内无法完成，请给出&quot;基于现有信息的最佳答案&quot;。
+
+当前已经执行了{iterations}步。
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 3：实现智能终止判断</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def should_continue(agent_state):
+    # 检查是否在重复相同的行动
+    last_3_actions = agent_state.history[-3:]
+    if len(set(last_3_actions)) == 1:  # 最后3个动作都相同
+        return False  # 终止
+
+    # 检查是否进展缓慢
+    if agent_state.iterations &gt; 5 and not has_new_info(agent_state):
+        return False
+
+    return True
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-2-难点二-工具选择错误" tabindex="-1"><a class="header-anchor" href="#_5-2-难点二-工具选择错误"><span>5.2 难点二：工具选择错误</span></a></h3><h4 id="问题描述-1" tabindex="-1"><a class="header-anchor" href="#问题描述-1"><span>问题描述</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>Agent选择了错误的工具：
+任务：&quot;计算2024年有多少天&quot;
+
+错误选择：
+Action: WebSearch(&quot;2024年有多少天&quot;)  ❌ 不需要搜索
+
+正确选择：
+Action: Calculator(&quot;365 if not is_leap_year(2024) else 366&quot;)  ✅
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="根本原因" tabindex="-1"><a class="header-anchor" href="#根本原因"><span>根本原因</span></a></h4><ol><li><p>工具描述不清晰</p></li><li><p>Prompt 没有给出使用规则</p></li><li><p>LLM 对任务理解有偏差</p></li></ol><h4 id="解决方案-1" tabindex="-1"><a class="header-anchor" href="#解决方案-1"><span>解决方案</span></a></h4><p><strong>方案 1：改进工具描述</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>❌ 不好的描述
+calculator_tool = Tool(
+    name=&quot;Calculator&quot;,
+    description=&quot;计算&quot;
+)
+
+# ✅ 好的描述
+calculator_tool = Tool(
+    name=&quot;Calculator&quot;,
+    description=&quot;&quot;&quot;
+    用于精确的数学计算。
+
+    适用场景：
+    - 算术运算（加减乘除）
+    - 数学函数（平方、开方、三角函数）
+    - 逻辑判断（比较大小）
+
+    输入格式：Python数学表达式字符串
+    示例：&quot;2 + 2&quot;, &quot;sqrt(16)&quot;, &quot;2024 % 4 == 0&quot;
+
+    不适用场景：
+    - 需要最新数据（用Search）
+    - 需要上下文信息（用Memory）
+    &quot;&quot;&quot;
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 2：添加工具使用示例</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>prompt = &quot;&quot;&quot;
+工具使用示例：
+
+问题：&quot;今天的天气如何？&quot;
+正确：Action: WeatherAPI(&quot;北京&quot;)
+错误：Action: Calculator(&quot;天气&quot;)  # 天气不是数学问题
+
+问题：&quot;2的100次方是多少？&quot;
+正确：Action: Calculator(&quot;2**100&quot;)
+错误：Action: Search(&quot;2的100次方&quot;)  # 不需要搜索
+
+现在请处理：{input}
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 3：实现工具推荐系统</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def recommend_tool(task_description, available_tools):
+    &quot;&quot;&quot;根据任务描述推荐工具&quot;&quot;&quot;
+    # 使用LLM分析任务
+    analysis = llm.invoke(f&quot;&quot;&quot;
+    任务：{task_description}
+
+    请分析这个任务需要：
+    1. 实时数据吗？→ 需要Search
+    2. 数学计算吗？→ 需要Calculator
+    3. 历史信息吗？→ 需要Memory
+
+    推荐工具（JSON格式）：
+    {{&quot;recommended&quot;: [&quot;tool1&quot;, &quot;tool2&quot;], &quot;reason&quot;: &quot;...&quot;}}
+    &quot;&quot;&quot;)
+
+    return analysis.recommended
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-3-难点三-上下文窗口溢出" tabindex="-1"><a class="header-anchor" href="#_5-3-难点三-上下文窗口溢出"><span>5.3 难点三：上下文窗口溢出</span></a></h3><h4 id="问题描述-2" tabindex="-1"><a class="header-anchor" href="#问题描述-2"><span>问题描述</span></a></h4><p>长对话或复杂任务会导致：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>Prompt + 历史对话 + 工具描述 + 中间结果 = 超过Token限制
+
+GPT-4: 128K tokens
+Claude: 200K tokens
+
+一次复杂任务可能消耗50K+ tokens
+→ 超出限制或成本过高
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="解决方案-2" tabindex="-1"><a class="header-anchor" href="#解决方案-2"><span>解决方案</span></a></h4><p><strong>方案 1：智能压缩上下文</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.memory import ConversationSummaryBufferMemory
+
+memory = ConversationSummaryBufferMemory(
+    llm=llm,
+    max_token_limit=4000,  # 保留最近4000 tokens
+    moving_summary_buffer=&quot;&quot;,  # 旧的对话自动总结
+)
+
+# 效果：
+# 旧对话：&quot;用户询问了天气、新闻、股票...共20轮对话&quot;
+# ↓ 总结为
+# &quot;用户主要关心北京天气（晴）、今日新闻（AI发展）、股票（上涨）&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 2：分层记忆</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class HierarchicalMemory:
+    def init(self):
+        self.recent_memory = []  # 最近3轮，完整保留
+        self.mid_term_memory = []  # 中期10轮，保留关键信息
+        self.long_term_memory = vectorstore  # 长期，向量检索
+
+    def add(self, message):
+        self.recent_memory.append(message)
+
+        if len(self.recent_memory) &gt; 3:
+            # 移到中期记忆，提取关键信息
+            old_message = self.recent_memory.pop(0)
+            key_info = extract_key_info(old_message)
+            self.mid_term_memory.append(key_info)
+
+        if len(self.mid_term_memory) &gt; 10:
+            # 移到长期记忆，存入向量库
+            old_info = self.mid_term_memory.pop(0)
+            self.long_term_memory.add_texts([old_info])
+
+    def get_context(self, query):
+        # 组合三层记忆
+        recent = &quot;\\n&quot;.join(self.recent_memory)
+        mid = &quot;\\n&quot;.join(self.mid_term_memory)
+        relevant = self.long_term_memory.similarity_search(query, k=2)
+
+        return f&quot;{recent}\\n\\n相关历史：{mid}\\n{relevant}&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 3：动态工具加载</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#不要一次性加载所有工具
+all_tools = {
+    &quot;search&quot;: search_tool,
+    &quot;calculator&quot;: calc_tool,
+    &quot;database&quot;: db_tool,
+    &quot;api&quot;: api_tool,
+    # ... 50个工具
+}
+
+# 根据任务动态选择工具
+def select_tools(task):
+    # 分析任务需要哪些类别的工具
+    if &quot;搜索&quot; in task or &quot;查询&quot; in task:
+        return [all_tools[&quot;search&quot;]]
+    elif &quot;计算&quot; in task:
+        return [all_tools[&quot;calculator&quot;]]
+    # ...
+
+    # 默认返回最常用的5个工具
+    return list(all_tools.values())[:5]
+
+# 创建Agent时只加载需要的工具
+tools = select_tools(user_input)
+agent = create_agent(llm, tools)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-4-难点四-错误处理与鲁棒性" tabindex="-1"><a class="header-anchor" href="#_5-4-难点四-错误处理与鲁棒性"><span>5.4 难点四：错误处理与鲁棒性</span></a></h3><h4 id="问题描述-3" tabindex="-1"><a class="header-anchor" href="#问题描述-3"><span>问题描述</span></a></h4><p>各种错误会导致 Agent 崩溃：</p><ul><li><p>工具调用失败</p></li><li><p>API 超时</p></li><li><p>返回格式错误</p></li><li><p>LLM 输出异常</p></li></ul><h4 id="解决方案-3" tabindex="-1"><a class="header-anchor" href="#解决方案-3"><span>解决方案</span></a></h4><p><strong>方案 1：工具层面的错误处理</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def robust_tool(func):
+    &quot;&quot;&quot;装饰器：让工具更健壮&quot;&quot;&quot;
+    def wrapper(*args, **kwargs):
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                result = func(*args, **kwargs)
+                return {
+                    &quot;success&quot;: True,
+                    &quot;data&quot;: result
+                }
+            except TimeoutError:
+                if attempt == max_retries - 1:
+                    return {
+                        &quot;success&quot;: False,
+                        &quot;error&quot;: &quot;工具执行超时，请尝试简化输入或使用其他工具&quot;
+                    }
+                time.sleep(2 ** attempt)  # 指数退避
+            except Exception as e:
+                return {
+                    &quot;success&quot;: False,
+                    &quot;error&quot;: f&quot;工具执行失败：{str(e)}&quot;
+                }
+    return wrapper
+
+@robust_tool
+def search_tool(query):
+    # 实际搜索逻辑
+    return search_engine.query(query)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 2：Agent 层面的降级策略</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class RobustAgent:
+    def execute(self, task):
+        try:
+            # 尝试完整流程
+            return self.full_execution(task)
+        except AgentError:
+            # 降级：使用简化流程
+            return self.simplified_execution(task)
+        except Exception:
+            # 最终降级：直接用LLM回答
+            return self.fallback_execution(task)
+
+    def full_execution(self, task):
+        # ReAct完整循环，可能使用多个工具
+        return self.react_loop(task)
+
+    def simplified_execution(self, task):
+        # 简化版：只用一个最重要的工具
+        tool = self.select_best_tool(task)
+        result = tool.run(task)
+        return self.llm.summarize(result)
+
+    def fallback_execution(self, task):
+        # 保底：直接用LLM知识回答
+        return self.llm.invoke(f&quot;请基于你的知识回答：{task}&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 3：实时监控与告警</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import logging
+
+class AgentMonitor:
+    def init(self):
+        self.metrics = {
+            &quot;total_tasks&quot;: 0,
+            &quot;success&quot;: 0,
+            &quot;failures&quot;: 0,
+            &quot;avg_time&quot;: 0,
+        }
+
+    def log_execution(self, task, result, duration):
+        self.metrics[&quot;total_tasks&quot;] += 1
+
+        if result[&quot;success&quot;]:
+            self.metrics[&quot;success&quot;] += 1
+        else:
+            self.metrics[&quot;failures&quot;] += 1
+            logging.error(f&quot;Task failed: {task}, Error: {result[&#39;error&#39;]}&quot;)
+
+        # 计算平均时间
+        self.metrics[&quot;avg_time&quot;] = (
+            self.metrics[&quot;avg_time&quot;] * (self.metrics[&quot;total_tasks&quot;] - 1) + duration
+        ) / self.metrics[&quot;total_tasks&quot;]
+
+        # 告警
+        failure_rate = self.metrics[&quot;failures&quot;] / self.metrics[&quot;total_tasks&quot;]
+        if failure_rate &gt; 0.3:  # 失败率超过30%
+            send_alert(f&quot;Agent failure rate: {failure_rate:.2%}&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-5-难点五-成本控制" tabindex="-1"><a class="header-anchor" href="#_5-5-难点五-成本控制"><span>5.5 难点五：成本控制</span></a></h3><h4 id="问题描述-4" tabindex="-1"><a class="header-anchor" href="#问题描述-4"><span>问题描述</span></a></h4><p>Agent 的成本可能很高：</p><div class="language-Bash line-numbers-mode" data-ext="Bash" data-title="Bash"><pre class="language-Bash"><code>一次复杂任务：
+10轮ReAct循环
+每轮2K tokens输入 + 500 tokens输出
+总计：(2000+500) * 10 = 25K tokens
+
+GPT-4价格（假设）：
+输入：$0.03 / 1K tokens
+输出：$0.06 / 1K tokens
+
+单次任务成本：
+输入：20K * 0.03 = $0.60
+输出：5K * 0.06 = $0.30
+总计：$0.90
+
+如果每天1000个任务 = $900/天 = $27,000/月
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="解决方案-4" tabindex="-1"><a class="header-anchor" href="#解决方案-4"><span>解决方案</span></a></h4><p><strong>方案 1：模型分级使用</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class CostOptimizedAgent:
+    def init(self):
+        self.models = {
+            &quot;cheap&quot;: ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),  # $0.002/1K
+            &quot;standard&quot;: ChatOpenAI(model=&quot;gpt-4&quot;),        # $0.03/1K
+            &quot;premium&quot;: ChatOpenAI(model=&quot;gpt-4-turbo&quot;),   # $0.01/1K
+        }
+
+    def select_model(self, task_complexity):
+        # 简单任务用便宜模型
+        if task_complexity &lt; 3:
+            return self.models[&quot;cheap&quot;]
+        elif task_complexity &lt; 7:
+            return self.models[&quot;standard&quot;]
+        else:
+            return self.models[&quot;premium&quot;]
+
+    def estimate_complexity(self, task):
+        # 根据任务特征估计复杂度
+        factors = {
+            &quot;num_steps&quot;: len(parse_steps(task)) * 2,
+            &quot;need_tools&quot;: 3 if requires_tools(task) else 0,
+            &quot;domain_specific&quot;: 2 if is_specialized(task) else 0,
+        }
+        return sum(factors.values())
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 2：缓存机制</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from functools import lru_cache
+import hashlib
+
+class CachedAgent:
+    def init(self):
+        self.cache = {}
+
+    def execute(self, task):
+        # 计算任务的哈希值
+        task_hash = hashlib.md5(task.encode()).hexdigest()
+
+        # 检查缓存
+        if task_hash in self.cache:
+            logging.info(f&quot;Cache hit for task: {task[:50]}...&quot;)
+            return self.cache[task_hash]
+
+        # 执行任务
+        result = self.agent.run(task)
+
+        # 存入缓存
+        self.cache[task_hash] = result
+        return result
+
+# 效果：
+# 第一次：&quot;北京明天天气&quot; → 调用LLM → 成本$0.05
+# 第二次：&quot;北京明天天气&quot; → 从缓存读取 → 成本$0
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 3：批处理</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def batch_process(tasks):
+    &quot;&quot;&quot;批量处理相似任务&quot;&quot;&quot;
+    # 将相似任务分组
+    groups = group_similar_tasks(tasks)
+
+    results = []
+    for group in groups:
+        # 一次性处理一组任务
+        batch_prompt = f&quot;&quot;&quot;
+        请处理以下{len(group)}个相似任务：
+        {&quot;\\n&quot;.join([f&quot;{i+1}. {t}&quot; for i, t in enumerate(group)])}
+
+        请输出JSON格式的结果列表。
+        &quot;&quot;&quot;
+
+        batch_result = llm.invoke(batch_prompt)
+        results.extend(parse_batch_result(batch_result))
+
+    return results
+
+# 效果：
+# 单独处理10个任务：10次LLM调用
+# 批量处理10个任务：2-3次LLM调用（节省70%成本）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>方案 4：设置预算限制</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class BudgetControlledAgent:
+    def init(self, daily_budget_usd=10):
+        self.daily_budget = daily_budget_usd
+        self.today_spent = 0
+        self.task_count = 0
+
+    def execute(self, task):
+        # 检查预算
+        estimated_cost = self.estimate_cost(task)
+        if self.today_spent + estimated_cost &gt; self.daily_budget:
+            return {
+                &quot;success&quot;: False,
+                &quot;message&quot;: f&quot;预算不足。今日已用\${self.today_spent:.2f}，预算\${self.daily_budget}&quot;
+            }
+
+        # 执行任务
+        result = self.agent.run(task)
+        actual_cost = self.calculate_cost(result.tokens_used)
+
+        # 更新统计
+        self.today_spent += actual_cost
+        self.task_count += 1
+
+        logging.info(f&quot;Task {self.task_count}: Cost \${actual_cost:.4f}, Total \${self.today_spent:.2f}&quot;)
+
+        return result
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="多-agent-协同系统设计" tabindex="-1"><a class="header-anchor" href="#多-agent-协同系统设计"><span>多 Agent 协同系统设计</span></a></h2><h3 id="_6-1-为什么需要多-agent" tabindex="-1"><a class="header-anchor" href="#_6-1-为什么需要多-agent"><span>6.1 为什么需要多 Agent？</span></a></h3><p>单个 Agent 的局限性：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>假设你要开发一个完整的软件产品：
+
+单Agent模式：
+Agent：「我既要写需求文档，又要写代码，还要测试，还要设计UI...」
+→ 能力有限
+→ 容易出错
+→ 效率低下
+
+多Agent模式：
+产品经理Agent：负责需求分析
+架构师Agent：负责系统设计
+开发Agent：负责编写代码
+测试Agent：负责质量保证
+UI设计Agent：负责界面设计
+
+→ 专业分工
+→ 并行工作
+→ 质量更高
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-2-多-agent-系统架构" tabindex="-1"><a class="header-anchor" href="#_6-2-多-agent-系统架构"><span>6.2 多 Agent 系统架构</span></a></h3><p><img src="`+p+'" alt="Image" loading="lazy"></p><h3 id="_6-3-多-agent-协作模式" tabindex="-1"><a class="header-anchor" href="#_6-3-多-agent-协作模式"><span>6.3 多 Agent 协作模式</span></a></h3><h4 id="模式-1-层级结构-hierarchical" tabindex="-1"><a class="header-anchor" href="#模式-1-层级结构-hierarchical"><span>模式 1：层级结构（Hierarchical）</span></a></h4><p><img src="'+h+`" alt="Image" loading="lazy"></p><p><strong>特点</strong>：</p><ul><li><p>有明确的上下级关系</p></li><li><p>管理者负责任务分配和结果整合</p></li><li><p>适合层次清晰的任务</p></li></ul><p><strong>代码实现</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import Agent
+from langchain_openai import ChatOpenAI
+
+class ManagerAgent:
+    def init(self):
+        self.llm = ChatOpenAI(model=&quot;gpt-4&quot;)
+        self.workers = {
+            &quot;researcher&quot;: ResearcherAgent(),
+            &quot;analyst&quot;: AnalystAgent(),
+            &quot;writer&quot;: WriterAgent(),
+        }
+
+    def delegate(self, task):
+        # 分析任务，分配给合适的worker
+        plan = self.llm.invoke(f&quot;&quot;&quot;
+        任务：{task}
+
+        请将任务分解并分配给以下worker：
+        - researcher: 负责搜集信息
+        - analyst: 负责数据分析
+        - writer: 负责内容创作
+
+        输出JSON格式的任务分配：
+        [
+            {{&quot;worker&quot;: &quot;researcher&quot;, &quot;subtask&quot;: &quot;...&quot;}},
+            {{&quot;worker&quot;: &quot;analyst&quot;, &quot;subtask&quot;: &quot;...&quot;}},
+            ...
+        ]
+        &quot;&quot;&quot;)
+
+        # 分配任务
+        results = {}
+        for subtask in plan:
+            worker_name = subtask[&quot;worker&quot;]
+            worker = self.workers[worker_name]
+            results[worker_name] = worker.execute(subtask[&quot;subtask&quot;])
+
+        # 整合结果
+        return self.integrate_results(results)
+
+    def integrate_results(self, results):
+        # 让LLM整合各个worker的结果
+        combined = self.llm.invoke(f&quot;&quot;&quot;
+        请整合以下各部分的结果：
+
+        研究结果：{results[&#39;researcher&#39;]}
+        分析结果：{results[&#39;analyst&#39;]}
+        创作结果：{results[&#39;writer&#39;]}
+
+        输出最终完整的报告。
+        &quot;&quot;&quot;)
+        return combined
+
+# 使用
+manager = ManagerAgent()
+result = manager.delegate(&quot;分析2024年AI Agent市场趋势并撰写报告&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="模式-2-平等协作-collaborative" tabindex="-1"><a class="header-anchor" href="#模式-2-平等协作-collaborative"><span>模式 2：平等协作（Collaborative）</span></a></h4><p><img src="`+g+`" alt="Image" loading="lazy"></p><p><strong>特点</strong>：</p><ul><li><p>Agents 地位平等</p></li><li><p>可以相互协商和讨论</p></li><li><p>适合需要多角度思考的复杂问题</p></li></ul><p><strong>代码实现（AutoGen 风格）</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from autogen import ConversableAgent
+
+# 定义三个平等的Agent
+researcher = ConversableAgent(
+    name=&quot;Researcher&quot;,
+    system_message=&quot;你是一个研究员，负责收集和验证信息。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+critic = ConversableAgent(
+    name=&quot;Critic&quot;,
+    system_message=&quot;你是一个评论家，负责质疑和改进方案。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+writer = ConversableAgent(
+    name=&quot;Writer&quot;,
+    system_message=&quot;你是一个作家，负责组织和表达信息。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+# Agents之间的对话
+def collaborative_work(task):
+    # Round 1: Researcher提供初步信息
+    research_result = researcher.generate_reply(
+        messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task}]
+    )
+
+    # Round 2: Critic评价和建议
+    critique = critic.generate_reply(
+        messages=[
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task},
+            {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: research_result},
+        ]
+    )
+
+    # Round 3: Writer整合并输出
+    final_output = writer.generate_reply(
+        messages=[
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task},
+            {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: research_result},
+            {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: critique},
+        ]
+    )
+
+    return final_output
+
+result = collaborative_work(&quot;设计一个AI Agent产品的营销策略&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="模式-3-流水线-pipeline" tabindex="-1"><a class="header-anchor" href="#模式-3-流水线-pipeline"><span>模式 3：流水线（Pipeline）</span></a></h4><p><img src="`+_+`" alt="Image" loading="lazy"></p><p><strong>特点</strong>：</p><ul><li><p>固定的处理顺序</p></li><li><p>每个 Agent 专注于流程中的一个阶段</p></li><li><p>适合有明确步骤的任务</p></li></ul><p><strong>实际案例：内容创作流水线</strong></p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class ContentPipeline:
+    def init(self):
+        self.stages = [
+            ResearchAgent(),    # 阶段1：研究
+            OutlineAgent(),     # 阶段2：大纲
+            DraftAgent(),       # 阶段3：草稿
+            EditorAgent(),      # 阶段4：编辑
+            SEOAgent(),         # 阶段5：SEO优化
+        ]
+
+    def process(self, topic):
+        data = {&quot;topic&quot;: topic}
+
+        for stage in self.stages:
+            print(f&quot;执行阶段：{stage.name}&quot;)
+            data = stage.execute(data)
+            print(f&quot;输出：{data[:100]}...\\n&quot;)
+
+        return data
+
+# 定义各阶段的Agent
+class ResearchAgent:
+    name = &quot;Research&quot;
+    def execute(self, data):
+        # 搜索相关资料
+        sources = search(data[&quot;topic&quot;])
+        data[&quot;sources&quot;] = sources
+        return data
+
+class OutlineAgent:
+    name = &quot;Outline&quot;
+    def execute(self, data):
+        # 基于sources生成大纲
+        outline = generate_outline(data[&quot;sources&quot;])
+        data[&quot;outline&quot;] = outline
+        return data
+
+class DraftAgent:
+    name = &quot;Draft&quot;
+    def execute(self, data):
+        # 基于outline写草稿
+        draft = write_draft(data[&quot;outline&quot;])
+        data[&quot;draft&quot;] = draft
+        return data
+
+class EditorAgent:
+    name = &quot;Editor&quot;
+    def execute(self, data):
+        # 润色和改进草稿
+        edited = edit_content(data[&quot;draft&quot;])
+        data[&quot;final_content&quot;] = edited
+        return data
+
+class SEOAgent:
+    name = &quot;SEO&quot;
+    def execute(self, data):
+        # 优化SEO
+        optimized = add_seo_keywords(data[&quot;final_content&quot;])
+        data[&quot;seo_content&quot;] = optimized
+        return data
+
+# 使用流水线
+pipeline = ContentPipeline()
+article = pipeline.process(&quot;AI Agent的商业应用&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-4-多-agent-的实战案例" tabindex="-1"><a class="header-anchor" href="#_6-4-多-agent-的实战案例"><span>6.4 多 Agent 的实战案例</span></a></h3><h4 id="案例-智能软件开发团队" tabindex="-1"><a class="header-anchor" href="#案例-智能软件开发团队"><span>案例：智能软件开发团队</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class SoftwareDevelopmentTeam:
+    def init(self):
+        # 定义团队成员
+        self.agents = {
+            &quot;pm&quot;: ProductManagerAgent(),      # 产品经理
+            &quot;architect&quot;: ArchitectAgent(),    # 架构师
+            &quot;frontend&quot;: FrontendAgent(),      # 前端开发
+            &quot;backend&quot;: BackendAgent(),        # 后端开发
+            &quot;tester&quot;: TesterAgent(),          # 测试工程师
+            &quot;reviewer&quot;: CodeReviewerAgent(),  # 代码审查
+        }
+
+        self.coordinator = CoordinatorAgent()
+
+    def develop(self, requirement):
+        &quot;&quot;&quot;完整的开发流程&quot;&quot;&quot;
+
+        # 步骤1：产品经理分析需求
+        print(&quot;📋 产品经理分析需求...&quot;)
+        prd = self.agents[&quot;pm&quot;].analyze_requirement(requirement)
+
+        # 步骤2：架构师设计系统
+        print(&quot;🏗️ 架构师设计系统...&quot;)
+        architecture = self.agents[&quot;architect&quot;].design_system(prd)
+
+        # 步骤3：前后端并行开发
+        print(&quot;💻 开发中...&quot;)
+        from concurrent.futures import ThreadPoolExecutor
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            frontend_future = executor.submit(
+                self.agents[&quot;frontend&quot;].develop,
+                architecture[&quot;frontend_spec&quot;]
+            )
+            backend_future = executor.submit(
+                self.agents[&quot;backend&quot;].develop,
+                architecture[&quot;backend_spec&quot;]
+            )
+
+            frontend_code = frontend_future.result()
+            backend_code = backend_future.result()
+
+        # 步骤4：代码审查
+        print(&quot;🔍 代码审查...&quot;)
+        review_result = self.agents[&quot;reviewer&quot;].review({
+            &quot;frontend&quot;: frontend_code,
+            &quot;backend&quot;: backend_code,
+        })
+
+        if not review_result[&quot;passed&quot;]:
+            print(&quot;⚠️ 代码审查未通过，需要修改...&quot;)
+            # 递归修改，直到通过
+            return self.develop(requirement)  # 简化示例
+
+        # 步骤5：测试
+        print(&quot;🧪 测试中...&quot;)
+        test_result = self.agents[&quot;tester&quot;].test({
+            &quot;frontend&quot;: frontend_code,
+            &quot;backend&quot;: backend_code,
+        })
+
+        if not test_result[&quot;passed&quot;]:
+            print(&quot;❌ 测试失败，修复bug...&quot;)
+            # 修复并重新测试
+            return self.develop(requirement)  # 简化示例
+
+        # 步骤6：部署
+        print(&quot;✅ 开发完成！&quot;)
+        return {
+            &quot;prd&quot;: prd,
+            &quot;architecture&quot;: architecture,
+            &quot;code&quot;: {
+                &quot;frontend&quot;: frontend_code,
+                &quot;backend&quot;: backend_code,
+            },
+            &quot;test_report&quot;: test_result,
+        }
+
+# 使用
+team = SoftwareDevelopmentTeam()
+result = team.develop(&quot;开发一个AI聊天机器人网站&quot;)
+
+# 输出示例：
+# 📋 产品经理分析需求...
+# 🏗️ 架构师设计系统...
+# 💻 开发中...
+# 🔍 代码审查...
+# 🧪 测试中...
+# ✅ 开发完成！
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-5-多-agent-的关键挑战" tabindex="-1"><a class="header-anchor" href="#_6-5-多-agent-的关键挑战"><span>6.5 多 Agent 的关键挑战</span></a></h3><h4 id="挑战-1-通信开销" tabindex="-1"><a class="header-anchor" href="#挑战-1-通信开销"><span>挑战 1：通信开销</span></a></h4><p>多个 Agent 之间需要频繁通信：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#问题：每次通信都要调用LLM
+Agent1 → LLM → Agent2 → LLM → Agent3
+成本和延迟都很高
+
+# 解决：使用结构化消息
+class Message:
+    def init(self, sender, receiver, content, message_type):
+        self.sender = sender
+        self.receiver = receiver
+        self.content = content  # 结构化数据，不需要LLM理解
+        self.type = message_type  # &quot;task&quot;, &quot;result&quot;, &quot;question&quot;
+
+    def to_dict(self):
+        return {
+            &quot;from&quot;: self.sender,
+            &quot;to&quot;: self.receiver,
+            &quot;content&quot;: self.content,
+            &quot;type&quot;: self.type,
+        }
+
+# Agent直接处理结构化消息，只在必要时调用LLM
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="挑战-2-死锁和循环依赖" tabindex="-1"><a class="header-anchor" href="#挑战-2-死锁和循环依赖"><span>挑战 2：死锁和循环依赖</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#问题：两个Agent互相等待
+Agent1：等待Agent2的结果...
+Agent2：等待Agent1的结果...
+→ 死锁
+
+# 解决：超时和fallback机制
+class AgentCommunicator:
+    def send_and_wait(self, target_agent, message, timeout=30):
+        start_time = time.time()
+
+        # 发送消息
+        target_agent.receive(message)
+
+        # 等待响应
+        while time.time() - start_time &lt; timeout:
+            if target_agent.has_response():
+                return target_agent.get_response()
+            time.sleep(0.1)
+
+        # 超时处理
+        return {&quot;error&quot;: &quot;Timeout&quot;, &quot;fallback&quot;: &quot;使用默认值&quot;}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="挑战-3-结果冲突" tabindex="-1"><a class="header-anchor" href="#挑战-3-结果冲突"><span>挑战 3：结果冲突</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#问题：不同Agent给出不同的答案
+Agent1: &quot;这个方案可行&quot;
+Agent2: &quot;这个方案有风险&quot;
+Agent3: &quot;这个方案成本太高&quot;
+
+# 解决：投票或仲裁机制
+class ConflictResolver:
+    def resolve(self, opinions):
+        # 方法1：投票
+        votes = {&quot;agree&quot;: 0, &quot;disagree&quot;: 0}
+        for opinion in opinions:
+            if opinion[&quot;stance&quot;] == &quot;positive&quot;:
+                votes[&quot;agree&quot;] += opinion[&quot;confidence&quot;]
+            else:
+                votes[&quot;disagree&quot;] += opinion[&quot;confidence&quot;]
+
+        if votes[&quot;agree&quot;] &gt; votes[&quot;disagree&quot;]:
+            return &quot;采纳方案&quot;
+        else:
+            return &quot;否决方案&quot;
+
+        # 方法2：专家仲裁
+        expert = ExpertAgent()
+        final_decision = expert.judge(opinions)
+        return final_decision
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="主流-agent-开发框架对比" tabindex="-1"><a class="header-anchor" href="#主流-agent-开发框架对比"><span>主流 Agent 开发框架对比</span></a></h2><h3 id="_7-1-框架总览对比" tabindex="-1"><a class="header-anchor" href="#_7-1-框架总览对比"><span>7.1 框架总览对比</span></a></h3><h3 id="_7-2-langchain-深度解析" tabindex="-1"><a class="header-anchor" href="#_7-2-langchain-深度解析"><span>7.2 LangChain 深度解析</span></a></h3><h4 id="核心概念" tabindex="-1"><a class="header-anchor" href="#核心概念"><span>核心概念</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import create_react_agent, AgentExecutor
+from langchain_openai import ChatOpenAI
+from langchain.tools import Tool
+from langchain.prompts import PromptTemplate
+
+# 1. LLM：大脑
+llm = ChatOpenAI(model=&quot;gpt-4&quot;, temperature=0)
+
+# 2. Tools：工具
+tools = [
+    Tool(
+        name=&quot;Search&quot;,
+        func=search_function,
+        description=&quot;搜索互联网信息&quot;
+    ),
+    Tool(
+        name=&quot;Calculator&quot;,
+        func=calculator_function,
+        description=&quot;执行数学计算&quot;
+    ),
+]
+
+# 3. Prompt：指令模板
+prompt = PromptTemplate.from_template(&quot;&quot;&quot;
+你是一个AI助手。使用以下工具来回答问题：
+{tools}
+
+格式：
+Question: {input}
+Thought: 思考过程
+Action: 工具名称
+Action Input: 工具输入
+Observation: 工具输出
+... (重复)
+Thought: 我现在知道答案了
+Final Answer: 最终答案
+
+Question: {input}
+{agent_scratchpad}
+&quot;&quot;&quot;)
+
+# 4. Agent：组装
+agent = create_react_agent(llm, tools, prompt)
+
+# 5. Executor：执行器
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    verbose=True,
+    max_iterations=5,
+)
+
+# 6. 执行
+result = agent_executor.invoke({&quot;input&quot;: &quot;2024年AI Agent市场规模是多少？&quot;})
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="langchain-的优势" tabindex="-1"><a class="header-anchor" href="#langchain-的优势"><span>LangChain 的优势</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#优势1：丰富的集成
+from langchain.vectorstores import Chroma
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.document_loaders import WebBaseLoader
+
+#一站式RAG方案
+loader = WebBaseLoader(&quot;https://example.com/article&quot;)
+documents = loader.load()
+
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000)
+chunks = text_splitter.split_documents(documents)
+
+vectorstore = Chroma.from_documents(
+    documents=chunks,
+    embedding=OpenAIEmbeddings()
+)
+
+#优势2：灵活的链式组合
+from langchain.chains import LLMChain
+
+chain = (
+    prompt
+    | llm
+    | output_parser
+)
+
+#优势3：强大的记忆管理
+from langchain.memory import ConversationBufferWindowMemory
+
+memory = ConversationBufferWindowMemory(k=5)  # 保留最近5轮对话
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-3-autogen-多-agent-协作" tabindex="-1"><a class="header-anchor" href="#_7-3-autogen-多-agent-协作"><span>7.3 AutoGen 多 Agent 协作</span></a></h3><h4 id="autogen-的特色" tabindex="-1"><a class="header-anchor" href="#autogen-的特色"><span>AutoGen 的特色</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from autogen import ConversableAgent, GroupChat, GroupChatManager
+
+#定义多个Agent
+product_manager = ConversableAgent(
+    name=&quot;PM&quot;,
+    system_message=&quot;你是产品经理，负责需求分析和产品规划。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+engineer = ConversableAgent(
+    name=&quot;Engineer&quot;,
+    system_message=&quot;你是工程师，负责技术实现。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+designer = ConversableAgent(
+    name=&quot;Designer&quot;,
+    system_message=&quot;你是设计师，负责UI/UX设计。&quot;,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+#创建群聊
+group_chat = GroupChat(
+    agents=[product_manager, engineer, designer],
+    messages=[],
+    max_round=10,
+)
+
+#管理者
+manager = GroupChatManager(
+    groupchat=group_chat,
+    llm_config={&quot;model&quot;: &quot;gpt-4&quot;},
+)
+
+#开始协作
+product_manager.initiate_chat(
+    manager,
+    message=&quot;我们需要开发一个AI聊天应用，大家讨论一下方案。&quot;,
+)
+
+#输出示例：
+#PM: &quot;我建议使用WebSocket实现实时通信...&quot;
+#Engineer: &quot;技术上可行，我可以用FastAPI+WebSocket实现...&quot;
+#Designer: &quot;UI应该简洁，参考Slack的设计...&quot;
+#PM: &quot;同意，我们先做MVP...&quot;
+#...
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="autogen-的并行执行" tabindex="-1"><a class="header-anchor" href="#autogen-的并行执行"><span>AutoGen 的并行执行</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#多个Agent同时工作
+from autogen import UserProxyAgent
+
+user_proxy = UserProxyAgent(
+    name=&quot;User&quot;,
+    human_input_mode=&quot;NEVER&quot;,  # 不需要人工输入
+    code_execution_config={&quot;work_dir&quot;: &quot;workspace&quot;},
+)
+
+#并行任务
+tasks = [
+    &quot;搜索2024年AI发展趋势&quot;,
+    &quot;分析主要竞争对手&quot;,
+    &quot;设计产品架构&quot;,
+]
+
+import asyncio
+
+async def parallel_execution():
+    results = await asyncio.gather(*[
+        agent.a_generate_reply({&quot;content&quot;: task})
+        for task in tasks
+    ])
+    return results
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-4-crewai-角色扮演框架" tabindex="-1"><a class="header-anchor" href="#_7-4-crewai-角色扮演框架"><span>7.4 CrewAI 角色扮演框架</span></a></h3><h4 id="crewai-的团队概念" tabindex="-1"><a class="header-anchor" href="#crewai-的团队概念"><span>CrewAI 的团队概念</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from crewai import Agent, Task, Crew
+
+#定义角色
+researcher = Agent(
+    role=&quot;Research Analyst&quot;,
+    goal=&quot;发现AI Agent领域的最新趋势&quot;,
+    backstory=&quot;你是一个经验丰富的AI研究分析师...&quot;,
+    tools=[search_tool],
+    verbose=True,
+)
+
+writer = Agent(
+    role=&quot;Content Writer&quot;,
+    goal=&quot;撰写吸引人的技术文章&quot;,
+    backstory=&quot;你是一个技术作家，擅长将复杂概念简化...&quot;,
+    tools=[],
+    verbose=True,
+)
+
+#定义任务
+task1 = Task(
+    description=&quot;研究2024年AI Agent的市场趋势&quot;,
+    agent=researcher,
+    expected_output=&quot;详细的市场分析报告&quot;,
+)
+
+task2 = Task(
+    description=&quot;基于研究结果撰写一篇博客文章&quot;,
+    agent=writer,
+    expected_output=&quot;1500字的博客文章&quot;,
+)
+
+#组建团队
+crew = Crew(
+    agents=[researcher, writer],
+    tasks=[task1, task2],
+    verbose=True,
+    process=&quot;sequential&quot;,  # 顺序执行
+)
+
+#启动
+result = crew.kickoff()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-5-dify-可视化平台" tabindex="-1"><a class="header-anchor" href="#_7-5-dify-可视化平台"><span>7.5 Dify 可视化平台</span></a></h3><h4 id="dify-的工作流编排" tabindex="-1"><a class="header-anchor" href="#dify-的工作流编排"><span>Dify 的工作流编排</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>[用户输入]
+    ↓
+[LLM节点: 理解意图]
+    ↓
+[条件分支]
+    ├─ 需要搜索 → [搜索节点] → [LLM节点: 总结]
+    └─ 不需要搜索 → [LLM节点: 直接回答]
+    ↓
+[输出节点]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Dify 的优势</strong>：</p><ul><li><p>✅ 拖拽式设计，无需代码</p></li><li><p>✅ 内置 RAG、Agent、工作流模板</p></li><li><p>✅ 可视化调试和监控</p></li><li><p>✅ 一键部署 API</p></li></ul><p><strong>适用场景</strong>：</p><ul><li><p>快速原型验证</p></li><li><p>业务人员使用</p></li><li><p>低代码场景</p></li></ul><h3 id="_7-6-框架选择指南" tabindex="-1"><a class="header-anchor" href="#_7-6-框架选择指南"><span>7.6 框架选择指南</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def choose_framework(scenario):
+    if scenario == &quot;学习和探索&quot;:
+        return &quot;LangChain - 生态最完善，教程最多&quot;
+    elif scenario == &quot;多Agent协作&quot;:
+        return &quot;AutoGen - 专为多Agent设计&quot;
+    elif scenario == &quot;团队流程模拟&quot;:
+        return &quot;CrewAI - 角色扮演最自然&quot;
+    elif scenario == &quot;快速原型&quot;:
+        return &quot;Dify - 可视化，上手快&quot;
+    elif scenario == &quot;国内部署&quot;:
+        return &quot;LazyLLM - 中文优化，商汤支持&quot;
+    elif scenario == &quot;生产级应用&quot;:
+        return &quot;LangChain + 自定义优化&quot;
+    else:
+        return &quot;LangChain - 最保险的选择&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="agent-实战案例与代码实现" tabindex="-1"><a class="header-anchor" href="#agent-实战案例与代码实现"><span>Agent 实战案例与代码实现</span></a></h2><h3 id="_8-1-案例一-智能客服-agent" tabindex="-1"><a class="header-anchor" href="#_8-1-案例一-智能客服-agent"><span>8.1 案例一：智能客服 Agent</span></a></h3><h4 id="需求分析" tabindex="-1"><a class="header-anchor" href="#需求分析"><span>需求分析</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>场景：电商平台的客服系统
+
+功能要求：
+回答常见问题（FAQ）
+查询订单状态
+处理退换货
+转人工客服（复杂问题）
+技术挑战：
+需要访问数据库（订单系统）
+需要记忆上下文（多轮对话）
+需要情感识别（判断用户情绪）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="完整实现" tabindex="-1"><a class="header-anchor" href="#完整实现"><span>完整实现</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import create_react_agent, AgentExecutor
+from langchain_openai import ChatOpenAI
+from langchain.tools import Tool
+from langchain.memory import ConversationBufferMemory
+import sqlite3
+
+# 1. 定义工具
+
+def query_order(order_id: str) -&gt; str:
+    &quot;&quot;&quot;查询订单状态&quot;&quot;&quot;
+    conn = sqlite3.connect(&#39;ecommerce.db&#39;)
+    cursor = conn.cursor()
+
+    cursor.execute(
+        &quot;SELECT status, items, total FROM orders WHERE order_id = ?&quot;,
+        (order_id,)
+    )
+    result = cursor.fetchone()
+    conn.close()
+
+    if result:
+        status, items, total = result
+        return f&quot;订单状态：{status}，商品：{items}，总金额：{total}元&quot;
+    else:
+        return &quot;未找到该订单&quot;
+
+def search_faq(question: str) -&gt; str:
+    &quot;&quot;&quot;搜索FAQ知识库&quot;&quot;&quot;
+    faq_db = {
+        &quot;退货&quot;: &quot;退货政策：7天无理由退货，商品需保持完好...&quot;,
+        &quot;发货&quot;: &quot;发货时间：工作日下单当天发货，节假日顺延...&quot;,
+        &quot;支付&quot;: &quot;支付方式：支持微信、支付宝、信用卡...&quot;,
+    }
+
+    # 简单的关键词匹配
+    for key, answer in faq_db.items():
+        if key in question:
+            return answer
+
+    return &quot;未找到相关FAQ，建议转人工客服&quot;
+
+def detect_emotion(text: str) -&gt; str:
+    &quot;&quot;&quot;检测用户情绪&quot;&quot;&quot;
+    negative_words = [&quot;生气&quot;, &quot;不满意&quot;, &quot;糟糕&quot;, &quot;差&quot;, &quot;垃圾&quot;]
+
+    for word in negative_words:
+        if word in text:
+            return &quot;negative&quot;
+
+    return &quot;neutral&quot;
+
+# 2. 创建工具列表
+
+tools = [
+    Tool(
+        name=&quot;QueryOrder&quot;,
+        func=query_order,
+        description=&quot;查询订单状态。输入订单号，返回订单详情。&quot;
+    ),
+    Tool(
+        name=&quot;SearchFAQ&quot;,
+        func=search_faq,
+        description=&quot;搜索常见问题答案。输入问题关键词。&quot;
+    ),
+    Tool(
+        name=&quot;DetectEmotion&quot;,
+        func=detect_emotion,
+        description=&quot;检测用户情绪。输入用户消息文本。&quot;
+    ),
+]
+
+# 3. 创建客服Agent
+
+llm = ChatOpenAI(model=&quot;gpt-4&quot;, temperature=0.7)
+
+memory = ConversationBufferMemory(
+    memory_key=&quot;chat_history&quot;,
+    return_messages=True
+)
+
+customer_service_prompt = &quot;&quot;&quot;
+你是一个友好、专业的电商客服AI助手。
+
+你的职责：
+1. 热情回答用户问题
+2. 查询订单信息
+3. 处理退换货问题
+4. 如遇复杂问题，建议转人工客服
+
+重要原则：
+- 始终保持礼貌和耐心
+- 如果用户情绪不好，先安抚情绪
+- 准确查询信息，不要编造数据
+- 不确定时建议转人工
+
+可用工具：
+{tools}
+
+对话历史：
+{chat_history}
+
+用户问题：{input}
+{agent_scratchpad}
+&quot;&quot;&quot;
+
+agent = create_react_agent(llm, tools, customer_service_prompt)
+
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    memory=memory,
+    verbose=True,
+    max_iterations=5,
+)
+
+# 4. 使用示例
+
+def chat_with_customer(user_input):
+    result = agent_executor.invoke({&quot;input&quot;: user_input})
+    return result[&quot;output&quot;]
+
+# 对话流程
+print(&quot;客服：您好！我是AI客服小助手，很高兴为您服务~&quot;)
+
+# 第一轮
+user1 = &quot;我想查一下订单号12345的状态&quot;
+response1 = chat_with_customer(user1)
+print(f&quot;客服：{response1}&quot;)
+
+# Agent思考过程（verbose=True会显示）：
+# Thought: 用户想查询订单，我需要使用QueryOrder工具
+# Action: QueryOrder
+# Action Input: &quot;12345&quot;
+# Observation: 订单状态：已发货，商品：iPhone 15，总金额：5999元
+# Thought: 我现在知道订单信息了
+# Final Answer: 您的订单12345已经发货啦！...
+
+# 第二轮（记忆上下文）
+user2 = &quot;什么时候能到？&quot;
+response2 = chat_with_customer(user2)
+print(f&quot;客服：{response2}&quot;)
+
+# Agent会记得在讨论订单12345
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="增强版-处理情绪和转人工" tabindex="-1"><a class="header-anchor" href="#增强版-处理情绪和转人工"><span>增强版：处理情绪和转人工</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class EnhancedCustomerServiceAgent:
+    def __init__(self):
+        self.agent = agent_executor
+        self.human_agent_queue = []
+    def handle_message(self, user_input):
+        # 1. 检测情绪
+        emotion = detect_emotion(user_input)
+        if emotion == &quot;negative&quot;:
+            # 情绪不好，优先安抚
+            comfort_msg = &quot;非常抱歉给您带来不好的体验，我会尽快帮您解决问题...&quot;
+            print(f&quot;客服：{comfort_msg}&quot;)
+        # 2. Agent处理
+        try:
+            response = self.agent.invoke({&quot;input&quot;: user_input})
+            result = response[&quot;output&quot;]
+            # 3. 判断是否需要转人工
+            if self._need_human_agent(result):
+                return self._transfer_to_human(user_input)
+            return result
+        except Exception as e:
+            # 出错时转人工
+            return self._transfer_to_human(user_input)
+    def _need_human_agent(self, agent_response):
+        # 检测关键词
+        keywords = [&quot;转人工&quot;, &quot;不能解决&quot;, &quot;复杂问题&quot;]
+        return any(kw in agent_response for kw in keywords)
+    def _transfer_to_human(self, user_input):
+        self.human_agent_queue.append({
+            &quot;user_input&quot;: user_input,
+            &quot;timestamp&quot;: datetime.now(),
+        })
+        return &quot;我为您转接人工客服，请稍等...&quot;
+
+#使用
+enhanced_agent = EnhancedCustomerServiceAgent()
+response = enhanced_agent.handle_message(&quot;我的订单有问题，很生气！&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-2-案例二-代码生成-agent" tabindex="-1"><a class="header-anchor" href="#_8-2-案例二-代码生成-agent"><span>8.2 案例二：代码生成 Agent</span></a></h3><h4 id="需求分析-1" tabindex="-1"><a class="header-anchor" href="#需求分析-1"><span>需求分析</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>功能：根据自然语言描述生成代码
+
+流程：
+    理解需求
+    设计方案
+    生成代码
+    测试代码
+    修复bug（如果有）
+    添加注释和文档
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="实现" tabindex="-1"><a class="header-anchor" href="#实现"><span>实现</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from langchain.agents import Tool
+import subprocess
+import tempfile
+import os
+
+class CodeGenerationAgent:
+    def init(self):
+        self.llm = ChatOpenAI(model=&quot;gpt-4&quot;, temperature=0)
+
+        # 定义工具
+        self.tools = [
+            Tool(
+                name=&quot;GenerateCode&quot;,
+                func=self._generate_code,
+                description=&quot;生成Python代码&quot;
+            ),
+            Tool(
+                name=&quot;TestCode&quot;,
+                func=self._test_code,
+                description=&quot;测试代码是否可以运行&quot;
+            ),
+            Tool(
+                name=&quot;FixBug&quot;,
+                func=self._fix_bug,
+                description=&quot;修复代码中的bug&quot;
+            ),
+        ]
+
+    def _generate_code(self, requirement: str) -&gt; str:
+        &quot;&quot;&quot;生成代码&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        请根据以下需求生成Python代码：
+
+        需求：{requirement}
+
+        要求：
+        1. 代码要清晰、可读
+        2. 添加必要的注释
+        3. 包含错误处理
+        4. 包含使用示例
+
+        请输出完整的可运行代码。
+        &quot;&quot;&quot;
+
+        response = self.llm.invoke(prompt)
+        code = self._extract_code(response.content)
+        return code
+
+    def _test_code(self, code: str) -&gt; dict:
+        &quot;&quot;&quot;测试代码&quot;&quot;&quot;
+        # 创建临时文件
+        with tempfile.NamedTemporaryFile(
+            mode=&#39;w&#39;,
+            suffix=&#39;.py&#39;,
+            delete=False
+        ) as f:
+            f.write(code)
+            temp_file = f.name
+
+        try:
+            # 运行代码
+            result = subprocess.run(
+                [&#39;python&#39;, temp_file],
+                capture_output=True,
+                text=True,
+                timeout=5
+            )
+
+            if result.returncode == 0:
+                return {
+                    &quot;success&quot;: True,
+                    &quot;output&quot;: result.stdout,
+                }
+            else:
+                return {
+                    &quot;success&quot;: False,
+                    &quot;error&quot;: result.stderr,
+                }
+
+        except subprocess.TimeoutExpired:
+            return {
+                &quot;success&quot;: False,
+                &quot;error&quot;: &quot;代码执行超时&quot;
+            }
+
+        finally:
+            os.unlink(temp_file)
+
+    def _fix_bug(self, code: str, error: str) -&gt; str:
+        &quot;&quot;&quot;修复bug&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        以下代码有错误：
+
+        代码：
+        \`\`\`python
+        {code}
+        \`\`\`
+
+        错误信息：
+        {error}
+
+        请修复这个bug并返回完整的正确代码。
+        &quot;&quot;&quot;
+
+        response = self.llm.invoke(prompt)
+        fixed_code = self._extract_code(response.content)
+        return fixed_code
+
+    def _extract_code(self, text: str) -&gt; str:
+        &quot;&quot;&quot;从回复中提取代码&quot;&quot;&quot;
+        # 提取\`\`\`python...\`\`\`之间的内容
+        import re
+        pattern = r&quot;\`\`\`python\\n(.*?)\`\`\`&quot;
+        match = re.search(pattern, text, re.DOTALL)
+
+        if match:
+            return match.group(1).strip()
+        else:
+            return text.strip()
+
+    def generate(self, requirement: str, max_attempts=3):
+        &quot;&quot;&quot;完整的代码生成流程&quot;&quot;&quot;
+        print(f&quot;📝 需求：{requirement}\\n&quot;)
+
+        # 步骤1：生成代码
+        print(&quot;1️⃣ 生成代码...&quot;)
+        code = self._generate_code(requirement)
+        print(f&quot;生成的代码：\\n{code}\\n&quot;)
+
+        # 步骤2：测试代码
+        print(&quot;2️⃣ 测试代码...&quot;)
+
+        for attempt in range(max_attempts):
+            test_result = self._test_code(code)
+
+            if test_result[&quot;success&quot;]:
+                print(&quot;✅ 测试通过！&quot;)
+                print(f&quot;输出：{test_result[&#39;output&#39;]}&quot;)
+
+                # 步骤3：添加文档
+                print(&quot;\\n3️⃣ 添加文档...&quot;)
+                documented_code = self._add_documentation(code)
+
+                return documented_code
+
+            else:
+                print(f&quot;❌ 测试失败（尝试{attempt+1}/{max_attempts}）&quot;)
+                print(f&quot;错误：{test_result[&#39;error&#39;]}\\n&quot;)
+
+                # 修复bug
+                print(&quot;🔧 修复bug...&quot;)
+                code = self._fix_bug(code, test_result[&#39;error&#39;])
+                print(f&quot;修复后的代码：\\n{code}\\n&quot;)
+
+        # 所有尝试都失败
+        return {
+            &quot;success&quot;: False,
+            &quot;message&quot;: f&quot;经过{max_attempts}次尝试仍无法生成可运行的代码&quot;,
+            &quot;last_code&quot;: code,
+        }
+
+    def _add_documentation(self, code: str) -&gt; str:
+        &quot;&quot;&quot;添加文档字符串&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        为以下代码添加详细的文档字符串（docstring）和使用说明：
+
+        \`\`\`python
+        {code}
+        \`\`\`
+
+        要求：
+        1. 每个函数都有docstring
+        2. 包含参数说明
+        3. 包含返回值说明
+        4. 包含使用示例
+        &quot;&quot;&quot;
+
+        response = self.llm.invoke(prompt)
+        return self._extract_code(response.content)
+
+# 使用示例
+agent = CodeGenerationAgent()
+
+result = agent.generate(&quot;&quot;&quot;
+写一个函数，计算列表中所有数字的平方和。
+要求：
+- 输入是一个数字列表
+- 返回平方和
+- 包含错误处理（如果输入不是数字）
+&quot;&quot;&quot;)
+
+print(&quot;\\n&quot; + &quot;=&quot;*50)
+print(&quot;最终代码：&quot;)
+print(&quot;=&quot;*50)
+print(result)
+
+# 输出示例：
+# 📝 需求：写一个函数，计算列表中所有数字的平方和...
+#
+# 1️⃣ 生成代码...
+# 生成的代码：
+# def sum_of_squares(numbers):
+#     total = 0
+#     for num in numbers:
+#         total += num ** 2
+#     return total
+#
+# 2️⃣ 测试代码...
+# ✅ 测试通过！
+#
+# 3️⃣ 添加文档...
+#
+# ==================================================
+# 最终代码：
+# ==================================================
+# def sum_of_squares(numbers):
+#     &quot;&quot;&quot;
+#     计算列表中所有数字的平方和。
+#
+#     参数：
+#         numbers (list): 数字列表
+#
+#     返回：
+#         int/float: 所有数字的平方和
+#
+#     示例：
+#         &gt;&gt;&gt; sum_of_squares([1, 2, 3])
+#         14
+#     &quot;&quot;&quot;
+#     ...
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-3-案例三-数据分析-agent" tabindex="-1"><a class="header-anchor" href="#_8-3-案例三-数据分析-agent"><span>8.3 案例三：数据分析 Agent</span></a></h3><h4 id="需求" tabindex="-1"><a class="header-anchor" href="#需求"><span>需求</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>场景：自动分析Excel数据
+
+功能：
+    读取Excel文件
+    数据清洗和预处理
+    统计分析（均值、中位数等）
+    生成可视化图表
+    输出分析报告
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="实现-完整代码过长-展示关键部分" tabindex="-1"><a class="header-anchor" href="#实现-完整代码过长-展示关键部分"><span>实现（完整代码过长，展示关键部分）</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+class DataAnalysisAgent:
+    def analyze(self, file_path: str, question: str):
+        &quot;&quot;&quot;
+        分析数据并回答问题
+        参数：
+            file_path: Excel文件路径
+            question: 分析问题
+        &quot;&quot;&quot;
+        # 1. 读取数据
+        print(&quot;📊 读取数据...&quot;)
+        df = pd.read_excel(file_path)
+        print(f&quot;数据形状：{df.shape}&quot;)
+        print(f&quot;列名：{df.columns.tolist()}\\n&quot;)
+        # 2. 让Agent分析应该做什么
+        print(&quot;🤔 分析问题...&quot;)
+        analysis_plan = self._plan_analysis(df, question)
+        print(f&quot;分析计划：\\n{analysis_plan}\\n&quot;)
+        # 3. 执行分析
+        print(&quot;⚙️ 执行分析...&quot;)
+        results = self._execute_analysis(df, analysis_plan)
+        # 4. 生成报告
+        print(&quot;📝 生成报告...&quot;)
+        report = self._generate_report(results, question)
+        return report
+    def _plan_analysis(self, df, question):
+        &quot;&quot;&quot;制定分析计划&quot;&quot;&quot;
+        prompt = f&quot;&quot;&quot;
+        数据集信息：
+        - 形状：{df.shape}
+        - 列名：{df.columns.tolist()}
+        - 前5行数据：
+        {df.head().to_string()}
+        问题：{question}
+        请制定分析计划（JSON格式）：
+        {{
+            &quot;steps&quot;: [
+                {{&quot;action&quot;: &quot;统计描述&quot;, &quot;columns&quot;: [&quot;...&quot;]}}，
+                {{&quot;action&quot;: &quot;分组分析&quot;, &quot;group_by&quot;: &quot;...&quot;, &quot;agg&quot;: &quot;...&quot;}},
+                {{&quot;action&quot;: &quot;可视化&quot;, &quot;chart_type&quot;: &quot;...&quot;, &quot;x&quot;: &quot;...&quot;, &quot;y&quot;: &quot;...&quot;}}
+            ]
+        }}
+        &quot;&quot;&quot;
+        response = self.llm.invoke(prompt)
+        return json.loads(response.content)
+    def _execute_analysis(self, df, plan):
+        &quot;&quot;&quot;执行分析步骤&quot;&quot;&quot;
+        results = {}
+        for step in plan[&quot;steps&quot;]:
+            action = step[&quot;action&quot;]
+            if action == &quot;统计描述&quot;:
+                results[&quot;统计&quot;] = df[step[&quot;columns&quot;]].describe()
+            elif action == &quot;分组分析&quot;:
+                results[&quot;分组&quot;] = df.groupby(step[&quot;group_by&quot;]).agg(step[&quot;agg&quot;])
+            elif action == &quot;可视化&quot;:
+                self._create_chart(df, step)
+                results[&quot;图表&quot;] = &quot;已生成&quot;
+        return results
+
+#使用
+agent = DataAnalysisAgent()
+report = agent.analyze(
+    &quot;sales_data.xlsx&quot;,
+    &quot;分析各地区的销售情况，找出销售最好的3个地区&quot;
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="agent-性能优化与最佳实践" tabindex="-1"><a class="header-anchor" href="#agent-性能优化与最佳实践"><span>Agent 性能优化与最佳实践</span></a></h2><h3 id="_9-1-提示词工程优化" tabindex="-1"><a class="header-anchor" href="#_9-1-提示词工程优化"><span>9.1 提示词工程优化</span></a></h3><h4 id="技巧-1-few-shot-examples" tabindex="-1"><a class="header-anchor" href="#技巧-1-few-shot-examples"><span>技巧 1：Few-Shot Examples</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#❌ 不好的提示词
+prompt = &quot;请分析这段代码&quot;
+
+# ✅ 好的提示词（包含示例）
+prompt = &quot;&quot;&quot;
+请分析代码的时间复杂度。
+
+示例1：
+代码：
+for i in range(n):
+    print(i)
+
+分析：时间复杂度 O(n)，因为循环执行n次。
+
+示例2：
+代码：
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+
+分析：时间复杂度 O(n²)，因为嵌套循环执行n*n次。
+
+现在请分析以下代码：
+{code}
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="技巧-2-chain-of-thought" tabindex="-1"><a class="header-anchor" href="#技巧-2-chain-of-thought"><span>技巧 2：Chain of Thought</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#❌ 直接要求答案
+prompt = &quot;2024年哪个国家GDP最高？&quot;
+
+# ✅ 引导逐步思考
+prompt = &quot;&quot;&quot;
+请回答：2024年哪个国家GDP最高？
+
+请按以下步骤思考：
+1. 首先，我需要搜索2024年全球GDP排名
+2. 然后，找到排名第一的国家
+3. 最后，验证这个信息的可靠性
+
+现在开始：
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="技巧-3-角色扮演" tabindex="-1"><a class="header-anchor" href="#技巧-3-角色扮演"><span>技巧 3：角色扮演</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>#❌ 通用指令
+prompt = &quot;帮我写代码&quot;
+
+#✅ 明确角色
+prompt = &quot;&quot;&quot;
+你是一个资深的Python工程师，有10年开发经验。
+你的代码特点：
+清晰易读
+注重性能
+考虑边界情况
+包含完整的错误处理
+现在请帮我写一个函数...
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-2-工具调用优化" tabindex="-1"><a class="header-anchor" href="#_9-2-工具调用优化"><span>9.2 工具调用优化</span></a></h3><h4 id="优化-1-工具描述标准化" tabindex="-1"><a class="header-anchor" href="#优化-1-工具描述标准化"><span>优化 1：工具描述标准化</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class ToolDescriptionTemplate:
+    &quot;&quot;&quot;标准化的工具描述模板&quot;&quot;&quot;
+    @staticmethod
+    def create_description(
+        purpose: str,
+        input_format: str,
+        output_format: str,
+        use_cases: list,
+        limitations: list,
+    ):
+        return f&quot;&quot;&quot;
+工具目的：{purpose}
+
+输入格式：{input_format}
+输出格式：{output_format}
+
+适用场景：
+{chr(10).join(f&quot;- {case}&quot; for case in use_cases)}
+
+不适用场景：
+{chr(10).join(f&quot;- {limit}&quot; for limit in limitations)}
+
+示例：
+输入：&quot;example_input&quot;
+输出：&quot;example_output&quot;
+&quot;&quot;&quot;
+
+使用
+search_tool_desc = ToolDescriptionTemplate.create_description(
+    purpose=&quot;搜索互联网获取最新信息&quot;,
+    input_format=&quot;字符串（搜索查询）&quot;,
+    output_format=&quot;字符串（搜索结果摘要）&quot;,
+    use_cases=[
+        &quot;需要最新数据（新闻、事件）&quot;,
+        &quot;查找具体信息（人物、地点）&quot;,
+        &quot;验证事实&quot;,
+    ],
+    limitations=[
+        &quot;不用于数学计算&quot;,
+        &quot;不用于代码执行&quot;,
+        &quot;不用于个人隐私信息&quot;,
+    ],
+)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="优化-2-工具调用缓存" tabindex="-1"><a class="header-anchor" href="#优化-2-工具调用缓存"><span>优化 2：工具调用缓存</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from functools import lru_cache
+import hashlib
+
+class CachedToolExecutor:
+    def init(self):
+        self.cache = {}
+        self.cache_hits = 0
+        self.cache_misses = 0
+
+    def execute(self, tool_name: str, tool_input: str):
+        # 生成缓存key
+        cache_key = hashlib.md5(
+            f&quot;{tool_name}:{tool_input}&quot;.encode()
+        ).hexdigest()
+
+        # 检查缓存
+        if cache_key in self.cache:
+            self.cache_hits += 1
+            print(f&quot;✅ Cache hit! (命中率: {self.hit_rate:.2%})&quot;)
+            return self.cache[cache_key]
+
+        # 执行工具
+        self.cache_misses += 1
+        result = self._actual_execute(tool_name, tool_input)
+
+        # 存入缓存
+        self.cache[cache_key] = result
+        return result
+
+    @property
+    def hit_rate(self):
+        total = self.cache_hits + self.cache_misses
+        return self.cache_hits / total if total &gt; 0 else 0
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-3-成本优化策略" tabindex="-1"><a class="header-anchor" href="#_9-3-成本优化策略"><span>9.3 成本优化策略</span></a></h3><h4 id="策略-1-智能-token-管理" tabindex="-1"><a class="header-anchor" href="#策略-1-智能-token-管理"><span>策略 1：智能 Token 管理</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class TokenOptimizer:
+    def __init__(self, max_tokens=4000):
+        self.max_tokens = max_tokens
+    def compress_context(self, messages: list) -&gt; list:
+        &quot;&quot;&quot;压缩上下文&quot;&quot;&quot;
+        total_tokens = sum(len(m[&quot;content&quot;].split()) for m in messages)
+        if total_tokens &lt;= self.max_tokens:
+            return messages
+        # 保留最近的和最重要的
+        recent_messages = messages[-3:]  # 最近3条
+        important_messages = self._extract_important(messages[:-3])
+        return important_messages + recent_messages
+    def _extract_important(self, messages):
+        &quot;&quot;&quot;提取重要消息&quot;&quot;&quot;
+        # 使用关键词识别重要性
+        important_keywords = [&quot;重要&quot;, &quot;关键&quot;, &quot;必须&quot;, &quot;注意&quot;]
+        important = []
+        for msg in messages:
+            if any(kw in msg[&quot;content&quot;] for kw in important_keywords):
+                important.append(msg)
+        return important[:2]  # 最多保留2条
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="策略-2-批量处理" tabindex="-1"><a class="header-anchor" href="#策略-2-批量处理"><span>策略 2：批量处理</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def batch_process_with_cost_tracking(tasks, batch_size=10):
+    &quot;&quot;&quot;批量处理并跟踪成本&quot;&quot;&quot;
+    results = []
+    total_cost = 0
+
+    for i in range(0, len(tasks), batch_size):
+        batch = tasks[i:i+batch_size]
+
+        # 批量处理
+        batch_prompt = create_batch_prompt(batch)
+        response = llm.invoke(batch_prompt)
+
+        # 计算成本
+        tokens_used = count_tokens(batch_prompt) + count_tokens(response.content)
+        batch_cost = calculate_cost(tokens_used)
+        total_cost += batch_cost
+
+        print(f&quot;批次{i//batch_size + 1}: {len(batch)}个任务, 成本\${batch_cost:.4f}&quot;)
+
+        # 解析结果
+        batch_results = parse_batch_response(response.content)
+        results.extend(batch_results)
+
+    print(f&quot;\\n总成本: \${total_cost:.4f}&quot;)
+    print(f&quot;平均每任务: \${total_cost/len(tasks):.4f}&quot;)
+
+    return results
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-4-可靠性增强" tabindex="-1"><a class="header-anchor" href="#_9-4-可靠性增强"><span>9.4 可靠性增强</span></a></h3><h4 id="技巧-1-重试机制" tabindex="-1"><a class="header-anchor" href="#技巧-1-重试机制"><span>技巧 1：重试机制</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import time
+from functools import wraps
+
+def retry_with_exponential_backoff(
+    max_retries=3,
+    initial_delay=1,
+    exponential_base=2,
+):
+    &quot;&quot;&quot;指数退避重试装饰器&quot;&quot;&quot;
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            delay = initial_delay
+
+            for attempt in range(max_retries):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    if attempt == max_retries - 1:
+                        raise
+
+                    print(f&quot;⚠️ 尝试{attempt+1}失败: {e}&quot;)
+                    print(f&quot;等待{delay}秒后重试...&quot;)
+                    time.sleep(delay)
+                    delay *= exponential_base
+
+        return wrapper
+    return decorator
+
+# 使用
+@retry_with_exponential_backoff(max_retries=3)
+def call_llm(prompt):
+    return llm.invoke(prompt)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="技巧-2-健康检查" tabindex="-1"><a class="header-anchor" href="#技巧-2-健康检查"><span>技巧 2：健康检查</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class AgentHealthMonitor:
+    def init(self):
+        self.metrics = {
+            &quot;total_requests&quot;: 0,
+            &quot;successful_requests&quot;: 0,
+            &quot;failed_requests&quot;: 0,
+            &quot;total_latency&quot;: 0,
+        }
+
+    def record_request(self, success: bool, latency: float):
+        self.metrics[&quot;total_requests&quot;] += 1
+        self.metrics[&quot;total_latency&quot;] += latency
+
+        if success:
+            self.metrics[&quot;successful_requests&quot;] += 1
+        else:
+            self.metrics[&quot;failed_requests&quot;] += 1
+
+    def get_health_status(self):
+        total = self.metrics[&quot;total_requests&quot;]
+        if total == 0:
+            return &quot;UNKNOWN&quot;
+
+        success_rate = self.metrics[&quot;successful_requests&quot;] / total
+        avg_latency = self.metrics[&quot;total_latency&quot;] / total
+
+        if success_rate &gt;= 0.95 and avg_latency &lt; 2:
+            return &quot;HEALTHY&quot;
+        elif success_rate &gt;= 0.8:
+            return &quot;DEGRADED&quot;
+        else:
+            return &quot;UNHEALTHY&quot;
+
+    def get_report(self):
+        total = self.metrics[&quot;total_requests&quot;]
+        if total == 0:
+            return &quot;暂无数据&quot;
+
+        return f&quot;&quot;&quot;
+健康状态：{self.get_health_status()}
+
+统计信息：
+- 总请求数：{total}
+- 成功率：{self.metrics[&quot;successful_requests&quot;]/total:.2%}
+- 平均延迟：{self.metrics[&quot;total_latency&quot;]/total:.2f}秒
+&quot;&quot;&quot;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-5-调试与监控" tabindex="-1"><a class="header-anchor" href="#_9-5-调试与监控"><span>9.5 调试与监控</span></a></h3><h4 id="调试技巧" tabindex="-1"><a class="header-anchor" href="#调试技巧"><span>调试技巧</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class DebugAgent:
+    def init(self, agent, debug_mode=True):
+        self.agent = agent
+        self.debug_mode = debug_mode
+        self.execution_log = []
+
+    def execute(self, task):
+        if self.debug_mode:
+            print(&quot;\\n&quot; + &quot;=&quot;*50)
+            print(&quot;🔍 调试模式&quot;)
+            print(&quot;=&quot;*50)
+            print(f&quot;任务：{task}\\n&quot;)
+
+        start_time = time.time()
+
+        try:
+            # 记录每一步
+            result = self._execute_with_logging(task)
+
+            if self.debug_mode:
+                self._print_execution_summary(time.time() - start_time)
+
+            return result
+
+        except Exception as e:
+            if self.debug_mode:
+                self._print_error_details(e)
+            raise
+
+    def _execute_with_logging(self, task):
+        # 钩子：记录每次工具调用
+        original_tool_call = self.agent.tool_executor.call
+
+        def logged_tool_call(tool_name, tool_input):
+            self.execution_log.append({
+                &quot;type&quot;: &quot;tool_call&quot;,
+                &quot;tool&quot;: tool_name,
+                &quot;input&quot;: tool_input,
+                &quot;timestamp&quot;: time.time(),
+            })
+
+            result = original_tool_call(tool_name, tool_input)
+
+            self.execution_log.append({
+                &quot;type&quot;: &quot;tool_result&quot;,
+                &quot;tool&quot;: tool_name,
+                &quot;result&quot;: result,
+                &quot;timestamp&quot;: time.time(),
+            })
+
+            if self.debug_mode:
+                print(f&quot;\\n🔧 工具调用：{tool_name}&quot;)
+                print(f&quot;输入：{tool_input}&quot;)
+                print(f&quot;输出：{result[:100]}...&quot;)
+
+            return result
+
+        self.agent.tool_executor.call = logged_tool_call
+
+        return self.agent.execute(task)
+
+    def _print_execution_summary(self, duration):
+        print(&quot;\\n&quot; + &quot;=&quot;*50)
+        print(&quot;📊 执行总结&quot;)
+        print(&quot;=&quot;*50)
+        print(f&quot;总耗时：{duration:.2f}秒&quot;)
+        print(f&quot;工具调用次数：{len([l for l in self.execution_log if l[&#39;type&#39;]==&#39;tool_call&#39;])}&quot;)
+        print(f&quot;执行步骤：{len(self.execution_log)}&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="未来展望-agent-的发展趋势" tabindex="-1"><a class="header-anchor" href="#未来展望-agent-的发展趋势"><span>未来展望：Agent 的发展趋势</span></a></h2><h3 id="_10-1-技术趋势" tabindex="-1"><a class="header-anchor" href="#_10-1-技术趋势"><span>10.1 技术趋势</span></a></h3><h4 id="趋势-1-更强的推理能力" tabindex="-1"><a class="header-anchor" href="#趋势-1-更强的推理能力"><span>趋势 1：更强的推理能力</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>当前（2024）：
+GPT-4：擅长语言理解和生成
+推理能力有限（复杂数学、逻辑）
+
+未来（2025-2026）：
+OpenAI o1系列：专注推理
+DeepSeek-R1：强化学习推理
+推理时间↑，推理准确度↑
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>影响</strong>：</p><ul><li><p>Agent 可以处理更复杂的任务</p></li><li><p>减少对外部工具的依赖</p></li><li><p>更少的错误和幻觉</p></li></ul><h4 id="趋势-2-多模态-agent" tabindex="-1"><a class="header-anchor" href="#趋势-2-多模态-agent"><span>趋势 2：多模态 Agent</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>当前：主要处理文本
+未来：
+图像理解（识别图表、设计UI）
+视频分析（剪辑、内容审核）
+语音交互（实时对话）
+3D环境操作（游戏、仿真）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>示例场景</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>用户上传设计草图 → Agent识别 → 生成HTML/CSS → 自动部署网站
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h4 id="趋势-3-个性化和记忆增强" tabindex="-1"><a class="header-anchor" href="#趋势-3-个性化和记忆增强"><span>趋势 3：个性化和记忆增强</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>当前：对话级记忆
+未来：
+跨会话的长期记忆
+个性化学习（理解用户习惯）
+主动建议（不等用户询问）
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="补充" tabindex="-1"><a class="header-anchor" href="#补充"><span>补充</span></a></h1><p><img src="`+f+'" alt="Image" loading="lazy"></p><h2 id="🎯-第一章-什么是意图识别-一个生活化的例子" tabindex="-1"><a class="header-anchor" href="#🎯-第一章-什么是意图识别-一个生活化的例子"><span>🎯 第一章：什么是意图识别？一个生活化的例子</span></a></h2><h3 id="_1-1-从咖啡店点单说起" tabindex="-1"><a class="header-anchor" href="#_1-1-从咖啡店点单说起"><span>1.1 从咖啡店点单说起</span></a></h3><p>想象你走进一家咖啡店，对服务员说：&quot;好冷啊，来点热的。&quot;</p><p>服务员会怎么做？她不会傻乎乎地问&quot;你到底要什么&quot;，而是立刻明白：</p><ul><li><p><strong>表面话语</strong>：&quot;好冷啊，来点热的&quot;</p></li><li><p><strong>真实意图</strong>：我想要一杯热饮</p></li></ul><p>这就是<strong>意图识别</strong>！</p><h3 id="_1-2-ai-agent-中的意图识别" tabindex="-1"><a class="header-anchor" href="#_1-2-ai-agent-中的意图识别"><span>1.2 AI Agent 中的意图识别</span></a></h3><p><img src="'+y+'" alt="Image" loading="lazy"></p><p>在 AI 世界里，意图识别（Intent Recognition）就是让机器理解用户说话背后的真实目的。</p><p><strong>举个例子</strong>：</p><p><strong>配图说明</strong>：参见 <code>intent_recognition_flow.svg</code></p><h3 id="_1-3-为什么意图识别这么重要" tabindex="-1"><a class="header-anchor" href="#_1-3-为什么意图识别这么重要"><span>1.3 为什么意图识别这么重要？</span></a></h3><p>没有意图识别的 AI 就像：</p><ul><li><p>🤖 只会死板回答的机器人</p></li><li><p>❌ 听不懂人话的客服</p></li><li><p>😵 需要你说精确命令的语音助手</p></li></ul><p>有了意图识别的 AI 就像：</p><ul><li><p>✨ 能读懂你心思的贴心助手</p></li><li><p>💡 聪明的问题解决专家</p></li><li><p>🎯 精准响应的智能系统</p></li></ul><h2 id="🧠-第二章-ai-agent-的-读心术-意图识别的魔法原理" tabindex="-1"><a class="header-anchor" href="#🧠-第二章-ai-agent-的-读心术-意图识别的魔法原理"><span>🧠 第二章：AI Agent 的&quot;读心术&quot;：意图识别的魔法原理</span></a></h2><h3 id="_2-1-意图识别的三层结构" tabindex="-1"><a class="header-anchor" href="#_2-1-意图识别的三层结构"><span>2.1 意图识别的三层结构</span></a></h3><p>意图识别不是一步到位的，而是分为三个层次：</p><p><img src="'+x+`" alt="Image" loading="lazy"></p><h4 id="第一层-文本理解-text-understanding" tabindex="-1"><a class="header-anchor" href="#第一层-文本理解-text-understanding"><span>第一层：文本理解（Text Understanding）</span></a></h4><p>把用户说的话变成机器能理解的形式。</p><p><strong>例子</strong>：</p><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>用户输入：&quot;我想买一台笔记本电脑，预算5000左右&quot;
+↓ 文本理解
+结构化数据：
+{
+  &quot;动作&quot;: &quot;购买&quot;,
+  &quot;商品类别&quot;: &quot;笔记本电脑&quot;,
+  &quot;预算&quot;: 5000,
+  &quot;单位&quot;: &quot;元&quot;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="第二层-意图分类-intent-classification" tabindex="-1"><a class="header-anchor" href="#第二层-意图分类-intent-classification"><span>第二层：意图分类（Intent Classification）</span></a></h4><p>判断用户想做什么事情。</p><p><strong>例子</strong>：</p><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>输入：&quot;这款手机有货吗？&quot;
+→ 意图分类 → 库存查询
+
+输入：&quot;帮我退货&quot;
+→ 意图分类 → 退款申请
+
+输入：&quot;客服在吗？&quot;
+→ 意图分类 → 人工服务
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="第三层-槽位填充-slot-filling" tabindex="-1"><a class="header-anchor" href="#第三层-槽位填充-slot-filling"><span>第三层：槽位填充（Slot Filling）</span></a></h4><p>提取关键信息，填补意图执行所需的参数。</p><p><strong>例子</strong>：</p><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>意图：预订酒店
+必需槽位：
+  - 城市：？
+  - 入住日期：？
+  - 退房日期：？
+  - 房间数量：？
+
+用户说：&quot;下周去上海住两晚&quot;
+提取结果：
+  - 城市：上海 ✓
+  - 入住日期：下周一 ✓
+  - 退房日期：下周三 ✓
+  - 房间数量：未知 ✗ → 需要追问
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-意图识别的工作流程" tabindex="-1"><a class="header-anchor" href="#_2-2-意图识别的工作流程"><span>2.2 意图识别的工作流程</span></a></h3><p><strong>配图说明</strong>：参见 <code>workflow.svg</code></p><p>完整流程如下：</p><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>1. 用户输入 → 2. 文本预处理 → 3. 特征提取 → 4. 意图分类
+                                                ↓
+7. 执行动作 ← 6. 槽位验证 ← 5. 槽位填充 ← [意图+槽位]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>具体步骤解释</strong>：</p><ol><li><p><strong>用户输入</strong>：接收原始文本</p></li><li><p><strong>文本预处理</strong>：去除标点、统一大小写、分词</p></li><li><p><strong>特征提取</strong>：将文本转为向量（数字表示）</p></li><li><p><strong>意图分类</strong>：用模型预测意图类别</p></li><li><p><strong>槽位填充</strong>：提取关键信息</p></li><li><p><strong>槽位验证</strong>：检查必需信息是否完整</p></li><li><p><strong>执行动作</strong>：调用对应的功能模块</p></li></ol><hr><h2 id="🔬-第三章-三大核心技术-让-ai-懂你所想" tabindex="-1"><a class="header-anchor" href="#🔬-第三章-三大核心技术-让-ai-懂你所想"><span>🔬 第三章：三大核心技术：让 AI 懂你所想</span></a></h2><h3 id="_3-1-技术一-基于规则的意图识别-规则匹配" tabindex="-1"><a class="header-anchor" href="#_3-1-技术一-基于规则的意图识别-规则匹配"><span>3.1 技术一：基于规则的意图识别（规则匹配）</span></a></h3><h4 id="原理" tabindex="-1"><a class="header-anchor" href="#原理"><span>原理</span></a></h4><p>用预定义的关键词和模式来匹配用户意图。</p><h4 id="优点" tabindex="-1"><a class="header-anchor" href="#优点"><span>优点</span></a></h4><ul><li><p>✅ 简单易懂</p></li><li><p>✅ 可控性强</p></li><li><p>✅ 适合固定场景</p></li></ul><h4 id="缺点" tabindex="-1"><a class="header-anchor" href="#缺点"><span>缺点</span></a></h4><ul><li><p>❌ 覆盖面窄</p></li><li><p>❌ 难以处理复杂语句</p></li><li><p>❌ 维护成本高</p></li></ul><h4 id="代码示例" tabindex="-1"><a class="header-anchor" href="#代码示例"><span>代码示例</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class RuleBasedIntentRecognizer:
+    def __init__(self):
+        # 定义意图规则字典
+        self.intent_rules = {
+            &quot;查询天气&quot;: [&quot;天气&quot;, &quot;温度&quot;, &quot;下雨&quot;, &quot;晴天&quot;, &quot;气温&quot;],
+            &quot;订票&quot;: [&quot;订票&quot;, &quot;买票&quot;, &quot;机票&quot;, &quot;车票&quot;, &quot;预订&quot;],
+            &quot;查询订单&quot;: [&quot;订单&quot;, &quot;物流&quot;, &quot;快递&quot;, &quot;到哪了&quot;, &quot;发货&quot;],
+            &quot;退款&quot;: [&quot;退款&quot;, &quot;退货&quot;, &quot;不想要&quot;, &quot;退钱&quot;],
+            &quot;人工客服&quot;: [&quot;人工&quot;, &quot;客服&quot;, &quot;转人工&quot;, &quot;找客服&quot;]
+        }
+
+    def recognize(self, text):
+        &quot;&quot;&quot;识别意图&quot;&quot;&quot;
+        text = text.lower()  # 转小写
+
+        # 遍历所有意图规则
+        for intent, keywords in self.intent_rules.items():
+            # 检查是否包含关键词
+            for keyword in keywords:
+                if keyword in text:
+                    return {
+                        &quot;intent&quot;: intent,
+                        &quot;confidence&quot;: 0.9,  # 规则匹配给固定置信度
+                        &quot;matched_keyword&quot;: keyword
+                    }
+
+        # 没有匹配到任何规则
+        return {
+            &quot;intent&quot;: &quot;未知意图&quot;,
+            &quot;confidence&quot;: 0.0,
+            &quot;matched_keyword&quot;: None
+        }
+
+# 使用示例
+recognizer = RuleBasedIntentRecognizer()
+
+# 测试
+test_cases = [
+    &quot;今天天气怎么样？&quot;,
+    &quot;帮我订张机票&quot;,
+    &quot;我的快递到哪了？&quot;,
+    &quot;想退货&quot;,
+    &quot;转人工客服&quot;
+]
+
+for text in test_cases:
+    result = recognizer.recognize(text)
+    print(f&quot;输入: {text}&quot;)
+    print(f&quot;意图: {result[&#39;intent&#39;]}, 置信度: {result[&#39;confidence&#39;]}&quot;)
+    print()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>运行结果</strong>：</p><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>输入: 今天天气怎么样？
+意图: 查询天气, 置信度: 0.9
+
+输入: 帮我订张机票
+意图: 订票, 置信度: 0.9
+
+输入: 我的快递到哪了？
+意图: 查询订单, 置信度: 0.9
+
+输入: 想退货
+意图: 退款, 置信度: 0.9
+
+输入: 转人工客服
+意图: 人工客服, 置信度: 0.9
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-2-技术二-基于机器学习的意图识别" tabindex="-1"><a class="header-anchor" href="#_3-2-技术二-基于机器学习的意图识别"><span>3.2 技术二：基于机器学习的意图识别</span></a></h3><h4 id="原理-1" tabindex="-1"><a class="header-anchor" href="#原理-1"><span>原理</span></a></h4><p>用大量标注数据训练分类模型，让 AI 自动学习意图识别规律。</p><p><img src="`+P+`" alt="Image" loading="lazy"></p><h4 id="核心步骤" tabindex="-1"><a class="header-anchor" href="#核心步骤"><span>核心步骤</span></a></h4><ol start="8"><li><strong>数据准备</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code># 训练数据示例
+training_data = [
+    (&quot;今天天气怎么样&quot;, &quot;查询天气&quot;),
+    (&quot;北京现在多少度&quot;, &quot;查询天气&quot;),
+    (&quot;会下雨吗&quot;, &quot;查询天气&quot;),
+    (&quot;帮我订一张机票&quot;, &quot;订票&quot;),
+    (&quot;买票去上海&quot;, &quot;订票&quot;),
+    (&quot;预订高铁票&quot;, &quot;订票&quot;),
+    (&quot;我的订单到哪了&quot;, &quot;查询订单&quot;),
+    (&quot;快递什么时候到&quot;, &quot;查询订单&quot;),
+]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="9"><li><strong>特征工程</strong></li></ol><p>将文本转为向量：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from sklearn.feature_extraction.text import TfidfVectorizer
+
+# TF-IDF向量化
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform([text for text, _ in training_data])
+
+# 文本 &quot;今天天气怎么样&quot; 会变成向量：
+# [0.0, 0.5, 0.3, 0.0, 0.7, ...]
+#  ↑    ↑    ↑    ↑    ↑
+# 词1  词2  词3  词4  词5
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="10"><li><strong>模型训练</strong></li></ol><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from sklearn.naive_bayes import MultinomialNB
+
+# 朴素贝叶斯分类器
+classifier = MultinomialNB()
+classifier.fit(X, labels)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="完整代码实现" tabindex="-1"><a class="header-anchor" href="#完整代码实现"><span>完整代码实现</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import jieba
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+class MLIntentRecognizer:
+    def __init__(self):
+        self.vectorizer = TfidfVectorizer(
+            tokenizer=lambda x: jieba.lcut(x),  # 中文分词
+            max_features=1000
+        )
+        self.classifier = MultinomialNB()
+        self.is_trained = False
+
+    def train(self, texts, labels):
+        &quot;&quot;&quot;训练模型&quot;&quot;&quot;
+        # 特征提取
+        X = self.vectorizer.fit_transform(texts)
+
+        # 训练分类器
+        self.classifier.fit(X, labels)
+        self.is_trained = True
+
+        print(&quot;✅ 模型训练完成！&quot;)
+
+    def predict(self, text):
+        &quot;&quot;&quot;预测意图&quot;&quot;&quot;
+        if not self.is_trained:
+            return {&quot;error&quot;: &quot;模型未训练&quot;}
+
+        # 特征提取
+        X = self.vectorizer.transform([text])
+
+        # 预测意图
+        intent = self.classifier.predict(X)[0]
+
+        # 获取置信度
+        probas = self.classifier.predict_proba(X)[0]
+        confidence = float(np.max(probas))
+
+        return {
+            &quot;intent&quot;: intent,
+            &quot;confidence&quot;: confidence
+        }
+
+# 准备训练数据
+texts = [
+    &quot;今天天气怎么样&quot;, &quot;北京现在多少度&quot;, &quot;会下雨吗&quot;, &quot;明天晴天吗&quot;,
+    &quot;帮我订一张机票&quot;, &quot;买票去上海&quot;, &quot;预订高铁票&quot;, &quot;购买火车票&quot;,
+    &quot;我的订单到哪了&quot;, &quot;快递什么时候到&quot;, &quot;查询物流&quot;, &quot;包裹在哪&quot;,
+    &quot;我要退款&quot;, &quot;申请退货&quot;, &quot;不想要了&quot;, &quot;退钱&quot;,
+    &quot;转人工客服&quot;, &quot;找客服&quot;, &quot;人工服务&quot;, &quot;联系客服&quot;
+]
+
+labels = [
+    &quot;查询天气&quot;, &quot;查询天气&quot;, &quot;查询天气&quot;, &quot;查询天气&quot;,
+    &quot;订票&quot;, &quot;订票&quot;, &quot;订票&quot;, &quot;订票&quot;,
+    &quot;查询订单&quot;, &quot;查询订单&quot;, &quot;查询订单&quot;, &quot;查询订单&quot;,
+    &quot;退款&quot;, &quot;退款&quot;, &quot;退款&quot;, &quot;退款&quot;,
+    &quot;人工客服&quot;, &quot;人工客服&quot;, &quot;人工客服&quot;, &quot;人工客服&quot;
+]
+
+# 训练模型
+recognizer = MLIntentRecognizer()
+recognizer.train(texts, labels)
+
+# 测试
+test_cases = [
+    &quot;今天会不会下雨&quot;,
+    &quot;我想买张去广州的票&quot;,
+    &quot;订单什么时候能到&quot;,
+    &quot;能退货吗&quot;,
+    &quot;我要找人工&quot;
+]
+
+print(&quot;\\n📊 测试结果：\\n&quot;)
+for text in test_cases:
+    result = recognizer.predict(text)
+    print(f&quot;输入: {text}&quot;)
+    print(f&quot;意图: {result[&#39;intent&#39;]}, 置信度: {result[&#39;confidence&#39;]:.2f}&quot;)
+    print()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3-技术三-基于深度学习的意图识别-bert" tabindex="-1"><a class="header-anchor" href="#_3-3-技术三-基于深度学习的意图识别-bert"><span>3.3 技术三：基于深度学习的意图识别（BERT）</span></a></h3><h4 id="原理-2" tabindex="-1"><a class="header-anchor" href="#原理-2"><span>原理</span></a></h4><p>使用预训练语言模型（如 BERT），理解上下文语义。</p><p><img src="`+A+`" alt="Image" loading="lazy"></p><h4 id="bert-的优势" tabindex="-1"><a class="header-anchor" href="#bert-的优势"><span>BERT 的优势</span></a></h4><ul><li><p>✅ 理解上下文</p></li><li><p>✅ 处理复杂语句</p></li><li><p>✅ 泛化能力强</p></li><li><p>✅ 准确率高</p></li></ul><h4 id="代码实现" tabindex="-1"><a class="header-anchor" href="#代码实现"><span>代码实现</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from transformers import BertTokenizer, BertForSequenceClassification
+import torch
+import torch.nn.functional as F
+
+class BERTIntentRecognizer:
+    def __init__(self, model_name=&#39;bert-base-chinese&#39;):
+        &quot;&quot;&quot;初始化BERT模型&quot;&quot;&quot;
+        self.tokenizer = BertTokenizer.from_pretrained(model_name)
+        self.model = None
+        self.intent_labels = []
+
+    def prepare_data(self, texts, labels):
+        &quot;&quot;&quot;准备训练数据&quot;&quot;&quot;
+        # 获取唯一的标签
+        self.intent_labels = list(set(labels))
+
+        # 将标签转为数字
+        label_to_id = {label: i for i, label in enumerate(self.intent_labels)}
+        numeric_labels = [label_to_id[label] for label in labels]
+
+        # 分词和编码
+        encodings = self.tokenizer(
+            texts,
+            padding=True,
+            truncation=True,
+            max_length=128,
+            return_tensors=&#39;pt&#39;
+        )
+
+        return encodings, torch.tensor(numeric_labels)
+
+    def train(self, texts, labels, epochs=3):
+        &quot;&quot;&quot;训练BERT模型&quot;&quot;&quot;
+        print(&quot;🚀 开始训练BERT模型...&quot;)
+
+        # 准备数据
+        encodings, numeric_labels = self.prepare_data(texts, labels)
+
+        # 初始化模型
+        num_labels = len(self.intent_labels)
+        self.model = BertForSequenceClassification.from_pretrained(
+            &#39;bert-base-chinese&#39;,
+            num_labels=num_labels
+        )
+
+        # 优化器
+        optimizer = torch.optim.AdamW(self.model.parameters(), lr=2e-5)
+
+        # 训练循环
+        self.model.train()
+        for epoch in range(epochs):
+            optimizer.zero_grad()
+
+            outputs = self.model(
+                input_ids=encodings[&#39;input_ids&#39;],
+                attention_mask=encodings[&#39;attention_mask&#39;],
+                labels=numeric_labels
+            )
+
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
+
+            print(f&quot;Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}&quot;)
+
+        print(&quot;✅ BERT模型训练完成！&quot;)
+
+    def predict(self, text):
+        &quot;&quot;&quot;预测意图&quot;&quot;&quot;
+        if self.model is None:
+            return {&quot;error&quot;: &quot;模型未训练&quot;}
+
+        # 编码输入
+        encoding = self.tokenizer(
+            text,
+            padding=True,
+            truncation=True,
+            max_length=128,
+            return_tensors=&#39;pt&#39;
+        )
+
+        # 预测
+        self.model.eval()
+        with torch.no_grad():
+            outputs = self.model(
+                input_ids=encoding[&#39;input_ids&#39;],
+                attention_mask=encoding[&#39;attention_mask&#39;]
+            )
+
+        # 获取概率分布
+        probas = F.softmax(outputs.logits, dim=1)
+        confidence, pred_idx = torch.max(probas, dim=1)
+
+        intent = self.intent_labels[pred_idx.item()]
+
+        return {
+            &quot;intent&quot;: intent,
+            &quot;confidence&quot;: float(confidence.item()),
+            &quot;all_probabilities&quot;: {
+                self.intent_labels[i]: float(probas[0][i])
+                for i in range(len(self.intent_labels))
+            }
+        }
+
+# 使用示例
+# 注意：需要先安装 transformers: pip install transformers torch
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="🛠️-第四章-从零开始-手把手搭建意图识别系统" tabindex="-1"><a class="header-anchor" href="#🛠️-第四章-从零开始-手把手搭建意图识别系统"><span>🛠️ 第四章：从零开始：手把手搭建意图识别系统</span></a></h2><h3 id="_4-1-系统架构设计" tabindex="-1"><a class="header-anchor" href="#_4-1-系统架构设计"><span>4.1 系统架构设计</span></a></h3><p><img src="`+k+`" alt="Image" loading="lazy"></p><p>我们将构建一个完整的意图识别系统，包含：</p><ol><li><p>文本预处理模块</p></li><li><p>意图识别引擎</p></li><li><p>槽位提取模块</p></li><li><p>对话管理器</p></li></ol><h3 id="_4-2-第一步-文本预处理" tabindex="-1"><a class="header-anchor" href="#_4-2-第一步-文本预处理"><span>4.2 第一步：文本预处理</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import re
+import jieba
+
+class TextPreprocessor:
+    &quot;&quot;&quot;文本预处理器&quot;&quot;&quot;
+
+    def __init__(self):
+        # 加载停用词
+        self.stopwords = set([&#39;的&#39;, &#39;了&#39;, &#39;在&#39;, &#39;是&#39;, &#39;我&#39;, &#39;有&#39;, &#39;和&#39;, &#39;就&#39;,
+                              &#39;不&#39;, &#39;人&#39;, &#39;都&#39;, &#39;一&#39;, &#39;一个&#39;, &#39;上&#39;, &#39;也&#39;, &#39;很&#39;])
+
+    def clean_text(self, text):
+        &quot;&quot;&quot;清洗文本&quot;&quot;&quot;
+        # 1. 去除特殊字符
+        text = re.sub(r&#39;[^\\w\\s]&#39;, &#39;&#39;, text)
+
+        # 2. 去除多余空格
+        text = &#39; &#39;.join(text.split())
+
+        # 3. 转小写（对英文）
+        text = text.lower()
+
+        return text
+
+    def tokenize(self, text):
+        &quot;&quot;&quot;分词&quot;&quot;&quot;
+        return jieba.lcut(text)
+
+    def remove_stopwords(self, tokens):
+        &quot;&quot;&quot;去除停用词&quot;&quot;&quot;
+        return [token for token in tokens if token not in self.stopwords]
+
+    def preprocess(self, text):
+        &quot;&quot;&quot;完整预处理流程&quot;&quot;&quot;
+        # 清洗
+        text = self.clean_text(text)
+
+        # 分词
+        tokens = self.tokenize(text)
+
+        # 去停用词
+        tokens = self.remove_stopwords(tokens)
+
+        return {
+            &quot;original&quot;: text,
+            &quot;tokens&quot;: tokens,
+            &quot;processed&quot;: &#39; &#39;.join(tokens)
+        }
+
+# 测试
+preprocessor = TextPreprocessor()
+result = preprocessor.preprocess(&quot;今天的天气怎么样啊？？&quot;)
+print(result)
+# 输出: {&#39;original&#39;: &#39;今天天气怎么样啊&#39;, &#39;tokens&#39;: [&#39;今天&#39;, &#39;天气&#39;, &#39;怎么样&#39;, &#39;啊&#39;], ...}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-第二步-槽位提取" tabindex="-1"><a class="header-anchor" href="#_4-3-第二步-槽位提取"><span>4.3 第二步：槽位提取</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import re
+from datetime import datetime, timedelta
+
+class SlotExtractor:
+    &quot;&quot;&quot;槽位提取器&quot;&quot;&quot;
+
+    def __init__(self):
+        # 定义槽位模式
+        self.patterns = {
+            &quot;城市&quot;: r&#39;(北京|上海|广州|深圳|杭州|成都|武汉|西安)&#39;,
+            &quot;日期&quot;: r&#39;(今天|明天|后天|下周|周\\w)&#39;,
+            &quot;数量&quot;: r&#39;(\\d+)\\s*(个|张|份|次)&#39;,
+            &quot;价格&quot;: r&#39;(\\d+)\\s*(元|块|rmb)&#39;,
+        }
+
+    def extract_slots(self, text, intent):
+        &quot;&quot;&quot;根据意图提取槽位&quot;&quot;&quot;
+        slots = {}
+
+        # 根据不同意图提取不同槽位
+        if intent == &quot;查询天气&quot;:
+            slots = self._extract_weather_slots(text)
+        elif intent == &quot;订票&quot;:
+            slots = self._extract_booking_slots(text)
+        elif intent == &quot;查询订单&quot;:
+            slots = self._extract_order_slots(text)
+
+        return slots
+
+    def _extract_weather_slots(self, text):
+        &quot;&quot;&quot;提取天气查询槽位&quot;&quot;&quot;
+        slots = {}
+
+        # 提取城市
+        city_match = re.search(self.patterns[&quot;城市&quot;], text)
+        if city_match:
+            slots[&quot;city&quot;] = city_match.group(1)
+
+        # 提取日期
+        date_match = re.search(self.patterns[&quot;日期&quot;], text)
+        if date_match:
+            slots[&quot;date&quot;] = self._parse_date(date_match.group(1))
+        else:
+            slots[&quot;date&quot;] = &quot;今天&quot;
+
+        return slots
+
+    def _extract_booking_slots(self, text):
+        &quot;&quot;&quot;提取订票槽位&quot;&quot;&quot;
+        slots = {}
+
+        # 提取出发地和目的地
+        cities = re.findall(self.patterns[&quot;城市&quot;], text)
+        if len(cities) &gt;= 2:
+            slots[&quot;from&quot;] = cities[0]
+            slots[&quot;to&quot;] = cities[1]
+        elif len(cities) == 1:
+            slots[&quot;to&quot;] = cities[0]
+
+        # 提取日期
+        date_match = re.search(self.patterns[&quot;日期&quot;], text)
+        if date_match:
+            slots[&quot;date&quot;] = self._parse_date(date_match.group(1))
+
+        # 提取数量
+        qty_match = re.search(self.patterns[&quot;数量&quot;], text)
+        if qty_match:
+            slots[&quot;quantity&quot;] = int(qty_match.group(1))
+
+        return slots
+
+    def _extract_order_slots(self, text):
+        &quot;&quot;&quot;提取订单查询槽位&quot;&quot;&quot;
+        slots = {}
+
+        # 提取订单号（示例）
+        order_pattern = r&#39;([A-Z0-9]{10,})&#39;
+        order_match = re.search(order_pattern, text)
+        if order_match:
+            slots[&quot;order_id&quot;] = order_match.group(1)
+
+        return slots
+
+    def _parse_date(self, date_str):
+        &quot;&quot;&quot;解析日期字符串&quot;&quot;&quot;
+        today = datetime.now()
+
+        if date_str == &quot;今天&quot;:
+            return today.strftime(&quot;%Y-%m-%d&quot;)
+        elif date_str == &quot;明天&quot;:
+            return (today + timedelta(days=1)).strftime(&quot;%Y-%m-%d&quot;)
+        elif date_str == &quot;后天&quot;:
+            return (today + timedelta(days=2)).strftime(&quot;%Y-%m-%d&quot;)
+        else:
+            return date_str
+
+# 测试
+extractor = SlotExtractor()
+
+# 测试天气查询
+slots = extractor.extract_slots(&quot;明天北京天气怎么样&quot;, &quot;查询天气&quot;)
+print(&quot;天气槽位:&quot;, slots)
+# 输出: {&#39;city&#39;: &#39;北京&#39;, &#39;date&#39;: &#39;2024-xx-xx&#39;}
+
+# 测试订票
+slots = extractor.extract_slots(&quot;订2张从上海到北京的票&quot;, &quot;订票&quot;)
+print(&quot;订票槽位:&quot;, slots)
+# 输出: {&#39;from&#39;: &#39;上海&#39;, &#39;to&#39;: &#39;北京&#39;, &#39;quantity&#39;: 2}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-4-第三步-完整意图识别引擎" tabindex="-1"><a class="header-anchor" href="#_4-4-第三步-完整意图识别引擎"><span>4.4 第三步：完整意图识别引擎</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class IntentRecognitionEngine:
+    &quot;&quot;&quot;完整的意图识别引擎&quot;&quot;&quot;
+
+    def __init__(self):
+        self.preprocessor = TextPreprocessor()
+        self.intent_recognizer = MLIntentRecognizer()  # 可替换为BERT
+        self.slot_extractor = SlotExtractor()
+
+        # 意图置信度阈值
+        self.confidence_threshold = 0.6
+
+    def process(self, text):
+        &quot;&quot;&quot;处理用户输入&quot;&quot;&quot;
+        # 1. 文本预处理
+        preprocessed = self.preprocessor.preprocess(text)
+
+        # 2. 意图识别
+        intent_result = self.intent_recognizer.predict(text)
+
+        # 3. 检查置信度
+        if intent_result[&#39;confidence&#39;] &lt; self.confidence_threshold:
+            return {
+                &quot;status&quot;: &quot;uncertain&quot;,
+                &quot;message&quot;: &quot;抱歉，我没太理解您的意思，能换个说法吗？&quot;,
+                &quot;confidence&quot;: intent_result[&#39;confidence&#39;]
+            }
+
+        # 4. 槽位提取
+        slots = self.slot_extractor.extract_slots(
+            text,
+            intent_result[&#39;intent&#39;]
+        )
+
+        # 5. 验证必需槽位
+        missing_slots = self._check_required_slots(
+            intent_result[&#39;intent&#39;],
+            slots
+        )
+
+        if missing_slots:
+            return {
+                &quot;status&quot;: &quot;incomplete&quot;,
+                &quot;intent&quot;: intent_result[&#39;intent&#39;],
+                &quot;slots&quot;: slots,
+                &quot;missing_slots&quot;: missing_slots,
+                &quot;message&quot;: self._generate_slot_question(missing_slots[0])
+            }
+
+        # 6. 返回完整结果
+        return {
+            &quot;status&quot;: &quot;complete&quot;,
+            &quot;intent&quot;: intent_result[&#39;intent&#39;],
+            &quot;confidence&quot;: intent_result[&#39;confidence&#39;],
+            &quot;slots&quot;: slots,
+            &quot;preprocessed&quot;: preprocessed
+        }
+
+    def _check_required_slots(self, intent, slots):
+        &quot;&quot;&quot;检查必需槽位&quot;&quot;&quot;
+        required_slots = {
+            &quot;查询天气&quot;: [&quot;city&quot;],
+            &quot;订票&quot;: [&quot;to&quot;, &quot;date&quot;],
+            &quot;查询订单&quot;: [],
+        }
+
+        required = required_slots.get(intent, [])
+        missing = [slot for slot in required if slot not in slots]
+
+        return missing
+
+    def _generate_slot_question(self, slot_name):
+        &quot;&quot;&quot;生成槽位询问语句&quot;&quot;&quot;
+        questions = {
+            &quot;city&quot;: &quot;请问您想查询哪个城市的天气？&quot;,
+            &quot;to&quot;: &quot;请问您想去哪个城市？&quot;,
+            &quot;from&quot;: &quot;请问您从哪里出发？&quot;,
+            &quot;date&quot;: &quot;请问您打算什么时候出发？&quot;,
+            &quot;quantity&quot;: &quot;请问您需要几张票？&quot;
+        }
+
+        return questions.get(slot_name, f&quot;请提供{slot_name}信息&quot;)
+
+# 完整测试
+engine = IntentRecognitionEngine()
+
+# 先训练模型
+texts = [
+    &quot;今天天气怎么样&quot;, &quot;北京现在多少度&quot;,
+    &quot;帮我订票&quot;, &quot;买张机票&quot;,
+    &quot;订单在哪&quot;, &quot;快递到了吗&quot;
+]
+labels = [&quot;查询天气&quot;, &quot;查询天气&quot;, &quot;订票&quot;, &quot;订票&quot;, &quot;查询订单&quot;, &quot;查询订单&quot;]
+engine.intent_recognizer.train(texts, labels)
+
+# 测试完整流程
+test_inputs = [
+    &quot;明天北京天气怎么样&quot;,
+    &quot;我想订票去上海&quot;,
+    &quot;查询我的订单&quot;
+]
+
+print(&quot;\\n🎯 完整意图识别测试：\\n&quot;)
+for text in test_inputs:
+    result = engine.process(text)
+    print(f&quot;输入: {text}&quot;)
+    print(f&quot;结果: {result}&quot;)
+    print(&quot;-&quot; * 50)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="🎮-第五章-实战案例-智能客服机器人完整实现" tabindex="-1"><a class="header-anchor" href="#🎮-第五章-实战案例-智能客服机器人完整实现"><span>🎮 第五章：实战案例：智能客服机器人完整实现</span></a></h2><h3 id="_5-1-项目需求" tabindex="-1"><a class="header-anchor" href="#_5-1-项目需求"><span>5.1 项目需求</span></a></h3><p>构建一个智能客服机器人，能够：</p><ul><li><p>✅ 查询天气</p></li><li><p>✅ 预订机票</p></li><li><p>✅ 查询订单</p></li><li><p>✅ 处理退款</p></li><li><p>✅ 转人工客服</p></li><li><p>✅ 多轮对话记忆</p></li></ul><p><img src="`+T+`" alt="Image" loading="lazy"></p><h3 id="_5-2-完整代码实现" tabindex="-1"><a class="header-anchor" href="#_5-2-完整代码实现"><span>5.2 完整代码实现</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import json
+from datetime import datetime
+
+class SmartCustomerServiceBot:
+    &quot;&quot;&quot;智能客服机器人&quot;&quot;&quot;
+
+    def __init__(self):
+        # 初始化各个模块
+        self.engine = IntentRecognitionEngine()
+
+        # 对话历史
+        self.conversation_history = []
+
+        # 当前对话状态
+        self.current_intent = None
+        self.current_slots = {}
+
+        # 模拟数据库
+        self.mock_database = {
+            &quot;weather&quot;: {
+                &quot;北京&quot;: {&quot;temp&quot;: 15, &quot;condition&quot;: &quot;晴天&quot;},
+                &quot;上海&quot;: {&quot;temp&quot;: 20, &quot;condition&quot;: &quot;多云&quot;},
+            },
+            &quot;orders&quot;: {
+                &quot;ORD123456&quot;: {
+                    &quot;status&quot;: &quot;运输中&quot;,
+                    &quot;location&quot;: &quot;北京分拨中心&quot;,
+                    &quot;expected&quot;: &quot;2024-11-25&quot;
+                }
+            }
+        }
+
+        print(&quot;🤖 智能客服机器人已启动！&quot;)
+        print(&quot;=&quot; * 60)
+
+    def train(self):
+        &quot;&quot;&quot;训练意图识别模型&quot;&quot;&quot;
+        print(&quot;📚 正在训练意图识别模型...&quot;)
+
+        # 训练数据
+        texts = [
+            &quot;今天天气怎么样&quot;, &quot;北京现在多少度&quot;, &quot;会下雨吗&quot;, &quot;明天晴天吗&quot;,
+            &quot;帮我订票&quot;, &quot;买张去上海的票&quot;, &quot;预订机票&quot;, &quot;购买火车票&quot;,
+            &quot;我的订单在哪&quot;, &quot;快递到了吗&quot;, &quot;查询物流&quot;, &quot;包裹什么时候到&quot;,
+            &quot;我要退款&quot;, &quot;申请退货&quot;, &quot;不想要了&quot;, &quot;能退吗&quot;,
+            &quot;转人工&quot;, &quot;找客服&quot;, &quot;人工服务&quot;, &quot;联系客服&quot;,
+            &quot;你好&quot;, &quot;在吗&quot;, &quot;嗨&quot;, &quot;hello&quot;
+        ]
+
+        labels = [
+            &quot;查询天气&quot;, &quot;查询天气&quot;, &quot;查询天气&quot;, &quot;查询天气&quot;,
+            &quot;订票&quot;, &quot;订票&quot;, &quot;订票&quot;, &quot;订票&quot;,
+            &quot;查询订单&quot;, &quot;查询订单&quot;, &quot;查询订单&quot;, &quot;查询订单&quot;,
+            &quot;退款&quot;, &quot;退款&quot;, &quot;退款&quot;, &quot;退款&quot;,
+            &quot;人工客服&quot;, &quot;人工客服&quot;, &quot;人工客服&quot;, &quot;人工客服&quot;,
+            &quot;问候&quot;, &quot;问候&quot;, &quot;问候&quot;, &quot;问候&quot;
+        ]
+
+        self.engine.intent_recognizer.train(texts, labels)
+        print(&quot;✅ 模型训练完成！\\n&quot;)
+
+    def chat(self, user_input):
+        &quot;&quot;&quot;处理用户消息&quot;&quot;&quot;
+        # 记录对话
+        self.conversation_history.append({
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: user_input,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+        # 意图识别
+        result = self.engine.process(user_input)
+
+        # 根据状态生成响应
+        response = self._generate_response(result)
+
+        # 记录机器人响应
+        self.conversation_history.append({
+            &quot;role&quot;: &quot;bot&quot;,
+            &quot;content&quot;: response,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+        return response
+
+    def _generate_response(self, result):
+        &quot;&quot;&quot;生成响应&quot;&quot;&quot;
+        status = result.get(&quot;status&quot;)
+
+        # 情况1: 不确定意图
+        if status == &quot;uncertain&quot;:
+            return result[&quot;message&quot;]
+
+        # 情况2: 槽位不完整
+        if status == &quot;incomplete&quot;:
+            self.current_intent = result[&quot;intent&quot;]
+            self.current_slots.update(result[&quot;slots&quot;])
+            return result[&quot;message&quot;]
+
+        # 情况3: 意图和槽位都完整
+        intent = result[&quot;intent&quot;]
+        slots = result[&quot;slots&quot;]
+
+        # 执行相应动作
+        if intent == &quot;问候&quot;:
+            return self._handle_greeting()
+        elif intent == &quot;查询天气&quot;:
+            return self._handle_weather_query(slots)
+        elif intent == &quot;订票&quot;:
+            return self._handle_booking(slots)
+        elif intent == &quot;查询订单&quot;:
+            return self._handle_order_query(slots)
+        elif intent == &quot;退款&quot;:
+            return self._handle_refund(slots)
+        elif intent == &quot;人工客服&quot;:
+            return self._handle_human_service()
+        else:
+            return &quot;抱歉，我还在学习中，这个问题我暂时回答不了。&quot;
+
+    def _handle_greeting(self):
+        &quot;&quot;&quot;处理问候&quot;&quot;&quot;
+        return &quot;您好！我是智能客服小助手，很高兴为您服务！😊\\n\\n我可以帮您：\\n1. 查询天气\\n2. 预订机票\\n3. 查询订单\\n4. 处理退款\\n5. 转接人工客服\\n\\n请问有什么可以帮您？&quot;
+
+    def _handle_weather_query(self, slots):
+        &quot;&quot;&quot;处理天气查询&quot;&quot;&quot;
+        city = slots.get(&quot;city&quot;, &quot;北京&quot;)
+        date = slots.get(&quot;date&quot;, &quot;今天&quot;)
+
+        # 模拟查询天气API
+        weather_data = self.mock_database[&quot;weather&quot;].get(city)
+
+        if weather_data:
+            return f&quot;📍 {city} {date}的天气：\\n&quot; \\
+                   f&quot;🌡️ 温度：{weather_data[&#39;temp&#39;]}°C\\n&quot; \\
+                   f&quot;☀️ 天气：{weather_data[&#39;condition&#39;]}\\n\\n&quot; \\
+                   f&quot;还有其他需要帮助的吗？&quot;
+        else:
+            return f&quot;抱歉，暂时没有{city}的天气信息。您可以换个城市试试。&quot;
+
+    def _handle_booking(self, slots):
+        &quot;&quot;&quot;处理订票&quot;&quot;&quot;
+        to_city = slots.get(&quot;to&quot;, &quot;未知&quot;)
+        from_city = slots.get(&quot;from&quot;, &quot;当前位置&quot;)
+        date = slots.get(&quot;date&quot;, &quot;近期&quot;)
+        quantity = slots.get(&quot;quantity&quot;, 1)
+
+        # 模拟订票流程
+        order_id = f&quot;ORD{datetime.now().strftime(&#39;%Y%m%d%H%M%S&#39;)}&quot;
+
+        return f&quot;✈️ 订票信息确认：\\n&quot; \\
+               f&quot;出发地：{from_city}\\n&quot; \\
+               f&quot;目的地：{to_city}\\n&quot; \\
+               f&quot;出发日期：{date}\\n&quot; \\
+               f&quot;票数：{quantity}张\\n\\n&quot; \\
+               f&quot;订单已生成！\\n&quot; \\
+               f&quot;📋 订单号：{order_id}\\n\\n&quot; \\
+               f&quot;请在30分钟内完成支付。还有其他需要吗？&quot;
+
+    def _handle_order_query(self, slots):
+        &quot;&quot;&quot;处理订单查询&quot;&quot;&quot;
+        order_id = slots.get(&quot;order_id&quot;)
+
+        if order_id and order_id in self.mock_database[&quot;orders&quot;]:
+            order = self.mock_database[&quot;orders&quot;][order_id]
+            return f&quot;📦 订单查询结果：\\n&quot; \\
+                   f&quot;订单号：{order_id}\\n&quot; \\
+                   f&quot;状态：{order[&#39;status&#39;]}\\n&quot; \\
+                   f&quot;当前位置：{order[&#39;location&#39;]}\\n&quot; \\
+                   f&quot;预计送达：{order[&#39;expected&#39;]}\\n\\n&quot; \\
+                   f&quot;还有其他需要帮助的吗？&quot;
+        else:
+            return &quot;请提供您的订单号，格式如：ORD123456&quot;
+
+    def _handle_refund(self, slots):
+        &quot;&quot;&quot;处理退款&quot;&quot;&quot;
+        return &quot;💰 退款流程说明：\\n&quot; \\
+               &quot;1. 请提供订单号\\n&quot; \\
+               &quot;2. 说明退款原因\\n&quot; \\
+               &quot;3. 上传商品照片（如适用）\\n&quot; \\
+               &quot;4. 等待审核（1-3个工作日）\\n&quot; \\
+               &quot;5. 退款将原路返回\\n\\n&quot; \\
+               &quot;需要我帮您转接人工客服处理吗？&quot;
+
+    def _handle_human_service(self):
+        &quot;&quot;&quot;处理人工客服请求&quot;&quot;&quot;
+        return &quot;正在为您转接人工客服...\\n&quot; \\
+               &quot;👨‍💼 当前排队人数：3人\\n&quot; \\
+               &quot;⏱️ 预计等待时间：2分钟\\n\\n&quot; \\
+               &quot;在等待期间，您可以继续向我咨询其他问题。&quot;
+
+    def get_conversation_history(self):
+        &quot;&quot;&quot;获取对话历史&quot;&quot;&quot;
+        return self.conversation_history
+
+    def save_conversation(self, filename=&quot;conversation_log.json&quot;):
+        &quot;&quot;&quot;保存对话记录&quot;&quot;&quot;
+        with open(filename, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f:
+            json.dump(self.conversation_history, f,
+                     ensure_ascii=False, indent=2)
+        print(f&quot;📝 对话记录已保存到 {filename}&quot;)
+
+# ========== 使用示例 ==========
+
+def main():
+    # 创建机器人
+    bot = SmartCustomerServiceBot()
+
+    # 训练模型
+    bot.train()
+
+    # 模拟对话
+    print(&quot;💬 开始对话（输入 &#39;quit&#39; 退出）\\n&quot;)
+    print(&quot;=&quot; * 60)
+
+    while True:
+        user_input = input(&quot;\\n👤 您: &quot;)
+
+        if user_input.lower() in [&#39;quit&#39;, &#39;exit&#39;, &#39;退出&#39;]:
+            print(&quot;\\n👋 感谢使用！再见！&quot;)
+            bot.save_conversation()
+            break
+
+        if not user_input.strip():
+            continue
+
+        # 获取机器人响应
+        response = bot.chat(user_input)
+        print(f&quot;\\n🤖 客服: {response}&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-3-运行效果示例" tabindex="-1"><a class="header-anchor" href="#_5-3-运行效果示例"><span>5.3 运行效果示例</span></a></h3><div class="language-Plain line-numbers-mode" data-ext="Plain" data-title="Plain"><pre class="language-Plain"><code>🤖 智能客服机器人已启动！
+============================================================
+📚 正在训练意图识别模型...
+✅ 模型训练完成！
+
+💬 开始对话（输入 &#39;quit&#39; 退出）
+
+============================================================
+
+👤 您: 你好
+
+🤖 客服: 您好！我是智能客服小助手,很高兴为您服务！😊
+
+我可以帮您：
+1. 查询天气
+2. 预订机票
+3. 查询订单
+4. 处理退款
+5. 转接人工客服
+
+请问有什么可以帮您？
+
+👤 您: 明天北京天气怎么样
+
+🤖 客服: 📍 北京 2024-11-23的天气：
+🌡️ 温度：15°C
+☀️ 天气：晴天
+
+还有其他需要帮助的吗？
+
+👤 您: 帮我订2张去上海的票
+
+🤖 客服: ✈️ 订票信息确认：
+出发地：当前位置
+目的地：上海
+出发日期：近期
+票数：2张
+
+订单已生成！
+📋 订单号：ORD20241122153045
+
+请在30分钟内完成支付。还有其他需要吗？
+
+👤 您: 查询订单ORD123456
+
+🤖 客服: 📦 订单查询结果：
+订单号：ORD123456
+状态：运输中
+当前位置：北京分拨中心
+预计送达：2024-11-25
+
+还有其他需要帮助的吗？
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="🚀-第六章-进阶技巧-多意图识别与置信度评分" tabindex="-1"><a class="header-anchor" href="#🚀-第六章-进阶技巧-多意图识别与置信度评分"><span>🚀 第六章：进阶技巧：多意图识别与置信度评分</span></a></h2><h3 id="_6-1-处理多意图场景" tabindex="-1"><a class="header-anchor" href="#_6-1-处理多意图场景"><span>6.1 处理多意图场景</span></a></h3><p>有时用户一句话包含多个意图：</p><p><strong>例子</strong>：</p><ul><li><p>&quot;帮我查一下明天北京的天气，然后订张去上海的票&quot;</p><ul><li><p>意图 1：查询天气（北京，明天）</p></li><li><p>意图 2：订票（去上海）</p></li></ul></li></ul><p><img src="`+w+`" alt="Image" loading="lazy"></p><h3 id="_6-2-多意图识别实现" tabindex="-1"><a class="header-anchor" href="#_6-2-多意图识别实现"><span>6.2 多意图识别实现</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class MultiIntentRecognizer:
+    &quot;&quot;&quot;多意图识别器&quot;&quot;&quot;
+
+    def __init__(self):
+        self.single_recognizer = IntentRecognitionEngine()
+
+    def split_sentence(self, text):
+        &quot;&quot;&quot;拆分复合句子&quot;&quot;&quot;
+        # 使用连词分割
+        separators = [&#39;然后&#39;, &#39;接着&#39;, &#39;还有&#39;, &#39;另外&#39;, &#39;以及&#39;, &#39;和&#39;]
+
+        parts = [text]
+        for sep in separators:
+            new_parts = []
+            for part in parts:
+                new_parts.extend(part.split(sep))
+            parts = new_parts
+
+        return [p.strip() for p in parts if p.strip()]
+
+    def recognize(self, text):
+        &quot;&quot;&quot;识别多意图&quot;&quot;&quot;
+        # 拆分句子
+        parts = self.split_sentence(text)
+
+        # 识别每个部分的意图
+        results = []
+        for i, part in enumerate(parts):
+            result = self.single_recognizer.process(part)
+            result[&#39;sequence&#39;] = i + 1
+            results.append(result)
+
+        return {
+            &quot;has_multiple_intents&quot;: len(results) &gt; 1,
+            &quot;intents&quot;: results
+        }
+
+# 测试
+multi_recognizer = MultiIntentRecognizer()
+text = &quot;帮我查明天北京天气，然后订张去上海的票&quot;
+result = multi_recognizer.recognize(text)
+
+print(&quot;多意图识别结果:&quot;)
+for intent in result[&#39;intents&#39;]:
+    print(f&quot;  意图{intent[&#39;sequence&#39;]}: {intent[&#39;intent&#39;]}&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-3-置信度校准" tabindex="-1"><a class="header-anchor" href="#_6-3-置信度校准"><span>6.3 置信度校准</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class ConfidenceCalibrator:
+    &quot;&quot;&quot;置信度校准器&quot;&quot;&quot;
+
+    def __init__(self):
+        self.thresholds = {
+            &quot;high&quot;: 0.85,    # 高置信度
+            &quot;medium&quot;: 0.6,   # 中等置信度
+            &quot;low&quot;: 0.3       # 低置信度
+        }
+
+    def calibrate(self, intent, confidence):
+        &quot;&quot;&quot;校准置信度&quot;&quot;&quot;
+        if confidence &gt;= self.thresholds[&quot;high&quot;]:
+            return {
+                &quot;intent&quot;: intent,
+                &quot;confidence&quot;: confidence,
+                &quot;level&quot;: &quot;high&quot;,
+                &quot;action&quot;: &quot;直接执行&quot;,
+                &quot;message&quot;: None
+            }
+
+        elif confidence &gt;= self.thresholds[&quot;medium&quot;]:
+            return {
+                &quot;intent&quot;: intent,
+                &quot;confidence&quot;: confidence,
+                &quot;level&quot;: &quot;medium&quot;,
+                &quot;action&quot;: &quot;二次确认&quot;,
+                &quot;message&quot;: f&quot;您是想{intent}吗？&quot;
+            }
+
+        elif confidence &gt;= self.thresholds[&quot;low&quot;]:
+            return {
+                &quot;intent&quot;: intent,
+                &quot;confidence&quot;: confidence,
+                &quot;level&quot;: &quot;low&quot;,
+                &quot;action&quot;: &quot;提供选项&quot;,
+                &quot;message&quot;: f&quot;您可能想：\\n1. {intent}\\n2. 其他...\\n请选择&quot;
+            }
+
+        else:
+            return {
+                &quot;intent&quot;: &quot;未知&quot;,
+                &quot;confidence&quot;: confidence,
+                &quot;level&quot;: &quot;very_low&quot;,
+                &quot;action&quot;: &quot;拒绝识别&quot;,
+                &quot;message&quot;: &quot;抱歉，我没太理解，能换个说法吗？&quot;
+            }
+
+# 使用示例
+calibrator = ConfidenceCalibrator()
+
+# 测试不同置信度
+test_cases = [
+    (&quot;查询天气&quot;, 0.95),
+    (&quot;订票&quot;, 0.7),
+    (&quot;退款&quot;, 0.4),
+    (&quot;未知意图&quot;, 0.1)
+]
+
+for intent, conf in test_cases:
+    result = calibrator.calibrate(intent, conf)
+    print(f&quot;意图: {intent}, 置信度: {conf}&quot;)
+    print(f&quot;处理方式: {result[&#39;action&#39;]}&quot;)
+    if result[&#39;message&#39;]:
+        print(f&quot;消息: {result[&#39;message&#39;]}&quot;)
+    print()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr><h2 id="🔍-第七章-常见问题与优化策略" tabindex="-1"><a class="header-anchor" href="#🔍-第七章-常见问题与优化策略"><span>🔍 第七章：常见问题与优化策略</span></a></h2><h3 id="_7-1-常见问题汇总" tabindex="-1"><a class="header-anchor" href="#_7-1-常见问题汇总"><span>7.1 常见问题汇总</span></a></h3><h4 id="问题-1-识别准确率低" tabindex="-1"><a class="header-anchor" href="#问题-1-识别准确率低"><span>问题 1：识别准确率低</span></a></h4><p><strong>原因</strong>：</p><ul><li><p>训练数据不足</p></li><li><p>意图分类过于模糊</p></li><li><p>缺少上下文信息</p></li></ul><p><strong>解决方案</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code># 1. 数据增强
+def augment_data(text):
+    &quot;&quot;&quot;数据增强&quot;&quot;&quot;
+    variations = []
+
+    # 同义词替换
+    synonyms = {
+        &quot;查询&quot;: [&quot;查看&quot;, &quot;看看&quot;, &quot;了解&quot;],
+        &quot;订票&quot;: [&quot;买票&quot;, &quot;购买&quot;, &quot;预订&quot;],
+    }
+
+    for original, syns in synonyms.items():
+        if original in text:
+            for syn in syns:
+                variations.append(text.replace(original, syn))
+
+    return variations
+
+# 2. 增加训练样本
+original_data = [&quot;查询天气&quot;]
+augmented_data = augment_data(original_data[0])
+print(augmented_data)
+# [&#39;查看天气&#39;, &#39;看看天气&#39;, &#39;了解天气&#39;]
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="问题-2-多轮对话记忆丢失" tabindex="-1"><a class="header-anchor" href="#问题-2-多轮对话记忆丢失"><span>问题 2：多轮对话记忆丢失</span></a></h4><p><strong>解决方案</strong>：</p><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>class ConversationMemory:
+    &quot;&quot;&quot;对话记忆管理器&quot;&quot;&quot;
+
+    def __init__(self, max_history=10):
+        self.history = []
+        self.max_history = max_history
+        self.context = {}
+
+    def add_turn(self, user_input, bot_response, intent, slots):
+        &quot;&quot;&quot;添加对话轮次&quot;&quot;&quot;
+        turn = {
+            &quot;user&quot;: user_input,
+            &quot;bot&quot;: bot_response,
+            &quot;intent&quot;: intent,
+            &quot;slots&quot;: slots,
+            &quot;timestamp&quot;: datetime.now()
+        }
+
+        self.history.append(turn)
+
+        # 更新上下文
+        self.context.update(slots)
+
+        # 保持历史记录在限制内
+        if len(self.history) &gt; self.max_history:
+            self.history = self.history[-self.max_history:]
+
+    def get_context(self):
+        &quot;&quot;&quot;获取当前上下文&quot;&quot;&quot;
+        return self.context
+
+    def get_last_intent(self):
+        &quot;&quot;&quot;获取上一轮意图&quot;&quot;&quot;
+        if self.history:
+            return self.history[-1][&quot;intent&quot;]
+        return None
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-2-性能优化建议" tabindex="-1"><a class="header-anchor" href="#_7-2-性能优化建议"><span>7.2 性能优化建议</span></a></h3><h4 id="优化-1-模型缓存" tabindex="-1"><a class="header-anchor" href="#优化-1-模型缓存"><span>优化 1：模型缓存</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>import pickle
+
+class ModelCache:
+    &quot;&quot;&quot;模型缓存&quot;&quot;&quot;
+
+    @staticmethod
+    def save_model(model, filename):
+        &quot;&quot;&quot;保存模型&quot;&quot;&quot;
+        with open(filename, &#39;wb&#39;) as f:
+            pickle.dump(model, f)
+        print(f&quot;✅ 模型已保存到 {filename}&quot;)
+
+    @staticmethod
+    def load_model(filename):
+        &quot;&quot;&quot;加载模型&quot;&quot;&quot;
+        with open(filename, &#39;rb&#39;) as f:
+            model = pickle.load(f)
+        print(f&quot;✅ 模型已从 {filename} 加载&quot;)
+        return model
+
+# 使用
+# 训练后保存
+ModelCache.save_model(recognizer, &quot;intent_model.pkl&quot;)
+
+# 下次直接加载
+recognizer = ModelCache.load_model(&quot;intent_model.pkl&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="优化-2-批量处理" tabindex="-1"><a class="header-anchor" href="#优化-2-批量处理"><span>优化 2：批量处理</span></a></h4><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>def batch_predict(recognizer, texts, batch_size=32):
+    &quot;&quot;&quot;批量预测&quot;&quot;&quot;
+    results = []
+
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:i+batch_size]
+        batch_results = [recognizer.predict(text) for text in batch]
+        results.extend(batch_results)
+
+    return results
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-3-评估指标" tabindex="-1"><a class="header-anchor" href="#_7-3-评估指标"><span>7.3 评估指标</span></a></h3><div class="language-Python line-numbers-mode" data-ext="Python" data-title="Python"><pre class="language-Python"><code>from sklearn.metrics import classification_report, confusion_matrix
+
+def evaluate_model(recognizer, test_texts, test_labels):
+    &quot;&quot;&quot;评估模型性能&quot;&quot;&quot;
+    predictions = [recognizer.predict(text)[&#39;intent&#39;]
+                   for text in test_texts]
+
+    # 分类报告
+    print(&quot;📊 分类报告:&quot;)
+    print(classification_report(test_labels, predictions))
+
+    # 混淆矩阵
+    print(&quot;\\n📊 混淆矩阵:&quot;)
+    print(confusion_matrix(test_labels, predictions))
+
+    # 准确率
+    accuracy = sum(p == l for p, l in zip(predictions, test_labels)) / len(test_labels)
+    print(f&quot;\\n✅ 总体准确率: {accuracy:.2%}&quot;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>`,479),L=[I];function z(E,M){return i(),e("div",null,L)}const O=n(C,[["render",z],["__file","ai-agent.html.vue"]]),B=JSON.parse('{"path":"/ai/ai-agent.html","title":"大模型 AI Agent 知识从 0-1 笔记-万字详解版本！","lang":"zh-CN","frontmatter":{"description":"大模型 AI Agent 知识从 0-1 笔记-万字详解版本！ 【Agent 入门到实战】深度理解 Agent 全链路内容和深度优化、系统评估 Image 什么是 Agent？为什么说它是 AI 的下一个战场 1.1 从 ChatGPT 到 Agent 的进化 想象一下这个场景： 传统的 ChatGPT 对话： 你：「帮我规划一次周末去京都的旅行」 C...","head":[["meta",{"property":"og:url","content":"https://lfange.github.io/ai/ai-agent.html"}],["meta",{"property":"og:site_name","content":"哓番茄"}],["meta",{"property":"og:title","content":"大模型 AI Agent 知识从 0-1 笔记-万字详解版本！"}],["meta",{"property":"og:description","content":"大模型 AI Agent 知识从 0-1 笔记-万字详解版本！ 【Agent 入门到实战】深度理解 Agent 全链路内容和深度优化、系统评估 Image 什么是 Agent？为什么说它是 AI 的下一个战场 1.1 从 ChatGPT 到 Agent 的进化 想象一下这个场景： 传统的 ChatGPT 对话： 你：「帮我规划一次周末去京都的旅行」 C..."}],["meta",{"property":"og:type","content":"article"}],["meta",{"property":"og:locale","content":"zh-CN"}],["meta",{"property":"og:updated_time","content":"2026-07-20T04:27:28.000Z"}],["meta",{"property":"article:author","content":"哓番茄"}],["meta",{"property":"article:modified_time","content":"2026-07-20T04:27:28.000Z"}],["script",{"type":"application/ld+json"},"{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"大模型 AI Agent 知识从 0-1 笔记-万字详解版本！\\",\\"image\\":[\\"\\"],\\"dateModified\\":\\"2026-07-20T04:27:28.000Z\\",\\"author\\":[{\\"@type\\":\\"Person\\",\\"name\\":\\"哓番茄\\",\\"url\\":\\"https://lfange.github.io/\\"}]}"]]},"headers":[{"level":2,"title":"什么是 Agent？为什么说它是 AI 的下一个战场","slug":"什么是-agent-为什么说它是-ai-的下一个战场","link":"#什么是-agent-为什么说它是-ai-的下一个战场","children":[{"level":3,"title":"1.1 从 ChatGPT 到 Agent 的进化","slug":"_1-1-从-chatgpt-到-agent-的进化","link":"#_1-1-从-chatgpt-到-agent-的进化","children":[]},{"level":3,"title":"1.2 Agent 的核心定义","slug":"_1-2-agent-的核心定义","link":"#_1-2-agent-的核心定义","children":[]}]},{"level":2,"title":"Agent 核心架构深度剖析","slug":"agent-核心架构深度剖析","link":"#agent-核心架构深度剖析","children":[{"level":3,"title":"2.1 Agent 整体架构图","slug":"_2-1-agent-整体架构图","link":"#_2-1-agent-整体架构图","children":[]},{"level":3,"title":"2.2 架构分层解析","slug":"_2-2-架构分层解析","link":"#_2-2-架构分层解析","children":[]},{"level":3,"title":"2.3 数据流转过程","slug":"_2-3-数据流转过程","link":"#_2-3-数据流转过程","children":[]}]},{"level":2,"title":"Agent 的四大组成部分详解","slug":"agent-的四大组成部分详解","link":"#agent-的四大组成部分详解","children":[{"level":3,"title":"3.1 组成部分总览","slug":"_3-1-组成部分总览","link":"#_3-1-组成部分总览","children":[]},{"level":3,"title":"3.2 组成部分一：大语言模型（LLM Brain）","slug":"_3-2-组成部分一-大语言模型-llm-brain","link":"#_3-2-组成部分一-大语言模型-llm-brain","children":[]},{"level":3,"title":"3.3 组成部分二：规划模块（Planning）","slug":"_3-3-组成部分二-规划模块-planning","link":"#_3-3-组成部分二-规划模块-planning","children":[]},{"level":3,"title":"3.4 组成部分三：记忆模块（Memory）","slug":"_3-4-组成部分三-记忆模块-memory","link":"#_3-4-组成部分三-记忆模块-memory","children":[]},{"level":3,"title":"3.5 组成部分四：工具集（Tools）","slug":"_3-5-组成部分四-工具集-tools","link":"#_3-5-组成部分四-工具集-tools","children":[]}]},{"level":2,"title":"Agent 的工作原理与理解方式","slug":"agent-的工作原理与理解方式","link":"#agent-的工作原理与理解方式","children":[{"level":3,"title":"4.1 ReAct 框架深度解析","slug":"_4-1-react-框架深度解析","link":"#_4-1-react-框架深度解析","children":[]},{"level":3,"title":"4.2 其他 Agent 工作模式","slug":"_4-2-其他-agent-工作模式","link":"#_4-2-其他-agent-工作模式","children":[]},{"level":3,"title":"4.3 理解 Agent 的三种视角","slug":"_4-3-理解-agent-的三种视角","link":"#_4-3-理解-agent-的三种视角","children":[]}]},{"level":2,"title":"构建 Agent 的五大难点与解决方案","slug":"构建-agent-的五大难点与解决方案","link":"#构建-agent-的五大难点与解决方案","children":[{"level":3,"title":"5.1 难点一：无限循环与任务卡死","slug":"_5-1-难点一-无限循环与任务卡死","link":"#_5-1-难点一-无限循环与任务卡死","children":[]},{"level":3,"title":"5.2 难点二：工具选择错误","slug":"_5-2-难点二-工具选择错误","link":"#_5-2-难点二-工具选择错误","children":[]},{"level":3,"title":"5.3 难点三：上下文窗口溢出","slug":"_5-3-难点三-上下文窗口溢出","link":"#_5-3-难点三-上下文窗口溢出","children":[]},{"level":3,"title":"5.4 难点四：错误处理与鲁棒性","slug":"_5-4-难点四-错误处理与鲁棒性","link":"#_5-4-难点四-错误处理与鲁棒性","children":[]},{"level":3,"title":"5.5 难点五：成本控制","slug":"_5-5-难点五-成本控制","link":"#_5-5-难点五-成本控制","children":[]}]},{"level":2,"title":"多 Agent 协同系统设计","slug":"多-agent-协同系统设计","link":"#多-agent-协同系统设计","children":[{"level":3,"title":"6.1 为什么需要多 Agent？","slug":"_6-1-为什么需要多-agent","link":"#_6-1-为什么需要多-agent","children":[]},{"level":3,"title":"6.2 多 Agent 系统架构","slug":"_6-2-多-agent-系统架构","link":"#_6-2-多-agent-系统架构","children":[]},{"level":3,"title":"6.3 多 Agent 协作模式","slug":"_6-3-多-agent-协作模式","link":"#_6-3-多-agent-协作模式","children":[]},{"level":3,"title":"6.4 多 Agent 的实战案例","slug":"_6-4-多-agent-的实战案例","link":"#_6-4-多-agent-的实战案例","children":[]},{"level":3,"title":"6.5 多 Agent 的关键挑战","slug":"_6-5-多-agent-的关键挑战","link":"#_6-5-多-agent-的关键挑战","children":[]}]},{"level":2,"title":"主流 Agent 开发框架对比","slug":"主流-agent-开发框架对比","link":"#主流-agent-开发框架对比","children":[{"level":3,"title":"7.1 框架总览对比","slug":"_7-1-框架总览对比","link":"#_7-1-框架总览对比","children":[]},{"level":3,"title":"7.2 LangChain 深度解析","slug":"_7-2-langchain-深度解析","link":"#_7-2-langchain-深度解析","children":[]},{"level":3,"title":"7.3 AutoGen 多 Agent 协作","slug":"_7-3-autogen-多-agent-协作","link":"#_7-3-autogen-多-agent-协作","children":[]},{"level":3,"title":"7.4 CrewAI 角色扮演框架","slug":"_7-4-crewai-角色扮演框架","link":"#_7-4-crewai-角色扮演框架","children":[]},{"level":3,"title":"7.5 Dify 可视化平台","slug":"_7-5-dify-可视化平台","link":"#_7-5-dify-可视化平台","children":[]},{"level":3,"title":"7.6 框架选择指南","slug":"_7-6-框架选择指南","link":"#_7-6-框架选择指南","children":[]}]},{"level":2,"title":"Agent 实战案例与代码实现","slug":"agent-实战案例与代码实现","link":"#agent-实战案例与代码实现","children":[{"level":3,"title":"8.1 案例一：智能客服 Agent","slug":"_8-1-案例一-智能客服-agent","link":"#_8-1-案例一-智能客服-agent","children":[]},{"level":3,"title":"8.2 案例二：代码生成 Agent","slug":"_8-2-案例二-代码生成-agent","link":"#_8-2-案例二-代码生成-agent","children":[]},{"level":3,"title":"8.3 案例三：数据分析 Agent","slug":"_8-3-案例三-数据分析-agent","link":"#_8-3-案例三-数据分析-agent","children":[]}]},{"level":2,"title":"Agent 性能优化与最佳实践","slug":"agent-性能优化与最佳实践","link":"#agent-性能优化与最佳实践","children":[{"level":3,"title":"9.1 提示词工程优化","slug":"_9-1-提示词工程优化","link":"#_9-1-提示词工程优化","children":[]},{"level":3,"title":"9.2 工具调用优化","slug":"_9-2-工具调用优化","link":"#_9-2-工具调用优化","children":[]},{"level":3,"title":"9.3 成本优化策略","slug":"_9-3-成本优化策略","link":"#_9-3-成本优化策略","children":[]},{"level":3,"title":"9.4 可靠性增强","slug":"_9-4-可靠性增强","link":"#_9-4-可靠性增强","children":[]},{"level":3,"title":"9.5 调试与监控","slug":"_9-5-调试与监控","link":"#_9-5-调试与监控","children":[]}]},{"level":2,"title":"未来展望：Agent 的发展趋势","slug":"未来展望-agent-的发展趋势","link":"#未来展望-agent-的发展趋势","children":[{"level":3,"title":"10.1 技术趋势","slug":"_10-1-技术趋势","link":"#_10-1-技术趋势","children":[]}]},{"level":2,"title":"🎯 第一章：什么是意图识别？一个生活化的例子","slug":"🎯-第一章-什么是意图识别-一个生活化的例子","link":"#🎯-第一章-什么是意图识别-一个生活化的例子","children":[{"level":3,"title":"1.1 从咖啡店点单说起","slug":"_1-1-从咖啡店点单说起","link":"#_1-1-从咖啡店点单说起","children":[]},{"level":3,"title":"1.2 AI Agent 中的意图识别","slug":"_1-2-ai-agent-中的意图识别","link":"#_1-2-ai-agent-中的意图识别","children":[]},{"level":3,"title":"1.3 为什么意图识别这么重要？","slug":"_1-3-为什么意图识别这么重要","link":"#_1-3-为什么意图识别这么重要","children":[]}]},{"level":2,"title":"🧠 第二章：AI Agent 的\\"读心术\\"：意图识别的魔法原理","slug":"🧠-第二章-ai-agent-的-读心术-意图识别的魔法原理","link":"#🧠-第二章-ai-agent-的-读心术-意图识别的魔法原理","children":[{"level":3,"title":"2.1 意图识别的三层结构","slug":"_2-1-意图识别的三层结构","link":"#_2-1-意图识别的三层结构","children":[]},{"level":3,"title":"2.2 意图识别的工作流程","slug":"_2-2-意图识别的工作流程","link":"#_2-2-意图识别的工作流程","children":[]}]},{"level":2,"title":"🔬 第三章：三大核心技术：让 AI 懂你所想","slug":"🔬-第三章-三大核心技术-让-ai-懂你所想","link":"#🔬-第三章-三大核心技术-让-ai-懂你所想","children":[{"level":3,"title":"3.1 技术一：基于规则的意图识别（规则匹配）","slug":"_3-1-技术一-基于规则的意图识别-规则匹配","link":"#_3-1-技术一-基于规则的意图识别-规则匹配","children":[]},{"level":3,"title":"3.2 技术二：基于机器学习的意图识别","slug":"_3-2-技术二-基于机器学习的意图识别","link":"#_3-2-技术二-基于机器学习的意图识别","children":[]},{"level":3,"title":"3.3 技术三：基于深度学习的意图识别（BERT）","slug":"_3-3-技术三-基于深度学习的意图识别-bert","link":"#_3-3-技术三-基于深度学习的意图识别-bert","children":[]}]},{"level":2,"title":"🛠️ 第四章：从零开始：手把手搭建意图识别系统","slug":"🛠️-第四章-从零开始-手把手搭建意图识别系统","link":"#🛠️-第四章-从零开始-手把手搭建意图识别系统","children":[{"level":3,"title":"4.1 系统架构设计","slug":"_4-1-系统架构设计","link":"#_4-1-系统架构设计","children":[]},{"level":3,"title":"4.2 第一步：文本预处理","slug":"_4-2-第一步-文本预处理","link":"#_4-2-第一步-文本预处理","children":[]},{"level":3,"title":"4.3 第二步：槽位提取","slug":"_4-3-第二步-槽位提取","link":"#_4-3-第二步-槽位提取","children":[]},{"level":3,"title":"4.4 第三步：完整意图识别引擎","slug":"_4-4-第三步-完整意图识别引擎","link":"#_4-4-第三步-完整意图识别引擎","children":[]}]},{"level":2,"title":"🎮 第五章：实战案例：智能客服机器人完整实现","slug":"🎮-第五章-实战案例-智能客服机器人完整实现","link":"#🎮-第五章-实战案例-智能客服机器人完整实现","children":[{"level":3,"title":"5.1 项目需求","slug":"_5-1-项目需求","link":"#_5-1-项目需求","children":[]},{"level":3,"title":"5.2 完整代码实现","slug":"_5-2-完整代码实现","link":"#_5-2-完整代码实现","children":[]},{"level":3,"title":"5.3 运行效果示例","slug":"_5-3-运行效果示例","link":"#_5-3-运行效果示例","children":[]}]},{"level":2,"title":"🚀 第六章：进阶技巧：多意图识别与置信度评分","slug":"🚀-第六章-进阶技巧-多意图识别与置信度评分","link":"#🚀-第六章-进阶技巧-多意图识别与置信度评分","children":[{"level":3,"title":"6.1 处理多意图场景","slug":"_6-1-处理多意图场景","link":"#_6-1-处理多意图场景","children":[]},{"level":3,"title":"6.2 多意图识别实现","slug":"_6-2-多意图识别实现","link":"#_6-2-多意图识别实现","children":[]},{"level":3,"title":"6.3 置信度校准","slug":"_6-3-置信度校准","link":"#_6-3-置信度校准","children":[]}]},{"level":2,"title":"🔍 第七章：常见问题与优化策略","slug":"🔍-第七章-常见问题与优化策略","link":"#🔍-第七章-常见问题与优化策略","children":[{"level":3,"title":"7.1 常见问题汇总","slug":"_7-1-常见问题汇总","link":"#_7-1-常见问题汇总","children":[]},{"level":3,"title":"7.2 性能优化建议","slug":"_7-2-性能优化建议","link":"#_7-2-性能优化建议","children":[]},{"level":3,"title":"7.3 评估指标","slug":"_7-3-评估指标","link":"#_7-3-评估指标","children":[]}]}],"git":{"createdTime":1780906819000,"updatedTime":1784521648000,"contributors":[{"name":"FanGe","email":"653398363@qq.com","commits":1}]},"readingTime":{"minutes":61.75,"words":18526},"filePathRelative":"ai/ai-agent.md","localizedDate":"2026年6月8日","excerpt":"","autoDesc":true}');export{O as comp,B as data};
