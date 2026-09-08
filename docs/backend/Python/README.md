@@ -9,7 +9,7 @@ tag:
 
 # Python 从入门到精通
 
-一套从零基础到企业级项目实战的 Python 完整学习教程，涵盖**语言特性、标准库、Web 开发、并发编程、测试与工程化部署**。每篇都配有可运行案例与输出，循序渐进。
+一套从零基础到企业级项目实战的 Python 完整学习教程，涵盖**语言特性、标准库、Web 开发、并发编程、测试与工程化部署、网络爬虫**。每篇都配有可运行案例与输出，循序渐进。
 
 ## 学习路线
 
@@ -34,6 +34,14 @@ tag:
 - [11 测试](./11-testing.md) —— pytest、fixture、mock、覆盖率与 TDD
 - [12 企业级项目实战](./12-enterprise-project.md) —— 分层架构、配置管理、日志、SQLAlchemy ORM、Docker、CI/CD
 - [13 性能优化与最佳实践](./13-performance.md) —— 性能分析、优化技巧、类型提示、PEP 规范
+
+### 第四部分：爬虫实战
+
+- [14 爬虫基础与 HTTP 协议](./14-crawler-http-basics.md) —— HTTP 报文、状态码、请求头、DevTools 抓包分析、robots.txt 与合规
+- [15 requests 进阶与页面解析](./15-crawler-requests-parsing.md) —— Session 登录态、代理与重试、BeautifulSoup/XPath、静态页实战
+- [16 动态页面与接口爬取](./16-crawler-dynamic.md) —— XHR 接口分析、httpx 异步爬虫、Playwright 渲染与网络拦截
+- [17 Scrapy 框架实战](./17-crawler-scrapy.md) —— 架构组件、Spider/Pipeline/中间件、断点续爬、并发调优
+- [18 反爬对抗与数据存储](./18-crawler-anti-storage.md) —— 反爬三层识别、代理池、TLS 指纹、SQLite/MongoDB 存储、增量爬取、法律合规
 
 ## 学习建议
 
