@@ -83,6 +83,18 @@ ts-node helloworld.ts
 
 可以看到我们的打印结果已经输出,后续我们的示例都可以通过这个命令来进行验证
 
-## TypeScript 基本类型
+## TypeScript 从入门到精通
 
-[TypeScript 基本类型](https://www.tslang.cn/docs/handbook/basic-types.html)
+1. [概览与环境配置](./01-ts-overview.md)
+2. [基础类型](./02-basic-types.md)
+3. [接口与类型别名](./03-interface-and-type.md)
+4. [函数与泛型](./04-functions-and-generics.md)
+5. [高级类型](./05-advanced-types.md)
+6. [类与模块](./06-classes-and-modules.md)
+7. [类型收窄与实战技巧](./07-type-narrowing-techniques.md)
+8. [工程实践与面试题](./08-ts-engineering.md)
+
+## 其他笔记
+
+- [TypeScript 基本类型（早期笔记）](./baseType.md)
+- [TypeScript 基本类型（官网 Handbook）](https://www.tslang.cn/docs/handbook/basic-types.html)
