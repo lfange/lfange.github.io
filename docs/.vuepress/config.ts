@@ -15,7 +15,8 @@ export default defineUserConfig({
       'meta',
       {
         name: 'keywords',
-        content: '哓番茄, Lfange Blog!, JavaScript, linux, git',
+        content:
+          '哓番茄, Lfange Blog!, JavaScript, linux, git, Python 爬虫, Web Scraping, Scrapy, Playwright, AI Engineering, LLMOps, 大模型, 模型训练, 推理部署, AI Agent, RAG, MCP',
       },
     ],
     // ['meta', { name: 'baidu-site-verification', content: '4H7tszevS8' }],

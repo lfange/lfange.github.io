@@ -38,6 +38,15 @@ export const zhNavbarConfig = navbar([
     link: '/algorithms/',
   },
   {
+    text: 'AI',
+    icon: 'robot',
+    link: '/ai/',
+    children: [
+      { text: 'AI 研发与生态', link: '/ai/' },
+      { text: 'AI Agent', link: '/ai-agent/' },
+    ],
+  },
+  {
     text: '计算机',
     icon: 'note',
     link: '/computer/',
@@ -91,7 +100,10 @@ export const zhNavbarConfig = navbar([
     text: '后端',
     icon: 'engine',
     link: '/backend/',
-    children: ['/backend/Golang/README.md'],
+    children: [
+      { text: 'Golang', link: '/backend/Golang/README.md' },
+      { text: 'Python 爬虫', link: '/python-crawler/' },
+    ],
   },
   {
     text: '服务',
