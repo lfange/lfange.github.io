@@ -98,3 +98,23 @@ const b1 = aaa()()
 console.log('fff', a1) // 3
 console.log('bbb', b1) // 3
 ```
+
+### 通用函数柯里化的方法
+
+```javascript
+function curry(fn) {
+  //获取原函数需要的参数个数
+  const arity = fn.length
+  //返回柯里化后的函数
+  return function curried(...args) {
+    //如果参数够了，直接执行
+    if (args.length >= arity) {
+      return fn.apply(this, args)
+    }
+    //参数不够，继续返回函数收集参数
+    return function (...nextArgs) {
+      return curried.apply(this, args.concat(nextArgs))
+    }
+  }
+}
+```

@@ -7,3 +7,9 @@ node_modules/
 dist/
 .history
 *.log
+
+# Claude Code local config
+.claude/
+
+# Continue session transcripts
+*_session.md

@@ -1,5 +1,6 @@
 const { execFile, exec } = require('node:child_process')
 const path = require('node:path')
+const { open } = require('node:fs/promises')
 
 console.log(`output->__dirname`, __dirname)
 // 使用 __dirname 拼接当前目录下的 node.js 文件路径
@@ -24,6 +25,14 @@ const child1 = exec('echo 1+2', (error, stdout, stderr) => {
   console.log(stdout)
 })
 
+async function main() {
+  let filehandle
+  try {
+    filehandle = await open(nodeScript, 'r')
+  } finally {
+    await filehandle?.close()
+  }
+
 exec('node -e "console.log(\'hi\')"', (error, stdout, stderr) => {
   if (error) {
     console.log(`output->error`, error)
@@ -31,6 +40,9 @@ exec('node -e "console.log(\'hi\')"', (error, stdout, stderr) => {
   }
   console.log(stdout)
 })
+}
+
+main()
 /*
 execFile 与 exec 的区别：
 1. execFile 直接调用可执行文件，不经过 shell，因此更安全、性能更好，不支持 shell 语法（如通配符、管道）。

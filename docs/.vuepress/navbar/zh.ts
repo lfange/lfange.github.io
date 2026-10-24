@@ -102,13 +102,30 @@ export const zhNavbarConfig = navbar([
     link: '/backend/',
     children: [
       { text: 'Golang', link: '/backend/Golang/README.md' },
+      { text: 'Node.js', link: '/backend/Node/README.md' },
+      { text: '数据库', link: '/backend/database/README.md' },
+      { text: 'Python', link: '/backend/Python/README.md' },
       { text: 'Python 爬虫', link: '/python-crawler/' },
     ],
   },
   {
     text: '服务',
+    icon: 'engine',
     link: '/serve/',
-    children: ['/serve/linux/README.md', '/serve/ngnix.md', '/serve/frps.md'],
+    children: [
+      '/serve/linux/README.md',
+      '/serve/nginx.md',
+      '/serve/frps.md',
+    ],
+  },
+  {
+    text: 'AI',
+    icon: 'robot',
+    link: '/ai/',
+    children: [
+      { text: 'AI 研发与生态', link: '/ai/' },
+      { text: 'AI Agent', link: '/ai-agent/' },
+    ],
   },
   // {
   //   text: 'web3',

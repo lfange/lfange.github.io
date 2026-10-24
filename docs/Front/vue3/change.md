@@ -208,20 +208,11 @@ import {
   popScopeId as _popScopeId,
 } from 'vue'
 
-const _withScopeId = (n) => (
-  _pushScopeId('scope-id'), (n = n()), _popScopeId(), n
-)
+const _withScopeId = (n) => (_pushScopeId('scope-id'), (n = n()), _popScopeId(), n)
 const _hoisted_1 = { id: 'app' }
-const _hoisted_2 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */)
-)
+const _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */))
 const _hoisted_3 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode(
-    'p',
-    null,
-    '今天天气真不错',
-    -1 /* HOISTED */
-  )
+  /*#__PURE__*/ _createElementVNode('p', null, '今天天气真不错', -1 /* HOISTED */)
 )
 
 export function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -230,12 +221,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
     _createElementBlock('div', _hoisted_1, [
       _hoisted_2,
       _hoisted_3,
-      _createElementVNode(
-        'div',
-        null,
-        _toDisplayString(_ctx.name),
-        1 /* TEXT */
-      ),
+      _createElementVNode('div', null, _toDisplayString(_ctx.name), 1 /* TEXT */),
     ])
   )
 }
@@ -286,20 +272,11 @@ import {
   popScopeId as _popScopeId,
 } from 'vue'
 
-const _withScopeId = (n) => (
-  _pushScopeId('scope-id'), (n = n()), _popScopeId(), n
-)
+const _withScopeId = (n) => (_pushScopeId('scope-id'), (n = n()), _popScopeId(), n)
 const _hoisted_1 = { id: 'app' }
-const _hoisted_2 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */)
-)
+const _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/ _createElementVNode('h1', null, '技术摸鱼', -1 /* HOISTED */))
 const _hoisted_3 = /*#__PURE__*/ _withScopeId(() =>
-  /*#__PURE__*/ _createElementVNode(
-    'p',
-    null,
-    '今天天气真不错',
-    -1 /* HOISTED */
-  )
+  /*#__PURE__*/ _createElementVNode('p', null, '今天天气真不错', -1 /* HOISTED */)
 )
 const _hoisted_4 = /*#__PURE__*/ _withScopeId(() =>
   /*#__PURE__*/ _createElementVNode(
@@ -316,12 +293,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
     _createElementBlock('div', _hoisted_1, [
       _hoisted_2,
       _hoisted_3,
-      _createElementVNode(
-        'div',
-        null,
-        _toDisplayString(_ctx.name),
-        1 /* TEXT */
-      ),
+      _createElementVNode('div', null, _toDisplayString(_ctx.name), 1 /* TEXT */),
       _hoisted_4,
     ])
   )
@@ -605,8 +577,7 @@ nextTick(() => {
 - Vue.version
 - Vue.compile （仅全构建）
 - Vue.set （仅兼容构建）
-- Vue.delete （仅兼容构建）
-  内部 API 也有诸如 transition、v-model 等标签或者指令被命名导出。只有在程序真正使用才会被捆绑打包。
+- Vue.delete （仅兼容构建）内部 API 也有诸如 transition、v-model 等标签或者指令被命名导出。只有在程序真正使用才会被捆绑打包。
 
 根据 尤大 直播可以知道如今 Vue3 将所有运行功能打包也只有 22.5kb，比 Vue2 轻量很多。
 
@@ -628,6 +599,8 @@ Vue3 由 TS 重写，相对于 Vue2 有更好地 TypeScript 支持。
 
 - Vue2 Option API 中 option 是个简单对象，而 TS 是一种类型系统，面向对象的语法，不是特别匹配。
 - Vue2 需要 vue-class-component 强化 vue 原生组件，也需要 vue-property-decorator 增加更多结合 Vue 特性的装饰器，写法比较繁琐。
+
+优化维度,Vue 2,Vue 3 响应式原理,Object.defineProperty (递归、有局限),Proxy (惰性、全监听、高性能) Diff 算法,全量对比虚拟 DOM,靶向更新 (Patch Flags) + 静态提升打包体积,完整引入，体积较大,原生支持 Tree-shaking，按需打包更轻量代码组织,Options API (割裂、难以复用),Composition API (高内聚、易组合) TS 支持,极其有限 (需要借助装饰器等),原生 TS 编写，类型推导完美支持
 
 ## reference
 

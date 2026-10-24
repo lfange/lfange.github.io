@@ -5,10 +5,14 @@ if (cluster.isPrimary || cluster.isMaster) {
   // --- 【主进程：守护者】 ---
   console.log(`[Master] 正在运行: ${process.pid}`)
 
-  const createWorker = () => {
+  // 检查是否有子进程，并启动一个新的以进行负载均衡
+  const checkAndForkWorker = () => {
+    // 简单地尝试fork一个新进程来模拟增加负载
     const worker = cluster.fork()
     console.log(`[Master] 已启动子进程: ${worker.process.pid}`)
+    // 在实际应用中，应该定期检查进程健康状态并进行替换
   }
+  checkAndForkWorker();
 
   createWorker()
 
